@@ -1,0 +1,5 @@
+syn match javaScriptDollarVariable "\$"
+syn match javaScriptOperator "\v[?+!<>=-]{1}"
+syn match javaScriptOperator "\v(\||\&){2}"
+syn match javaScriptOperator "\v(\*|/|\%)"
+syn match javaScriptPunctuation "\v[.,;]{1}"

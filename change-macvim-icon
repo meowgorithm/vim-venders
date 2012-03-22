@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cp $HOME/.vim/MacVim.icns /Applications/MacVim.app/Contents/Resources/MacVim.icns

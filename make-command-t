@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# So, part of the Command-T plugin needs to be compiled (so it will run fast)
+# Run this script to built it.
+
+THISDIR=$(pwd)
+
+cd $THISDIR/bundle/command-t/ruby/command-t/ && ruby extconf.rb
+cd $THISDIR/bundle/command-t/ruby/command-t/ && make
+
+unset THISDIR

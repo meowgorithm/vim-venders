@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+VIMDIR=$HOME/.vim
+
+# Symlink
+ln -s $VIMDIR/vimrc $HOME/.vimrc
+ln -s $VIMDIR/gvimrc $HOME/.gvimrc
+
+# Create directories
+mkdir $VIMDIR/{tmp,view,backup,session}
+
+# Download Vundle
+git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+# Install bundles
+vim +BundleInstall +qall
+
+unset VIMDIR
+
+echo
+echo 'Done. If you would like to use the Command-T plugin you should run'
+echo 'make-command-t to build it.'
+echo
+echo 'You can also run change-macvim-icon to replace the default MacVim icon'
+echo 'with the Tango version. Note that the script assumes that MacVim exists'
+echo 'at /Applications/MacVim.app.'
+echo
