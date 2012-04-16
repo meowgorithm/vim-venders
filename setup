@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VIMDIR=$HOME/.vim
+VIMDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Symlink
 ln -s $VIMDIR/vimrc $HOME/.vimrc
