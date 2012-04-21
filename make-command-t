@@ -3,7 +3,7 @@
 # So, part of the Command-T plugin needs to be compiled (so it will run fast)
 # Run this script to built it.
 
-THISDIR=$(pwd)
+THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd $THISDIR/bundle/command-t/ruby/command-t/ && ruby extconf.rb
 cd $THISDIR/bundle/command-t/ruby/command-t/ && make
