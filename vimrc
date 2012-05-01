@@ -29,6 +29,7 @@ Bundle 'digitaltoad/vim-jade'
 "Bundle 'CSApprox.vim'
 "Bundle 'statusline.vim'
 Bundle 'wavded/vim-stylus'
+Bundle 'Lokaltog/vim-powerline'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
