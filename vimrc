@@ -77,6 +77,7 @@ autocmd FileType,BufEnter,BufWinEnter django set ft=django.html
 autocmd FileType,BufEnter,BufWinEnter eruby set ft=eruby.html
 autocmd FileType,BufEnter,BufWinEnter css,less set ft=less.css
 autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
+autocmd FileType,BufEnter,BufWinEnter jade set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd BufRead,BufNewFile *.json set ft=javascript
 
 set ruler
