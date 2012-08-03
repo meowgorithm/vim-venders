@@ -49,7 +49,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-set clipboard+=unnamed "yanks and pastes use the clipboard instead
+"set clipboard+=unnamed "yanks and pastes use the clipboard instead
 set foldlevelstart=99 "no folds, please
 set timeoutlen=250 "time to wait for a command (after leader, for example)
 set hidden "change buffer without saving
@@ -72,7 +72,7 @@ set shiftround
 
 " Language-specific settings
 autocmd FileType,BufEnter,BufWinEnter python,javascript,coffee,css,less,scss set expandtab tabstop=4 shiftwidth=4 softtabstop=4 "textwidth=79 "PEP0008 compliance
-autocmd FileType,BufEnter,BufWinEnter ruby,html,django,eruby set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType,BufEnter,BufWinEnter ruby,html,htmldjango,eruby set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType,BufEnter,BufWinEnter django set ft=django.html
 autocmd FileType,BufEnter,BufWinEnter eruby set ft=eruby.html
 autocmd FileType,BufEnter,BufWinEnter css,less set ft=less.css
@@ -110,7 +110,7 @@ set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*
 set wildignore+=*/tmp/*
 set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
-set wildignore+=*/media/*,*/html/*,*/source/media/*
+set wildignore+=*/media/*,*/html/*,*/source/media/*,*.pyc
 set infercase "ignore case on insert completion
 
 " MacVIM shift+arrows to select behavior. Required in .vimrc instead of
@@ -203,7 +203,7 @@ let NERDTreeHijackNetrw=1 "sure, hijack netrw
 let NERDTreeIgnore=['\.$', '\~$', '\.git']
 
 " NERDCommenter
-let NERDSpaceDelims=1 "number of spaces to add before comments
+let NERDSpaceDelims=0 "number of spaces to add before comments
 
 " Exuberant CTags
 map <Leader>l :TlistToggle<CR>
