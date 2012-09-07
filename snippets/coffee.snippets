@@ -8,10 +8,17 @@ snippet jq jQuery document.onReady()
 snippet rt return
 	return ${1}
 snippet - function
-	-> ${1}
+	->
+		${1}
 snippet ( function with arguments
-	(${1}) -> ${2}
+	(${1}) ->
+		${2}
 snippet = scoped function
-	=> ${1}
+	=>
+		${1}
 snippet (( scoped function with arguments
-	(${1}) => ${2}
+	(${1}) =>
+		${2}
+snippet e function with 'e' as an argument
+	(e) ->
+		${1}
