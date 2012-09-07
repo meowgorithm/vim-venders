@@ -30,6 +30,7 @@ Bundle 'digitaltoad/vim-jade'
 "Bundle 'statusline.vim'
 Bundle 'wavded/vim-stylus'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'AutoTag'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -215,6 +216,7 @@ let g:CommandTMatchWindowAtTop=0
 let g:CommandTMaxHeight=20
 
 " Ctrlp
+map CC :CtrlPClearCache<CR>
 let g:ctrlp_max_height = 20
 let g:ctrlp_jump_to_buffer = 2 "if the file's already open somewhere (anywhere) jump to it
 let g:ctrlp_working_path_mode = 2 "try and find the repo root and search from there
@@ -227,6 +229,13 @@ let g:snips_author='Roshambo'
 
 " Auto-compile CoffeeScript on save
 "autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
+
+" AutoTag (find tagfile and auto-generate tags on save)
+" Requires Vim with Python
+let autoTagsFile = '~/.vim/bundle/AutoTag/plugin/autotag.vim'
+if filereadable(autoTagsFile)
+    source autoTagsFile
+endif
 
 " Syntastic
 map <Leader>e :Errors<CR>
