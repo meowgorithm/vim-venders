@@ -33,6 +33,7 @@ hi CursorLine     guibg=#0e1113
 hi Visual         guibg=#3b464d
 hi ModeMsg        guifg=#798b92 gui=italic
 hi LineNr         guifg=#556166 guibg=#151A1B gui=none
+hi CursorLineNr   guifg=#adadad
 "hi WildMenu       guibg=#2c302d guifg=#cbecd0 gui=underline
 hi PMenu          guifg=#1b313e guibg=#7abfdf
 hi PMenuSel       guifg=#FFFF99 guibg=#312B2B
