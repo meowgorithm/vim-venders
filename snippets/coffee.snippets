@@ -22,5 +22,21 @@ snippet (( scoped function with arguments
 snippet e function with 'e' as an argument
 	(e) ->
 		${1}
+snippet i function with 'i' as an argument
+	(i) ->
+		${1}
 snippet $ jQuery $ wrapper
-	$(${1})
+	$(${1})${2}
+snippet ea jQuery each
+	$(${1:this}).each (i) ->
+		${2}
+snippet th $(this)
+	$(this)
+snippet w $(window)
+	$(window)
+snippet wh $(window).height()
+	$(window).height()
+snippet ww $(window).width()
+	$(window).width()
+snippet st $(window).scrollTop()
+	$(window).scrollTop()
