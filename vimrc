@@ -160,14 +160,14 @@ nmap BP :wa<CR>:bprev<CR>
 nmap BO :wa<CR>:BufOnly<CR>
 
 " Remove empty buffers
-function! CleanEmptyBuffers()
+function! g:CleanEmptyBuffers()
   let buffers = filter(range(0, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0')
   if !empty(buffers)
     exe 'bw '.join(buffers, ' ')
   endif
 endfunction
 
-nmap BC :call CleanEmptyBuffers()<CR>
+nmap BC :call g:CleanEmptyBuffers()<CR>
 
 " Session management
 nmap SSA :wa<CR>:mksession! ~/.vim/session/
