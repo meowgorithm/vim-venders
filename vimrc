@@ -206,6 +206,7 @@ vmap < <gv
 
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>f :NERDTreeFind<CR>
 let NERDChristmasTree=1 "colorize
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowBookmarks=1
