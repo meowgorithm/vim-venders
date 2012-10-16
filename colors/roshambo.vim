@@ -214,7 +214,7 @@ hi coffeeAssignSymbols guifg=#f8585b
 hi coffeeSpecialVar guifg=#3be8c7
 hi coffeeObject guifg=#ffffff gui=bold,underline
 hi coffeeObjAssign guifg=#00b9ff
-hi coffeeSpecialIdent guifg=#8f88c7
+hi coffeeSpecialIdent guifg=#3dc7cf
 hi coffeeComment guifg=#1d915e gui=italic
 hi coffeeFunction guifg=#4974ac
 hi coffeeOperator guifg=#f8585b
