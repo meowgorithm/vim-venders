@@ -19,8 +19,8 @@ if has('gui_macvim')
     " Indenting: Bind command-[ and command-] to shift left and right
     nmap <D-]> >>
     nmap <D-[> <<
-    vmap <D-]> >>
-    vmap <D-[> <<
+    vmap <D-]> >gv
+    vmap <D-[> <gv
     imap <D-]> <C-t>
     imap <D-[> <C-d>
 
