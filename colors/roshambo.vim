@@ -29,6 +29,8 @@ hi SpecialKey     guifg=#3d464e gui=none
 hi Normal         guifg=#c1c1c1 guibg=#1a1d1e
 hi Cursor         guifg=#f1f1f1 guibg=#3b464d
 
+hi ColorColumn    guibg=#141716
+
 hi CursorLine     guibg=#0e1113
 hi Visual         guibg=#3b464d
 hi ModeMsg        guifg=#798b92 gui=italic
