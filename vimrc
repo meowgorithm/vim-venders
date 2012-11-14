@@ -31,6 +31,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'AutoTag'
+Bundle 'JSON.vim'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -79,7 +80,7 @@ autocmd FileType,BufEnter,BufWinEnter eruby set ft=eruby.html
 autocmd FileType,BufEnter,BufWinEnter css,less set ft=less.css
 autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
 autocmd FileType,BufEnter,BufWinEnter jade,stylus set expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd BufRead,BufNewFile *.json set ft=javascript
+autocmd BufRead,BufNewFile *.json set ft=json
 
 set ruler
 set nowrap
