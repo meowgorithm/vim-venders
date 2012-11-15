@@ -90,44 +90,44 @@ au InsertLeave * hi StatusLine guifg=#e2eb23 guibg=#2085ad gui=none
 
 hi cssComment              guifg=#798b92 gui=none
 hi cssImportant            guifg=#ff5e57 gui=bold
-hi cssInclude              guifg=#46EFFE gui=bold
+hi cssInclude              ctermfg=125 guifg=#46EFFE gui=bold
 hi cssBraces               guifg=#e8fcb0
-hi cssURL                  guifg=#c8de83
-hi cssStringQ              guifg=#c8de83
-hi cssStringQQ             guifg=#c8de83
-hi cssTagName              guifg=#ff5da1
-hi cssClassName            guifg=#ff8ad8
+hi cssURL                  ctermfg=191 guifg=#c8de83
+hi cssStringQ              ctermfg=185 guifg=#c8de83
+hi cssStringQQ             ctermfg=185 guifg=#c8de83
+hi cssTagName              ctermfg=161 guifg=#ff5da1
+hi cssClassName            ctermfg=206 guifg=#ff8ad8
 hi cssIdentifier           guifg=#ff2f93
-hi cssPseudoClass          guifg=#C563A7
-hi cssPseudoClassId        guifg=#C563A7
-hi cssSelectorOp           guifg=#AA5590
+hi cssPseudoClass          ctermfg=177 guifg=#C563A7
+hi cssPseudoClassId        ctermfg=177 guifg=#C563A7
+hi cssSelectorOp           ctermfg=167 guifg=#AA5590
 
-hi cssFontProp             guifg=#60edc8
-hi cssColorProp            guifg=#60edc8
-hi cssTextProp             guifg=#60edc8
-hi cssBoxProp              guifg=#60edc8
-hi cssRenderProp           guifg=#60edc8
-hi cssAuralProp            guifg=#60edc8
-hi cssGeneratedContentProp guifg=#60edc8
-hi cssPagingProp           guifg=#60edc8
-hi cssTableProp            guifg=#60edc8
-hi cssUIProp               guifg=#60edc8
+hi cssFontProp             ctermfg=37 guifg=#60edc8
+hi cssColorProp            ctermfg=37 guifg=#60edc8
+hi cssTextProp             ctermfg=37 guifg=#60edc8
+hi cssBoxProp              ctermfg=37 guifg=#60edc8
+hi cssRenderProp           ctermfg=37 guifg=#60edc8
+hi cssAuralProp            ctermfg=37 guifg=#60edc8
+hi cssGeneratedContentProp ctermfg=37 guifg=#60edc8
+hi cssPagingProp           ctermfg=37 guifg=#60edc8
+hi cssTableProp            ctermfg=37 guifg=#60edc8
+hi cssUIProp               ctermfg=37 guifg=#60edc8
 
-hi cssCommonAttr           guifg=#51a4c5
-hi cssFontAttr             guifg=#51a4c5
-hi cssTextAttr             guifg=#51a4c5
-hi cssColorAttr            guifg=#51a4c5
-hi cssBoxAttr              guifg=#51a4c5
-hi cssRenderAttr           guifg=#51a4c5
-hi cssAuralAttr            guifg=#51a4c5
-hi cssColor                guifg=#51a4c5
-hi cssInteger              guifg=#51a4c5
-hi cssValueNumber          guifg=#51a4c5 gui=none
-hi cssValueInteger         guifg=#51a4c5 gui=none
-hi cssValueLength          guifg=#51a4c5 gui=none
-hi cssValueAngle           guifg=#51a4c5 gui=none
-hi cssValueTime            guifg=#51a4c5 gui=none
-hi cssValueFrequency       guifg=#51a4c5 gui=none
+hi cssCommonAttr           ctermfg=24 guifg=#51a4c5
+hi cssFontAttr             ctermfg=24 guifg=#51a4c5
+hi cssTextAttr             ctermfg=24 guifg=#51a4c5
+hi cssColorAttr            ctermfg=24 guifg=#51a4c5
+hi cssBoxAttr              ctermfg=24 guifg=#51a4c5
+hi cssRenderAttr           ctermfg=24 guifg=#51a4c5
+hi cssAuralAttr            ctermfg=24 guifg=#51a4c5
+hi cssColor                ctermfg=24 guifg=#51a4c5
+hi cssInteger              ctermfg=24 guifg=#51a4c5
+hi cssValueNumber          ctermfg=24 guifg=#51a4c5 gui=none
+hi cssValueInteger         ctermfg=24 guifg=#51a4c5 gui=none
+hi cssValueLength          ctermfg=24 guifg=#51a4c5 gui=none
+hi cssValueAngle           ctermfg=24 guifg=#51a4c5 gui=none
+hi cssValueTime            ctermfg=24 guifg=#51a4c5 gui=none
+hi cssValueFrequency       ctermfg=24 guifg=#51a4c5 gui=none
 
 " LESS
 
@@ -146,9 +146,22 @@ hi lessFunction guifg=#2eb5dc
 hi lessComment guifg=#798b92
 
 " STYLUS
+hi stylusComment ctermfg=238
+hi stylusCssComment ctermfg=238
 hi stylusVariable guifg=#3fced3
 hi stylusFunction guifg=#2eb5dc
 hi stylusComment guifg=#798b92
+hi stylusClass ctermfg=206 guifg=#ff8ad8
+hi stylusClassChar ctermfg=206 guifg=#ff8ad8
+hi stylusId ctermfg=198 guifg=#ff2f93
+hi stylusIdChar ctermfg=198 guifg=#ff2f93
+hi stylusProperty ctermfg=37
+hi stylusFunction ctermfg=42
+hi stylusUserFunction ctermfg=42
+hi stylusInterpolation ctermfg=42
+hi stylusVariable ctermfg=42
+hi stylusVariableAssignment ctermfg=30
+hi stylusAmpersand ctermfg=89
 
 " HTML
 
