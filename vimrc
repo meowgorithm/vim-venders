@@ -32,6 +32,9 @@ Bundle 'wavded/vim-stylus'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'AutoTag'
 Bundle 'JSON.vim'
+Bundle 'guns/xterm-color-table.vim'
+
+colorscheme roshambo
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
