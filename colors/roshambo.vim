@@ -214,39 +214,39 @@ hi javaScriptPunctuation      guifg=#e7ffb2
 hi javaScriptFunctionName     guifg=#ffffff gui=bold
 
 " Coffee-Script
-hi coffeeKeyword guifg=#6bd26f
-hi coffeeConditional guifg=#ff6fd0
-hi coffeeRepeat guifg=#ff6fd0
-hi coffeeException guifg=#6bd26f
-hi coffeeStatement guifg=#6bd26f
-hi coffeeString guifg=#7b8b92
-hi coffeeRegex guifg=#6d73ea
-hi coffeeEscape guifg=#c4c249 gui=bold
-hi coffeeGlobal guifg=#41c5fd
-hi coffeeBoolean guifg=#00b9ff
-hi coffeeAssign guifg=#b09b6a
-hi coffeeAssignSymbols guifg=#f8585b
-hi coffeeSpecialVar guifg=#3be8c7
-hi coffeeObject guifg=#ffffff gui=bold,underline
-hi coffeeObjAssign guifg=#00b9ff
-hi coffeeSpecialIdent guifg=#3dc7cf
-hi coffeeComment guifg=#1d915e gui=italic
-hi coffeeFunction guifg=#4974ac
-hi coffeeOperator guifg=#f8585b
-hi coffeeAssignBrackets guifg=#e7ffb2
-hi coffeeConstant guifg=#66ccff gui=bold
-hi coffeeNumber guifg=#66ccff gui=bold
-hi coffeeFloat guifg=#66ccff gui=bold
+hi coffeeKeyword                ctermfg=77 guifg=#6bd26f
+hi coffeeConditional            ctermfg=206 guifg=#ff6fd0
+hi coffeeRepeat                 ctermfg=206 guifg=#ff6fd0
+hi coffeeException              ctermfg=77 guifg=#6bd26f
+hi coffeeStatement              ctermfg=77 guifg=#6bd26f
+hi coffeeString                 ctermfg=102 guifg=#7b8b92
+hi coffeeRegex                  ctermfg=62 guifg=#6d73ea
+hi coffeeEscape                 ctermfg=179 cterm=bold guifg=#c4c249 gui=bold
+hi coffeeGlobal                 ctermfg=81 guifg=#41c5fd
+hi coffeeBoolean                ctermfg=39 guifg=#00b9ff
+hi coffeeAssign                 ctermfg=137 guifg=#b09b6a
+hi coffeeAssignSymbols          ctermfg=160 guifg=#f8585b
+hi coffeeSpecialVar             ctermfg=80 guifg=#3be8c7
+hi coffeeObject                 ctermfg=231 cterm=bold,underline guifg=#ffffff gui=bold,underline
+hi coffeeObjAssign              ctermfg=39 guifg=#00b9ff
+hi coffeeSpecialIdent           ctermfg=80 guifg=#3dc7cf
+hi coffeeComment                ctermfg=29 cterm=italic guifg=#1d915e gui=italic
+hi coffeeFunction               ctermfg=67 guifg=#4974ac
+hi coffeeOperator               ctermfg=203 guifg=#f8585b
+hi coffeeAssignBrackets         ctermfg=193 guifg=#e7ffb2
+hi coffeeConstant               ctermfg=81 cterm=bold guifg=#66ccff gui=bold
+hi coffeeNumber                 ctermfg=81 cterm=bold guifg=#66ccff gui=bold
+hi coffeeFloat                  ctermfg=81 cterm=bold guifg=#66ccff gui=bold
 "hi coffeePrototype guifg=#e9e9e9 gui=bold
 "hi coffeeDot guifg=#e9e9e9 gui=bold
 
-hi coffeePunctutation guifg=#e7ffb2
+hi coffeePunctutation           ctermfg=193 guifg=#e7ffb2
 
 " Python
 
 "let python_highlight_all = 1
 
-hi pythonComment              guifg=#1d915e  gui=italic
+hi pythonComment              guifg=#1d915e gui=italic
 hi pythonString               guifg=#7b8b92
 hi pythonRawString            guifg=#a38955
 hi pythonStatement            guifg=#6bd26f
