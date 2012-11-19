@@ -24,9 +24,9 @@ if has('mac')
 	set transparency=2
 endif
 
-hi NonText        guifg=#3d464e gui=none
-hi SpecialKey     guifg=#3d464e gui=none
 hi Normal         ctermfg=250 ctermbg=0 guifg=#c1c1c1 guibg=#1a1d1e
+hi NonText        ctermfg=235 guifg=#3d464e gui=none
+hi SpecialKey     guifg=#3d464e gui=none
 hi Cursor         guifg=#f1f1f1 guibg=#3b464d
 
 hi ColorColumn    ctermbg=232 guibg=#141716
@@ -230,7 +230,7 @@ hi coffeeSpecialVar             ctermfg=80 guifg=#3be8c7
 hi coffeeObject                 ctermfg=231 cterm=bold,underline guifg=#ffffff gui=bold,underline
 hi coffeeObjAssign              ctermfg=39 guifg=#00b9ff
 hi coffeeSpecialIdent           ctermfg=80 guifg=#3dc7cf
-hi coffeeComment                ctermfg=29 cterm=italic guifg=#1d915e gui=italic
+hi coffeeComment                ctermbg=29 ctermfg=0 cterm=italic guifg=#1d915e gui=italic
 hi coffeeFunction               ctermfg=67 guifg=#4974ac
 hi coffeeOperator               ctermfg=203 guifg=#f8585b
 hi coffeeAssignBrackets         ctermfg=193 guifg=#e7ffb2
