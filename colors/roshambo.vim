@@ -112,6 +112,7 @@ hi cssGeneratedContentProp ctermfg=37 guifg=#60edc8
 hi cssPagingProp           ctermfg=37 guifg=#60edc8
 hi cssTableProp            ctermfg=37 guifg=#60edc8
 hi cssUIProp               ctermfg=37 guifg=#60edc8
+hi cssMiscProp             ctermfg=37 guifg=#60edc8
 
 hi cssCommonAttr           ctermfg=24 guifg=#51a4c5
 hi cssFontAttr             ctermfg=24 guifg=#51a4c5
@@ -120,6 +121,7 @@ hi cssColorAttr            ctermfg=24 guifg=#51a4c5
 hi cssBoxAttr              ctermfg=24 guifg=#51a4c5
 hi cssRenderAttr           ctermfg=24 guifg=#51a4c5
 hi cssAuralAttr            ctermfg=24 guifg=#51a4c5
+hi cssMiscAttr             ctermfg=24 guifg=#51a4c5
 hi cssColor                ctermfg=24 guifg=#51a4c5
 hi cssInteger              ctermfg=24 guifg=#51a4c5
 hi cssValueNumber          ctermfg=24 guifg=#51a4c5 gui=none
