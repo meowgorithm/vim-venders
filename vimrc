@@ -159,11 +159,18 @@ map <Leader>w :set wrap! wrap?<CR>
 " Tabs
 nmap TN :wa<CR>:tabnext<CR>
 nmap TP :wa<CR>:tabnext<CR>
+"nmap <C-n> :tabnew<CR>
 
 " Buffers
 nmap BN :wa<CR>:bnext<CR>
 nmap BP :wa<CR>:bprev<CR>
 nmap BO :wa<CR>:BufOnly<CR>
+
+" Window Navigation
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
 
 " Remove empty buffers
 function! g:CleanEmptyBuffers()
