@@ -167,16 +167,16 @@ hi stylusAmpersand ctermfg=89
 
 " HTML
 
-hi htmlTag           guifg=#3EADFD
-hi htmlTagName       guifg=#3EADFD
-hi htmlArg           guifg=#46EFFE
-hi htmlString        guifg=#D7EDA1
-hi htmlSpecialChar   guifg=#ffffff gui=bold
-hi htmlTitle         guifg=#c1c1c1
-hi htmlH1            guifg=#c1c1c1
+hi htmlTag           ctermfg=75 guifg=#3EADFD
+hi htmlTagName       ctermfg=75 guifg=#3EADFD
+hi htmlArg           ctermfg=87 guifg=#46EFFE
+hi htmlString        ctermfg=193 guifg=#D7EDA1
+hi htmlSpecialChar   ctermfg=231 guifg=#ffffff gui=bold
+hi htmlTitle         ctermfg=250 guifg=#c1c1c1
+hi htmlH1            ctermfg=250 guifg=#c1c1c1
 hi def link htmlLink Normal
-hi htmlDoctype       guifg=#af98ff gui=bold
-hi htmlBlockTag      guifg=#f53d92
+hi htmlDoctype       ctermfg=141 guifg=#af98ff gui=bold
+hi htmlBlockTag      ctermfg=204 guifg=#f53d92
 
 " PHP
 
@@ -232,7 +232,7 @@ hi coffeeSpecialVar             ctermfg=80 guifg=#3be8c7
 hi coffeeObject                 ctermfg=231 cterm=bold,underline guifg=#ffffff gui=bold,underline
 hi coffeeObjAssign              ctermfg=39 guifg=#00b9ff
 hi coffeeSpecialIdent           ctermfg=80 guifg=#3dc7cf
-hi coffeeComment                ctermbg=29 ctermfg=0 cterm=italic guifg=#1d915e gui=italic
+hi coffeeComment                ctermfg=29 guifg=#1d915e gui=italic
 hi coffeeFunction               ctermfg=67 guifg=#4974ac
 hi coffeeOperator               ctermfg=203 guifg=#f8585b
 hi coffeeAssignBrackets         ctermfg=193 guifg=#e7ffb2
@@ -248,29 +248,29 @@ hi coffeePunctutation           ctermfg=193 guifg=#e7ffb2
 
 "let python_highlight_all = 1
 
-hi pythonComment              guifg=#1d915e gui=italic
-hi pythonString               guifg=#7b8b92
-hi pythonRawString            guifg=#a38955
-hi pythonStatement            guifg=#6bd26f
-hi pythonConditional          guifg=#ff6fd0
-hi pythonRepeat               guifg=#ff6fd0
-hi pythonException            guifg=#ff6fd0
-hi pythonExceptions           guifg=#4fddb0
-hi pythonInclude              guifg=#3be8c7
-hi pythonEscape               guifg=#c4c249 gui=bold
-hi pythonFunction             guifg=#ffffff gui=bold
-hi pythonBuiltin              guifg=#66ccff gui=bold
-hi pythonNumber               guifg=#66ccff gui=bold
-hi pythonOperator             guifg=#f8585b
+hi pythonComment            ctermfg=29 guifg=#1d915e gui=italic
+hi pythonString             ctermfg=102 guifg=#7b8b92
+hi pythonRawString          ctermfg=137 guifg=#a38955
+hi pythonStatement          ctermfg=77 guifg=#6bd26f
+hi pythonConditional        ctermfg=206 guifg=#ff6fd0
+hi pythonRepeat             ctermfg=206 guifg=#ff6fd0
+hi pythonException          ctermfg=206 guifg=#ff6fd0
+hi pythonExceptions         ctermfg=79 guifg=#4fddb0
+hi pythonInclude            ctermfg=80 guifg=#3be8c7
+hi pythonEscape             ctermfg=179 guifg=#c4c249 gui=bold
+hi pythonFunction           ctermfg=231 guifg=#ffffff gui=bold
+hi pythonBuiltin            ctermfg=81 guifg=#66ccff gui=bold
+hi pythonNumber             ctermfg=81 guifg=#66ccff gui=bold
+hi pythonOperator           ctermfg=203 guifg=#f8585b
 
-hi pythonSpecial guifg=#00b9ff
-hi pythonOperator guifg=#ff4546
-hi pythonPunctuation guifg=#e7ffb2
+hi pythonSpecial            ctermfg=39 guifg=#00b9ff
+hi pythonOperator           ctermfg=203 guifg=#ff4546
+hi pythonPunctuation        ctermfg=193 guifg=#e7ffb2
 
 " Django
 
 hi djangoTagBlock guifg=#c1c1c1
-hi djangoComBlock guifg=#c1c1c1
+hi djangoComBlock ctermfg=239 guifg=#008e5d gui=italic
 hi djangoVarBlock guifg=#c1c1c1
 hi djangoFilter guifg=#48ab50
 hi djangoStatement guifg=#ff6fd0
