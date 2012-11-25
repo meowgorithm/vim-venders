@@ -71,8 +71,8 @@ if has('gui_macvim')
 
     " Command-/ to toggle comments
     " Requires the NERDCommenter plugin
-    nmap <D-/> <plug>NERDComToggleComment<CR>
-    imap <D-/> <ESC><plug>NERDComToggleComment<CR>a
+    nmap <D-/> <plug>NERDCommenterToggle<CR>
+    imap <D-/> <ESC><plug>NERDCommenterToggle<CR>a
 
 elseif has('gui_gtk')
 
