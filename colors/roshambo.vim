@@ -1,3 +1,4 @@
+" vim:foldmethod=marker
 "
 " Roshambo Colorscheme. A work in progress.
 "
@@ -7,7 +8,7 @@
 "
 
 
-" CONFIG
+" Config {{{
 
 highlight clear
 
@@ -17,8 +18,9 @@ endif
 
 let colors_name = 'Roshambo'
 
+" }}}
 
-" COMMON
+" General {{{
 
 if has('mac')
 	set transparency=2
@@ -68,25 +70,27 @@ hi Special        ctermfg=178 guifg=#d8ea9f
 hi Identifier     ctermfg=29 guifg=#00c6ff
 hi PreProc        ctermfg=33 guifg=#72fcd5 gui=none
 
-" TABS
+" }}}
+
+" Tabs {{{
+
 hi TabLineFill guibg=#343434 guibg=#333D3E gui=none
 hi TabLineSel  guifg=#e9e9e9 guibg=#1B2121 gui=none
 hi TabLine     guifg=#93C8CE guibg=#47595B gui=none
 
-" STATUSLINE
+" }}}
 
-"hi StatusLine                  guifg=#B4D0E1 guibg=#495B5F gui=none
-hi StatusLine                  guifg=#e2eb23 guibg=#2085ad gui=none
-hi StatusLineNC                guifg=#5D7075 guibg=#2C383A gui=none
-"au InsertEnter * hi StatusLine guifg=#131617 guibg=#a3aa52 gui=bold
-au InsertEnter * hi StatusLine guifg=#7a2d2e guibg=#4bbfa1 gui=bold
-au InsertLeave * hi StatusLine guifg=#e2eb23 guibg=#2085ad gui=none
+" Statusline {{{
+" NOTE: this section now outdated due to the Powerline plugin.
 
-" NERDTree
+"hi StatusLine                  guifg=#e2eb23 guibg=#2085ad gui=none
+"hi StatusLineNC                guifg=#5D7075 guibg=#2C383A gui=none
+"au InsertEnter * hi StatusLine guifg=#7a2d2e guibg=#4bbfa1 gui=bold
+"au InsertLeave * hi StatusLine guifg=#e2eb23 guibg=#2085ad gui=none
 
-"hi TreeDir guifg=#b39967
+" }}}
 
-" CSS
+" CSS {{{
 
 hi cssComment              guifg=#798b92 gui=none
 hi cssImportant            guifg=#ff5e57 gui=bold
@@ -131,7 +135,9 @@ hi cssValueAngle           ctermfg=24 guifg=#51a4c5 gui=none
 hi cssValueTime            ctermfg=24 guifg=#51a4c5 gui=none
 hi cssValueFrequency       ctermfg=24 guifg=#51a4c5 gui=none
 
-" LESS
+" }}}
+
+" Less {{{
 
 "hi lessDefinition guifg=#7d7d7d
 hi lessVariable guifg=#3fced3
@@ -147,7 +153,9 @@ hi lessClass guifg=#ff8ad8
 hi lessFunction guifg=#2eb5dc
 hi lessComment guifg=#798b92
 
-" STYLUS
+" }}}
+
+" Stylus {{{
 hi stylusComment ctermfg=238
 hi stylusCssComment ctermfg=238
 hi stylusVariable guifg=#3fced3
@@ -165,7 +173,9 @@ hi stylusVariable ctermfg=42
 hi stylusVariableAssignment ctermfg=30
 hi stylusAmpersand ctermfg=89
 
-" HTML
+" }}}
+
+" HTML {{{
 
 hi htmlTag           ctermfg=75 guifg=#3EADFD
 hi htmlTagName       ctermfg=75 guifg=#3EADFD
@@ -178,7 +188,9 @@ hi def link htmlLink Normal
 hi htmlDoctype       ctermfg=141 guifg=#af98ff gui=bold
 hi htmlBlockTag      ctermfg=204 guifg=#f53d92
 
-" PHP
+" }}}
+
+" PHP {{{
 
 hi phpComment                 guifg=#1D915E gui=italic
 hi phpString                  guifg=#7B8B92
@@ -187,7 +199,9 @@ hi phpKeyword                 guifg=#03b9ff
 hi phpConditional             guifg=#03b9ff
 hi phpFunctions               guifg=#4edeb0
 
-" JavaScript
+" }}}
+
+" JavaScript {{{
 
 hi javaScriptComment          guifg=#209074
 hi javaScriptLineComment      guifg=#209074
@@ -215,7 +229,9 @@ hi javaScriptDollarVariable   guifg=#F83E42
 hi javaScriptPunctuation      guifg=#e7ffb2
 hi javaScriptFunctionName     guifg=#ffffff gui=bold
 
-" Coffee-Script
+" }}}
+
+" Coffee-Script {{{
 hi coffeeKeyword                ctermfg=77 guifg=#6bd26f
 hi coffeeConditional            ctermfg=206 guifg=#ff6fd0
 hi coffeeRepeat                 ctermfg=206 guifg=#ff6fd0
@@ -244,7 +260,9 @@ hi coffeeFloat                  ctermfg=81 cterm=bold guifg=#66ccff gui=bold
 
 hi coffeePunctutation           ctermfg=193 guifg=#e7ffb2
 
-" Python
+" }}}
+
+" Python {{{
 
 "let python_highlight_all = 1
 
@@ -267,7 +285,9 @@ hi pythonSpecial            ctermfg=39 guifg=#00b9ff
 hi pythonOperator           ctermfg=203 guifg=#ff4546
 hi pythonPunctuation        ctermfg=193 guifg=#e7ffb2
 
-" Django
+" }}}
+
+" Django {{{
 
 hi djangoTagBlock guifg=#c1c1c1
 hi djangoComBlock ctermfg=239 guifg=#008e5d gui=italic
@@ -275,9 +295,13 @@ hi djangoVarBlock guifg=#c1c1c1
 hi djangoFilter guifg=#48ab50
 hi djangoStatement guifg=#ff6fd0
 
-" Git
+" }}}
+
+" Git {{{
 
 hi gitDiffAdded ctermfg=28
 hi gitDiffRemoved ctermfg=88
 
 hi gitcommitComment ctermfg=240
+
+" }}}
