@@ -23,53 +23,53 @@ let colors_name = 'Roshambo'
 " Vim UI {{{
 
 if has('mac')
-	set transparency=2
+    set transparency=2
 endif
 
-hi Normal         ctermfg=250 ctermbg=0 guifg=#c1c1c1 guibg=#1a1d1e
-hi NonText        ctermfg=235 guifg=#3d464e gui=none
-hi SpecialKey     guifg=#3d464e gui=none
-hi Cursor         guifg=#f1f1f1 guibg=#3b464d
-hi ColorColumn    ctermbg=232 guibg=#141716
-hi CursorLine     cterm=none ctermbg=233 guibg=#0e1113
-hi Visual         guibg=#3b464d
-hi ModeMsg        guifg=#798b92 gui=italic
-hi LineNr         ctermfg=238 guifg=#556166 guibg=#151A1B gui=none
-hi CursorLineNr   ctermfg=242 guifg=#adadad
-"hi WildMenu       guibg=#2c302d guifg=#cbecd0 gui=underline
-hi PMenu          guifg=#1b313e guibg=#7abfdf
-hi PMenuSel       guifg=#FFFF99 guibg=#312B2B
-hi PmenuSbar      guifg=#FFFF99 guibg=#7abfdf
-hi PmenuThumb     guifg=#174c63
-hi VertSplit      guifg=#556166 guibg=#151A1B
-hi MatchParen     guibg=#3d7b94
-hi SignColumn     guibg=#121518
-hi Folded         ctermfg=241 ctermbg=233 guifg=#947D7D guibg=#1A1717
-"hi FoldColumn     guifg=#947D7D guibg=#121518
-hi Question       guifg=#6bd26f gui=bold
-hi Search         guibg=#c4c249
-hi Title          guifg=#e75b91
-hi Error          guifg=#f0f0f0 guibg=#ff4546
-hi ErrorMsg       guifg=#f0f0f0 guibg=#ff4546
-hi Todo           guifg=#000000 guibg=#51a156
-hi WarningMsg     guifg=#ff3a3f  gui=bold
-hi TagListFileName guifg=#B4D0E1 guibg=#495B5F
+hi Normal           ctermfg=250 ctermbg=0 guifg=#c1c1c1 guibg=#1a1d1e
+hi NonText          ctermfg=235 guifg=#3d464e gui=none
+hi SpecialKey       guifg=#3d464e gui=none
+hi Cursor           guifg=#f1f1f1 guibg=#3b464d
+hi ColorColumn      ctermbg=232 guibg=#141716
+hi CursorLine       cterm=none ctermbg=233 guibg=#0e1113
+hi Visual           guibg=#3b464d
+hi ModeMsg          guifg=#798b92 gui=italic
+hi LineNr           ctermfg=238 guifg=#556166 guibg=#151A1B gui=none
+hi CursorLineNr     ctermfg=242 guifg=#adadad
+"hi WildMenu         guibg=#2c302d guifg=#cbecd0 gui=underline
+hi PMenu            guifg=#1b313e guibg=#7abfdf
+hi PMenuSel         guifg=#FFFF99 guibg=#312B2B
+hi PmenuSbar        guifg=#FFFF99 guibg=#7abfdf
+hi PmenuThumb       guifg=#174c63
+hi VertSplit        guifg=#556166 guibg=#151A1B
+hi MatchParen       guibg=#3d7b94
+hi SignColumn       guibg=#121518
+hi Folded           ctermfg=241 ctermbg=233 guifg=#947D7D guibg=#1A1717
+"hi FoldColumn       guifg=#947D7D guibg=#121518
+hi Question         guifg=#6bd26f gui=bold
+hi Search           guibg=#c4c249
+hi Title            guifg=#e75b91
+hi Error            guifg=#f0f0f0 guibg=#ff4546
+hi ErrorMsg         guifg=#f0f0f0 guibg=#ff4546
+hi Todo             guifg=#000000 guibg=#51a156
+hi WarningMsg       guifg=#ff3a3f  gui=bold
+hi TagListFileName  guifg=#B4D0E1 guibg=#495B5F
 
 " }}}
 
 " General {{{
 
-hi Comment        ctermfg=239 guifg=#008e5d gui=italic
-hi Operator       ctermfg=160 guifg=#ff5e57
-hi String         ctermfg=23 guifg=#798b92
-hi Keyword        ctermfg=22 guifg=#ff8ad9
-hi Function       ctermfg=31 guifg=#51a4c5
-hi Constant       ctermfg=39 guifg=#76d6ff gui=bold
-hi Type           ctermfg=24 guifg=#b39967 gui=none
-hi Statement      ctermfg=34 guifg=#ff8ad8 gui=none
-hi Special        ctermfg=178 guifg=#d8ea9f
-hi Identifier     ctermfg=29 guifg=#00c6ff
-hi PreProc        ctermfg=33 guifg=#72fcd5 gui=none
+hi Comment          ctermfg=239 guifg=#008e5d gui=italic
+hi Operator         ctermfg=160 guifg=#ff5e57
+hi String           ctermfg=23 guifg=#798b92
+hi Keyword          ctermfg=22 guifg=#ff8ad9
+hi Function         ctermfg=31 guifg=#51a4c5
+hi Constant         ctermfg=39 guifg=#76d6ff gui=bold
+hi Type             ctermfg=24 guifg=#b39967 gui=none
+hi Statement        ctermfg=34 guifg=#ff8ad8 gui=none
+hi Special          ctermfg=178 guifg=#d8ea9f
+hi Identifier       ctermfg=29 guifg=#00c6ff
+hi PreProc          ctermfg=33 guifg=#72fcd5 gui=none
 
 " }}}
 
