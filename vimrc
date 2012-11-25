@@ -55,7 +55,7 @@ set nowritebackup
 set noswapfile
 
 "set clipboard+=unnamed "yanks and pastes use the clipboard instead
-set foldlevelstart=99 "no folds, please
+"set foldlevelstart=99 "no folds, please
 set timeoutlen=250 "time to wait for a command (after leader, for example)
 set hidden "change buffer without saving
 set showmatch "show matching brackets
@@ -240,6 +240,9 @@ map <Leader>m :TagbarToggle<CR>
 map <Leader>t :CommandT<CR>
 let g:CommandTMatchWindowAtTop=0
 let g:CommandTMaxHeight=20
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
 
 " Ctrlp
 map CC :CtrlPClearCache<CR>
