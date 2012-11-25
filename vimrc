@@ -229,6 +229,8 @@ let NERDTreeIgnore=['\.$', '\~$', '\.git']
 
 " NERDCommenter
 let NERDSpaceDelims=0 "number of spaces to add before comments
+map <c-c> <plug>NERDCommenterToggle<cr>
+imap <c-c> <esc><plug>NERDCommenterToggle<cr>a
 
 " Exuberant CTags
 map <Leader>l :TlistToggle<CR>
