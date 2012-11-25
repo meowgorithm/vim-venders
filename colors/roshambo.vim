@@ -274,3 +274,10 @@ hi djangoComBlock ctermfg=239 guifg=#008e5d gui=italic
 hi djangoVarBlock guifg=#c1c1c1
 hi djangoFilter guifg=#48ab50
 hi djangoStatement guifg=#ff6fd0
+
+" Git
+
+hi gitDiffAdded ctermfg=28
+hi gitDiffRemoved ctermfg=88
+
+hi gitcommitComment ctermfg=240
