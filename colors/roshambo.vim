@@ -20,7 +20,7 @@ let colors_name = 'Roshambo'
 
 " }}}
 
-" General {{{
+" Vim UI {{{
 
 if has('mac')
 	set transparency=2
@@ -30,9 +30,7 @@ hi Normal         ctermfg=250 ctermbg=0 guifg=#c1c1c1 guibg=#1a1d1e
 hi NonText        ctermfg=235 guifg=#3d464e gui=none
 hi SpecialKey     guifg=#3d464e gui=none
 hi Cursor         guifg=#f1f1f1 guibg=#3b464d
-
 hi ColorColumn    ctermbg=232 guibg=#141716
-
 hi CursorLine     cterm=none ctermbg=233 guibg=#0e1113
 hi Visual         guibg=#3b464d
 hi ModeMsg        guifg=#798b92 gui=italic
@@ -44,10 +42,10 @@ hi PMenuSel       guifg=#FFFF99 guibg=#312B2B
 hi PmenuSbar      guifg=#FFFF99 guibg=#7abfdf
 hi PmenuThumb     guifg=#174c63
 hi VertSplit      guifg=#556166 guibg=#151A1B
-hi Folded         guifg=#947D7D guibg=#1A1717
 hi MatchParen     guibg=#3d7b94
 hi SignColumn     guibg=#121518
-hi FoldColumn     guifg=#947D7D guibg=#121518
+hi Folded         ctermfg=241 ctermbg=233 guifg=#947D7D guibg=#1A1717
+"hi FoldColumn     guifg=#947D7D guibg=#121518
 hi Question       guifg=#6bd26f gui=bold
 hi Search         guibg=#c4c249
 hi Title          guifg=#e75b91
@@ -55,8 +53,11 @@ hi Error          guifg=#f0f0f0 guibg=#ff4546
 hi ErrorMsg       guifg=#f0f0f0 guibg=#ff4546
 hi Todo           guifg=#000000 guibg=#51a156
 hi WarningMsg     guifg=#ff3a3f  gui=bold
-
 hi TagListFileName guifg=#B4D0E1 guibg=#495B5F
+
+" }}}
+
+" General {{{
 
 hi Comment        ctermfg=239 guifg=#008e5d gui=italic
 hi Operator       ctermfg=160 guifg=#ff5e57
