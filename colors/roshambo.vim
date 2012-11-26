@@ -47,7 +47,7 @@ hi SignColumn       guibg=#121518
 hi Folded           ctermfg=241 ctermbg=233 guifg=#947D7D guibg=#1A1717
 "hi FoldColumn       guifg=#947D7D guibg=#121518
 hi Question         guifg=#6bd26f gui=bold
-hi Search           guibg=#c4c249
+hi Search           ctermfg=233 ctermbg=227 guifg=#1a1a1a guibg=#c4c249
 hi Title            guifg=#e75b91
 hi Error            guifg=#f0f0f0 guibg=#ff4546
 hi ErrorMsg         guifg=#f0f0f0 guibg=#ff4546
