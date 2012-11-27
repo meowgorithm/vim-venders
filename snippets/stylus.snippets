@@ -55,6 +55,8 @@ snippet ff font-family
 	font-family ${1}
 snippet lh line-height
 	line-height ${1:14px}
+snippet ls letter-spacing
+	letter-spacing ${1:1px}
 snippet td text-decoration
 	text-decoration ${1:none}
 snippet ta text-align
@@ -100,12 +102,8 @@ snippet	u url()
 snippet ! ! important
 	! important
 snippet brr border-radius
-	-webkit-border-radius ${1:10px}
-	-moz-border-radius $1
-	-border-radius $1
+	border-radius $1
 snippet bsh box-shadow
-	-webkit-box-shadow ${1:2px} ${2:2px} ${3:2px} ${4:#000}
-	-moz-box-shadow $1 $2 $3 $4
 	box-shadow $1 $2 $3 $4
 snippet deb debug (border)
 	border 1px solid red
