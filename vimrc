@@ -135,7 +135,7 @@ set statusline+=%(\ (%{&ff})%)
 set statusline+=%=
 set statusline+=%-19.{fugitive#statusline()}\ %-14.(%l,%c%V%)\ %P
 
-" Enable the mouse in terminal Vim (if supported). In OS X iTerm provides
+" Enable the mouse in terminal Vim (if supported). On OS X iTerm provides
 " this functionality.
 set mouse=a
 
