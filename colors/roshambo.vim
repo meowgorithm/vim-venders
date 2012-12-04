@@ -245,10 +245,10 @@ hi coffeeGlobal                 ctermfg=81 guifg=#41c5fd
 hi coffeeBoolean                ctermfg=39 guifg=#00b9ff
 hi coffeeAssign                 ctermfg=137 guifg=#b09b6a
 hi coffeeAssignSymbols          ctermfg=160 guifg=#f8585b
-hi coffeeSpecialVar             ctermfg=80 guifg=#3be8c7
+hi coffeeSpecialVar             ctermfg=43 guifg=#3be8c7
 hi coffeeObject                 ctermfg=231 cterm=bold,underline guifg=#ffffff gui=bold,underline
 hi coffeeObjAssign              ctermfg=39 guifg=#00b9ff
-hi coffeeSpecialIdent           ctermfg=80 guifg=#3dc7cf
+hi coffeeSpecialIdent           ctermfg=44 guifg=#3dc7cf
 hi coffeeComment                ctermfg=29 guifg=#1d915e gui=italic
 hi coffeeFunction               ctermfg=67 guifg=#4974ac
 hi coffeeOperator               ctermfg=203 guifg=#f8585b
