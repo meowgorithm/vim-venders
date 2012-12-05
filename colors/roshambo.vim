@@ -26,12 +26,17 @@ if has('mac')
     set transparency=2
 endif
 
-hi Normal           ctermfg=250 ctermbg=0 guifg=#c1c1c1 guibg=#1a1d1e
+"hi Normal           ctermfg=250 ctermbg=0 guifg=#c1c1c1 guibg=#1a1d1e
+"hi CursorLine       cterm=none ctermbg=233 guibg=#0e1113
+"hi ColorColumn      ctermbg=232 guibg=#141716
+
+hi Normal           ctermfg=250 ctermbg=0 guifg=#c1c1c1 guibg=#161616
+hi CursorLine       cterm=none ctermbg=233 guibg=#1f2221
+hi ColorColumn      ctermbg=232 guibg=#1b1e1d
+
 hi NonText          ctermfg=235 guifg=#3d464e gui=none
 hi SpecialKey       guifg=#3d464e gui=none
 hi Cursor           guifg=#f1f1f1 guibg=#3b464d
-hi ColorColumn      ctermbg=232 guibg=#141716
-hi CursorLine       cterm=none ctermbg=233 guibg=#0e1113
 hi Visual           guibg=#3b464d
 hi ModeMsg          guifg=#798b92 gui=italic
 hi LineNr           ctermfg=238 guifg=#556166 guibg=#151A1B gui=none
@@ -61,7 +66,7 @@ hi TagListFileName  guifg=#B4D0E1 guibg=#495B5F
 
 hi Comment          ctermfg=239 guifg=#008e5d gui=italic
 hi Operator         ctermfg=160 guifg=#ff5e57
-hi String           ctermfg=23 guifg=#798b92
+hi String           ctermfg=29 guifg=#798b92
 hi Keyword          ctermfg=22 guifg=#ff8ad9
 hi Function         ctermfg=31 guifg=#51a4c5
 hi Constant         ctermfg=39 guifg=#76d6ff gui=bold
