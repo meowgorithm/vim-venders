@@ -78,6 +78,13 @@ hi PreProc          ctermfg=33 guifg=#72fcd5 gui=none
 
 " }}}
 
+" Filesystem & NERDTree {{{
+
+hi Directory ctermfg=31 guifg=#0087af
+hi NERDTreeOpenable ctermfg=24 guifg=#005f87
+
+" }}}
+
 " Tabs {{{
 
 hi TabLineFill guibg=#343434 guibg=#333D3E gui=none
