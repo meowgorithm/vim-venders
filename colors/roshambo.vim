@@ -312,9 +312,14 @@ hi djangoStatement guifg=#ff6fd0
 
 " Git {{{
 
-hi gitDiffAdded ctermfg=28
-hi gitDiffRemoved ctermfg=88
-
 hi gitcommitComment ctermfg=240
+
+" }}}
+
+" Diff {{{
+
+hi diffFile ctermfg=24
+hi diffAdded ctermfg=28 cterm=none guifg=#870000 gui=none
+hi diffRemoved ctermfg=124 cterm=none guifg=#af0000 gui=none
 
 " }}}
