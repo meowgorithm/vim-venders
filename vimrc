@@ -1,3 +1,5 @@
+" vim:et:ts=4:fdm=marker
+
 " All UTF-8 all the time
 scriptencoding utf-8
 set encoding=utf-8
