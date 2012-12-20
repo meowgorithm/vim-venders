@@ -60,6 +60,19 @@ hi Todo             guifg=#000000 guibg=#51a156
 hi WarningMsg       guifg=#ff3a3f  gui=bold
 hi TagListFileName  guifg=#B4D0E1 guibg=#495B5F
 
+" Tabs
+hi TabLineFill cterm=none ctermbg=236 guibg=#303030 gui=none
+hi TabLineSel  cterm=bold ctermfg=253 ctermbg=242 guifg=#dadada guibg=#666666 gui=none
+hi TabLine     cterm=none ctermfg=244 ctermbg=238 guifg=#808080 guibg=#444444 gui=none
+"hi TabLineFill guibg=#343434 guibg=#333D3E gui=none
+"hi TabLineSel  guifg=#e9e9e9 guibg=#1B2121 gui=none
+"hi TabLine     guifg=#93C8CE guibg=#47595B gui=none
+
+" Filesystem & NERDTree
+
+hi Directory ctermfg=31 guifg=#0087af
+hi NERDTreeOpenable ctermfg=24 guifg=#005f87
+
 " }}}
 
 " General {{{
@@ -75,21 +88,6 @@ hi Statement        ctermfg=34 guifg=#ff8ad8 gui=none
 hi Special          ctermfg=178 guifg=#d8ea9f
 hi Identifier       ctermfg=29 guifg=#00c6ff
 hi PreProc          ctermfg=33 guifg=#72fcd5 gui=none
-
-" }}}
-
-" Filesystem & NERDTree {{{
-
-hi Directory ctermfg=31 guifg=#0087af
-hi NERDTreeOpenable ctermfg=24 guifg=#005f87
-
-" }}}
-
-" Tabs {{{
-
-hi TabLineFill guibg=#343434 guibg=#333D3E gui=none
-hi TabLineSel  guifg=#e9e9e9 guibg=#1B2121 gui=none
-hi TabLine     guifg=#93C8CE guibg=#47595B gui=none
 
 " }}}
 
