@@ -16,3 +16,4 @@ There’s a setup script included that will create a bunch of directories in ~/.
 - [PyFlakes](https://launchpad.net/pyflakes)
 - [JSHint](https://github.com/jshint/jshint)
 - [CoffeeTags](https://github.com/lukaszkorecki/CoffeeTags)
+- [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
