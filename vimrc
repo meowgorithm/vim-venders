@@ -1,4 +1,4 @@
-" vim:noet:ts=2:fdm=marker
+" vim:et:ts=2:sw=2:fdm=marker
 
 " All UTF-8 all the time
 scriptencoding utf-8
