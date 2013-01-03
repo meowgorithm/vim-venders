@@ -299,7 +299,7 @@ let g:tagbar_type_coffee = {
 \ 'o:object'
 \ ],
 \ 'kind2scope' : {
-\  'f' : 'object',
+\ 'f' : 'object',
 \ 'o' : 'object'
 \},
 \ 'sro' : ".",
