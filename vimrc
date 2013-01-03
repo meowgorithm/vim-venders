@@ -1,4 +1,4 @@
-" vim:et:ts=4:fdm=marker
+" vim:noet:ts=2:fdm=marker
 
 " All UTF-8 all the time
 scriptencoding utf-8
@@ -44,8 +44,8 @@ syntax on
 
 " Vim 7.3 and newer can persist undo history across sessions
 if v:version >= 703
-    set undofile
-    set undodir=~/.vim/tmp
+  set undofile
+  set undodir=~/.vim/tmp
 endif
 
 set directory=~/.vim/tmp "where to put swap files
@@ -150,6 +150,7 @@ let mapleader=','
 imap <S-CR> <Esc>
 imap kj <Esc>
 
+" Show registers
 map <Leader>r :registers<CR>
 
 " Toggles
@@ -178,7 +179,7 @@ nmap <C-l> <C-w>l
 function! g:CleanEmptyBuffers()
   let buffers = filter(range(0, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0')
   if !empty(buffers)
-    exe 'bw '.join(buffers, ' ')
+  exe 'bw '.join(buffers, ' ')
   endif
 endfunction
 
@@ -265,7 +266,7 @@ let g:snips_author='Roshambo'
 " Requires Vim with Python
 let autoTagsFile = '~/.vim/bundle/AutoTag/plugin/autotag.vim'
 if filereadable(autoTagsFile)
-    source autoTagsFile
+  source autoTagsFile
 endif
 
 " Syntastic
@@ -294,12 +295,12 @@ endif
 " $ coffeetags --vim-conf --includevars >> ~/.vimrc
 let g:tagbar_type_coffee = {
 \ 'kinds' : [
-\   'f:functions',
-\   'o:object'
+\ 'f:functions',
+\ 'o:object'
 \ ],
 \ 'kind2scope' : {
 \  'f' : 'object',
-\   'o' : 'object'
+\ 'o' : 'object'
 \},
 \ 'sro' : ".",
 \ 'ctagsbin' : 'coffeetags',
