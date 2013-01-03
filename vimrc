@@ -259,6 +259,10 @@ let g:SuperTabDefaultCompletionType='context' "let SuperTab determine which comp
 " SnipMate
 let g:snips_author='Roshambo'
 
+" Configure ack.vim to use The Silver Searcher instead of Ack
+" https://github.com/ggreer/the_silver_searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " Auto-compile CoffeeScript on save
 "autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
