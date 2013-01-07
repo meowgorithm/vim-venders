@@ -162,9 +162,7 @@ map <Leader>w :set wrap! wrap?<CR>
 " Tabs
 nmap TN :wa<CR>:tabnext<CR>
 nmap TP :wa<CR>:tabprev<CR>
-nmap <C-n> :wa<CR>:tabnew<CR>
-nmap <C-[> :wa<CR>:tabprev<CR>
-nmap <C-]> :wa<CR>:tabnext<CR>
+nmap TT :wa<CR>:tabnew<CR>
 
 " Buffers
 nmap BN :wa<CR>:bnext<CR>
