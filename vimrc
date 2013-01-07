@@ -245,7 +245,7 @@ let g:CommandTMatchWindowAtTop=0
 let g:CommandTMaxHeight=20
 
 " Powerline
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'fancy'
 
 " Ctrlp
 map CC :CtrlPClearCache<CR>
