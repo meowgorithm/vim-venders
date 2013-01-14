@@ -35,6 +35,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'AutoTag'
 Bundle 'JSON.vim'
 Bundle 'guns/xterm-color-table.vim'
+Bundle 'jnwhiteh/vim-golang'
 
 colorscheme roshambo
 
@@ -88,6 +89,7 @@ autocmd FileType,BufEnter,BufWinEnter css,less set ft=less.css
 autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
 autocmd FileType,BufEnter,BufWinEnter jade,stylus set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd BufRead,BufNewFile *.json set ft=json
+autocmd BufRead,BufNewFile *.go set filetype=go
 
 set ruler
 set nowrap
