@@ -321,3 +321,9 @@ hi diffAdded ctermfg=28 cterm=none guifg=#870000 gui=none
 hi diffRemoved ctermfg=124 cterm=none guifg=#af0000 gui=none
 
 " }}}
+
+" Go {{{
+
+hi goDirective ctermfg=29 cterm=bold,underline guifg=#ffffff gui=bold,underline
+
+" }}}
