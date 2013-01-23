@@ -149,6 +149,10 @@ set mouse=a
 
 let mapleader=','
 
+" Remap the colon to semicolon. This becomes a super big deal when entering
+" commands like :w as you no longer need to hit the shift key.
+nnoremap ; :
+
 " Escape key alternatives
 imap <S-CR> <Esc>
 imap kj <Esc>
