@@ -234,8 +234,8 @@ hi javaScriptStatement        ctermfg=206 guifg=#FB82D8
 hi javaScriptOperator         ctermfg=160 guifg=#F83E42
 hi javaScriptType             ctermfg=38 guifg=#41C5FD
 hi javaScriptFunction         ctermfg=38 guifg=#41C5FD
-hi javaScriptBraces           ctermfg=228 guifg=#E7FFB2
-hi javaScriptParens           ctermfg=228 guifg=#e7ffb2
+hi javaScriptBraces           ctermfg=186 guifg=#E7FFB2
+hi javaScriptParens           ctermfg=186 guifg=#e7ffb2
 hi javaScriptBoolean          ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
 hi javaScriptNumber           ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
 hi javaScriptNull             ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
