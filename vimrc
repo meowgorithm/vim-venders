@@ -175,6 +175,7 @@ nmap TT :wa<CR>:tabnew<CR>
 nmap BN :wa<CR>:bnext<CR>
 nmap BP :wa<CR>:bprev<CR>
 nmap BO :wa<CR>:BufOnly<CR>
+nmap BD :wa<CR>:bdelete<CR>
 
 " Window Navigation
 nmap <C-j> <C-w>j
