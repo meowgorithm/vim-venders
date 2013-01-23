@@ -37,11 +37,12 @@ Bundle 'JSON.vim'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'jnwhiteh/vim-golang'
 
-colorscheme roshambo
-
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
 syntax on
+
+set t_Co=256
+colorscheme roshambo
 
 " Vim 7.3 and newer can persist undo history across sessions
 if v:version >= 703
