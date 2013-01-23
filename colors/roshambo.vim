@@ -214,31 +214,33 @@ hi phpFunctions               guifg=#4edeb0
 
 " JavaScript {{{
 
-hi javaScriptComment          guifg=#209074
-hi javaScriptLineComment      guifg=#209074
-hi javaScriptSpecial          guifg=#F83E42
-hi javaScriptStringS          guifg=#b09b6a
-hi javaScriptStringD          guifg=#B09B6A
-hi javaScriptSpecialCharacter guifg=#e7ffb2
-hi javaScriptConditional      guifg=#FB82D8
-hi javaScriptRepeat           guifg=#FB82D8
-hi javaScriptBranch           guifg=#FB82D8
-hi javaScriptStatement        guifg=#FB82D8
-hi javaScriptOperator         guifg=#F83E42
-hi javaScriptType             guifg=#41c5fd
-hi javaScriptFunction         guifg=#41C5FD
-hi javaScriptBraces           guifg=#E7FFB2
-hi javaScriptParens           guifg=#e7ffb2
-hi javaScriptBoolean          guifg=#85D5FE gui=bold
-hi javaScriptNumber           guifg=#85D5FE gui=bold
-hi javaScriptNull             guifg=#85D5FE gui=bold
-hi javaScriptRegexpString     guifg=#6BD26F
-hi javaScriptGlobal           guifg=#84FFD6
-hi javaScriptMember           guifg=#84FFD6
+hi javaScriptComment          ctermfg=29 guifg=#209074
+hi javaScriptLineComment      ctermfg=29 guifg=#209074
+hi javaScriptSpecial          ctermfg=160 guifg=#F83E42
+hi javaScriptStringS          ctermfg=137 guifg=#B09B6A
+hi javaScriptStringD          ctermfg=137 guifg=#B09B6A
+hi javaScriptSpecialCharacter ctermfg=228 guifg=#e7ffb2
+hi javaScriptIdentifier       ctermfg=38 guifg=#00afdf
+hi javaScriptException        ctermfg=206 guifg=#FB82D8
+hi javaScriptConditional      ctermfg=206 guifg=#FB82D8
+hi javaScriptRepeat           ctermfg=206 guifg=#FB82D8
+hi javaScriptBranch           ctermfg=206 guifg=#FB82D8
+hi javaScriptStatement        ctermfg=206 guifg=#FB82D8
+hi javaScriptOperator         ctermfg=160 guifg=#F83E42
+hi javaScriptType             ctermfg=38 guifg=#41C5FD
+hi javaScriptFunction         ctermfg=38 guifg=#41C5FD
+hi javaScriptBraces           ctermfg=228 guifg=#E7FFB2
+hi javaScriptParens           ctermfg=228 guifg=#e7ffb2
+hi javaScriptBoolean          ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
+hi javaScriptNumber           ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
+hi javaScriptNull             ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
+hi javaScriptRegexpString     ctermfg=35 guifg=#6BD26F
+hi javaScriptGlobal           ctermfg=79 guifg=#84FFD6
+hi javaScriptMember           ctermfg=79 guifg=#84FFD6
 
-hi javaScriptDollarVariable   guifg=#F83E42
-hi javaScriptPunctuation      guifg=#e7ffb2
-hi javaScriptFunctionName     guifg=#ffffff gui=bold
+hi javaScriptDollarVariable   ctermfg=160 guifg=#F83E42
+hi javaScriptPunctuation      ctermfg=228 guifg=#e7ffb2
+hi javaScriptFunctionName     ctermfg=255 cterm=bold guifg=#ffffff gui=bold
 
 " }}}
 
