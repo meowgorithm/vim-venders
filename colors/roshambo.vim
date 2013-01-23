@@ -46,7 +46,12 @@ hi PMenu            guifg=#1b313e guibg=#7abfdf
 hi PMenuSel         guifg=#FFFF99 guibg=#312B2B
 hi PmenuSbar        guifg=#FFFF99 guibg=#7abfdf
 hi PmenuThumb       guifg=#174c63
+
+" NOTE the foreground and background vales are totally reversed for some
+" reason. In other words, foreground values apply to the background and the
+" background values apply to the verical pipe: |. Really annoying!
 hi VertSplit        ctermfg=233 ctermbg=235 guifg=#556166 guibg=#151A1B
+
 hi MatchParen       guibg=#3d7b94
 hi SignColumn       ctermbg=233 guibg=#121518
 hi Folded           ctermfg=241 ctermbg=233 guifg=#947D7D guibg=#1A1717
