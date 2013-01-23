@@ -46,7 +46,7 @@ hi PMenu            guifg=#1b313e guibg=#7abfdf
 hi PMenuSel         guifg=#FFFF99 guibg=#312B2B
 hi PmenuSbar        guifg=#FFFF99 guibg=#7abfdf
 hi PmenuThumb       guifg=#174c63
-hi VertSplit        guifg=#556166 guibg=#151A1B
+hi VertSplit        ctermfg=233 ctermbg=235 guifg=#556166 guibg=#151A1B
 hi MatchParen       guibg=#3d7b94
 hi SignColumn       ctermbg=233 guibg=#121518
 hi Folded           ctermfg=241 ctermbg=233 guifg=#947D7D guibg=#1A1717
