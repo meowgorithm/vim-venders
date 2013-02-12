@@ -22,7 +22,7 @@ let colors_name = 'Roshambo'
 
 " Vim UI {{{
 
-if has('mac')
+if has('gui_macvim')
     set transparency=2
 endif
 
