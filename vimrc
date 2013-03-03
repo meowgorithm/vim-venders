@@ -165,6 +165,7 @@ map <Leader>i :set invlist<CR>:exe ":echo 'toggling invisibles'"<CR>
 map <Leader>. :set number! nonumber?<CR>
 map <Leader>s :set hlsearch! hlsearch?<CR>
 map <Leader>w :set wrap! wrap?<CR>
+map <Leader>p :set paste! nopaste?<CR>
 
 " Tabs
 nmap TN :wa<CR>:tabnext<CR>
