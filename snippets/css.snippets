@@ -39,6 +39,10 @@ snippet bgp background-position
 	background-position: ${1:left} ${2:top};
 snippet bgi background-image
 	background-image: ${1:none};
+snippet bga background-attachment
+	background-attachment: ${1:fixed};
+snippet bgs background-size
+	background-size: ${1:cover};
 snippet f font
 	font: ${1};
 snippet fw font-weight
@@ -51,6 +55,8 @@ snippet ff font-family
 	font-family: ${1};
 snippet lh line-height
 	line-height: ${1:14px};
+snippet ls letter-spacing
+	letter-spacing: ${1:1px};
 snippet td text-decoration
 	text-decoration: ${1:none};
 snippet ta text-align
@@ -89,20 +95,16 @@ snippet blw border-left-width
 	border-left-width: ${1:0};
 snippet brw border-right-width
 	border-right-width: ${1:0};
-snippet pos position;
+snippet pos position
 	position: ${1:relative};
 snippet	u url()
 	url(${1})
 snippet ! ! important
 	! important
 snippet brr border-radius
-	-webkit-border-radius: ${1:10px};
-	-moz-border-radius: $1;
-	-border-radius: $1;
+	border-radius: $1;
 snippet bsh box-shadow
-	-webkit-box-shadow: ${1:2px} ${2:2px} ${3:2px} ${4:#000};
-	-moz-box-shadow: $1 $2 $3 $4;
-	box-shadow: $1 $2 $3 $4;
+	box-shadow: ${1:0} ${2:1px} ${3:1px} ${4:#000};
 snippet deb debug (border)
 	border: 1px solid red;
 snippet deb debug (background)
@@ -138,3 +140,4 @@ snippet {
 	{
 		${1}
 	}
+
