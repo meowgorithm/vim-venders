@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 VIMDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Remove existing config files
+rm ~.{vimrc,gvimrc}
+
 # Symlink
 ln -s $VIMDIR/vimrc $HOME/.vimrc
 ln -s $VIMDIR/gvimrc $HOME/.gvimrc
