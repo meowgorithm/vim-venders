@@ -146,12 +146,13 @@ set statusline+=%-19.{fugitive#statusline()}\ %-14.(%l,%c%V%)\ %P
 set mouse=a
 
 
-" GENERAL KEYBINDINGS
+" KEYBINDINGS
 
+" The comma is way easier to reach than the backslash, the default
 let mapleader=','
 
-" Remap the colon to semicolon. This becomes a super big deal when entering
-" commands like :w as you no longer need to hit the shift key.
+" Remap the colon to semicolon in normal mode. This becomes a super big deal
+" when entering commands like :w as you no longer need to hit the shift key.
 nnoremap ; :
 
 " Escape key alternatives
@@ -182,10 +183,10 @@ nmap BO :wa<CR>:BufOnly<CR>
 nmap BD :wa<CR>:bdelete<CR>
 
 " Window Navigation
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-h> <C-w>h
-nmap <C-l> <C-w>l
+nmap <S-j> <C-w>j
+nmap <S-k> <C-w>k
+nmap <S-h> <C-w>h
+nmap <S-l> <C-w>l
 
 " Remove empty buffers
 function! g:CleanEmptyBuffers()
@@ -272,7 +273,7 @@ let g:SuperTabDefaultCompletionType='context' "let SuperTab determine which comp
 let g:snips_author='Roshambo'
 
 " Configure ack.vim to use The Silver Searcher instead of Ack
-" https://github.com/ggreer/the_silver_searcher
+" See: https://github.com/ggreer/the_silver_searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Auto-compile CoffeeScript on save
