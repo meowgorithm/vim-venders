@@ -51,6 +51,9 @@ if v:version >= 703
   set undodir=~/.vim/tmp
 endif
 
+" Keep Vim from freaking out under Fish
+set shell=bash
+
 set directory=~/.vim/tmp "where to put swap files
 set backupdir=~/.vim/backup "where to put backups
 set viewdir=~/.vim/view
