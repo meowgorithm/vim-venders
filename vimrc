@@ -185,12 +185,6 @@ nmap BP :wa<CR>:bprev<CR>
 nmap BO :wa<CR>:BufOnly<CR>
 nmap BD :wa<CR>:bdelete<CR>
 
-" Window Navigation
-nmap <S-j> <C-w>j
-nmap <S-k> <C-w>k
-nmap <S-h> <C-w>h
-nmap <S-l> <C-w>l
-
 " Remove empty buffers
 function! g:CleanEmptyBuffers()
   let buffers = filter(range(0, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0')
