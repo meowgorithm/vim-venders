@@ -146,7 +146,12 @@ set statusline+=%-19.{fugitive#statusline()}\ %-14.(%l,%c%V%)\ %P
 
 " Enable the mouse in terminal Vim (if supported). On OS X iTerm provides
 " this functionality.
-set mouse=a
+"set mouse=a
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
 
 
 " KEYBINDINGS
