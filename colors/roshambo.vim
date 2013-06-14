@@ -278,6 +278,8 @@ hi coffeeFloat                  ctermfg=81 cterm=bold guifg=#66ccff gui=bold
 
 hi coffeePunctutation           ctermfg=193 guifg=#e7ffb2
 hi coffeeDollarVariable         ctermfg=203 guifg=#e7ffb2
+hi coffeeBuiltinFunction        ctermfg=68
+hi coffeeSpecialVariable        ctermfg=68
 
 " }}}
 
