@@ -249,7 +249,7 @@ hi javaScriptFunctionName     ctermfg=255 cterm=bold guifg=#ffffff gui=bold
 
 " }}}
 
-" Coffee-Script {{{
+" CoffeeScript {{{
 hi coffeeKeyword                ctermfg=77 guifg=#6bd26f
 hi coffeeConditional            ctermfg=206 guifg=#ff6fd0
 hi coffeeRepeat                 ctermfg=206 guifg=#ff6fd0
@@ -277,6 +277,7 @@ hi coffeeFloat                  ctermfg=81 cterm=bold guifg=#66ccff gui=bold
 "hi coffeeDot guifg=#e9e9e9 gui=bold
 
 hi coffeePunctutation           ctermfg=193 guifg=#e7ffb2
+hi coffeeDollarVariable         ctermfg=203 guifg=#e7ffb2
 
 " }}}
 
