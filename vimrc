@@ -37,6 +37,7 @@ Bundle 'JSON.vim'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'aliva/vim-fish'
+Bundle 'Jinja'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
