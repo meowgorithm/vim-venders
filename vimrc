@@ -179,8 +179,6 @@ map <Leader>w :set wrap! wrap?<CR>
 map <Leader>p :set paste! nopaste?<CR>
 
 " Tabs
-nmap TN :wa<CR>:tabnext<CR>
-nmap TP :wa<CR>:tabprev<CR>
 nmap TT :wa<CR>:tabnew<CR>
 nmap <C-n> :tabprev<CR>
 nmap <C-m> :tabnext<CR>
