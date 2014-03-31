@@ -87,11 +87,11 @@ set shiftround
 set colorcolumn=80
 
 " Language-specific settings
-autocmd FileType,BufEnter,BufWinEnter python,javascript,coffee,css,less,scss set expandtab tabstop=4 shiftwidth=4 softtabstop=4 "textwidth=79 "PEP0008 compliance
+autocmd FileType,BufEnter,BufWinEnter python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 "PEP0008 compliance
 autocmd FileType,BufEnter,BufWinEnter ruby,html,htmldjango,eruby set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType,BufEnter,BufWinEnter django set ft=django.html
 autocmd FileType,BufEnter,BufWinEnter eruby set ft=eruby.html
-autocmd FileType,BufEnter,BufWinEnter css,less set ft=less.css
+autocmd FileType,BufEnter,BufWinEnter less set ft=less.css
 autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
 autocmd FileType,BufEnter,BufWinEnter jade,stylus set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd BufRead,BufNewFile *.json set ft=json
@@ -110,7 +110,7 @@ set cursorline
 autocmd WinEnter,BufEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
-" Automatically strip trailing whitespace.
+" Automatically strip trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Searching
@@ -127,27 +127,13 @@ set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*
 set wildignore+=*/tmp/*
 set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
-set wildignore+=*/media/*,*/html/*,*/source/media/*,*.pyc
 set infercase "ignore case on insert completion
-
-" MacVIM shift+arrows to select behavior. Required in .vimrc instead of
-" .gvimrc for some reason.
-let macvim_hig_shift_movement=1
 
 " Window management
 set splitbelow "open new horizontal splits below the current
 set splitright "open new veritcal splits to the right of the current
 
-" Statusline
-"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P "default statusline
-set statusline=%<%f%(\ %h%m%r%w%q%)
-set statusline+=%(\ (%{&ff})%)
-set statusline+=%=
-set statusline+=%-19.{fugitive#statusline()}\ %-14.(%l,%c%V%)\ %P
-
-" Enable the mouse in terminal Vim (if supported). On OS X iTerm provides
-" this functionality.
-"set mouse=a
+" Enable the mouse in terminal Vim (if supported)
 set mouse+=a
 if &term =~ '^screen'
     " tmux knows the extended mouse mode
@@ -159,10 +145,6 @@ endif
 
 " The comma is way easier to reach than the backslash, the default <leader>
 let mapleader=','
-
-" Remap the colon to semicolon in normal mode. This becomes a super big deal
-" when entering commands like :w as you no longer need to hit the shift key.
-"nnoremap ; :
 
 " Escape key alternatives
 imap kj <Esc>
