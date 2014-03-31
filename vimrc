@@ -52,7 +52,7 @@ if v:version >= 703
   set undodir=~/.vim/tmp
 endif
 
-" Keep Vim from freaking out under Fish
+" Keep Vim from freaking out under Fish Shell
 set shell=bash
 
 set directory=~/.vim/tmp "where to put swap files
@@ -157,7 +157,7 @@ endif
 
 " KEYBINDINGS
 
-" The comma is way easier to reach than the backslash, the default
+" The comma is way easier to reach than the backslash, the default <leader>
 let mapleader=','
 
 " Remap the colon to semicolon in normal mode. This becomes a super big deal
@@ -165,7 +165,6 @@ let mapleader=','
 "nnoremap ; :
 
 " Escape key alternatives
-imap <S-CR> <Esc>
 imap kj <Esc>
 
 " Show registers
@@ -242,7 +241,7 @@ let NERDTreeHighlightCursorline=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1 "show hidden files
 let NERDTreeHijackNetrw=1 "sure, hijack netrw
-let NERDTreeIgnore=['\.$', '\~$', '\.git']
+let NERDTreeIgnore=['\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc']
 
 " NERDCommenter
 let NERDSpaceDelims=0 "number of spaces to add before comments
@@ -257,9 +256,6 @@ map <Leader>m :TagbarToggle<CR>
 map <Leader>t :CommandT<CR>
 let g:CommandTMatchWindowAtTop=0
 let g:CommandTMaxHeight=20
-
-" Powerline
-"let g:Powerline_symbols = 'fancy'
 
 " Ctrlp
 map CC :CtrlPClearCache<CR>
@@ -277,9 +273,6 @@ let g:snips_author='Roshambo'
 " See: https://github.com/ggreer/the_silver_searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" Auto-compile CoffeeScript on save
-"autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
-
 " AutoTag (find tagfile and auto-generate tags on save)
 " Requires Vim with Python
 let autoTagsFile = '~/.vim/bundle/AutoTag/plugin/autotag.vim'
@@ -292,10 +285,6 @@ map <Leader>e :Errors<CR>
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=2
-
-" Statusline.vim
-"let g:statusline_fugitive=1
-"let g:statusline_fullpath=0
 
 " Syntastic/PyFlakes
 " We have to run a mini Python script here to append 'site-packages' to the Python
