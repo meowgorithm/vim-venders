@@ -1,5 +1,3 @@
-" vim:et:ts=2:sw=2:fdm=marker
-
 " All UTF-8 all the time
 scriptencoding utf-8
 set encoding=utf-8
@@ -102,7 +100,6 @@ set nowrap
 set number
 set laststatus=2
 set report=0
-"set showcmd
 set listchars=tab:\▸\ ,trail:·,eol:¶
 
 " Show current line in current window only
@@ -204,7 +201,7 @@ nmap <Leader>2 :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":ech
 nmap <Leader>3 :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>:exe ":echo 'Tabs, 4'"<CR>
 nmap <Leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":echo 'Tabs, 2'"<CR>
 
-" Visual mode blockwise indent
+" Visual Mode Blockwise Indent
 " This keeps the current visual block selection active after changing indent
 " with '<' or '>'. Usually the visual block selection is lost after you shift
 " it, which is incredibly annoying.
@@ -218,11 +215,11 @@ vmap < <gv
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
-let NERDChristmasTree=1 "colorize
+let NERDChristmasTree=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowBookmarks=1
-let NERDTreeShowHidden=1 "show hidden files
-let NERDTreeHijackNetrw=1 "sure, hijack netrw
+let NERDTreeShowHidden=1
+let NERDTreeHijackNetrw=1
 let NERDTreeIgnore=['\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc']
 
 " NERDCommenter
@@ -294,3 +291,5 @@ let g:tagbar_type_coffee = {
 \ 'ctagsbin' : 'coffeetags',
 \ 'ctagsargs' : ' ',
 \}
+
+" vim:et:ts=2:sw=2:fdm=marker
