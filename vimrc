@@ -158,8 +158,6 @@ map <Leader>p :set paste! nopaste?<CR>
 
 " Tabs
 nmap TT :wa<CR>:tabnew<CR>
-nmap <C-n> :tabprev<CR>
-nmap <C-m> :tabnext<CR>
 
 " Buffers
 nmap BN :wa<CR>:bnext<CR>
