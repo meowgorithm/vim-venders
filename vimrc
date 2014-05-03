@@ -259,11 +259,16 @@ if filereadable(autoTagsFile)
 endif
 
 " Syntastic
-map <Leader>e :Errors<CR>
+"map <Leader>e :Errors<CR>
+nmap <script> <silent> <leader>e :call ToggleLocationList()<cr>
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=2
-let g:syntastic_python_flake8_args='--ignore=E501' " ignore line length warnings
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_warning_symbol='W>'
+let g:syntastic_enable_balloons = 1
+let g:syntastic_python_flake8_args='--ignore=E501,E128,E226,E261,E265,E401' " ignore line length warnings
 
 " Syntastic/Flake8
 " We have to run a mini Python script here to append 'site-packages' to the Python
