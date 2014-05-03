@@ -16,7 +16,7 @@ setup like so:
 ## Recommended Utilities
 
 - [Exuberant Ctags](http://ctags.sourceforge.net/)
-- [PyFlakes](https://launchpad.net/pyflakes)
+- [Flake8](https://pypi.python.org/pypi/flake8)
 - [JSHint](https://github.com/jshint/jshint)
 - [CoffeeTags](https://github.com/lukaszkorecki/CoffeeTags)
 - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)

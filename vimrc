@@ -264,8 +264,9 @@ map <Leader>e :Errors<CR>
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=2
+let g:syntastic_python_flake8_args='--ignore=E501' " ignore line length warnings
 
-" Syntastic/PyFlakes
+" Syntastic/Flake8
 " We have to run a mini Python script here to append 'site-packages' to the Python
 " path at runtime.
 if has('python')
