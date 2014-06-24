@@ -10,7 +10,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
-"Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'majutsushi/tagbar'

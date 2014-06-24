@@ -24,10 +24,5 @@ vim +BundleInstall +qall
 unset VIMDIR
 
 echo
-echo 'Done. If you would like to use the Command-T plugin you should run'
-echo 'make-command-t to build it.'
-echo
-echo 'You can also run change-macvim-icon to replace the default MacVim icon'
-echo 'with the Tango version. Note that the script assumes that MacVim exists'
-echo 'at /Applications/MacVim.app.'
+echo 'Done.'
 echo
