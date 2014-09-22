@@ -249,6 +249,51 @@ hi javaScriptFunctionName     ctermfg=255 cterm=bold guifg=#ffffff gui=bold
 
 " }}}
 
+" JSX {{{
+
+hi jsxDocComment          ctermfg=29 guifg=#209074
+" jsxDocTags
+hi jsxComment          ctermfg=29 guifg=#209074
+hi jsxLineComment          ctermfg=29 guifg=#209074
+" jsxCommentTodo
+" jsxEscape
+hi jsxString          ctermfg=137 guifg=#B09B6A
+hi jsxInteger           ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
+hi jsxFloat           ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
+hi jsxFloatX           ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
+hi jsxSpecialNumbers           ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
+hi jsxConditional      ctermfg=206 guifg=#FB82D8
+hi jsxRepeat           ctermfg=206 guifg=#FB82D8
+hi jsxBranch           ctermfg=206 guifg=#FB82D8
+hi jsxOperator         ctermfg=160 guifg=#F83E42
+hi jsxType             ctermfg=38 guifg=#41C5FD
+hi jsxStatement        ctermfg=206 guifg=#FB82D8
+hi jsxFunction         ctermfg=38 guifg=#41C5FD
+hi jsxBraces           ctermfg=186 guifg=#E7FFB2
+hi jsxNull             ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
+hi jsxBoolean          ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
+hi jsxRegexp     ctermfg=35 guifg=#6BD26F
+hi jsxIdentifier       ctermfg=38 guifg=#00afdf
+" jsxLabel
+hi jsxException        ctermfg=206 guifg=#FB82D8
+" jsxClass
+" jsxModifiers
+" jsxImport
+" jsxEntryPoint
+" jsxDebug
+
+"hi jsxSpecial          ctermfg=160 guifg=#F83E42
+"hi jsxSpecialCharacter ctermfg=228 guifg=#e7ffb2
+"hi jsxParens           ctermfg=186 guifg=#e7ffb2
+"hi jsxGlobal           ctermfg=79 guifg=#84FFD6
+"hi jsxMember           ctermfg=79 guifg=#84FFD6
+
+hi jsxDollarVariable   ctermfg=160 guifg=#F83E42
+"hi jsxPunctuation      ctermfg=228 guifg=#e7ffb2
+hi jsxFunctionName     ctermfg=255 cterm=bold guifg=#ffffff gui=bold
+
+" }}}
+
 " CoffeeScript {{{
 hi coffeeKeyword                ctermfg=77 guifg=#6bd26f
 hi coffeeConditional            ctermfg=206 guifg=#ff6fd0

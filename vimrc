@@ -36,6 +36,7 @@ Bundle 'fatih/vim-go'
 Bundle 'aliva/vim-fish'
 Bundle 'Jinja'
 Bundle 'milkypostman/vim-togglelist'
+Bundle 'jsx/jsx.vim'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -268,6 +269,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_warning_symbol='W>'
 let g:syntastic_enable_balloons = 1
 let g:syntastic_python_flake8_args='--ignore=E501,E128,E226,E261,E265,E401' " ignore line length warnings
+let g:syntastic_javascript_checkers = ['jsxhint'] " JSX support with jsxhint (npm install -g jsxhint)
 
 " Syntastic/Flake8
 " We have to run a mini Python script here to append 'site-packages' to the Python
