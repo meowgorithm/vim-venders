@@ -362,7 +362,7 @@ hi goDirective        ctermfg=198 cterm=bold
 hi goDeclaration      ctermfg=170 " var const type
 hi goDeclType         ctermfg=170 " struct interface
 
-" Keywords within functinos
+" Keywords within functions
 hi goStatement        ctermfg=170
 hi goConditional      ctermfg=170
 hi goLabel            ctermfg=170
@@ -380,12 +380,12 @@ hi goOctalInt         ctermfg=45
 hi goImaginary        ctermfg=45
 
 " Types
-hi goType ctermfg=101
-hi goSignedInts ctermfg=101
-hi goUnsignedInts ctermfg=101
-hi goFloats ctermfg=101
-hi goComplexes ctermfg=101
-hi goExtraType ctermfg=101
+hi goType ctermfg=95
+hi goSignedInts ctermfg=95
+hi goUnsignedInts ctermfg=95
+hi goFloats ctermfg=95
+hi goComplexes ctermfg=95
+hi goExtraType ctermfg=95
 
 " Func
 hi goDeclaration ctermfg=77
@@ -397,13 +397,13 @@ hi goEscapeU ctermfg=33
 hi goEscapeBigU ctermfg=33
 
 " Strings
-hi goString ctermfg=240
-hi goRawString ctermfg=240
-hi goFormatSpecifier ctermfg=240
+hi goString ctermfg=137
+hi goRawString ctermfg=29
+hi goFormatSpecifier ctermfg=29
 
 " Comments
-hi goCommentGroup ctermfg=29
-hi goComment ctermfg=29
+hi goCommentGroup ctermfg=240
+hi goComment ctermfg=240 " 29
 
 " Operators
 hi goOperator ctermfg=203
