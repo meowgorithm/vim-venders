@@ -298,4 +298,9 @@ let g:tagbar_type_coffee = {
 \ 'ctagsargs' : ' ',
 \}
 
+" Go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
 " vim:et:ts=2:sw=2:fdm=marker

@@ -353,6 +353,70 @@ hi pythonPunctuation        ctermfg=193 guifg=#e7ffb2
 
 " }}}
 
+" Go {{{
+
+" Statements
+hi goDirective        ctermfg=198 cterm=bold
+
+" Keywords
+hi goDeclaration      ctermfg=170 " var const type
+hi goDeclType         ctermfg=170 " struct interface
+
+" Keywords within functinos
+hi goStatement        ctermfg=170
+hi goConditional      ctermfg=170
+hi goLabel            ctermfg=170
+hi goRepeat           ctermfg=170
+
+hi goBuiltins         ctermfg=208
+
+" Boolean
+hi goBoolean          ctermfg=45
+
+" Numbers
+hi goDecimalInt       ctermfg=45
+hi goHexadecimalInt   ctermfg=45
+hi goOctalInt         ctermfg=45
+hi goImaginary        ctermfg=45
+
+" Types
+hi goType ctermfg=101
+hi goSignedInts ctermfg=101
+hi goUnsignedInts ctermfg=101
+hi goFloats ctermfg=101
+hi goComplexes ctermfg=101
+hi goExtraType ctermfg=101
+
+" Func
+hi goDeclaration ctermfg=77
+
+" Esacpes
+hi goEscapeOctal ctermfg=33
+hi goEcscapeC ctermfg=33
+hi goEscapeU ctermfg=33
+hi goEscapeBigU ctermfg=33
+
+" Strings
+hi goString ctermfg=240
+hi goRawString ctermfg=240
+hi goFormatSpecifier ctermfg=240
+
+" Comments
+hi goCommentGroup ctermfg=29
+hi goComment ctermfg=29
+
+" Operators
+hi goOperator ctermfg=203
+
+" Structs & Methods
+hi goMethod ctermfg=31
+hi goStruct ctermfg=208
+hi goStructDef ctermfg=255 cterm=bold,underline
+
+hi goFunction ctermfg=255
+
+" }}}
+
 " Django {{{
 
 hi djangoTagBlock guifg=#c1c1c1
@@ -374,11 +438,5 @@ hi gitcommitComment ctermfg=240
 hi diffFile ctermfg=24
 hi diffAdded ctermfg=28 cterm=none guifg=#870000 gui=none
 hi diffRemoved ctermfg=124 cterm=none guifg=#af0000 gui=none
-
-" }}}
-
-" Go {{{
-
-hi goDirective ctermfg=29 cterm=bold,underline guifg=#ffffff gui=bold,underline
 
 " }}}
