@@ -16,12 +16,12 @@ Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'msanders/snipmate.vim'
+"Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'taglist.vim'
 "Bundle 'PickAColor.vim'
 Bundle 'BufOnly.vim'
-"Bundle 'ervandew/supertab'
+Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
 Bundle 'digitaltoad/vim-jade'
@@ -93,8 +93,8 @@ autocmd FileType,BufEnter,BufWinEnter eruby set ft=eruby.html
 autocmd FileType,BufEnter,BufWinEnter less set ft=less.css
 autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
 autocmd FileType,BufEnter,BufWinEnter jade,stylus set expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd BufRead,BufNewFile *.json set ft=json
-autocmd BufRead,BufNewFile *.go set filetype=go
+autocmd FileType,BufRead,BufNewFile *.json set ft=json
+autocmd FileType,BufRead,BufNewFile *.go set filetype=go
 
 set ruler
 set nowrap
@@ -208,7 +208,6 @@ nmap <Leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":e
 vmap > >gv
 vmap < <gv
 
-
 " PLUGIN CONFIGURATION
 
 " NERDTree
@@ -242,7 +241,8 @@ let g:ctrlp_jump_to_buffer = 2 "if the file's already open somewhere (anywhere) 
 let g:ctrlp_working_path_mode = 2 "try and find the repo root and search from there
 
 " SuperTab
-let g:SuperTabDefaultCompletionType='context' "let SuperTab determine which completion mode should be used
+"autocmd FileType go let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 
 " SnipMate
 let g:snips_author='Roshambo'
