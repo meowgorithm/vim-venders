@@ -246,7 +246,7 @@ let g:ctrlp_working_path_mode = 2 "try and find the repo root and search from th
 let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 
 " SnipMate
-let g:snips_author='Roshambo'
+let g:snips_author='Christian Rocha'
 
 " Configure ack.vim to use The Silver Searcher instead of Ack
 " See: https://github.com/ggreer/the_silver_searcher
