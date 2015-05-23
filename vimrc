@@ -37,6 +37,7 @@ Bundle 'aliva/vim-fish'
 Bundle 'Jinja'
 Bundle 'milkypostman/vim-togglelist'
 Bundle 'jsx/jsx.vim'
+Bundle 'kballard/vim-swift'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
