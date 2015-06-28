@@ -139,6 +139,9 @@ if &term =~ '^screen'
     set ttymouse=xterm2
 endif
 
+" Text formatting options, mostly around comments. See fo-table.
+set formatoptions+=rocr
+
 
 " KEYBINDINGS
 
