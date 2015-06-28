@@ -270,8 +270,13 @@ let g:syntastic_check_on_open=1
 let g:syntastic_warning_symbol='W>'
 let g:syntastic_enable_balloons = 1
 let g:syntastic_python_flake8_args='--ignore=E501,E128,E226,E261,E265,E401' " ignore line length warnings
-let g:syntastic_javascript_checkers = ['jsxhint'] " JSX support with react-syntastic (npm install -g react-syntastic)
-let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper' " JSX support with react-syntastic (npm install -g react-syntastic)
+
+" JSX support. For this to work you'll need to do the following:
+"    npm install -g eslint
+"    npm install -g babel-eslint
+"    npm install -g eslint-plugin-react
+" For more info see the notes at: https://github.com/jaxbot/syntastic-react
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Syntastic/Flake8
 " We have to run a mini Python script here to append 'site-packages' to the Python
