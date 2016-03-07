@@ -96,6 +96,7 @@ autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
 autocmd FileType,BufEnter,BufWinEnter jade,stylus set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType,BufRead,BufNewFile *.json set ft=json
 autocmd FileType,BufRead,BufNewFile *.go set filetype=go
+autocmd FileType,BufRead,BufNewFile *.rive set filetype=rivescript
 
 set ruler
 set nowrap
