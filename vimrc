@@ -126,6 +126,7 @@ set wildmode=list:longest,list:full
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*
 set wildignore+=*/tmp/*
+set wildignore+=*/vendor/*
 set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
 set infercase "ignore case on insert completion
 
