@@ -93,8 +93,9 @@ autocmd FileType,BufEnter,BufWinEnter django set ft=django.html
 autocmd FileType,BufEnter,BufWinEnter eruby set ft=eruby.html
 autocmd FileType,BufEnter,BufWinEnter less set ft=less.css
 autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
-autocmd FileType,BufEnter,BufWinEnter jade,stylus set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType,BufEnter,BufWinEnter pug,jade,stylus set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType,BufRead,BufNewFile *.json set ft=json
+autocmd FileType,BufRead,BufNewFile *.pug set ft=jade
 autocmd FileType,BufRead,BufNewFile *.go set filetype=go
 autocmd FileType,BufRead,BufNewFile *.rive set filetype=rivescript
 
