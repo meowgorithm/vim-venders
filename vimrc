@@ -322,6 +322,8 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_chan_whitespace_error = 1
 let g:go_highlight_array_whitespace_error = 1
 
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = expand("~/.go/bin")
 
