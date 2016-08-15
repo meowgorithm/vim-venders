@@ -38,6 +38,7 @@ Bundle 'fatih/vim-go'
 Bundle 'milkypostman/vim-togglelist'
 Bundle 'jsx/jsx.vim'
 "Bundle 'kballard/vim-swift'
+"Plugin 'isRuslan/vim-es6'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -95,7 +96,7 @@ autocmd FileType,BufEnter,BufWinEnter less set ft=less.css
 autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
 autocmd FileType,BufEnter,BufWinEnter pug,jade,stylus set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType,BufRead,BufNewFile *.json set ft=json
-autocmd FileType,BufRead,BufNewFile *.pug set ft=jade
+autocmd FileType,BufRead,BufNewFile *.pug set ft=pug
 autocmd FileType,BufRead,BufNewFile *.go set filetype=go
 autocmd FileType,BufRead,BufNewFile *.rive set filetype=rivescript
 
@@ -283,6 +284,9 @@ let g:syntastic_python_flake8_args='--ignore=E501,E128,E226,E261,E265,E401' " ig
 "    npm install -g eslint-plugin-react
 " For more info see the notes at: https://github.com/jaxbot/syntastic-react
 let g:syntastic_javascript_checkers = ['eslint']
+
+" Allow JSX in normal JS files
+let g:jsx_ext_required = 0
 
 " Syntastic/Flake8
 " We have to run a mini Python script here to append 'site-packages' to the Python
