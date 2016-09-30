@@ -20,3 +20,4 @@ setup like so:
 - [JSHint](https://github.com/jshint/jshint)
 - [CoffeeTags](https://github.com/lukaszkorecki/CoffeeTags)
 - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
+- [ESLint Stuff](https://github.com/jaxbot/syntastic-react)

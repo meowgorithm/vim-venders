@@ -1,3 +1,5 @@
+" vim:et:ts=2:sw=2:fdm=marker
+"
 " All UTF-8 all the time
 scriptencoding utf-8
 set encoding=utf-8
@@ -330,5 +332,3 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
 
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = expand("~/.go/bin")
-
-" vim:et:ts=2:sw=2:fdm=marker
