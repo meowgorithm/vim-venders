@@ -277,7 +277,7 @@ hi jsFuncName ctermfg=254
 hi jsObjectFuncName ctermfg=77
 hi jsFuncArgs ctermfg=245
 hi jsClassFuncName ctermfg=254 cterm=bold
-hi jsClassDefinition ctermfg=41 cterm=bold
+hi jsClassDefinition ctermfg=194 cterm=bold
 hi jsClassKeywords ctermfg=77
 
 hi jsDecorator ctermfg=34
@@ -328,6 +328,18 @@ hi link jsObjectBraces jsNoise
 hi link jsObjectSeparator jsNoise
 hi link jsModuleAsterisk jsNoise
 hi jsNoise ctermfg=228 guifg=#e7ffb2
+
+" }}}
+
+" XML (Also JSX) {{{
+
+hi link xmlTagName xmlTag
+hi link xmlEndTag xmlTag
+hi link xmlEqual xmlTag
+hi xmlTag ctermfg=95
+hi link xmlAttribPunct xmlAttrib
+hi xmlAttrib ctermfg=131
+hi xmlString ctermfg=104
 
 " }}}
 

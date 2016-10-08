@@ -40,6 +40,7 @@ Bundle 'fatih/vim-go'
 Bundle 'milkypostman/vim-togglelist'
 Bundle 'jsx/jsx.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'mxw/vim-jsx'
 Bundle 'Raimondi/delimitMate'
 
 " Enable filetype-specific indenting, syntax, and plugins
