@@ -39,8 +39,8 @@ Bundle 'fatih/vim-go'
 "Bundle 'Jinja'
 Bundle 'milkypostman/vim-togglelist'
 Bundle 'jsx/jsx.vim'
-"Bundle 'kballard/vim-swift'
-"Plugin 'isRuslan/vim-es6'
+Bundle 'pangloss/vim-javascript'
+Bundle 'Raimondi/delimitMate'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on

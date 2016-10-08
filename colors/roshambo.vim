@@ -217,7 +217,7 @@ hi phpFunctions               guifg=#4edeb0
 
 " }}}
 
-" JavaScript {{{
+" JavaScript (Built-in) {{{
 
 hi javaScriptComment          ctermfg=29 guifg=#209074
 hi javaScriptLineComment      ctermfg=29 guifg=#209074
@@ -249,48 +249,85 @@ hi javaScriptFunctionName     ctermfg=255 cterm=bold guifg=#ffffff gui=bold
 
 " }}}
 
-" JSX {{{
+" JavaScript (pangloss/vim-javascript) {{{
 
-hi jsxDocComment          ctermfg=29 guifg=#209074
-" jsxDocTags
-hi jsxComment          ctermfg=29 guifg=#209074
-hi jsxLineComment          ctermfg=29 guifg=#209074
-" jsxCommentTodo
-" jsxEscape
-hi jsxString          ctermfg=137 guifg=#B09B6A
-hi jsxInteger           ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
-hi jsxFloat           ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
-hi jsxFloatX           ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
-hi jsxSpecialNumbers           ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
-hi jsxConditional      ctermfg=206 guifg=#FB82D8
-hi jsxRepeat           ctermfg=206 guifg=#FB82D8
-hi jsxBranch           ctermfg=206 guifg=#FB82D8
-hi jsxOperator         ctermfg=160 guifg=#F83E42
-hi jsxType             ctermfg=38 guifg=#41C5FD
-hi jsxStatement        ctermfg=206 guifg=#FB82D8
-hi jsxFunction         ctermfg=38 guifg=#41C5FD
-hi jsxBraces           ctermfg=186 guifg=#E7FFB2
-hi jsxNull             ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
-hi jsxBoolean          ctermfg=122 cterm=bold guifg=#85D5FE gui=bold
-hi jsxRegexp     ctermfg=35 guifg=#6BD26F
-hi jsxIdentifier       ctermfg=38 guifg=#00afdf
-" jsxLabel
-hi jsxException        ctermfg=206 guifg=#FB82D8
-" jsxClass
-" jsxModifiers
-" jsxImport
-" jsxEntryPoint
-" jsxDebug
+hi link jsTemplateString jsString
+hi jsComment ctermfg=29
 
-"hi jsxSpecial          ctermfg=160 guifg=#F83E42
-"hi jsxSpecialCharacter ctermfg=228 guifg=#e7ffb2
-"hi jsxParens           ctermfg=186 guifg=#e7ffb2
-"hi jsxGlobal           ctermfg=79 guifg=#84FFD6
-"hi jsxMember           ctermfg=79 guifg=#84FFD6
+hi link jsObjectStringKey jsString
+hi link jsClassStringKey jsString
+hi jsString ctermfg=137
+hi jsTemplateVar ctermfg=61
 
-hi jsxDollarVariable   ctermfg=160 guifg=#F83E42
-"hi jsxPunctuation      ctermfg=228 guifg=#e7ffb2
-hi jsxFunctionName     ctermfg=255 cterm=bold guifg=#ffffff gui=bold
+hi link jsBooleanTrue jsConst
+hi link jsBooleanFalse jsConst
+hi link jsNumber jsConst
+hi link jsNull jsConst
+hi link jsNan jsConst
+hi jsConst ctermfg=121 cterm=bold
+
+hi jsGlobalObjects ctermfg=166
+hi jsThis ctermfg=38
+hi jsPrototype ctermfg=38
+
+hi jsFunction ctermfg=38
+hi jsArrowFunction ctermfg=38
+hi jsGenerator ctermfg=38
+hi jsFuncName ctermfg=254
+hi jsObjectFuncName ctermfg=77
+hi jsFuncArgs ctermfg=245
+hi jsClassFuncName ctermfg=254 cterm=bold
+hi jsClassDefinition ctermfg=41 cterm=bold
+hi jsClassKeywords ctermfg=77
+
+hi jsDecorator ctermfg=34
+hi jsDecoratorFunction ctermfg=28
+hi jsParensDecorator ctermfg=34
+
+hi jsModuleKeywords ctermfg=205
+hi jsModuleOperators ctermfg=205
+hi jsModuleDefault ctermfg=213
+
+hi link jsAsyncKeyword jsKeyword
+hi link jsAwaitKeyword jsKeyword
+hi link jsStorageClass jsKeyword
+hi link jsConditional jsKeyword
+hi link jsReturn jsKeyword
+hi link jsRepeat jsKeyword
+hi link jsDo jsKeyword
+hi link jsTry jsKeyword
+hi link jsCatch jsKeyword
+hi link jsFinally jsKeyword
+hi jsKeyword ctermfg=206
+
+hi link jsRegexpBoundary jsRegexpSpecial
+hi link jsRegexpQuantifier jsRegexpSpecial
+hi link jsRegexpMod jsRegexpSpecial
+hi link jsRegexpBackRef jsRegexpSpecial
+hi jsRegexpSpecial ctermfg=63
+hi jsRegexpCharClass ctermfg=61
+
+hi link jsArguments jsSpecial
+hi jsSpecial ctermfg=61
+
+hi link jsRestOperator jsOperator
+hi link jsSpreadOperator jsOperator
+hi link jsTernaryIfOperator jsOperator
+hi link jsOf jsOperator
+hi jsOperator ctermfg=197
+
+hi link jsBraces jsNoise
+hi link jsParens jsNoise
+hi link jsFuncBraces jsNoise
+hi link jsFuncParens jsNoise
+hi link jsBrackets jsNoise
+hi link jsClassBraces jsNoise
+hi link jsClassNoise jsNoise
+hi link jsDestructuringBraces jsNoise
+hi link jsObjectBraces jsNoise
+hi link jsObjectSeparator jsNoise
+hi link jsModuleAsterisk jsNoise
+hi jsNoise ctermfg=228 guifg=#e7ffb2
 
 " }}}
 
@@ -315,8 +352,8 @@ hi coffeeComment                ctermfg=29 guifg=#1d915e gui=italic
 hi coffeeFunction               ctermfg=67 guifg=#4974ac
 hi coffeeOperator               ctermfg=203 guifg=#f8585b
 hi coffeeAssignBrackets         ctermfg=193 guifg=#e7ffb2
-hi coffeeConstant               ctermfg=81 cterm=bold guifg=#66ccff gui=bold
-hi coffeeNumber                 ctermfg=81 cterm=bold guifg=#66ccff gui=bold
+hi coffeeConstant               ctermfg=81 cterm=bold guifg=#66ccff gui=bold"{{{
+hi coffeeNumber                 ctermfg=81 cterm=bold guifg=#66ccff gui=bold"{{{"}}}"}}}
 hi coffeeFloat                  ctermfg=81 cterm=bold guifg=#66ccff gui=bold
 "hi coffeePrototype guifg=#e9e9e9 gui=bold
 "hi coffeeDot guifg=#e9e9e9 gui=bold
