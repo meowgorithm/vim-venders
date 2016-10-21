@@ -244,11 +244,6 @@ imap <c-c> <esc><plug>NERDCommenterToggle<cr>a
 map <Leader>l :TlistToggle<CR>
 map <Leader>m :TagbarToggle<CR>
 
-" Command-T
-map <Leader>t :CommandT<CR>
-let g:CommandTMatchWindowAtTop=0
-let g:CommandTMaxHeight=20
-
 " Ctrlp
 map CC :CtrlPClearCache<CR>
 let g:ctrlp_max_height = 20
