@@ -45,6 +45,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 Bundle 'Raimondi/delimitMate'
 Bundle 'vobornik/vim-mql4'
+"Bundle 'ternjs/tern_for_vim'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
