@@ -25,7 +25,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'taglist.vim'
 "Bundle 'PickAColor.vim'
 Bundle 'BufOnly.vim'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
 "Bundle 'groenewege/vim-less'
 Bundle 'digitaltoad/vim-jade'
@@ -46,6 +46,7 @@ Bundle 'mxw/vim-jsx'
 Bundle 'Raimondi/delimitMate'
 Bundle 'vobornik/vim-mql4'
 "Bundle 'ternjs/tern_for_vim'
+Bundle 'Valloric/YouCompleteMe'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
