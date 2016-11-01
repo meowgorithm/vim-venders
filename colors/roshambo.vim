@@ -42,10 +42,10 @@ hi ModeMsg          guifg=#798b92 gui=italic
 hi LineNr           ctermfg=238 guifg=#556166 guibg=#151A1B gui=none
 hi CursorLineNr     ctermfg=242 guifg=#adadad
 "hi WildMenu         guibg=#2c302d guifg=#cbecd0 gui=underline
-hi PMenu            guifg=#1b313e guibg=#7abfdf
-hi PMenuSel         guifg=#FFFF99 guibg=#312B2B
-hi PmenuSbar        guifg=#FFFF99 guibg=#7abfdf
-hi PmenuThumb       guifg=#174c63
+hi PMenu            ctermfg=121 ctermbg=29 guifg=#1b313e guibg=#7abfdf
+hi PMenuSel         ctermfg=52 ctermbg=217 guifg=#FFFF99 guibg=#312B2B
+hi PmenuSbar        ctermbg=23 guifg=#FFFF99 guibg=#7abfdf
+hi PmenuThumb       ctermbg=36 guifg=#174c63
 
 " NOTE the foreground and background vales are totally reversed for some
 " reason. In other words, foreground values apply to the background and the
