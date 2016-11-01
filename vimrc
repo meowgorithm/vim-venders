@@ -47,6 +47,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'vobornik/vim-mql4'
 "Bundle 'ternjs/tern_for_vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'rust-lang/rust.vim'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
