@@ -48,6 +48,7 @@ Bundle 'vobornik/vim-mql4'
 "Bundle 'ternjs/tern_for_vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rust-lang/rust.vim'
+Bundle 'cespare/vim-toml'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -255,7 +256,7 @@ let g:ctrlp_working_path_mode = 2 "try and find the repo root and search from th
 
 " SuperTab
 "autocmd FileType go let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
+"let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 
 " SnipMate
 let g:snips_author='Christian Rocha'
