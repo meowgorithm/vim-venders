@@ -83,13 +83,13 @@ hi NERDTreeOpenable ctermfg=24 guifg=#005f87
 " General {{{
 
 hi Comment          ctermfg=239 guifg=#008e5d gui=italic
-hi Operator         ctermfg=160 guifg=#ff5e57
+hi Operator         ctermfg=203 guifg=#ff5e57
 hi String           ctermfg=29 guifg=#798b92
-hi Keyword          ctermfg=22 guifg=#ff8ad9
-hi Function         ctermfg=31 guifg=#51a4c5
-hi Constant         ctermfg=39 guifg=#76d6ff gui=bold
-hi Type             ctermfg=24 guifg=#b39967 gui=none
-hi Statement        ctermfg=34 guifg=#ff8ad8 gui=none
+hi Keyword          ctermfg=206 guifg=#ff8ad9
+hi Function         ctermfg=42 guifg=#51a4c5
+hi Constant         ctermfg=80 cterm=bold guifg=#76d6ff gui=bold
+hi Type             ctermfg=138 guifg=#b39967 gui=none
+hi Statement        ctermfg=71 guifg=#ff8ad8 gui=none
 hi Special          ctermfg=178 guifg=#d8ea9f
 hi Identifier       ctermfg=29 guifg=#00c6ff
 hi PreProc          ctermfg=33 guifg=#72fcd5 gui=none
