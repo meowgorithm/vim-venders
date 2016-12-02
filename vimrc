@@ -140,6 +140,7 @@ set wildignore+=*/.git/*,*/node_modules/*
 set wildignore+=*/tmp/*
 set wildignore+=*/vendor/*
 set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
+set wildignore+=YouCompleteMe " locks up the vim directory a little bit
 set infercase "ignore case on insert completion
 
 " Window management
