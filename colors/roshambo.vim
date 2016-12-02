@@ -276,16 +276,23 @@ hi jsGenerator ctermfg=38
 hi jsFuncName ctermfg=254
 hi jsObjectFuncName ctermfg=77
 hi jsFuncArgs ctermfg=245
+
+" Class declaration
+hi link jsExtendsKeyword jsClassKeyword
+hi jsClassKeyword ctermfg=77
 hi jsClassFuncName ctermfg=254 cterm=bold
 hi jsClassDefinition ctermfg=194 cterm=bold
-hi jsClassKeywords ctermfg=77
 
 hi jsDecorator ctermfg=34
 hi jsDecoratorFunction ctermfg=28
 hi jsParensDecorator ctermfg=34
 
-hi jsModuleKeywords ctermfg=205
-hi jsModuleOperators ctermfg=205
+" Import/export
+hi link jsFrom jsImport
+hi link jsModuleAs jsImport
+hi link jsExportDefault jsImport
+hi link jsExport jsImport
+hi jsImport ctermfg=205
 hi jsModuleDefault ctermfg=213
 
 hi link jsAsyncKeyword jsKeyword
