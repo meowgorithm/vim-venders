@@ -251,6 +251,7 @@ map <Leader>m :TagbarToggle<CR>
 
 " Ctrlp
 map CC :CtrlPClearCache<CR>
+nmap ; :CtrlPBuffer<CR>
 let g:ctrlp_max_height = 20
 let g:ctrlp_jump_to_buffer = 2 "if the file's already open somewhere (anywhere) jump to it
 let g:ctrlp_working_path_mode = 2 "try and find the repo root and search from there
