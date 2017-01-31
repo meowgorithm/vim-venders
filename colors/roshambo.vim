@@ -32,7 +32,7 @@ endif
 
 hi Normal           ctermfg=250 ctermbg=232 guifg=#c1c1c1 guibg=#161616
 hi CursorLine       cterm=none ctermbg=234 guibg=#1f2221
-hi ColorColumn      ctermbg=232 guibg=#1b1e1d
+hi ColorColumn      ctermbg=233 guibg=#1b1e1d
 
 hi NonText          ctermfg=235 guifg=#3d464e gui=none
 hi SpecialKey       guifg=#3d464e gui=none
