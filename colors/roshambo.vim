@@ -328,6 +328,9 @@ hi link jsParens jsNoise
 hi link jsFuncBraces jsNoise
 hi link jsFuncParens jsNoise
 hi link jsBrackets jsNoise
+hi link jsIfElseBraces jsNoise
+hi link jsSwitchBraces jsNoise
+hi link jsRepeatBraces jsNoise
 hi link jsClassBraces jsNoise
 hi link jsClassNoise jsNoise
 hi link jsDestructuringBraces jsNoise
