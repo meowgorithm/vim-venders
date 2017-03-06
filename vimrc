@@ -49,6 +49,7 @@ Bundle 'vobornik/vim-mql4'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rust-lang/rust.vim'
 Bundle 'cespare/vim-toml'
+Bundle 'kovetskiy/sxhkd-vim'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -253,8 +254,8 @@ map <Leader>m :TagbarToggle<CR>
 map CC :CtrlPClearCache<CR>
 nmap ; :CtrlPBuffer<CR>
 let g:ctrlp_max_height = 20
-let g:ctrlp_jump_to_buffer = 2 "if the file's already open somewhere (anywhere) jump to it
-let g:ctrlp_working_path_mode = 2 "try and find the repo root and search from there
+let g:ctrlp_jump_to_buffer = 0 "enable this to jump to open windows if the file is open there. see ctrlp help.
+let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from there
 
 " SuperTab
 "autocmd FileType go let g:SuperTabDefaultCompletionType = "context"
