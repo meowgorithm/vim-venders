@@ -45,7 +45,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 Bundle 'Raimondi/delimitMate'
 Bundle 'vobornik/vim-mql4'
-"Bundle 'ternjs/tern_for_vim'
+Bundle 'ternjs/tern_for_vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rust-lang/rust.vim'
 Bundle 'cespare/vim-toml'
@@ -339,3 +339,6 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
 
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = expand("~/.go/bin")
+
+" Tern
+let g:tern_show_signature_in_pum = 1
