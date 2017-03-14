@@ -21,7 +21,7 @@ setup like so:
 - [CoffeeTags](https://github.com/lukaszkorecki/CoffeeTags) (CoffeeScript)
 - [Exuberant Ctags](http://ctags.sourceforge.net/) (Nerds)
 - [Node.js](https://nodejs.org/en/) (Required for [Tern][tern])
-- [NPM](https://www.npmjs.com) (Also !equired for [Tern][tern])
+- [NPM](https://www.npmjs.com) (Also required for [Tern][tern])
 
 [wim]: https://en.wikipedia.org/wiki/Wim_Wenders
 [tern]: http://ternjs.net
