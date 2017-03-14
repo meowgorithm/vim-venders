@@ -269,9 +269,10 @@ let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from
 " SnipMate
 let g:snips_author='Christian Rocha'
 
-" Configure ack.vim to use The Silver Searcher instead of Ack
-" See: https://github.com/ggreer/the_silver_searcher
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" mileszs/ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " AutoTag (find tagfile and auto-generate tags on save)
 " Requires Vim with Python
