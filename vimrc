@@ -141,7 +141,7 @@ set wildignore+=*/.git/*,*/node_modules/*
 set wildignore+=*/tmp/*
 set wildignore+=*/vendor/*
 set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
-set wildignore+=YouCompleteMe " locks up the vim directory a little bit
+set wildignore+=YouCompleteMe " this crazy dir locks up the vim directory a little bit
 set infercase "ignore case on insert completion
 
 " Window management
@@ -159,7 +159,9 @@ endif
 set formatoptions+=rocr
 
 
+"
 " KEYBINDINGS
+"
 
 " The comma is way easier to reach than the backslash, the default <leader>
 let mapleader=','
@@ -229,7 +231,10 @@ nmap <Leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":e
 vmap > >gv
 vmap < <gv
 
+
+"
 " PLUGIN CONFIGURATION
+"
 
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
