@@ -347,4 +347,9 @@ let g:go_fmt_command = "goimports"
 let g:go_bin_path = expand("~/.go/bin")
 
 " Tern
-let g:tern_show_signature_in_pum = 1
+let g:tern_show_signature_in_pum = 0
+let g:tern_show_loc_after_rename = 1
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_insertion = 1 " hide the preview window when exiting insert mode
+"let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion
