@@ -352,6 +352,8 @@ let g:tern_show_signature_in_pum = 0
 let g:tern_show_loc_after_rename = 1
 
 " YouCompleteMe
+inoremap <c-k> <c-p>
+inoremap <c-j> <c-n>
 let g:ycm_key_list_select_completion = [] " unbind <tab>. ctrl+n/ctrl+p will work instead.
 let g:ycm_autoclose_preview_window_after_insertion = 1 " hide the preview window when exiting insert mode
 "let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion
@@ -360,3 +362,26 @@ let g:ycm_autoclose_preview_window_after_insertion = 1 " hide the preview window
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" UltiSnips completion function that tries to expand a snippet. If there's no
+" snippet for expanding, it checks for completion window and if it's
+" shown, selects first element. If there's no completion window it tries to
+" jump to next placeholder. If there's no placeholder it just returns TAB key
+"
+" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411
+function! g:UltiSnips_Complete()
+    call UltiSnips_ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips_JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
