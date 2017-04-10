@@ -50,6 +50,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'rust-lang/rust.vim'
 Bundle 'cespare/vim-toml'
 Bundle 'kovetskiy/sxhkd-vim'
+Bundle 'SirVer/ultisnips'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -351,5 +352,11 @@ let g:tern_show_signature_in_pum = 0
 let g:tern_show_loc_after_rename = 1
 
 " YouCompleteMe
+let g:ycm_key_list_select_completion = [] " unbind <tab>. ctrl+n/ctrl+p will work instead.
 let g:ycm_autoclose_preview_window_after_insertion = 1 " hide the preview window when exiting insert mode
 "let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion
+
+" UtliSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
