@@ -1,0 +1,65 @@
+snippet cl
+console.log($0);
+endsnippet
+
+snippet im
+import $1 from '$0'
+endsnippet
+
+snippet ir
+import React from 'react'$0
+endsnippet
+
+snippet ird
+import ReactDOM from 'react-dom'$0
+endsnippet
+
+snippet rdr
+ReactDOM.render(${1:<Router routes=\{routes\} />}, ${0:document.getElementById('root')});
+endsnippet
+
+snippet ref
+ref={el => this.getEl(el)}$0
+endsnippet
+
+snippet ge
+getEl(el) {
+	if(this.el) return;
+	this.el = el;
+}
+endsnippet
+
+snippet rc
+class $1 extends React.Component {
+
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			$0
+		);
+	}
+
+}
+endsnippet
+
+snippet bf "Bound Function" i
+($1) => ${2:{$0}}
+endsnippet
+
+snippet an "anime({})"
+anime({
+	targets: ${1:this.el}$0,
+	easing: 'easeOutQuint',
+	duration: 250,
+	delay: 0,
+});
+endsnippet
+
+snippet cdm "componentDidMount"
+componentDidMount() {
+	$0
+}
+endsnippet

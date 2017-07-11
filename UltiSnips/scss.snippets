@@ -1,0 +1,110 @@
+snippet m "margin"
+margin: $0;
+endsnippet
+
+snippet p "padding"
+margin: $0;
+endsnippet
+
+snippet w "width"
+width: $0;
+endsnippet
+
+snippet h "height"
+height: $0;
+endsnippet
+
+snippet p "position"
+position: $0;
+endsnippet
+
+snippet op "opacity"
+opacity: ${0:0};
+endsnippet
+
+snippet a "absolute"
+absolute$0
+endsnippet
+
+snippet f "fixed"
+fixed$0
+endsnippet
+
+snippet bgc "background-color"
+background-color: $0;
+endsnippet
+
+snippet d "display"
+display: ${0:flex};
+endsnippet
+
+snippet fd "flex-direction"
+flex-direction: ${0:column};
+endsnippet
+
+snippet ai "align-items"
+align-items: ${0:center};
+endsnippet
+
+snippet jc "justify-content"
+justify-content: ${0:center};
+endsnippet
+
+snippet brr "border-radius"
+border-radius: $0;
+endsnippet
+
+#
+# Pseudo Elements
+#
+
+snippet fc "first-child" i
+:first-child {
+	$0
+}
+endsnippet
+
+snippet lc "last-child" i
+:last-child {
+	$0
+}
+endsnippet
+
+snippet nc "nth-child" i
+:nth-child($1) {
+	$0
+}
+endsnippet
+
+
+#
+# Elements
+#
+
+snippet ul
+ul {
+	$0
+}
+endsnippet
+
+snippet li
+li {
+	$0
+}
+endsnippet
+
+#
+# Breakpoints
+#
+snippet bp "breakpoint"
+@include breakpoint($1) {
+	$0
+}
+endsnippet
+
+#
+# Functions
+#
+snippet px "pxToRem()"
+pxToRem($0)
+endsnippet
