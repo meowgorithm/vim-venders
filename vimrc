@@ -360,9 +360,11 @@ let g:ycm_autoclose_preview_window_after_insertion = 1 " hide the preview window
 "let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion
 
 " UtliSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 
 " UltiSnips completion function that tries to expand a snippet. If there's no
 " snippet for expanding, it checks for completion window and if it's
