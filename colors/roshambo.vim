@@ -476,6 +476,33 @@ hi goFunction ctermfg=255
 
 " }}}
 
+" SQL/PostgreSQL {{{
+
+hi sqlSpecial ctermfg=204 cterm=bold,underline
+hi sqlCatalog ctermfg=204 cterm=bold,underline
+hi sqlConstant ctermfg=204 cterm=bold,underline
+hi sqlErrorCode ctermfg=204 cterm=bold,underline
+hi sqlFunction ctermfg=211 cterm=bold
+hi sqlIdentifier ctermfg=204 cterm=bold,underline
+hi sqlplpgsqlKeyword ctermfg=204 cterm=bold,underline
+hi sqlOperator ctermfg=204 cterm=bold,underline
+hi sqlOption ctermfg=204 cterm=bold,underline
+hi sqlSpecial ctermfg=204 cterm=bold,underline
+hi sqlTable ctermfg=204 cterm=bold,underline
+hi sqlView ctermfg=204 cterm=bold,underline
+hi sqlVariable ctermfg=203 cterm=bold,underline
+hi sqlPsqlCommand ctermfg=203 cterm=bold,underline
+hi sqlPsqlKeyword ctermfg=203 cterm=bold,underline
+
+hi sqlType ctermfg=206
+hi sqlStatement ctermfg=34 " CREATE, UPDATE, DELETE, EXECUTE, etc.
+hi sqlComment ctermfg=240
+hi sqlString ctermfg=137
+hi sqlNumber ctermfg=202
+hi sqlKeyword ctermfg=32
+
+" }}}
+
 " Django {{{
 
 hi djangoTagBlock guifg=#c1c1c1
