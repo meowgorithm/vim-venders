@@ -127,6 +127,11 @@ set cursorline
 autocmd WinEnter,BufEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
+" change cursor in different modes
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
 " Automatically strip trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -174,6 +179,8 @@ let mapleader=','
 
 " Escape key alternatives
 imap kj <Esc>
+vmap kj <Esc>
+
 
 " Show registers
 map <Leader>r :registers<CR>
