@@ -52,6 +52,7 @@ Bundle 'rust-lang/rust.vim'
 Bundle 'cespare/vim-toml'
 Bundle 'kovetskiy/sxhkd-vim'
 Bundle 'SirVer/ultisnips'
+Bundle 'lifepillar/pgsql.vim'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -112,6 +113,7 @@ autocmd FileType,BufRead,BufNewFile *.json set ft=json
 autocmd FileType,BufRead,BufNewFile *.pug set ft=pug
 autocmd FileType,BufRead,BufNewFile *.go set filetype=go
 autocmd FileType,BufRead,BufNewFile *.rive set filetype=rivescript
+autocmd FileType,BufRead,BufNewFile *.sql set filetype=pgsql
 
 set ruler
 set nowrap
@@ -141,7 +143,9 @@ set wildmode=list:longest,list:full
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*
 set wildignore+=*/tmp/*
+set wildignore+=*/build/*
 set wildignore+=*/vendor/*
+set wildignore+=*/pkg/*
 set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
 set wildignore+=YouCompleteMe " this crazy dir locks up the vim directory a little bit
 set infercase "ignore case on insert completion
