@@ -1,0 +1,11 @@
+snippet tr "t.Run()"
+t.Run("$1", func(t *testing.T) {
+	$0
+})
+endsnippet
+
+snippet wr "http route"
+func $1(w http.ResponseWriter, r *http.Request) {
+	$0
+}
+endsnippet
