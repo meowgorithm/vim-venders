@@ -19,11 +19,11 @@ ReactDOM.render(${1:<Router routes=\{routes\} />}, ${0:document.getElementById('
 endsnippet
 
 snippet ref
-ref={el => this.getEl(el)}$0
+ref={el => this.getRef(el)}$0
 endsnippet
 
-snippet ge
-getEl(el) {
+snippet gr
+getRef(el) {
 	if(this.el) return;
 	this.el = el;
 }
