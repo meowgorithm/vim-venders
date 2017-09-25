@@ -26,7 +26,7 @@ cd $VIMDIR/bundle/tern_for_vim && npm install
 cd $VIMDIR
 
 # Setup YouCompleteMe
-$VIMDIR/bundle/YouCompleteMe/install.py --clang-completer --gocode-completer --tern-completer --racer-completer
+$VIMDIR/bundle/YouCompleteMe/install.py --clang-completer --gocode-completer --tern-completer
 
 unset VIMDIR
 
