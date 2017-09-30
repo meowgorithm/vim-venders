@@ -32,7 +32,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-pug'
 "Bundle 'godlygeek/csapprox'
 "Bundle 'statusline.vim'
-Bundle 'wavded/vim-stylus'
+"Bundle 'wavded/vim-stylus'
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'AutoTag'
 Bundle 'JSON.vim'
@@ -48,9 +48,9 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'vobornik/vim-mql4'
 Bundle 'ternjs/tern_for_vim'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'rust-lang/rust.vim'
+"Bundle 'rust-lang/rust.vim'
 Bundle 'cespare/vim-toml'
-Bundle 'kovetskiy/sxhkd-vim'
+"Bundle 'kovetskiy/sxhkd-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'lifepillar/pgsql.vim'
 
@@ -278,9 +278,6 @@ let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from
 " SuperTab
 "autocmd FileType go let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
-
-" SnipMate
-let g:snips_author='Christian Rocha'
 
 " mileszs/ack.vim
 if executable('ag')
