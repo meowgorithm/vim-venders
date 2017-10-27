@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 VIMDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Remove existing config files
@@ -25,8 +26,12 @@ vim +BundleInstall +qall
 cd $VIMDIR/bundle/tern_for_vim && npm install
 cd $VIMDIR
 
+# Arch Linux requires an extra flag
+extraflags=''
+[[ $(cat /etc/issue) =~ 'Arch Linux' ]] && extraflags='--system-libclang'
+
 # Setup YouCompleteMe
-$VIMDIR/bundle/YouCompleteMe/install.py --clang-completer --gocode-completer --tern-completer
+$VIMDIR/bundle/YouCompleteMe/install.py --clang-completer $extraflags --gocode-completer --tern-completer
 
 unset VIMDIR
 
