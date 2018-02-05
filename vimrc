@@ -53,6 +53,7 @@ Bundle 'cespare/vim-toml'
 "Bundle 'kovetskiy/sxhkd-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'lifepillar/pgsql.vim'
+Bundle 'elmcast/elm-vim'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -302,6 +303,21 @@ let g:syntastic_check_on_open=1
 let g:syntastic_warning_symbol='W>'
 let g:syntastic_enable_balloons = 1
 let g:syntastic_python_flake8_args='--ignore=E501,E128,E226,E261,E265,E401' " ignore line length warnings
+
+" Elm
+let g:elm_syntastic_show_warnings = 1
+let g:ycm_semantic_triggers = {
+  \ 'elm' : ['.'],
+  \}
+let g:elm_jump_to_error = 0
+let g:elm_make_output_file = "elm.js"
+let g:elm_make_show_warnings = 0
+let g:elm_syntastic_show_warnings = 1
+let g:elm_browser_command = ""
+let g:elm_detailed_complete = 0
+let g:elm_format_autosave = 1
+let g:elm_format_fail_silently = 0
+let g:elm_setup_keybindings = 1
 
 " JSX support. For this to work you'll need to do the following:
 "    npm install -g eslint
