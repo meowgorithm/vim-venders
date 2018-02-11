@@ -147,7 +147,7 @@ set wrapscan "searches wrap around the end of the file
 " Tab completion
 set wildmode=list:longest,list:full
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
-set wildignore+=*/.git/*,*/node_modules/*
+set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*
 set wildignore+=*/tmp/*
 set wildignore+=*/build/*
 set wildignore+=*/vendor/*
