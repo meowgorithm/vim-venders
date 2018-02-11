@@ -128,7 +128,8 @@ set cursorline
 autocmd WinEnter,BufEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
-" change cursor in different modes
+" Change cursor in different modes. In particular, set an insert-like cursor
+" in insert mode
 "let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 "let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 "let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -144,7 +145,7 @@ set incsearch "search-as-you-type
 set gdefault "assume the /g flag on :s substitutions to replace all matches in a line
 set wrapscan "searches wrap around the end of the file
 
-" Tab completion
+" Tab completion and ingnores, which really shouldn't be bundled together
 set wildmode=list:longest,list:full
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*
