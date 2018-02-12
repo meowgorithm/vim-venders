@@ -9,3 +9,9 @@ func $1(w http.ResponseWriter, r *http.Request) {
 	$0
 }
 endsnippet
+
+snippet st "sub-test"
+t.Run("${1:test name}", func(t *testing.T) {
+	$0
+})
+endsnippet
