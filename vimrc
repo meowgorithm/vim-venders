@@ -18,7 +18,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
-"Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 "Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
@@ -54,7 +54,7 @@ Bundle 'cespare/vim-toml'
 Bundle 'SirVer/ultisnips'
 Bundle 'lifepillar/pgsql.vim'
 Bundle 'elmcast/elm-vim'
-Bundle 'w0rp/ale'
+"Bundle 'w0rp/ale'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -304,20 +304,22 @@ let g:syntastic_check_on_open=1
 let g:syntastic_warning_symbol='W>'
 let g:syntastic_enable_balloons = 1
 let g:syntastic_python_flake8_args='--ignore=E501,E128,E226,E261,E265,E401' " ignore line length warnings
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
 
 " Elm
 let g:elm_syntastic_show_warnings = 1
+let g:syntastic_elm_checkers = ['elm_make']
 let g:ycm_semantic_triggers = {
   \ 'elm' : ['.'],
   \}
 let g:elm_jump_to_error = 0
 let g:elm_make_output_file = "elm.js"
 let g:elm_make_show_warnings = 1
-let g:elm_syntastic_show_warnings = 1
 let g:elm_browser_command = ""
 let g:elm_detailed_complete = 1
 let g:elm_format_autosave = 1
-let g:elm_format_fail_silently = 0
+let g:elm_format_fail_silently = 1
 let g:elm_setup_keybindings = 1
 
 " JSX support. For this to work you'll need to do the following:
@@ -364,9 +366,12 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_trailing_whitespace_error = 1
 let g:go_highlight_space_tab_error = 1
+let g:go_highlight_types = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_chan_whitespace_error = 1
 let g:go_highlight_array_whitespace_error = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_fields = 1
 
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
 
