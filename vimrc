@@ -18,7 +18,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 "Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
@@ -54,7 +54,7 @@ Bundle 'cespare/vim-toml'
 Bundle 'SirVer/ultisnips'
 Bundle 'lifepillar/pgsql.vim'
 Bundle 'elmcast/elm-vim'
-"Bundle 'w0rp/ale'
+Bundle 'w0rp/ale'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -374,6 +374,7 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
 
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
+let g:ale_linters = {'go': ['golint', 'govet', 'gofmt', 'go build']}
 
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = expand("~/.go/bin")
