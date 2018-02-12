@@ -18,7 +18,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 "Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
@@ -54,6 +54,7 @@ Bundle 'cespare/vim-toml'
 Bundle 'SirVer/ultisnips'
 Bundle 'lifepillar/pgsql.vim'
 Bundle 'elmcast/elm-vim'
+Bundle 'w0rp/ale'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -294,7 +295,6 @@ if filereadable(autoTagsFile)
 endif
 
 " Syntastic
-"map <Leader>e :Errors<CR>
 nmap <script> <silent> <leader>e :call ToggleLocationList()<cr>
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
@@ -312,10 +312,10 @@ let g:ycm_semantic_triggers = {
   \}
 let g:elm_jump_to_error = 0
 let g:elm_make_output_file = "elm.js"
-let g:elm_make_show_warnings = 0
+let g:elm_make_show_warnings = 1
 let g:elm_syntastic_show_warnings = 1
 let g:elm_browser_command = ""
-let g:elm_detailed_complete = 0
+let g:elm_detailed_complete = 1
 let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 0
 let g:elm_setup_keybindings = 1
