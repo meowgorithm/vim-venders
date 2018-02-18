@@ -80,6 +80,13 @@ hi NERDTreeOpenable ctermfg=24 guifg=#005f87
 
 " }}}
 
+" Ale {{{
+
+hi ALEError ctermbg=52
+hi ALEWarning ctermbg=19
+
+" }}}
+
 " General {{{
 
 hi Comment          ctermfg=239 guifg=#008e5d gui=italic
@@ -473,6 +480,20 @@ hi goStruct ctermfg=208
 hi goStructDef ctermfg=255 cterm=bold,underline
 
 hi goFunction ctermfg=255
+
+" }}}
+
+" Elm {{{
+
+hi elmImport ctermfg=39
+hi elmDelimiter ctermfg=222
+hi elmBraces ctermfg=222
+hi elmType ctermfg=71 cterm=bold
+hi elmTopLevelDecl ctermfg=95
+hi elmConditional ctermfg=169
+hi elmAlias ctermfg=105
+hi elmTypedef ctermfg=212
+hi elmOperator ctermfg=167
 
 " }}}
 
