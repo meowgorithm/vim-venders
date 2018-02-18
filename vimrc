@@ -150,14 +150,15 @@ set wrapscan "searches wrap around the end of the file
 set wildmode=list:longest,list:full
 
 " Ignores + ignores + settings for wild mode
+" This also affects servies like Ctrl+P
 set infercase " ignore case on insert completion
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*
 set wildignore+=*/tmp/*
 set wildignore+=*/build/*,*/dist/*
-set wildignore+=*/vendor/*
-set wildignore+=*/pkg/*
+set wildignore+=*/vendor/*,*/pkg/*
 set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
+set wildignore+=*/bundle/*
 set wildignore+=YouCompleteMe " this crazy dir locks up the vim directory a little bit
 
 " Window management
