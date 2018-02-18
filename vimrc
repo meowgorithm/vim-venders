@@ -146,17 +146,19 @@ set incsearch "search-as-you-type
 set gdefault "assume the /g flag on :s substitutions to replace all matches in a line
 set wrapscan "searches wrap around the end of the file
 
-" Tab completion and ingnores, which really shouldn't be bundled together
+" Tab completion
 set wildmode=list:longest,list:full
+
+" Ignores + ignores + settings for wild mode
+set infercase " ignore case on insert completion
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*
 set wildignore+=*/tmp/*
-set wildignore+=*/build/*
+set wildignore+=*/build/*,*/dist/*
 set wildignore+=*/vendor/*
 set wildignore+=*/pkg/*
 set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
 set wildignore+=YouCompleteMe " this crazy dir locks up the vim directory a little bit
-set infercase "ignore case on insert completion
 
 " Window management
 set splitbelow "open new horizontal splits below the current
