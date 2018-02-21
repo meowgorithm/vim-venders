@@ -21,7 +21,10 @@ setup like so:
 - [CoffeeTags](https://github.com/lukaszkorecki/CoffeeTags) (CoffeeScript)
 - [Exuberant Ctags](http://ctags.sourceforge.net/) (Nerds)
 - [Node.js](https://nodejs.org/en/) (Required for [Tern][tern])
-- [NPM](https://www.npmjs.com) (Also required for [Tern][tern])
+- [Yarn][yarn] or [NPM][npm] (Also required for [Tern][tern])
+- [Prettier](https://prettier.io) for JavaScript and CSS/SCSS formatting
 
 [wim]: https://en.wikipedia.org/wiki/Wim_Wenders
 [tern]: http://ternjs.net
+[npm]: https://www.npmjs.com
+[yarn]: https://yarnpkg.com/

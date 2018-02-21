@@ -55,6 +55,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'lifepillar/pgsql.vim'
 Bundle 'elmcast/elm-vim'
 Bundle 'w0rp/ale'
+"Bundle 'sbdchd/neoformat'
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -420,5 +421,21 @@ function! g:UltiSnips_Complete()
     endif
     return ""
 endfunction
-
 exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+
+" ALE
+"
+" NOTE: add `--require-pragma` to options to allow formatting only in files
+" with a pragma at the top:
+"
+" /**
+"  * @format
+"  */
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = 'prettier'
+let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4'
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_fixers['scss'] = 'prettier'
+let g:ale_scss_prettier_options = '--trailing-comma all --tab-width 4'
+let g:ale_scss_prettier_use_local_config = 1
+let g:ale_fix_on_save = 1
