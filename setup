@@ -31,7 +31,7 @@ extraflags=''
 [[ $(cat /etc/issue) =~ 'Arch Linux' ]] && extraflags='--system-libclang'
 
 # Setup YouCompleteMe
-$VIMDIR/bundle/YouCompleteMe/install.py --clang-completer $extraflags --gocode-completer --tern-completer
+$VIMDIR/build-ycm
 
 unset VIMDIR
 
