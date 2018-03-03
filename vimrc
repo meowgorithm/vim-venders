@@ -264,7 +264,8 @@ let NERDTreeHighlightCursorline=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeHijackNetrw=1
-let NERDTreeIgnore=['\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc']
+let NERDTreeIgnore=['\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc',
+\ 'node_modules', 'elm-stuff']
 
 " NERDCommenter
 let NERDSpaceDelims=0 "number of spaces to add before comments
