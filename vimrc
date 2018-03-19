@@ -112,7 +112,7 @@ set laststatus=2
 set report=0
 set listchars=tab:\▸\ ,trail:·,eol:¶
 
-" Show current line in current window only
+" Highlight current line in current window only
 set cursorline
 autocmd WinEnter,BufEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
