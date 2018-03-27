@@ -123,7 +123,7 @@ autocmd WinLeave * setlocal nocursorline
 "let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 "let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
-" Automatically strip trailing whitespace
+" Automatically strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Searching
@@ -134,11 +134,11 @@ set incsearch "search-as-you-type
 set gdefault "assume the /g flag on :s substitutions to replace all matches in a line
 set wrapscan "searches wrap around the end of the file
 
-" Tab completion
+" Completion settings
 set wildmode=list:longest,list:full
 
 " Ignores + ignores + settings for wild mode
-" This also affects servies like Ctrl+P
+" This also affects services like Ctrl+P
 set infercase " ignore case on insert completion
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*
@@ -218,7 +218,7 @@ map Q :wa<CR>:q<CR>
 nmap SSS :wa<CR>:vs<CR><C-w><C-l>:sp<CR><C-w><C-h>:exe ":echo 'Pew pew pew!'"<CR>
 
 " File Handling
-nmap E :wa<CR>:e
+"nmap E :wa<CR>:e
 
 " Shortcut to open stuff in the Vim directory (mostly just to ease .vimrc
 " hacking)
@@ -260,12 +260,13 @@ map <c-c> <plug>NERDCommenterToggle<cr>
 imap <c-c> <esc><plug>NERDCommenterToggle<cr>a
 
 " Exuberant CTags
+" TODO: The below command is being overwritten somewhere
 map <Leader>l :TlistToggle<CR>
 map <Leader>m :TagbarToggle<CR>
 
 " Ctrlp
 map CC :CtrlPClearCache<CR>
-nmap ; :CtrlPBuffer<CR>
+"map ; :CtrlPBuffer<CR>
 let g:ctrlp_max_height = 20
 let g:ctrlp_jump_to_buffer = 0 "enable this to jump to open windows if the file is open there. see ctrlp help.
 let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from there
@@ -287,7 +288,9 @@ if filereadable(autoTagsFile)
 endif
 
 " Syntastic
-nmap <script> <silent> <leader>e :call ToggleLocationList()<cr>
+"nmap <script> <silent> <leader>e :call ToggleLocationList()<cr>
+" TODO: move the below somewhere neutral (it's not specific to syntastic)
+nmap <script> <silent> E :call ToggleLocationList()<cr>
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=2
@@ -302,6 +305,8 @@ let g:go_auto_type_info = 1
 " Elm
 let g:elm_syntastic_show_warnings = 1
 let g:syntastic_elm_checkers = ['elm_make']
+" TODO: adjust the below command so it's not postentially overwriting higher
+" declarations
 let g:ycm_semantic_triggers = {
   \ 'elm' : ['.'],
   \}
