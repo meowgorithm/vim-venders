@@ -434,3 +434,7 @@ let g:ale_scss_prettier_options = '--trailing-comma all --tab-width 4'
 let g:ale_scss_prettier_use_local_config = 1
 let g:ale_fixers['json'] = 'prettier'
 let g:ale_fix_on_save = 1
+
+" Curious background-color-erase fix/hack, apparently
+" https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+let &t_ut=''
