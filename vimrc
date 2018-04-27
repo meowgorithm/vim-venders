@@ -26,9 +26,9 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'taglist.vim'
 Bundle 'BufOnly.vim'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'digitaltoad/vim-pug'
+"Bundle 'digitaltoad/vim-pug'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'JSON.vim'
+"Bundle 'JSON.vim'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'fatih/vim-go'
 Bundle 'milkypostman/vim-togglelist'
@@ -38,7 +38,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'vobornik/vim-mql4'
 Bundle 'ternjs/tern_for_vim'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'cespare/vim-toml'
+"Bundle 'cespare/vim-toml'
 Bundle 'SirVer/ultisnips'
 Bundle 'lifepillar/pgsql.vim'
 Bundle 'elmcast/elm-vim'
@@ -186,7 +186,7 @@ map <Leader>s :set hlsearch! hlsearch?<CR>
 map <Leader>w :set wrap! wrap?<CR>
 map <Leader>p :set paste! nopaste?<CR>
 
-" Tabs
+" Tab management
 nmap TT :wa<CR>:tabnew<CR>
 
 " Buffers
