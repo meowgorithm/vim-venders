@@ -374,7 +374,7 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
 let g:ale_linters = {'go': ['golint', 'govet', 'gofmt', 'go build']}
 
 let g:go_fmt_command = "goimports"
-let g:go_bin_path = expand("~/.go/bin")
+"let g:go_bin_path = expand("~/.go/bin")
 
 " Tern
 let g:tern_show_signature_in_pum = 0
