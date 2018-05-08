@@ -246,6 +246,9 @@ vmap < <gv
 " PLUGIN CONFIGURATION
 "
 
+" Airline
+let g:airline#extensions#ale#enabled = 1
+
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
