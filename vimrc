@@ -42,6 +42,8 @@ Bundle 'SirVer/ultisnips'
 Bundle 'lifepillar/pgsql.vim'
 Bundle 'elmcast/elm-vim'
 Bundle 'w0rp/ale'
+Plugin 'eagletmt/ghcmod-vim' " haskell
+Plugin 'Shougo/vimproc' " ghcmod-vim needs this
 
 call vundle#end()
 
