@@ -7,11 +7,11 @@ set encoding=utf-8
 " Initialize Vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 Bundle 'gmarik/vundle'
 
-" Bundles
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'majutsushi/tagbar'
@@ -43,6 +43,8 @@ Bundle 'SirVer/ultisnips'
 Bundle 'lifepillar/pgsql.vim'
 Bundle 'elmcast/elm-vim'
 Bundle 'w0rp/ale'
+
+call vundle#end()
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on

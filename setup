@@ -13,7 +13,7 @@ ln -s $VIMDIR/gvimrc $HOME/.gvimrc
 mkdir -p $VIMDIR/{tmp,view,backup,session}
 
 # Download Vundle
-git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # We must explicitly set the shell to Bash or Vim will fail under Fish
 # https://github.com/gmarik/vundle/wiki
