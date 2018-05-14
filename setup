@@ -30,8 +30,11 @@ cd $VIMDIR
 extraflags=''
 [[ $(cat /etc/issue) =~ 'Arch Linux' ]] && extraflags='--system-libclang'
 
-# Setup YouCompleteMe
+# Build YouCompleteMe
 $VIMDIR/build-ycm
+
+# Build Vimproc
+cd $VIMDIR/bundle/vimproc && make
 
 unset VIMDIR
 
