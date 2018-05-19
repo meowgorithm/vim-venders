@@ -1,17 +1,29 @@
+snippet t "Test Function"
+func Test${1:Name}(t *testing.T) {
+	$0
+}
+endsnippet
+
 snippet tr "t.Run()"
 t.Run("$1", func(t *testing.T) {
 	$0
 })
 endsnippet
 
-snippet wr "http route"
-func $1(w http.ResponseWriter, r *http.Request) {
-	$0
-}
-endsnippet
-
 snippet st "sub-test"
 t.Run("${1:test name}", func(t *testing.T) {
 	$0
 })
+endsnippet
+
+snippet fn "function"
+func $1($2)$3 {
+	$4
+}
+endsnippet
+
+snippet wr "http route"
+func $1(w http.ResponseWriter, r *http.Request) {
+	$0
+}
 endsnippet
