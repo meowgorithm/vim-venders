@@ -18,15 +18,12 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-"Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'taglist.vim'
 Plugin 'BufOnly.vim'
 Plugin 'kchmck/vim-coffee-script'
-"Plugin 'digitaltoad/vim-pug'
 Plugin 'vim-airline/vim-airline'
-"Plugin 'JSON.vim'
 Plugin 'guns/xterm-color-table.vim'
 Plugin 'fatih/vim-go'
 Plugin 'milkypostman/vim-togglelist'
@@ -40,8 +37,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'lifepillar/pgsql.vim'
 Plugin 'elmcast/elm-vim'
 Plugin 'w0rp/ale'
-"Plugin 'eagletmt/ghcmod-vim' " haskell
-"Plugin 'Shougo/vimproc' " ghcmod-vim needs this
 
 call vundle#end()
 
@@ -287,24 +282,16 @@ if filereadable(autoTagsFile)
   source autoTagsFile
 endif
 
-" Syntastic
-"nmap <script> <silent> <leader>e :call ToggleLocationList()<cr>
-" TODO: move the below somewhere neutral (it's not specific to syntastic)
+
+" TODO: move the below somewhere that makes sense
 nmap <script> <silent> E :call ToggleLocationList()<cr>
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_jump=0
-let g:syntastic_auto_loc_list=2
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_warning_symbol='W>'
-let g:syntastic_enable_balloons = 1
-let g:syntastic_python_flake8_args='--ignore=E501,E128,E226,E261,E265,E401' " ignore line length warnings
+
+" TODO: figure out what these are. we originally had them grouped with
+" Syntastic
 let g:go_auto_sameids = 1
 let g:go_auto_type_info = 1
 
 " Elm
-let g:elm_syntastic_show_warnings = 1
-let g:syntastic_elm_checkers = ['elm_make']
 " TODO: adjust the below command so it's not postentially overwriting higher
 " declarations
 let g:ycm_semantic_triggers = {
@@ -319,17 +306,11 @@ let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 1
 let g:elm_setup_keybindings = 1
 
-" JSX support. For this to work you'll need to do the following:
-"    npm install -g eslint
-"    npm install -g babel-eslint
-"    npm install -g eslint-plugin-react
-" For more info see the notes at: https://github.com/jaxbot/syntastic-react
-let g:syntastic_javascript_checkers = ['eslint']
-
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0
 
-" Syntastic/Flake8
+" TODO: do we still need this?
+" Flake8
 " We have to run a mini Python script here to append 'site-packages' to the Python
 " path at runtime.
 if has('python')
@@ -370,7 +351,6 @@ let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
 
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
 "let g:ale_linters = {'go': ['golint', 'govet', 'gofmt', 'go build']}
 let g:ale_linters = {'go': ['gometalinter']}
 
