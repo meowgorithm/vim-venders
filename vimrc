@@ -353,6 +353,7 @@ let g:go_highlight_fields = 1
 
 "let g:ale_linters = {'go': ['golint', 'govet', 'gofmt', 'go build']}
 let g:ale_linters = {'go': ['gometalinter']}
+let g:ale_go_gometalinter_options = '--fast' " without this things are slowwwww
 
 let g:go_fmt_command = "goimports"
 "let g:go_bin_path = expand("~/.go/bin")
