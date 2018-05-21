@@ -19,14 +19,12 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'scrooloose/syntastic'
-"Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'taglist.vim'
 Plugin 'BufOnly.vim'
 Plugin 'kchmck/vim-coffee-script'
 "Plugin 'digitaltoad/vim-pug'
-"Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-airline/vim-airline'
 "Plugin 'JSON.vim'
 Plugin 'guns/xterm-color-table.vim'
@@ -42,8 +40,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'lifepillar/pgsql.vim'
 Plugin 'elmcast/elm-vim'
 Plugin 'w0rp/ale'
-Plugin 'eagletmt/ghcmod-vim' " haskell
-Plugin 'Shougo/vimproc' " ghcmod-vim needs this
+"Plugin 'eagletmt/ghcmod-vim' " haskell
+"Plugin 'Shougo/vimproc' " ghcmod-vim needs this
 
 call vundle#end()
 
@@ -276,10 +274,6 @@ nmap ; :CtrlPBuffer<CR>
 let g:ctrlp_max_height = 20
 let g:ctrlp_jump_to_buffer = 0 "enable this to jump to open windows if the file is open there. see ctrlp help.
 let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from there
-
-" SuperTab
-"autocmd FileType go let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 
 " mileszs/ack.vim
 if executable('ag')

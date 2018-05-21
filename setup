@@ -34,7 +34,7 @@ extraflags=''
 $VIMDIR/build-ycm
 
 # Build Vimproc
-cd $VIMDIR/bundle/vimproc && make
+#cd $VIMDIR/bundle/vimproc && make
 
 unset VIMDIR
 
