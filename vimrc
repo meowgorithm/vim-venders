@@ -371,7 +371,8 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
 
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
-let g:ale_linters = {'go': ['golint', 'govet', 'gofmt', 'go build']}
+"let g:ale_linters = {'go': ['golint', 'govet', 'gofmt', 'go build']}
+let g:ale_linters = {'go': ['gometalinter']}
 
 let g:go_fmt_command = "goimports"
 "let g:go_bin_path = expand("~/.go/bin")
@@ -435,6 +436,8 @@ let g:ale_scss_prettier_use_local_config = 1
 let g:ale_fixers['json'] = 'prettier'
 let g:ale_linters['python'] = ['flake8', 'mypy']
 let g:ale_fixers['python'] = ['yapf']
+let g:ale_linters['haskell'] = ['hlint']
+let g:ale_fixers['haskell'] = ['brittany']
 let g:ale_fix_on_save = 1
 
 " Curious background-color-erase fix/hack, apparently
