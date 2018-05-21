@@ -20,7 +20,7 @@ setup like so:
   `ack` replacement
 
 ### C and stuff like that
-- [Exuberant Ctags](http://ctags.sourceforge.net/) (Nerds)
+- [Exuberant Ctags](http://ctags.sourceforge.net/)
 
 ### Elm
 
