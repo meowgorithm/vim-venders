@@ -7,7 +7,7 @@ set encoding=utf-8
 
 " PLUGINS
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/bundles')
 
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
