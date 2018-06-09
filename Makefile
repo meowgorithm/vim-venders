@@ -1,7 +1,7 @@
 all: init bundles tern ycm
 
 UNAME=$(shell uname)
-VIM_DIR=.
+VIM_DIR=$(shell pwd)
 PLUGIN_DIR=$(VIM_DIR)/bundles
 
 # YouCompleteMe resquires a build step
