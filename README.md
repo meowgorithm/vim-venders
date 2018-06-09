@@ -16,6 +16,10 @@ Make sure you have [Make], [Node.js][node] and [NPM][npm] installed (for [Tern] 
     cd ~/.vim
     make
 
+On MacOS, [Make][make] is included with [Xcode][xcode]. If you're on Linux, you
+probably already have it installed, and if you don't, you probably know
+how to install it.
+
 
 ## Recommended Utilities
 
@@ -78,6 +82,8 @@ Quick install everything:
 
 
 [wim]: https://en.wikipedia.org/wiki/Wim_Wenders
+[make]: https://www.gnu.org/software/make/
+[xcode]: https://developer.apple.com/xcode/
 [vimgo]: https://github.com/fatih/vim-go
 [node]: https://nodejs.org/en/
 [tern]: http://ternjs.net
