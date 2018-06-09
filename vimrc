@@ -171,7 +171,26 @@ let mapleader=','
 imap kj <Esc>
 vmap kj <Esc>
 
-map <Ctrl>w :lclose
+" Faster window navigation
+map <S-w> <C-w>q
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Tab management
+nmap TT :wa<CR>:tabnew<CR>
+
+" Buffers
+nmap BN :wa<CR>:bnext<CR>
+nmap BP :wa<CR>:bprev<CR>
+nmap BO :wa<CR>:BufOnly<CR>
+nmap BD :wa<CR>:bdelete<CR>
+
+" Splits
+map SP :wa<CR>:sp<CR>
+map VS :wa<CR>:vs<CR>
+map Q :wa<CR>:q<CR>
 
 " Show registers
 map <Leader>r :registers<CR>
@@ -182,15 +201,6 @@ map <Leader>. :set number! nonumber?<CR>
 map <Leader>s :set hlsearch! hlsearch?<CR>
 map <Leader>w :set wrap! wrap?<CR>
 map <Leader>p :set paste! nopaste?<CR>
-
-" Tab management
-nmap TT :wa<CR>:tabnew<CR>
-
-" Buffers
-nmap BN :wa<CR>:bnext<CR>
-nmap BP :wa<CR>:bprev<CR>
-nmap BO :wa<CR>:BufOnly<CR>
-nmap BD :wa<CR>:bdelete<CR>
 
 " Remove empty buffers
 function! g:CleanEmptyBuffers()
@@ -205,11 +215,6 @@ nmap BC :call g:CleanEmptyBuffers()<CR>
 " Session management
 nmap SSA :wa<CR>:mksession! ~/.vim/session/
 nmap SO :wa<CR>:so ~/.vim/session/
-
-" Splits
-map SP :wa<CR>:sp<CR>
-map VS :wa<CR>:vs<CR>
-map Q :wa<CR>:q<CR>
 
 " Tri-Split
 nmap SSS :wa<CR>:vs<CR><C-w><C-l>:sp<CR><C-w><C-h>:exe ":echo 'Pew pew pew!'"<CR>

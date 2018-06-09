@@ -23,7 +23,7 @@ let colors_name = 'Roshambo'
 " Vim UI {{{
 
 hi Normal           ctermfg=250 ctermbg=235
-hi CursorLine       ctermbg=236 cterm=none
+hi CursorLine       ctermbg=234 cterm=none
 hi ColorColumn      ctermbg=234
 hi NonText          ctermfg=235
 hi LineNr           ctermfg=238
