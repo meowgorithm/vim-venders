@@ -57,21 +57,18 @@ endif
 " Keep Vim from freaking out under Fish Shell
 set shell=bash
 
-set directory=~/.vim/tmp "where to put swap files
-set backupdir=~/.vim/backup "where to put backups
+set directory=~/.vim/tmp " where to put swap files
+set backupdir=~/.vim/backup " where to put backups
 set viewdir=~/.vim/view
-set autoread "re-read files when they're changed externally
+set autoread " re-read files when they're changed externally
 set nobackup
 set nowritebackup
 set noswapfile
-
-"set foldlevelstart=99 "no folds, please
-set timeoutlen=250 "time to wait for a command (after leader, for example)
-set hidden "change buffer without saving
-set showmatch "show matching brackets
-set matchtime=2 "how many tenths of a second to blink
-
-" Modelines
+"set foldlevelstart=99 "no folds
+set timeoutlen=250 " time to wait for a command (after leader, for example)
+set hidden " change buffer without saving
+set showmatch " show matching brackets
+set matchtime=2 " how many tenths of a second to blink
 set modeline
 set modelines=5
 
@@ -88,14 +85,14 @@ set shiftround
 set colorcolumn=80
 
 " Language-specific settings
-autocmd FileType,BufEnter,BufWinEnter python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 "PEP0008 compliance
+autocmd FileType,BufEnter,BufWinEnter python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
 autocmd FileType,BufEnter,BufWinEnter ruby,html,htmldjango,eruby set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType,BufEnter,BufWinEnter django set ft=django.html
 autocmd FileType,BufEnter,BufWinEnter eruby set ft=eruby.html
 autocmd FileType,BufEnter,BufWinEnter less set ft=less.css
 autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
 autocmd FileType,BufEnter,BufWinEnter pug,jade,stylus,scss,css set expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType,BufRead,BufNewFile *.json set ft=json
+autocmd FileType,BufRead,BufNewFile *.json set ft=json set tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType,BufRead,BufNewFile *.pug set ft=pug
 autocmd FileType,BufRead,BufNewFile *.go set filetype=go
 autocmd FileType,BufRead,BufNewFile *.rive set filetype=rivescript
@@ -113,22 +110,16 @@ set cursorline
 autocmd WinEnter,BufEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
-" Change cursor in different modes. In particular, set an insert-like cursor
-" in insert mode
-"let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-"let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-"let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-
 " Automatically strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Searching
-set nohlsearch "don't highlight search results by default
+set nohlsearch " don't highlight search results by default
 set ignorecase
 set smartcase
-set incsearch "search-as-you-type
-set gdefault "assume the /g flag on :s substitutions to replace all matches in a line
-set wrapscan "searches wrap around the end of the file
+set incsearch " search-as-you-type
+"set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
+set wrapscan " searches wrap around the end of the file
 
 " Completion settings
 set wildmode=list:longest,list:full
@@ -143,16 +134,16 @@ set wildignore+=*/build/*,*/dist/*
 set wildignore+=*/vendor/*,*/pkg/*
 set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
 set wildignore+=*/bundle/*
-set wildignore+=YouCompleteMe " this crazy dir locks up the vim directory a little bit
+set wildignore+=YouCompleteMe " this crazy dir locks up ctrl-p in the vim directory a little bit
 
 " Window management
-set splitbelow "open new horizontal splits below the current
-set splitright "open new veritcal splits to the right of the current
+set splitbelow " open new horizontal splits below the current
+set splitright " open new veritcal splits to the right of the current
 
 " Enable the mouse in terminal Vim (if supported)
 set mouse+=a
 if &term =~ '^screen'
-    " tmux knows the extended mouse mode
+    " tmux knows about extended mouse mode
     set ttymouse=xterm2
 endif
 
@@ -245,6 +236,9 @@ vmap < <gv
 " PLUGIN CONFIGURATION
 "
 
+" Ale Init
+let ale_linters = {}
+
 " Airline
 let g:airline#extensions#ale#enabled = 1
 
@@ -280,7 +274,7 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_jump_to_buffer = 0 "enable this to jump to open windows if the file is open there. see ctrlp help.
 let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from there
 
-" mileszs/ack.vim
+" Ack.vim: configute the Silver Searcher, if available
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
@@ -295,11 +289,6 @@ endif
 
 " TODO: move the below somewhere that makes sense
 nmap <script> <silent> E :call ToggleLocationList()<cr>
-
-" TODO: figure out what these are. we originally had them grouped with
-" Syntastic
-let g:go_auto_sameids = 1
-let g:go_auto_type_info = 1
 
 " Elm
 " TODO: adjust the below command so it's not postentially overwriting higher
@@ -360,9 +349,11 @@ let g:go_highlight_chan_whitespace_error = 1
 let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
+let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
+let g:go_auto_type_info = 1
 
-"let g:ale_linters = {'go': ['golint', 'govet', 'gofmt', 'go build']}
-let g:ale_linters = {'go': ['gometalinter']}
+"let g:ale_linters['go': ['golint', 'govet', 'gofmt', 'go build']}
+let g:ale_linters['go'] = ['gometalinter']
 let g:ale_go_gometalinter_options = '--fast' " without this things are slowwwww
 
 let g:go_fmt_command = "goimports"
