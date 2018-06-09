@@ -4,42 +4,40 @@
 scriptencoding utf-8
 set encoding=utf-8
 
-" Initialize Vundle
-set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/vundle'
+" PLUGINS
 
-Plugin 'kien/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'guns/xterm-color-table.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'taglist.vim'
-Plugin 'BufOnly.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-airline/vim-airline'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'fatih/vim-go'
-Plugin 'milkypostman/vim-togglelist'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'Raimondi/delimitMate'
-Plugin 'vobornik/vim-mql4'
-Plugin 'ternjs/tern_for_vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'lifepillar/pgsql.vim'
-Plugin 'elmcast/elm-vim'
-Plugin 'w0rp/ale'
+call plug#begin('~/.vim/plugged')
 
-call vundle#end()
+Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'guns/xterm-color-table.vim'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'vim-airline/vim-airline'
+Plug 'digitaltoad/vim-pug'
+Plug 'fatih/vim-go'
+Plug 'milkypostman/vim-togglelist'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'Raimondi/delimitMate'
+Plug 'vobornik/vim-mql4'
+Plug 'ternjs/tern_for_vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'lifepillar/pgsql.vim'
+Plug 'elmcast/elm-vim'
+Plug 'w0rp/ale'
+
+call plug#end()
+
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
