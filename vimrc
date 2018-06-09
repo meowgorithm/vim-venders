@@ -241,6 +241,10 @@ vmap < <gv
 " Airline
 let g:airline#extensions#ale#enabled = 1
 
+" GitGutter
+let g:gitgutter_sign_modified = '•'
+let g:gitgutter_sign_modified_removed = '•-'
+
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
