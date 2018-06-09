@@ -1,6 +1,7 @@
 backup/
 tmp/
 view/
-bundle/
+autoload/
+bundles/
 session/
 .netrwhist
