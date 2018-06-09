@@ -171,6 +171,7 @@ let mapleader=','
 imap kj <Esc>
 vmap kj <Esc>
 
+map <Ctrl>w :lclose
 
 " Show registers
 map <Leader>r :registers<CR>

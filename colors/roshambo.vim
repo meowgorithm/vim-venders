@@ -22,50 +22,37 @@ let colors_name = 'Roshambo'
 
 " Vim UI {{{
 
-hi Normal           ctermfg=250
-hi CursorLine       ctermbg=234 cterm=none
-hi ColorColumn      ctermbg=233
-
+hi Normal           ctermfg=250 ctermbg=235
+hi CursorLine       ctermbg=236 cterm=none
+hi ColorColumn      ctermbg=234
 hi NonText          ctermfg=235
-hi SpecialKey       guifg=#3d464e
-"hi Cursor           guifg=#f1f1f1 guibg=#3b464d
-"hi Visual           guibg=#3b464d
-"hi ModeMsg          guifg=#798b92 gui=italic
 hi LineNr           ctermfg=238
 hi CursorLineNr     ctermfg=242
-"hi WildMenu         guibg=#2c302d guifg=#cbecd0 gui=underline
+hi SignColumn       ctermbg=237
+hi Search           ctermfg=233 ctermbg=227
+hi Folded           ctermfg=243 ctermbg=236
+
+" Autocomplete Menu
 hi PMenu            ctermfg=121 ctermbg=29
 hi PMenuSel         ctermfg=52 ctermbg=217
 hi PmenuSbar        ctermbg=23
 hi PmenuThumb       ctermbg=36
 
+" Vertical Window Divider
+"
 " NOTE the foreground and background vales are totally reversed for some
 " reason. In other words, foreground values apply to the background and the
 " background values apply to the verical pipe: |. Really annoying!
-hi VertSplit        ctermfg=233 ctermbg=235
-
-"hi MatchParen       guibg=#3d7b94
-hi SignColumn       ctermbg=233 guibg=#121518
-hi Folded           ctermfg=241 ctermbg=233
-"hi FoldColumn       guifg=#947D7D guibg=#121518
-"hi Question         guifg=#6bd26f gui=bold
-hi Search           ctermfg=233 ctermbg=227
-"hi Title            guifg=#e75b91
-"hi Error            guifg=#f0f0f0 guibg=#ff4546
-"hi ErrorMsg         guifg=#f0f0f0 guibg=#ff4546
-"hi Todo             guifg=#000000 guibg=#51a156
-"hi WarningMsg       guifg=#ff3a3f  gui=bold
-"hi TagListFileName  guifg=#B4D0E1 guibg=#495B5F
+hi VertSplit        ctermfg=236 ctermbg=236
 
 " Tabs
 hi TabLineFill cterm=none ctermbg=236
 hi TabLineSel  cterm=bold ctermfg=253 ctermbg=242
 hi TabLine     cterm=none ctermfg=244 ctermbg=238
-"hi TabLineFill guibg=#343434 guibg=#333D3E gui=none
-"hi TabLineSel  guifg=#e9e9e9 guibg=#1B2121 gui=none
-"hi TabLine     guifg=#93C8CE guibg=#47595B gui=none
 
-" Filesystem & NERDTree
+" }}}
+
+" Filesystem & NERDTree {{{
 
 hi Directory ctermfg=31
 hi NERDTreeOpenable ctermfg=24
@@ -97,16 +84,12 @@ hi PreProc          ctermfg=33
 
 " CSS {{{
 
-"hi cssComment              guifg=#798b92 gui=none
-"hi cssImportant            guifg=#ff5e57 gui=bold
 hi cssInclude              ctermfg=125
-"hi cssBraces               guifg=#e8fcb0
 hi cssURL                  ctermfg=191
 hi cssStringQ              ctermfg=185
 hi cssStringQQ             ctermfg=185
 hi cssTagName              ctermfg=161
 hi cssClassName            ctermfg=206
-"hi cssIdentifier           guifg=#ff2f93
 hi cssPseudoClass          ctermfg=177
 hi cssPseudoClassId        ctermfg=177
 hi cssSelectorOp           ctermfg=167
