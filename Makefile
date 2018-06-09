@@ -1,4 +1,4 @@
-all: symlink bundles tern ycm
+all: init bundles tern ycm
 
 UNAME=$(shell uname)
 VIM_DIR=.
@@ -14,12 +14,9 @@ endif
 # https://github.com/gmarik/vundle/wiki
 SHELL=bash
 
-symlink:
-	# Symlink
+init:
 	rm $(HOME)/.vimrc
 	ln -s $(VIM_DIR)/vimrc $(HOME)/.vimrc
-
-	# Create directories
 	mkdir -p $(VIM_DIR)/{tmp,view,backup,session}
 
 bundles:
@@ -35,4 +32,4 @@ tern:
 ycm:
 	$(BUILD_YCM)
 
-.PHONY: symlink bundles tern ycm
+.PHONY: init bundles tern ycm
