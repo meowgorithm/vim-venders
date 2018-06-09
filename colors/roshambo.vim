@@ -22,16 +22,12 @@ let colors_name = 'Roshambo'
 
 " Vim UI {{{
 
-if has('gui_macvim')
-    set transparency=2
-endif
-
-hi Normal           ctermfg=250 ctermbg=232
-hi CursorLine       cterm=none ctermbg=234
+hi Normal           ctermfg=250
+hi CursorLine       ctermbg=234 cterm=none
 hi ColorColumn      ctermbg=233
 
 hi NonText          ctermfg=235
-hi SpecialKey       guifg=#3d464e gui=none
+hi SpecialKey       guifg=#3d464e
 "hi Cursor           guifg=#f1f1f1 guibg=#3b464d
 "hi Visual           guibg=#3b464d
 "hi ModeMsg          guifg=#798b92 gui=italic

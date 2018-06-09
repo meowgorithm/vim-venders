@@ -1,11 +1,13 @@
 " vim:et:ts=2:sw=2:fdm=marker
-"
+
 " All UTF-8 all the time
 scriptencoding utf-8
 set encoding=utf-8
 
 
+"
 " PLUGINS
+"
 
 call plug#begin('~/.vim/bundles')
 
@@ -63,7 +65,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-"set clipboard+=unnamed "yanks and pastes use the clipboard instead
 "set foldlevelstart=99 "no folds, please
 set timeoutlen=250 "time to wait for a command (after leader, for example)
 set hidden "change buffer without saving
