@@ -19,11 +19,16 @@ init:
 	ln -s $(VIM_DIR)/vimrc $(HOME)/.vimrc
 	mkdir -p $(VIM_DIR)/{tmp,view,backup,session}
 
-bundles:
+update: | update_bundles tern ycm
+
+install_bundles:
 	rm -f ./autoload/plug.vim
 	curl -fLo ./autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	vim +PlugInstall +qall
+
+update_bundles:
+	vim +PlugUpdate +PlugUpgrade +qall
 
 tern:
 	cd $(PLUGIN_DIR)/tern_for_vim && npm install
@@ -32,4 +37,4 @@ tern:
 ycm:
 	$(BUILD_YCM)
 
-.PHONY: init bundles tern ycm
+.PHONY: | init install_bundles tern ycm
