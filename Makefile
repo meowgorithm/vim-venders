@@ -1,4 +1,4 @@
-all: init bundles tern ycm
+all: init install_bundles tern ycm
 
 UNAME=$(shell uname)
 VIM_DIR=$(shell pwd)
