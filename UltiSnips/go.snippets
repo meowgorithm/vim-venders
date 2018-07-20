@@ -27,3 +27,11 @@ func $1(w http.ResponseWriter, r *http.Request) {
 	$0
 }
 endsnippet
+
+snippet te "t.Error()"
+t.Error("$0")
+endsnippet
+
+snippet tef "t.Errorf()"
+t.Errorf("$1\n", $0)
+endsnippet
