@@ -241,7 +241,8 @@ vmap < <gv
 "
 
 " Ale Init
-let ale_linters = {}
+let g:ale_linters = {}
+let g:ale_fixers = {}
 
 " Airline
 let g:airline#extensions#ale#enabled = 1
@@ -411,7 +412,6 @@ exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Compl
 " /**
 "  * @format
 "  */
-let g:ale_fixers = {}
 let g:ale_fixers['elm'] = 'format'
 let g:ale_fixers['javascript'] = 'prettier'
 let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4'
