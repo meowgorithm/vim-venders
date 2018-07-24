@@ -96,7 +96,7 @@ autocmd FileType,BufEnter,BufWinEnter eruby set ft=eruby.html
 autocmd FileType,BufEnter,BufWinEnter less set ft=less.css
 autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
 autocmd FileType,BufEnter,BufWinEnter pug,jade,stylus,scss,css set expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType,BufRead,BufNewFile *.json set ft=json set tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType,BufRead,BufNewFile *.json set ft=json tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType,BufRead,BufNewFile *.pug set ft=pug
 autocmd FileType,BufRead,BufNewFile *.go set filetype=go
 autocmd FileType,BufRead,BufNewFile *.rive set filetype=rivescript
