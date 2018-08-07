@@ -15,7 +15,7 @@ endif
 SHELL=bash
 
 init:
-	rm $(HOME)/.vimrc
+	rm -f $(HOME)/.vimrc
 	ln -s $(VIM_DIR)/vimrc $(HOME)/.vimrc
 	mkdir -p $(VIM_DIR)/{tmp,view,backup,session}
 
