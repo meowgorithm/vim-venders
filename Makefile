@@ -1,4 +1,4 @@
-all: init install_bundles tern ycm
+all: init install_bundles tern ycm install_go_binaries
 
 UNAME=$(shell uname)
 VIM_DIR=$(shell pwd)
@@ -27,6 +27,9 @@ install_bundles:
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	vim +PlugInstall +qall
 
+install_go_binaries:
+	vim +GoInstallBinaries +qall
+
 update_bundles:
 	vim +PlugUpdate +PlugUpgrade +qall
 
@@ -37,4 +40,4 @@ tern:
 ycm:
 	$(BUILD_YCM)
 
-.PHONY: | init install_bundles tern ycm
+.PHONY: | init install_bundles tern ycm install_go_binaries
