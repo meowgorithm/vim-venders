@@ -6,7 +6,8 @@ PLUGIN_DIR=$(VIM_DIR)/bundles
 
 # YouCompleteMe resquires a build step
 BUILD_YCM=$(PLUGIN_DIR)/YouCompleteMe/install.py --clang-completer --gocode-completer --tern-completer
-ifeq ($(UNAME),Arch Linux)
+ifneq ("$(wildcard /etc/arch-release)", "")
+	# Arch linux requires this flag (and libclang to be installed locally
 	BUILD_YCM += --system-libclang
 endif
 

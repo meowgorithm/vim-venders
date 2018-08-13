@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-VIMDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-$VIMDIR/bundle/YouCompleteMe/install.py --clang-completer $extraflags --gocode-completer --tern-completer
