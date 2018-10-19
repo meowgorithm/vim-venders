@@ -15,33 +15,38 @@ endif
 
 call plug#begin('~/.vim/bundles')
 
-Plug 'kien/ctrlp.vim'
-Plug 'mileszs/ack.vim'
-Plug 'guns/xterm-color-table.vim'
-Plug 'majutsushi/tagbar'
+" General behavioral stuff stuff
+Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/BufOnly.vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'vim-airline/vim-airline'
-Plug 'digitaltoad/vim-pug'
-Plug 'fatih/vim-go'
+Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
+Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'w0rp/ale'
+Plug 'Valloric/YouCompleteMe'
+Plug 'ternjs/tern_for_vim'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
+
+" Languages
+Plug 'fatih/vim-go'
+Plug 'elmcast/elm-vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'digitaltoad/vim-pug'
+Plug 'lifepillar/pgsql.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'Raimondi/delimitMate'
 Plug 'vobornik/vim-mql4'
-Plug 'ternjs/tern_for_vim'
-Plug 'Valloric/YouCompleteMe'
-Plug 'SirVer/ultisnips'
-Plug 'lifepillar/pgsql.vim'
-Plug 'elmcast/elm-vim'
-Plug 'w0rp/ale'
-Plug 'tpope/vim-surround'
+
+" Utils
+Plug 'guns/xterm-color-table.vim'
 
 call plug#end()
 
