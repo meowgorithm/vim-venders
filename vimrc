@@ -41,6 +41,7 @@ Plug 'SirVer/ultisnips'
 Plug 'lifepillar/pgsql.vim'
 Plug 'elmcast/elm-vim'
 Plug 'w0rp/ale'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
