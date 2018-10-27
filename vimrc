@@ -363,7 +363,7 @@ let g:go_highlight_fields = 1
 let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
 let g:go_auto_type_info = 1
 
-"let g:ale_linters['go': ['golint', 'govet', 'gofmt', 'go build']}
+"let g:ale_linters['go'] = ['golint', 'govet', 'gofmt', 'go build']
 let g:ale_linters['go'] = ['gometalinter']
 let g:ale_go_gometalinter_options = '--fast' " without this things are slowwwww
 
