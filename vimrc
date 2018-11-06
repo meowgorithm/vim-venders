@@ -431,6 +431,7 @@ let g:ale_fixers['python'] = ['yapf']
 let g:ale_linters['haskell'] = ['hlint']
 let g:ale_fixers['haskell'] = ['brittany']
 let g:ale_fix_on_save = 1
+let g:ale_fixers['python'] = ['yapf']
 
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
