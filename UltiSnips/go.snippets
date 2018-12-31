@@ -35,3 +35,11 @@ endsnippet
 snippet tef "t.Errorf()"
 t.Errorf("$1\n", $0)
 endsnippet
+
+snippet pv "print variable"
+fmt.Printf("%+v\n", $0)
+endsnippet
+
+snippet pl "fmt.Println()"
+fmt.Println(${1:"$0"})
+endsnippet
