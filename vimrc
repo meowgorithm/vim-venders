@@ -289,7 +289,7 @@ let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from
 
 " FZF
 map <c-l> :GFiles<CR>
-nmap <c-;> :Buffers<CR>
+map <c-k> :Buffers<CR>
 
 " Ack.vim: configute the Silver Searcher, if available
 if executable('ag')
