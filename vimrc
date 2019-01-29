@@ -422,8 +422,8 @@ let g:ale_scss_prettier_use_local_config = 1
 let g:ale_fixers['json'] = 'prettier'
 let g:ale_linters['python'] = ['flake8', 'mypy']
 let g:ale_fixers['python'] = ['yapf']
-let g:ale_linters['haskell'] = ['hlint']
-let g:ale_fixers['haskell'] = ['brittany']
+let g:ale_linters['haskell'] = ['ghc', 'hlint']
+let g:ale_fixers['haskell'] = ['hfmt']
 let g:ale_fix_on_save = 1
 
 " Curious background-color-erase fix/hack, apparently
