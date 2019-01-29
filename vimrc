@@ -15,32 +15,40 @@ endif
 
 call plug#begin('~/.vim/bundles')
 
-Plug 'kien/ctrlp.vim'
-Plug 'mileszs/ack.vim'
-Plug 'guns/xterm-color-table.vim'
-Plug 'majutsushi/tagbar'
+" General behavioral stuff stuff
+Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/BufOnly.vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'vim-airline/vim-airline'
-Plug 'digitaltoad/vim-pug'
-Plug 'fatih/vim-go'
+Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'w0rp/ale'
+Plug 'Valloric/YouCompleteMe'
+Plug 'ternjs/tern_for_vim'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Languages
+Plug 'fatih/vim-go'
+Plug 'elmcast/elm-vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'digitaltoad/vim-pug'
+Plug 'lifepillar/pgsql.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'Raimondi/delimitMate'
 Plug 'vobornik/vim-mql4'
-Plug 'ternjs/tern_for_vim'
-Plug 'Valloric/YouCompleteMe'
-Plug 'SirVer/ultisnips'
-Plug 'lifepillar/pgsql.vim'
-Plug 'elmcast/elm-vim'
-Plug 'w0rp/ale'
+
+" Utils
+Plug 'guns/xterm-color-table.vim'
 
 call plug#end()
 
@@ -133,7 +141,7 @@ set wildmode=list:longest,list:full
 set infercase " ignore case on insert completion
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*
-set wildignore+=*/tmp/*
+set wildignore+=*/tmp/*,*/.cache/*
 set wildignore+=*/build/*,*/dist/*
 set wildignore+=*/vendor/*,*/pkg/*
 set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
@@ -279,6 +287,10 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_jump_to_buffer = 0 "enable this to jump to open windows if the file is open there. see ctrlp help.
 let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from there
 
+" FZF
+map <c-l> :GFiles<CR>
+nmap <c-;> :Buffers<CR>
+
 " Ack.vim: configute the Silver Searcher, if available
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -357,7 +369,7 @@ let g:go_highlight_fields = 1
 let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
 let g:go_auto_type_info = 1
 
-"let g:ale_linters['go': ['golint', 'govet', 'gofmt', 'go build']}
+"let g:ale_linters['go'] = ['golint', 'govet', 'gofmt', 'go build']
 let g:ale_linters['go'] = ['gometalinter']
 let g:ale_go_gometalinter_options = '--fast' " without this things are slowwwww
 
@@ -413,7 +425,8 @@ exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Compl
 "  * @format
 "  */
 let g:ale_fixers['elm'] = 'format'
-let g:ale_fixers['javascript'] = 'prettier'
+let g:ale_linters['javascript'] = ['eslint']
+let g:ale_fixers['javascript'] = ['eslint', 'prettier']
 let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4'
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fixers['scss'] = 'prettier'
@@ -425,6 +438,7 @@ let g:ale_fixers['python'] = ['yapf']
 let g:ale_linters['haskell'] = ['ghc', 'hlint']
 let g:ale_fixers['haskell'] = ['hfmt']
 let g:ale_fix_on_save = 1
+let g:ale_fixers['python'] = ['yapf']
 
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
