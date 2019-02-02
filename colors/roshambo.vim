@@ -66,6 +66,16 @@ hi ALEWarning ctermbg=19
 
 " }}}
 
+" Gitgutter {{{
+
+" By default, GitGutter uses the Diff colors here so we're overriding with
+" the old defaults
+highlight GitGutterAdd    guifg=#009900 guibg=#262626 ctermfg=2 ctermbg=235
+highlight GitGutterChange guifg=#bbbb00 guibg=#262626 ctermfg=3 ctermbg=235
+highlight GitGutterDelete guifg=#ff2222 guibg=#262626 ctermfg=1 ctermbg=235
+
+" }}}
+
 " General {{{
 
 hi Comment          ctermfg=239
