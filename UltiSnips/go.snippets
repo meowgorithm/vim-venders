@@ -43,3 +43,14 @@ endsnippet
 snippet pl "fmt.Println()"
 fmt.Println(${1:"$0"})
 endsnippet
+
+snippet em "exported method"
+// ${1:Name} ${2:...}
+func ($3) $1() {
+	$0
+}
+endsnippet
+
+snippet mn "github.com/magicnumbers"
+"github.com/magicnumbers/$0"
+endsnippet
