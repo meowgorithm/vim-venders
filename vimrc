@@ -50,6 +50,12 @@ Plug 'vobornik/vim-mql4'
 " Utils
 Plug 'guns/xterm-color-table.vim'
 
+" Language server (specifically installed for Haskell)
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': './install.sh'
+  \ }
+
 call plug#end()
 
 
@@ -288,8 +294,8 @@ let g:ctrlp_jump_to_buffer = 0 "enable this to jump to open windows if the file 
 let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from there
 
 " FZF
-nmap , :GFiles<CR>
-nmap ,, :Buffers<CR>
+"nmap , :GFiles<CR>
+"nmap ,, :Buffers<CR>
 
 " Ack.vim: configute the Silver Searcher, if available
 if executable('ag')
@@ -435,11 +441,27 @@ let g:ale_scss_prettier_use_local_config = 1
 let g:ale_fixers['json'] = 'prettier'
 let g:ale_linters['python'] = ['flake8', 'mypy']
 let g:ale_fixers['python'] = ['yapf']
-let g:ale_linters['haskell'] = ['ghc', 'hlint']
-let g:ale_fixers['haskell'] = ['hfmt']
+let g:ale_linters['haskell'] = ['hie']
+"let g:ale_fixers['haskell'] = ['hfmt']
+let g:ale_fixers['haskell'] = ['brittany']
 let g:ale_fix_on_save = 1
 let g:ale_fixers['python'] = ['yapf']
 
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
 let &t_ut=''
+
+" Haskell
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
+map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
+map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
+map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
+map <Leader>lb :call LanguageClient#textDocument_references()<CR>
+map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
+map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
+
+" Language Server
+let g:LanguageClient_serverCommands = {
+  \ 'haskell' : ['~/.local/bin/hie']
+  \ }
