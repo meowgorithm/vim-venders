@@ -383,16 +383,18 @@ let g:go_highlight_fields = 1
 let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
 let g:go_auto_type_info = 1
 
+let g:go_bin_path = expand("$HOME/.go/bin")
+
 " For myitcv/govim, NOT fatih/vim-go
 "let g:govim_format_on_save = "goimports"
 
+let g:ale_go_langserver_executable = 'gopls'
 let g:ale_linters['go'] = ['gopls']
 "let g:ale_linters['go'] = ['golint', 'govet', 'gofmt', 'go build']
 "let g:ale_linters['go'] = ['gometalinter']
 "let g:ale_go_gometalinter_options = '--fast' " without this things are slowwwww
 
 let g:go_fmt_command = "goimports"
-"let g:go_bin_path = expand("~/.go/bin")
 
 " Tern
 let g:tern_show_signature_in_pum = 0
@@ -402,7 +404,7 @@ let g:tern_show_loc_after_rename = 1
 inoremap <c-k> <c-p>
 inoremap <c-j> <c-n>
 let g:ycm_key_list_select_completion = [] " unbind <tab>. ctrl+n/ctrl+p will work instead.
-let g:ycm_autoclose_preview_window_after_insertion = 1 " hide the preview window when exiting insert mode
+let g:ycm_autoclose_preview_window_after_insertion = 0 " hide the preview window when exiting insert mode?
 "let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion
 
 " UtliSnips
