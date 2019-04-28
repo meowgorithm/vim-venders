@@ -207,7 +207,6 @@ nmap BD :wa<CR>:bdelete<CR>
 " Splits
 map SP :wa<CR>:sp<CR>
 map VS :wa<CR>:vs<CR>
-map Q :wa<CR>:q<CR>
 
 " Show registers
 map <Leader>r :registers<CR>
@@ -228,6 +227,9 @@ function! g:CleanEmptyBuffers()
 endfunction
 
 nmap BC :call g:CleanEmptyBuffers()<CR>
+
+" Close the preview pane
+map <Leader>h :pc<CR>
 
 " Session management
 nmap SSA :wa<CR>:mksession! ~/.vim/session/
@@ -282,7 +284,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeHijackNetrw=1
 let NERDTreeIgnore=['\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc',
-\ 'node_modules', 'elm-stuff']
+\ 'node_modules', 'elm-stuff', '.cache']
 
 " NERDCommenter
 let NERDSpaceDelims=0 "number of spaces to add before comments
@@ -317,7 +319,7 @@ if filereadable(autoTagsFile)
   source autoTagsFile
 endif
 
-
+" Toggle the error list
 " TODO: move the below somewhere that makes sense
 nmap <script> <silent> E :call ToggleLocationList()<cr>
 
@@ -405,7 +407,7 @@ inoremap <c-k> <c-p>
 inoremap <c-j> <c-n>
 let g:ycm_key_list_select_completion = [] " unbind <tab>. ctrl+n/ctrl+p will work instead.
 let g:ycm_autoclose_preview_window_after_insertion = 0 " hide the preview window when exiting insert mode?
-"let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion
+let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion?
 
 " UtliSnips
 let g:UltiSnipsExpandTrigger='<tab>'
