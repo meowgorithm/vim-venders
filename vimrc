@@ -386,9 +386,10 @@ let g:go_auto_type_info = 1
 " For myitcv/govim, NOT fatih/vim-go
 "let g:govim_format_on_save = "goimports"
 
+let g:ale_linters['go'] = ['gopls']
 "let g:ale_linters['go'] = ['golint', 'govet', 'gofmt', 'go build']
-let g:ale_linters['go'] = ['gometalinter']
-let g:ale_go_gometalinter_options = '--fast' " without this things are slowwwww
+"let g:ale_linters['go'] = ['gometalinter']
+"let g:ale_go_gometalinter_options = '--fast' " without this things are slowwwww
 
 let g:go_fmt_command = "goimports"
 "let g:go_bin_path = expand("~/.go/bin")
