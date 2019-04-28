@@ -18,7 +18,7 @@ call plug#begin('~/.vim/bundles')
 " General behavioral stuff stuff
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-scripts/taglist.vim'
@@ -46,16 +46,16 @@ Plug 'neomake/neomake'
 Plug 'parsonsmatt/intero-neovim'
 
 " Languages
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': 'go' }
 "Plug 'myitcv/govim'
-Plug 'elmcast/elm-vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'digitaltoad/vim-pug'
+Plug 'elmcast/elm-vim', { 'for': 'elm' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'lifepillar/pgsql.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'vobornik/vim-mql4'
-Plug 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 
 " Utils
 Plug 'guns/xterm-color-table.vim'
