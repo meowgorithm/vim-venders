@@ -166,7 +166,11 @@ set splitright " open new veritcal splits to the right of the current
 set mouse+=a
 if &term =~ '^screen'
     " tmux knows about extended mouse mode
-    set ttymouse=xterm2
+    "set ttymouse=xterm2
+
+    " Extended mouse mode
+    " See :help ttymouse
+    set ttymouse=sgr
 endif
 
 " Text formatting options, mostly around comments. See fo-table.
@@ -378,6 +382,9 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
 let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
 let g:go_auto_type_info = 1
+
+" For myitcv/govim, NOT fatih/vim-go
+"let g:govim_format_on_save = "goimports"
 
 "let g:ale_linters['go'] = ['golint', 'govet', 'gofmt', 'go build']
 let g:ale_linters['go'] = ['gometalinter']
