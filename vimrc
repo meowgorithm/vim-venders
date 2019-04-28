@@ -27,9 +27,6 @@ Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
-Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe'
-Plug 'ternjs/tern_for_vim'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -37,8 +34,20 @@ Plug 'Raimondi/delimitMate'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
+" Completers
+Plug 'w0rp/ale'
+Plug 'Valloric/YouCompleteMe'
+Plug 'ternjs/tern_for_vim'
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': './install.sh'
+  \ }
+Plug 'neomake/neomake'
+Plug 'parsonsmatt/intero-neovim'
+
 " Languages
 Plug 'fatih/vim-go'
+"Plug 'myitcv/govim'
 Plug 'elmcast/elm-vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'digitaltoad/vim-pug'
@@ -46,15 +55,10 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'vobornik/vim-mql4'
+Plug 'neovimhaskell/haskell-vim'
 
 " Utils
 Plug 'guns/xterm-color-table.vim'
-
-" Language server (specifically installed for Haskell)
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': './install.sh'
-  \ }
 
 call plug#end()
 
