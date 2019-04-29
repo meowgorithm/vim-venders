@@ -18,7 +18,7 @@ call plug#begin('~/.vim/bundles')
 " General behavioral stuff stuff
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-scripts/taglist.vim'
