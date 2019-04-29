@@ -52,7 +52,6 @@ Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'lifepillar/pgsql.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'vobornik/vim-mql4'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 
 " Utils
