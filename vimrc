@@ -31,8 +31,6 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
 
 " Completers
 Plug 'w0rp/ale'
@@ -45,7 +43,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " Languages
 Plug 'fatih/vim-go', { 'for': 'go' }
-"Plug 'myitcv/govim'
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
@@ -300,10 +297,6 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_jump_to_buffer = 0 "enable this to jump to open windows if the file is open there. see ctrlp help.
 let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from there
 
-" FZF
-"nmap , :GFiles<CR>
-"nmap ,, :Buffers<CR>
-
 " Ack.vim: configute the Silver Searcher, if available
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -384,15 +377,8 @@ let g:go_auto_type_info = 1
 
 let g:go_bin_path = expand("$HOME/.go/bin")
 
-" For myitcv/govim, NOT fatih/vim-go
-"let g:govim_format_on_save = "goimports"
-
 let g:ale_go_langserver_executable = 'gopls'
 let g:ale_linters['go'] = ['gopls']
-"let g:ale_linters['go'] = ['golint', 'govet', 'gofmt', 'go build']
-"let g:ale_linters['go'] = ['gometalinter']
-"let g:ale_go_gometalinter_options = '--fast' " without this things are slowwwww
-
 let g:go_fmt_command = "goimports"
 
 " Tern
@@ -455,7 +441,6 @@ let g:ale_fixers['json'] = 'prettier'
 let g:ale_linters['python'] = ['flake8', 'mypy']
 let g:ale_fixers['python'] = ['yapf']
 let g:ale_linters['haskell'] = ['hie']
-"let g:ale_fixers['haskell'] = ['hfmt']
 let g:ale_fixers['haskell'] = ['brittany']
 let g:ale_fix_on_save = 1
 let g:ale_fixers['python'] = ['yapf']
@@ -463,16 +448,6 @@ let g:ale_fixers['python'] = ['yapf']
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
 let &t_ut=''
-
-" Haskell
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
-map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
-map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
-map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
-map <Leader>lb :call LanguageClient#textDocument_references()<CR>
-map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
-map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
 
 " Language Server
 let g:LanguageClient_serverCommands = {
