@@ -42,8 +42,6 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ 'branch': 'next',
   \ 'do': './install.sh'
   \ }
-Plug 'neomake/neomake'
-Plug 'parsonsmatt/intero-neovim'
 
 " Languages
 Plug 'fatih/vim-go', { 'for': 'go' }
