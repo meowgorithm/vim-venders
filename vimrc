@@ -1,6 +1,8 @@
 " vim:et:ts=2:sw=2:fdm=marker
 
+" Bootstrap vim-plug
 if has("nvim")
+
   let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
   if !filereadable(autoload_plug_path)
     silent execute '!curl -fLo ' . autoload_plug_path . '  --create-dirs
@@ -8,12 +10,15 @@ if has("nvim")
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
   unlet autoload_plug_path
+
 else
+
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
       \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
+
 endif
 
 " All UTF-8 all the time
@@ -29,7 +34,7 @@ endif
 " PLUGINS
 "
 
-call plug#begin('~/.vim/bundles')
+call plug#begin()
 
 " General behavioral stuff stuff
 Plug 'vim-airline/vim-airline'
@@ -72,7 +77,6 @@ Plug 'guns/xterm-color-table.vim'
 
 call plug#end()
 
-
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
 syntax on
@@ -114,7 +118,19 @@ set autoindent
 set smartindent
 set shiftround
 
+" Basic UI
+set ruler
+set nowrap
+set number
+set laststatus=2
+set report=0
+set listchars=tab:\▸\ ,trail:·,eol:¶
 set colorcolumn=80
+
+" Highlight current line in current window only
+set cursorline
+autocmd WinEnter,BufEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
 
 " Language-specific settings
 autocmd FileType,BufEnter,BufWinEnter python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
@@ -129,18 +145,6 @@ autocmd FileType,BufRead,BufNewFile *.pug set ft=pug
 autocmd FileType,BufRead,BufNewFile *.go set filetype=go
 autocmd FileType,BufRead,BufNewFile *.rive set filetype=rivescript
 autocmd FileType,BufRead,BufNewFile *.sql set filetype=pgsql
-
-set ruler
-set nowrap
-set number
-set laststatus=2
-set report=0
-set listchars=tab:\▸\ ,trail:·,eol:¶
-
-" Highlight current line in current window only
-set cursorline
-autocmd WinEnter,BufEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
 
 " Automatically strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -173,11 +177,8 @@ set splitbelow " open new horizontal splits below the current
 set splitright " open new veritcal splits to the right of the current
 
 " Enable the mouse in terminal Vim (if supported)
-set mouse=nv
+set mouse+=a
 if &term =~ '^screen'
-    " tmux knows about extended mouse mode
-    "set ttymouse=xterm2
-
     " Extended mouse mode
     " See :help ttymouse
     set ttymouse=sgr
@@ -408,6 +409,11 @@ let g:ycm_key_list_select_completion = [] " unbind <tab>. ctrl+n/ctrl+p will wor
 let g:ycm_autoclose_preview_window_after_insertion = 0 " hide the preview window when exiting insert mode?
 let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion?
 
+" Language Server
+let g:LanguageClient_serverCommands = {
+  \ 'haskell' : ['~/.local/bin/hie']
+  \ }
+
 " UtliSnips
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
@@ -463,9 +469,5 @@ let g:ale_fixers['python'] = ['yapf']
 
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+" (We set this specifically for Kitty)
 let &t_ut=''
-
-" Language Server
-let g:LanguageClient_serverCommands = {
-  \ 'haskell' : ['~/.local/bin/hie']
-  \ }
