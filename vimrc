@@ -179,7 +179,7 @@ set splitbelow " open new horizontal splits below the current
 set splitright " open new veritcal splits to the right of the current
 
 " Enable the mouse in terminal Vim (if supported)
-set mouse+=a
+set mouse=nv
 if &term =~ '^screen'
     " tmux knows about extended mouse mode
     "set ttymouse=xterm2
