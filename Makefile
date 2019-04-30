@@ -2,12 +2,12 @@ all: init install_bundles tern ycm install_go_binaries
 
 UNAME=$(shell uname)
 VIM_DIR=$(shell pwd)
-PLUGIN_DIR=$(VIM_DIR)/bundles
+PLUGIN_DIR=$(VIM_DIR)/plugged
 
 # YouCompleteMe resquires a build step
 BUILD_YCM=$(PLUGIN_DIR)/YouCompleteMe/install.py --clang-completer --gocode-completer --tern-completer
 ifneq ("$(wildcard /etc/arch-release)", "")
-	# Arch linux requires this flag (and libclang to be installed locally
+	# Arch linux requires this flag (and libclang to be installed locally)
 	BUILD_YCM += --system-libclang
 endif
 
