@@ -1,5 +1,21 @@
 " vim:et:ts=2:sw=2:fdm=marker
 
+if has("nvim")
+  let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
+  if !filereadable(autoload_plug_path)
+    silent execute '!curl -fLo ' . autoload_plug_path . '  --create-dirs
+        \ "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+  unlet autoload_plug_path
+else
+  if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+endif
+
 " All UTF-8 all the time
 scriptencoding utf-8
 set encoding=utf-8
