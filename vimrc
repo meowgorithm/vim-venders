@@ -44,6 +44,7 @@ call plug#begin()
 if !debug_color_scheme
   Plug 'vim-airline/vim-airline'
 endif
+Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
