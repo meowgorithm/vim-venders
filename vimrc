@@ -298,8 +298,8 @@ let g:gitgutter_sign_modified = '•'
 let g:gitgutter_sign_modified_removed = '•-'
 
 " NERDTree
-map <leader>n <plug>NERDTreeToggle<cr>
-map <leader>f <plug>NERDTreeFind<cr>
+map <leader>n :NERDTreeToggle<cr>
+map <leader>f :NERDTreeFind<cr>
 let NERDChristmasTree=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowBookmarks=1
@@ -313,10 +313,10 @@ let NERDSpaceDelims=0 "number of spaces to add before comments
 map <c-c> :NERDCommenterToggle<cr>
 imap <c-c> <esc>:NERDCommenterToggle<cr>a
 
-" Exuberant CTags
+" Tagbar
 " TODO: The below command is being overwritten somewhere
-map <leader>l <plug>TlistToggle<cr>
-map <leader>m <plug>TagbarToggle<cr>
+map <leader>l :TlistToggle<cr>
+map <leader>m :TagbarToggle<cr>
 
 " Ctrlp
 nmap CC <plug>CtrlPClearCache<CR>
