@@ -310,8 +310,8 @@ let NERDTreeIgnore=['\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc',
 
 " NERDCommenter
 let NERDSpaceDelims=0 "number of spaces to add before comments
-map <c-c> <plug>NERDCommenterToggle<cr>
-imap <c-c> <esc><plug>NERDCommenterToggle<cr>a
+map <c-c> :NERDCommenterToggle<cr>
+imap <c-c> <esc>:NERDCommenterToggle<cr>a
 
 " Exuberant CTags
 " TODO: The below command is being overwritten somewhere
