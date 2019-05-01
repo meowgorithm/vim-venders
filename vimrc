@@ -195,8 +195,8 @@ if &term =~ '^screen'
     set ttymouse=sgr
 endif
 
-" Text formatting options, mostly around comments. See fo-table.
-set formatoptions+=rocr
+" Text formatting options, mostly around comments. See :help fo-table.
+set formatoptions+=rocrj1
 
 
 "
