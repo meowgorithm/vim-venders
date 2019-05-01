@@ -30,6 +30,10 @@ if has('python3')
   silent! python3 1
 endif
 
+" Turning this on diables Airline and instead shows the syntax definition
+" in the status line
+let debug_color_scheme = 0
+
 "
 " PLUGINS
 "
@@ -37,7 +41,9 @@ endif
 call plug#begin()
 
 " General behavioral stuff stuff
-Plug 'vim-airline/vim-airline'
+if !debug_color_scheme
+  Plug 'vim-airline/vim-airline'
+endif
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
@@ -63,19 +69,27 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ }
 
 " Languages
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'elmcast/elm-vim', { 'for': 'elm' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
+Plug 'fatih/vim-go',              { 'for': 'go' }
+Plug 'elmcast/elm-vim',           { 'for': 'elm' }
+Plug 'kchmck/vim-coffee-script',  { 'for': 'coffeescript' }
+Plug 'digitaltoad/vim-pug',       { 'for': 'pug' }
 Plug 'lifepillar/pgsql.vim'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript',   { 'for': 'javascript' }
+Plug 'mxw/vim-jsx',               { 'for': 'javascript' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 
 " Utils
 Plug 'guns/xterm-color-table.vim'
 
 call plug#end()
+
+if debug_color_scheme
+  " show the syntax definition in the status line
+  function! syntaxitem()
+    return synidattr(synid(line("."),col("."),1),"name")
+  endfunction
+  set statusline=%{syntaxitem()}
+endif
 
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
@@ -330,8 +344,8 @@ endif
 " TODO: move the below somewhere that makes sense
 nmap <script> <silent> E :call ToggleLocationList()<cr>
 
-" Elm
-" TODO: adjust the below command so it's not postentially overwriting higher
+" elm
+" todo: adjust the below command so it's not postentially overwriting higher
 " declarations
 let g:ycm_semantic_triggers = {
   \ 'elm' : ['.'],
