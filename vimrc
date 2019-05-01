@@ -108,18 +108,18 @@ endif
 " Keep Vim from freaking out under Fish Shell
 set shell=bash
 
-set directory=~/.vim/tmp " where to put swap files
+set directory=~/.vim/tmp    " where to put swap files
 set backupdir=~/.vim/backup " where to put backups
 set viewdir=~/.vim/view
-set autoread " re-read files when they're changed externally
+set autoread                " re-read files when they're changed externally
 set nobackup
 set nowritebackup
 set noswapfile
-"set foldlevelstart=99 "no folds
-set timeoutlen=250 " time to wait for a command (after leader, for example)
-set hidden " change buffer without saving
-set showmatch " show matching brackets
-set matchtime=2 " how many tenths of a second to blink
+"set foldlevelstart=99      " no folds
+set timeoutlen=250          " time to wait for a command (after leader, for example)
+set hidden                  " change buffer without saving
+set showmatch               " show matching brackets
+set matchtime=2             " how many tenths of a second to blink
 set modeline
 set modelines=5
 
@@ -127,7 +127,7 @@ set modelines=5
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab "expandtab for spaces, noexpandtab for tabs
+set expandtab               "expandtab for spaces, noexpandtab for tabs
 set smarttab
 set autoindent
 set smartindent
@@ -164,9 +164,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 set nohlsearch " don't highlight search results by default
 set ignorecase
 set smartcase
-set incsearch " search-as-you-type
-set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
-set wrapscan " searches wrap around the end of the file
+set incsearch  " search-as-you-type
+set gdefault   " assume the /g flag on :s substitutions to replace all matches in a line
+set wrapscan   " searches wrap around the end of the file
 
 " Completion settings
 set wildmode=list:longest,list:full
@@ -255,7 +255,7 @@ map <Leader>h :pc<CR>
 
 " Session management
 nmap SSA :wa<CR>:mksession! ~/.vim/session/
-nmap SO :wa<CR>:so ~/.vim/session/
+nmap SO  :wa<CR>:so         ~/.vim/session/
 
 " Tri-Split
 nmap SSS :wa<CR>:vs<CR><C-w><C-l>:sp<CR><C-w><C-h>:exe ":echo 'Pew pew pew!'"<CR>
@@ -285,7 +285,7 @@ vmap < <gv
 
 " Ale Init
 let g:ale_linters = {}
-let g:ale_fixers = {}
+let g:ale_fixers  = {}
 
 " YouCompleteMe init
 let g:ycm_semantic_triggers = {}
@@ -294,19 +294,21 @@ let g:ycm_semantic_triggers = {}
 let g:airline#extensions#ale#enabled = 1
 
 " GitGutter
-let g:gitgutter_sign_modified = '•'
+let g:gitgutter_sign_modified         = '•'
 let g:gitgutter_sign_modified_removed = '•-'
 
 " NERDTree
 map <leader>n :NERDTreeToggle<cr>
 map <leader>f :NERDTreeFind<cr>
-let NERDChristmasTree=1
-let NERDTreeHighlightCursorline=1
-let NERDTreeShowBookmarks=1
-let NERDTreeShowHidden=1
-let NERDTreeHijackNetrw=1
-let NERDTreeIgnore=['\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc',
-  \ 'node_modules', 'elm-stuff', '.cache']
+let NERDChristmasTree           = 1
+let NERDTreeHighlightCursorline = 1
+let NERDTreeShowBookmarks       = 1
+let NERDTreeShowHidden          = 1
+let NERDTreeHijackNetrw         = 1
+let NERDTreeIgnore              = [
+  \ '\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc',
+  \ 'node_modules', 'elm-stuff', '.cache'
+  \ ]
 
 " NERDCommenter
 let NERDSpaceDelims=0 "number of spaces to add before comments
@@ -333,6 +335,12 @@ endif
 " Toggle the error list
 " TODO: move the below somewhere that makes sense
 nmap <script> <silent> E :call ToggleLocationList()<cr>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " elm
 let g:ycm_semantic_triggers['elm'] = ['.']
@@ -390,8 +398,8 @@ let g:tern_show_loc_after_rename = 1
 " YouCompleteMe
 inoremap <c-k> <c-p>
 inoremap <c-j> <c-n>
-let g:ycm_key_list_select_completion = [] " unbind <tab>. ctrl+n/ctrl+p will work instead.
-let g:ycm_autoclose_preview_window_after_insertion = 0 " hide the preview window when exiting insert mode?
+let g:ycm_key_list_select_completion = []               " unbind <tab>. ctrl+n/ctrl+p will work instead.
+let g:ycm_autoclose_preview_window_after_insertion = 0  " hide the preview window when exiting insert mode?
 let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion?
 
 " Language Server
@@ -455,10 +463,10 @@ let g:ale_scss_prettier_use_local_config = 1
 let g:ale_fixers['json'] = 'prettier'
 
 let g:ale_linters['python'] = ['flake8', 'mypy']
-let g:ale_fixers['python'] = ['yapf']
+let g:ale_fixers['python']  = ['yapf']
 
 let g:ale_linters['haskell'] = ['hie']
-let g:ale_fixers['haskell'] = ['brittany']
+let g:ale_fixers['haskell']  = ['brittany']
 
 
 " Curious background-color-erase fix/hack, apparently
