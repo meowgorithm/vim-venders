@@ -165,7 +165,7 @@ set nohlsearch " don't highlight search results by default
 set ignorecase
 set smartcase
 set incsearch " search-as-you-type
-"set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
+set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set wrapscan " searches wrap around the end of the file
 
 " Completion settings
@@ -260,9 +260,6 @@ nmap SO :wa<CR>:so ~/.vim/session/
 " Tri-Split
 nmap SSS :wa<CR>:vs<CR><C-w><C-l>:sp<CR><C-w><C-h>:exe ":echo 'Pew pew pew!'"<CR>
 
-" File Handling
-"nmap E :wa<CR>:e
-
 " Shortcut to open stuff in the Vim directory (mostly just to ease .vimrc
 " hacking)
 nmap <Leader>v :wa<CR>:e ~/.vim/
@@ -289,6 +286,9 @@ vmap < <gv
 " Ale Init
 let g:ale_linters = {}
 let g:ale_fixers = {}
+
+" YouCompleteMe init
+let g:ycm_semantic_triggers = {}
 
 " Airline
 let g:airline#extensions#ale#enabled = 1
@@ -335,11 +335,7 @@ endif
 nmap <script> <silent> E :call ToggleLocationList()<cr>
 
 " elm
-" todo: adjust the below command so it's not postentially overwriting higher
-" declarations
-let g:ycm_semantic_triggers = {
-  \ 'elm' : ['.'],
-  \}
+let g:ycm_semantic_triggers['elm'] = ['.']
 let g:elm_jump_to_error = 0
 let g:elm_make_output_file = "elm.js"
 let g:elm_make_show_warnings = 1
