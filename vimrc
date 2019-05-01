@@ -70,14 +70,14 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ }
 
 " Languages
-Plug 'fatih/vim-go',              { 'for': 'go' }
-Plug 'elmcast/elm-vim',           { 'for': 'elm' }
-Plug 'kchmck/vim-coffee-script',  { 'for': 'coffeescript' }
-Plug 'digitaltoad/vim-pug',       { 'for': 'pug' }
+Plug 'fatih/vim-go'
+Plug 'elmcast/elm-vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'digitaltoad/vim-pug'
 Plug 'lifepillar/pgsql.vim'
-Plug 'pangloss/vim-javascript',   { 'for': 'javascript' }
-Plug 'mxw/vim-jsx',               { 'for': 'javascript' }
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'neovimhaskell/haskell-vim'
 
 " Utils
 Plug 'guns/xterm-color-table.vim'
@@ -149,12 +149,8 @@ autocmd WinLeave * setlocal nocursorline
 
 " Language-specific settings
 autocmd FileType,BufEnter,BufWinEnter python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
-autocmd FileType,BufEnter,BufWinEnter ruby,html,htmldjango,eruby set expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType,BufEnter,BufWinEnter django set ft=django.html
-autocmd FileType,BufEnter,BufWinEnter eruby set ft=eruby.html
-autocmd FileType,BufEnter,BufWinEnter less set ft=less.css
 autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
-autocmd FileType,BufEnter,BufWinEnter pug,jade,stylus,scss,css set expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType,BufEnter,BufWinEnter pug,stylus,scss,css set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType,BufRead,BufNewFile *.json set ft=json tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType,BufRead,BufNewFile *.pug set ft=pug
 autocmd FileType,BufRead,BufNewFile *.go set filetype=go
@@ -215,7 +211,7 @@ imap kj <Esc>
 vmap kj <Esc>
 
 " Faster window navigation
-map <S-w> <C-w>q
+map  <S-w> <C-w>q
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
@@ -302,15 +298,15 @@ let g:gitgutter_sign_modified = '•'
 let g:gitgutter_sign_modified_removed = '•-'
 
 " NERDTree
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>f :NERDTreeFind<CR>
+map <leader>n <plug>NERDTreeToggle<cr>
+map <leader>f <plug>NERDTreeFind<cr>
 let NERDChristmasTree=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeHijackNetrw=1
 let NERDTreeIgnore=['\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc',
-\ 'node_modules', 'elm-stuff', '.cache']
+  \ 'node_modules', 'elm-stuff', '.cache']
 
 " NERDCommenter
 let NERDSpaceDelims=0 "number of spaces to add before comments
@@ -319,26 +315,19 @@ imap <c-c> <esc><plug>NERDCommenterToggle<cr>a
 
 " Exuberant CTags
 " TODO: The below command is being overwritten somewhere
-map <Leader>l :TlistToggle<CR>
-map <Leader>m :TagbarToggle<CR>
+map <leader>l <plug>TlistToggle<cr>
+map <leader>m <plug>TagbarToggle<cr>
 
 " Ctrlp
-nmap CC :CtrlPClearCache<CR>
-nmap ; :CtrlPBuffer<CR>
-let g:ctrlp_max_height = 20
-let g:ctrlp_jump_to_buffer = 0 "enable this to jump to open windows if the file is open there. see ctrlp help.
-let g:ctrlp_working_path_mode = 'ra' "try and find the repo root and search from there
+nmap CC <plug>CtrlPClearCache<CR>
+nmap ;  <plug>CtrlPBuffer<CR>
+let g:ctrlp_max_height        = 20
+let g:ctrlp_jump_to_buffer    = 0    " enable this to jump to open windows if the file is open there. see ctrlp help.
+let g:ctrlp_working_path_mode = 'ra' " try and find the repo root and search from there
 
 " Ack.vim: configute the Silver Searcher, if available
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
-endif
-
-" AutoTag (find tagfile and auto-generate tags on save)
-" Requires Vim with Python
-let autoTagsFile = '~/.vim/bundle/AutoTag/plugin/autotag.vim'
-if filereadable(autoTagsFile)
-  source autoTagsFile
 endif
 
 " Toggle the error list
@@ -363,17 +352,6 @@ let g:elm_setup_keybindings = 1
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0
 
-" TODO: do we still need this?
-" Flake8
-" We have to run a mini Python script here to append 'site-packages' to the Python
-" path at runtime.
-if has('python')
-python << EOF
-import os, sys, vim
-sys.path.append('/usr/local/lib/python2.7/site-packages')
-EOF
-endif
-
 " CoffeeTags
 " The CoffeeTags gem is required for this. The code below was generated via:
 " $ coffeetags --vim-conf --includevars >> ~/.vimrc
@@ -392,6 +370,7 @@ let g:tagbar_type_coffee = {
 \}
 
 " Golang
+let g:go_bin_path = expand("$HOME/.go/bin")
 let g:go_highlight_functions = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_methods = 1
@@ -406,11 +385,6 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
 let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
 let g:go_auto_type_info = 1
-
-let g:go_bin_path = expand("$HOME/.go/bin")
-
-let g:ale_go_langserver_executable = 'gopls'
-let g:ale_linters['go'] = ['gopls']
 let g:go_fmt_command = "goimports"
 
 " Tern
@@ -460,27 +434,36 @@ exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Compl
 
 " ALE
 "
-" NOTE: add `--require-pragma` to options to allow formatting only in files
+" Note: add `--require-pragma` to options to allow formatting only in files
 " with a pragma at the top:
 "
 " /**
 "  * @format
-"  */
+"  *
+let g:ale_fix_on_save = 1
+
+let g:ale_go_langserver_executable = 'gopls'
+let g:ale_linters['go'] = ['gopls']
+
 let g:ale_fixers['elm'] = 'format'
+
 let g:ale_linters['javascript'] = ['eslint']
 let g:ale_fixers['javascript'] = ['eslint', 'prettier']
 let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4'
 let g:ale_javascript_prettier_use_local_config = 1
+
 let g:ale_fixers['scss'] = 'prettier'
 let g:ale_scss_prettier_options = '--trailing-comma all --tab-width 4'
 let g:ale_scss_prettier_use_local_config = 1
+
 let g:ale_fixers['json'] = 'prettier'
+
 let g:ale_linters['python'] = ['flake8', 'mypy']
 let g:ale_fixers['python'] = ['yapf']
+
 let g:ale_linters['haskell'] = ['hie']
 let g:ale_fixers['haskell'] = ['brittany']
-let g:ale_fix_on_save = 1
-let g:ale_fixers['python'] = ['yapf']
+
 
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
