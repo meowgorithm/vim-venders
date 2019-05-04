@@ -54,7 +54,6 @@ Plug 'vim-scripts/BufOnly.vim'
 Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mileszs/ack.vim'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -64,10 +63,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ternjs/tern_for_vim'
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': './install.sh'
-  \ }
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
 
 " Languages
 Plug 'fatih/vim-go'
@@ -105,35 +101,31 @@ if v:version >= 703
   set undodir=~/.vim/tmp
 endif
 
-" Keep Vim from freaking out under Fish Shell
-set shell=bash
 
-set directory=~/.vim/tmp    " where to put swap files
-set backupdir=~/.vim/backup " where to put backups
-set viewdir=~/.vim/view
-set autoread                " re-read files when they're changed externally
-set nobackup
-set nowritebackup
-set noswapfile
-"set foldlevelstart=99      " no folds
-set timeoutlen=250          " time to wait for a command (after leader, for example)
-set hidden                  " change buffer without saving
-set showmatch               " show matching brackets
-set matchtime=2             " how many tenths of a second to blink
-set modeline
-set modelines=5
-
-" Tabs and spacing
+if !has("nvim")
+  set directory=~/.vim/tmp    " where to put swap files
+  set backupdir=~/.vim/backup " where to put backups
+  set viewdir=~/.vim/view
+  set dir=~/.vim/swap
+endif
+set shell=bash                " keep Vim from freaking out under weird shells (like Fish)
+set autoread                  " re-read files when they're changed externally
+"set nobackup
+"set nowritebackup
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab               "expandtab for spaces, noexpandtab for tabs
+set expandtab
 set smarttab
 set autoindent
 set smartindent
 set shiftround
-
-" Basic UI
+set timeoutlen=250            " time to wait for a command (after leader, for example)
+set hidden                    " change buffer without saving
+set showmatch                 " show matching brackets
+set matchtime=2               " how many tenths of a second to blink
+set modeline
+set modelines=5
 set ruler
 set nowrap
 set number
@@ -142,23 +134,8 @@ set report=0
 set listchars=tab:\▸\ ,trail:·,eol:¶
 set colorcolumn=80
 
-" Highlight current line in current window only
-set cursorline
-autocmd WinEnter,BufEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-
-" Language-specific settings
-autocmd FileType,BufEnter,BufWinEnter python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
-autocmd FileType,BufEnter,BufWinEnter scss set ft=scss.css
-autocmd FileType,BufEnter,BufWinEnter pug,stylus,scss,css set expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType,BufRead,BufNewFile *.json set ft=json tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType,BufRead,BufNewFile *.pug set ft=pug
-autocmd FileType,BufRead,BufNewFile *.go set filetype=go
-autocmd FileType,BufRead,BufNewFile *.rive set filetype=rivescript
-autocmd FileType,BufRead,BufNewFile *.sql set filetype=pgsql
-
-" Automatically strip trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+" Text formatting options, mostly around comments. See :help fo-table.
+set formatoptions+=rocrj1
 
 " Searching
 set nohlsearch " don't highlight search results by default
@@ -167,6 +144,17 @@ set smartcase
 set incsearch  " search-as-you-type
 set gdefault   " assume the /g flag on :s substitutions to replace all matches in a line
 set wrapscan   " searches wrap around the end of the file
+
+" Highlight current line in current window only
+set cursorline
+autocmd WinEnter,BufEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+
+" Language-specific settings
+autocmd FileType,BufRead,BufEnter,BufWinEnter python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
+
+" Automatically strip trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Completion settings
 set wildmode=list:longest,list:full
@@ -195,43 +183,23 @@ if &term =~ '^screen'
     set ttymouse=sgr
 endif
 
-" Text formatting options, mostly around comments. See :help fo-table.
-set formatoptions+=rocrj1
-
-
-"
-" KEYBINDINGS
-"
-
-" The comma is way easier to reach than the backslash, the default <leader>
 let mapleader=','
-
-" Escape key alternatives
-imap kj <Esc>
-vmap kj <Esc>
-
-" Faster window navigation
-map  <S-w> <C-w>q
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-
-" Tab management
 nmap TT :wa<CR>:tabnew<CR>
-
-" Buffers
 nmap BN :wa<CR>:bnext<CR>
 nmap BP :wa<CR>:bprev<CR>
 nmap BO :wa<CR>:BufOnly<CR>
 nmap BD :wa<CR>:bdelete<CR>
-
-" Splits
+nmap CC :CtrlPClearCache<cr>
+nmap ;  :CtrlPBuffer<cr>
 map SP :wa<CR>:sp<CR>
 map VS :wa<CR>:vs<CR>
-
-" Show registers
 map <Leader>r :registers<CR>
+
+" Faster window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " Toggles
 map <Leader>i :set invlist<CR>:exe ":echo 'toggling invisibles'"<CR>
@@ -247,7 +215,6 @@ function! g:CleanEmptyBuffers()
   exe 'bw '.join(buffers, ' ')
   endif
 endfunction
-
 nmap BC :call g:CleanEmptyBuffers()<CR>
 
 " Close the preview pane
@@ -262,7 +229,9 @@ nmap SSS :wa<CR>:vs<CR><C-w><C-l>:sp<CR><C-w><C-h>:exe ":echo 'Pew pew pew!'"<CR
 
 " Shortcut to open stuff in the Vim directory (mostly just to ease .vimrc
 " hacking)
-nmap <Leader>v :wa<CR>:e ~/.vim/
+if !has("nvim")
+  nmap <Leader>v :wa<CR>:e ~/.vim/
+endif
 
 " Spaces and tabs settings
 nmap <Leader>1 :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>:exe ":echo 'Spaces, 4'"<CR>
@@ -283,131 +252,41 @@ vmap < <gv
 " PLUGIN CONFIGURATION
 "
 
-" Ale Init
+"
+" Ale
+"
 let g:ale_linters = {}
 let g:ale_fixers  = {}
+let g:ale_fix_on_save = 1
+let g:ale_go_langserver_executable = 'gopls'
+let g:ale_linters['go'] = ['gopls']
+let g:ale_fixers['elm'] = 'format'
+let g:ale_linters['javascript'] = ['eslint']
+let g:ale_fixers['javascript'] = ['eslint', 'prettier']
+let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4'
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_fixers['scss'] = 'prettier'
+let g:ale_scss_prettier_options = '--trailing-comma all --tab-width 4'
+let g:ale_scss_prettier_use_local_config = 1
+let g:ale_fixers['json'] = 'prettier'
+let g:ale_fixers['python']  = ['yapf']
+let g:ale_linters['python'] = ['flake8', 'mypy']
+let g:ale_linters['haskell'] = ['hie']
+let g:ale_fixers['haskell']  = ['brittany']
 
-" YouCompleteMe init
-let g:ycm_semantic_triggers = {}
-
-" Airline
-let g:airline#extensions#ale#enabled = 1
-
-" GitGutter
-let g:gitgutter_sign_modified         = '•'
-let g:gitgutter_sign_modified_removed = '•-'
-
-" NERDTree
-map <leader>n :NERDTreeToggle<cr>
-map <leader>f :NERDTreeFind<cr>
-let NERDChristmasTree           = 1
-let NERDTreeHighlightCursorline = 1
-let NERDTreeShowBookmarks       = 1
-let NERDTreeShowHidden          = 1
-let NERDTreeHijackNetrw         = 1
-let NERDTreeIgnore              = [
-  \ '\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc',
-  \ 'node_modules', 'elm-stuff', '.cache'
-  \ ]
-
-" NERDCommenter
-let NERDSpaceDelims=0 "number of spaces to add before comments
-map <c-c> :NERDCommenterToggle<cr>
-imap <c-c> <esc>:NERDCommenterToggle<cr>a
-
-" Tagbar
-" TODO: The below command is being overwritten somewhere
-map <leader>l :TlistToggle<cr>
-map <leader>m :TagbarToggle<cr>
-
-" Ctrlp
-nmap CC <plug>CtrlPClearCache<CR>
-nmap ;  <plug>CtrlPBuffer<CR>
-let g:ctrlp_max_height        = 20
-let g:ctrlp_jump_to_buffer    = 0    " enable this to jump to open windows if the file is open there. see ctrlp help.
-let g:ctrlp_working_path_mode = 'ra' " try and find the repo root and search from there
-
-" Ack.vim: configute the Silver Searcher, if available
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-" Toggle the error list
-" TODO: move the below somewhere that makes sense
-nmap <script> <silent> E :call ToggleLocationList()<cr>
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" elm
-let g:ycm_semantic_triggers['elm'] = ['.']
-let g:elm_jump_to_error = 0
-let g:elm_make_output_file = "elm.js"
-let g:elm_make_show_warnings = 1
-let g:elm_browser_command = ""
-let g:elm_detailed_complete = 1
-let g:elm_format_autosave = 1
-let g:elm_format_fail_silently = 1
-let g:elm_setup_keybindings = 1
-
-" Allow JSX in normal JS files
-let g:jsx_ext_required = 0
-
-" CoffeeTags
-" The CoffeeTags gem is required for this. The code below was generated via:
-" $ coffeetags --vim-conf --includevars >> ~/.vimrc
-let g:tagbar_type_coffee = {
-\ 'kinds' : [
-\ 'f:functions',
-\ 'o:object'
-\ ],
-\ 'kind2scope' : {
-\ 'f' : 'object',
-\ 'o' : 'object'
-\},
-\ 'sro' : ".",
-\ 'ctagsbin' : 'coffeetags',
-\ 'ctagsargs' : ' ',
-\}
-
-" Golang
-let g:go_bin_path = expand("$HOME/.go/bin")
-let g:go_highlight_functions = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_trailing_whitespace_error = 1
-let g:go_highlight_space_tab_error = 1
-let g:go_highlight_types = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_chan_whitespace_error = 1
-let g:go_highlight_array_whitespace_error = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_fields = 1
-let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
-let g:go_auto_type_info = 1
-let g:go_fmt_command = "goimports"
-
-" Tern
-let g:tern_show_signature_in_pum = 0
-let g:tern_show_loc_after_rename = 1
-
+"
 " YouCompleteMe
+"
+let g:ycm_semantic_triggers = {}
 inoremap <c-k> <c-p>
 inoremap <c-j> <c-n>
 let g:ycm_key_list_select_completion = []               " unbind <tab>. ctrl+n/ctrl+p will work instead.
 let g:ycm_autoclose_preview_window_after_insertion = 0  " hide the preview window when exiting insert mode?
 let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion?
 
-" Language Server
-let g:LanguageClient_serverCommands = {
-  \ 'haskell' : ['~/.local/bin/hie']
-  \ }
-
+"
 " UtliSnips
+"
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
@@ -436,38 +315,128 @@ function! g:UltiSnips_Complete()
 endfunction
 exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
-" ALE
 "
-" Note: add `--require-pragma` to options to allow formatting only in files
-" with a pragma at the top:
+" Airline
 "
-" /**
-"  * @format
-"  *
-let g:ale_fix_on_save = 1
+let g:airline#extensions#ale#enabled = 1
 
-let g:ale_go_langserver_executable = 'gopls'
-let g:ale_linters['go'] = ['gopls']
+"
+" GitGutter
+"
+let g:gitgutter_sign_modified         = '•'
+let g:gitgutter_sign_modified_removed = '•-'
 
-let g:ale_fixers['elm'] = 'format'
+"
+" NERDTree
+"
+map <leader>n :NERDTreeToggle<cr>
+map <leader>f :NERDTreeFind<cr>
+let NERDChristmasTree           = 1
+let NERDTreeHighlightCursorline = 1
+let NERDTreeShowBookmarks       = 1
+let NERDTreeShowHidden          = 1
+let NERDTreeHijackNetrw         = 1
+let NERDTreeIgnore              = [
+  \ '\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc',
+  \ 'node_modules', 'elm-stuff', '.cache'
+  \ ]
 
-let g:ale_linters['javascript'] = ['eslint']
-let g:ale_fixers['javascript'] = ['eslint', 'prettier']
-let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4'
-let g:ale_javascript_prettier_use_local_config = 1
+"
+" NERDCommenter
+"
+let NERDSpaceDelims=0 "number of spaces to add before comments
+map <c-c> :NERDCommenterToggle<cr>
+imap <c-c> <esc>:NERDCommenterToggle<cr>a
 
-let g:ale_fixers['scss'] = 'prettier'
-let g:ale_scss_prettier_options = '--trailing-comma all --tab-width 4'
-let g:ale_scss_prettier_use_local_config = 1
+"
+" Tagbar
+"
+map <leader>m :TagbarToggle<cr>
 
-let g:ale_fixers['json'] = 'prettier'
+"
+" Ctrlp
+"
+let g:ctrlp_max_height  = 20
+let g:ctrlp_jump_to_buffer = 0 " enable this to jump to open windows if the file is open there. see ctrlp help.
+let g:ctrlp_working_path_mode = 'ra' " try and find the repo root and search from there
 
-let g:ale_linters['python'] = ['flake8', 'mypy']
-let g:ale_fixers['python']  = ['yapf']
+" Toggle the error list
+" TODO: move the below somewhere that makes sense
+nmap <script> <silent> E :call ToggleLocationList()<cr>
 
-let g:ale_linters['haskell'] = ['hie']
-let g:ale_fixers['haskell']  = ['brittany']
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
 
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+"
+" Elm
+"
+let g:ycm_semantic_triggers['elm'] = ['.']
+let g:elm_jump_to_error = 0
+let g:elm_make_output_file = "elm.js"
+let g:elm_make_show_warnings = 1
+let g:elm_browser_command = ""
+let g:elm_detailed_complete = 1
+let g:elm_format_autosave = 1
+let g:elm_format_fail_silently = 1
+let g:elm_setup_keybindings = 1
+
+" Allow JSX in normal JS files
+let g:jsx_ext_required = 0
+
+"
+" CoffeeTags
+"
+" The CoffeeTags gem is required for this. The code below was generated via:
+" $ coffeetags --vim-conf --includevars >> ~/.vimrc
+let g:tagbar_type_coffee = {
+\ 'kinds' : [
+\ 'f:functions',
+\ 'o:object'
+\ ],
+\ 'kind2scope' : {
+\ 'f' : 'object',
+\ 'o' : 'object'
+\},
+\ 'sro' : ".",
+\ 'ctagsbin' : 'coffeetags',
+\ 'ctagsargs' : ' ',
+\}
+
+"
+" Golang
+"
+let g:go_bin_path = expand("$HOME/.go/bin")
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_trailing_whitespace_error = 1
+let g:go_highlight_space_tab_error = 1
+let g:go_highlight_types = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_chan_whitespace_error = 1
+let g:go_highlight_array_whitespace_error = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_fields = 1
+let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
+let g:go_auto_type_info = 1
+let g:go_fmt_command = "goimports"
+
+"
+" Tern
+"
+let g:tern_show_signature_in_pum = 0
+let g:tern_show_loc_after_rename = 1
+
+"
+" Neovim Language Server
+"
+let g:LanguageClient_serverCommands = {
+  \ 'haskell' : ['~/.local/bin/hie']
+  \ }
 
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
