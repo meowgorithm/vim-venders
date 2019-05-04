@@ -97,7 +97,7 @@ filetype plugin indent on
 syntax on
 
 set t_Co=256
-colorscheme roshambo
+colorscheme meowgorithm
 
 " Vim 7.3 and newer can persist undo history across sessions
 if v:version >= 703
