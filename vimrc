@@ -179,10 +179,10 @@ set splitright " open new veritcal splits to the right of the current
 
 " Enable the mouse in terminal Vim (if supported)
 set mouse+=a
-if &term =~ '^screen'
-    " Extended mouse mode
-    " See :help ttymouse
-    set ttymouse=sgr
+if !has('nvim') && &term =~ '^screen'
+  " Extended mouse mode
+  " See :help ttymouse
+  set ttymouse=sgr
 endif
 
 let mapleader=','
@@ -211,7 +211,6 @@ map <Leader>w :set wrap! wrap?<CR>
 map <Leader>p :set paste! nopaste?<CR>
 
 " Toggle the error list
-" TODO: move the below somewhere that makes sense
 nmap <script> <silent> E :call ToggleLocationList()<cr>
 
 " Remove empty buffers
@@ -291,36 +290,61 @@ let g:ycm_autoclose_preview_window_after_insertion = 0  " hide the preview windo
 let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion?
 
 "
-" UtliSnips
+" UltiSnips
 "
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
+let g:UltiSnipsEditSplit='vertical'
+if has("nvim")
+  let g:UltiSnipsSnippetsDir=stdpath('config') . '/snippets'
+else
+  let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
+endif
 
-" UltiSnips completion function that tries to expand a snippet. If there's no
-" snippet for expanding, it checks for completion window and if it's
-" shown, selects first element. If there's no completion window it tries to
-" jump to next placeholder. If there's no placeholder it just returns TAB key
+" UltiSnips completion function that makes it work nicely with YouCompleteMe
+" (and therefore TabNine).
+" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-171966710
 "
+" Another working solution was:
 " https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411
-function! g:UltiSnips_Complete()
-    call UltiSnips_ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips_JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
-exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
+function! g:UltiSnips_Complete()
+  call UltiSnips#ExpandSnippet()
+  if g:ulti_expand_res == 0
+    if pumvisible()
+      return "\<C-n>"
+    else
+      call UltiSnips#JumpForwards()
+      if g:ulti_jump_forwards_res == 0
+        return "\<TAB>"
+      endif
+    endif
+  endif
+  return ""
+endfunction
+
+function! g:UltiSnips_Reverse()
+  call UltiSnips#JumpBackwards()
+  if g:ulti_jump_backwards_res == 0
+    return "\<C-P>"
+  endif
+
+  return ""
+endfunction
+
+
+if !exists("g:UltiSnipsJumpForwardTrigger")
+  let g:UltiSnipsJumpForwardTrigger = "<tab>"
+endif
+
+if !exists("g:UltiSnipsJumpBackwardTrigger")
+  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+endif
+
+au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
 "
 " Airline
 "
