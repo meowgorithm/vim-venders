@@ -70,7 +70,6 @@ Plug 'fatih/vim-go'
 Plug 'elmcast/elm-vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'digitaltoad/vim-pug'
-Plug 'lifepillar/pgsql.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'neovimhaskell/haskell-vim'
@@ -110,8 +109,11 @@ if !has("nvim")
 endif
 set shell=bash                " keep Vim from freaking out under weird shells (like Fish)
 set autoread                  " re-read files when they're changed externally
-"set nobackup
-"set nowritebackup
+if !has("nvim")
+  set nobackup
+  set nowritebackup
+  set noswapfile
+endif
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -207,6 +209,10 @@ map <Leader>. :set number! nonumber?<CR>
 map <Leader>s :set hlsearch! hlsearch?<CR>
 map <Leader>w :set wrap! wrap?<CR>
 map <Leader>p :set paste! nopaste?<CR>
+
+" Toggle the error list
+" TODO: move the below somewhere that makes sense
+nmap <script> <silent> E :call ToggleLocationList()<cr>
 
 " Remove empty buffers
 function! g:CleanEmptyBuffers()
@@ -360,9 +366,9 @@ let g:ctrlp_max_height  = 20
 let g:ctrlp_jump_to_buffer = 0 " enable this to jump to open windows if the file is open there. see ctrlp help.
 let g:ctrlp_working_path_mode = 'ra' " try and find the repo root and search from there
 
-" Toggle the error list
-" TODO: move the below somewhere that makes sense
-nmap <script> <silent> E :call ToggleLocationList()<cr>
+"
+" EasyAlign
+"
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
