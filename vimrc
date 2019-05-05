@@ -196,7 +196,7 @@ nmap BD :wa<cr>:bdelete<cr>
 map SP :wa<cr>:sp<cr>
 map VS :wa<cr>:vs<cr>
 map <leader>r :registers<cr>
-nmap SO :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
+nmap <silent>SO :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
 nnoremap LC :e $MYVIMRC<cr>
 
 " Faster window navigation
