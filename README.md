@@ -4,46 +4,28 @@ A Vim config inspired by the work of [Wim Wenders][wim].
 
 Checkout to `~/.vim` or (`~/.config/nvim`) and get to work.
 
+There are also a few tools you can install for a better experience:
 
-## Recommended Utilities
+MacOS:
 
+    brew install ripgrep ctags python nodejs npm
 
-### General
+or Arch Linux:
 
-- [RipGrep](https://github.com/BurntSushi/ripgrep)
-- [Exuberant Ctags](http://ctags.sourceforge.net/)
+    sudo pacman -S ripgrep ctags python nodejs npm
 
+And then:
 
-### Go
+    # Install Elm and JavaScript tools
+    npm -g install \
+        elm elm-test elm-oracle elm-format \
+        flow-bin eslint babel-eslint eslint-plugin-react prettier
 
-Run `:GoInstallBinaries` and [Vim-Go][vimgo] will install the tools it needs.
-
-
-### Elm
-
-There's a bunch of Elm stuff to install. It's easiest to just copy and paste
-this in the terminal (assuming you have Node.js and NPM installed):
-
-    npm -g install elm elm-test elm-oracle elm-format
-
-
-### Python
-
-- [Flake8](https://pypi.python.org/pypi/flake8): Linter
-- [mypy](http://mypy-lang.org): Static type checker
-- [yapf](https://github.com/google/yapf): Code formatter
-
-Quick install everything:
-
+    # Install Python tools
     pip install flake8 mypy yapf
 
+If you’re working with Haskell you may also want to install the
+[Haskll IDE Engine][hie].
 
-### JavaScript
 
-- [ESLint](https://eslint.org): Linter
-- [Flow](https://flow.org): Static type checker
-- [Prettier](https://prettier.io): Code formatter (also formats CSS and Sass)
-
-Quick install everything:
-
-    npm -g install flow-bin eslint babel-eslint eslint-plugin-react prettier
+[hie]: https://github.com/haskell/haskell-ide-engine
