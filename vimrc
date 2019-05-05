@@ -59,8 +59,12 @@ Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
+
+" Completers
 Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'Valloric/YouCompleteMe'
+Plug 'ternjs/tern_for_vim'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
 
 " Languages
 Plug 'fatih/vim-go'
@@ -158,7 +162,6 @@ autocmd WinLeave * setlocal nocursorline
 " Language-specific settings
 autocmd FileType vim set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
-autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Automatically strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -172,7 +175,7 @@ set infercase " ignore case on insert completion
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*,*/tmp/*,*/.cache/*
 set wildignore+=*/build/*,*/dist/*,*/vendor/*,*/pkg/*
-set wildignore+=*/plugged/*
+set wildignore+=*/plugged/*,*/YouCompleteMe/*
 
 " Window management
 set splitbelow " open new horizontal splits below the current
@@ -238,7 +241,7 @@ if !has("nvim")
   nmap <leader>v :wa<cr>:e ~/.vim/
 endif
 
-" Switch between spaces and tabs
+" Switch between spaces and tabs on the fly
 nmap <leader>1 :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>:exe ":echo 'spaces, 2'"<cr>
 nmap <leader>2 :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":echo 'spaces, 4'"<cr>
 nmap <leader>3 :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":echo 'tabs, 4'"<cr>
@@ -274,6 +277,15 @@ let g:ale_linters['python'] = ['flake8', 'mypy']
 let g:ale_linters['haskell'] = ['hie']
 let g:ale_fixers['haskell']  = ['brittany']
 
+"
+" YouCompleteMe
+"
+let g:ycm_semantic_triggers = {}
+inoremap <c-k> <c-p>
+inoremap <c-j> <c-n>
+let g:ycm_key_list_select_completion = []               " unbind <tab>. ctrl+n/ctrl+p will work instead.
+let g:ycm_autoclose_preview_window_after_insertion = 0  " hide the preview window when exiting insert mode?
+let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion?
 
 "
 " UltiSnips
@@ -289,11 +301,11 @@ else
   let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 endif
 
-" UltiSnips completion function that makes it work nicely with the completion
-" menu
+" UltiSnips completion function that makes it work nicely with YouCompleteMe
+" (and therefore TabNine).
 " https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-171966710
 "
-" Another (good but not as good) working solution was:
+" Another working solution was:
 " https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411
 
 function! g:UltiSnips_Complete()
@@ -403,7 +415,7 @@ nmap ga <Plug>(EasyAlign)
 "
 " Elm
 "
-"let g:ycm_semantic_triggers['elm'] = ['.']
+let g:ycm_semantic_triggers['elm'] = ['.']
 let g:elm_jump_to_error = 0
 let g:elm_make_output_file = "elm.js"
 let g:elm_make_show_warnings = 1
