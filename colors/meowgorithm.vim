@@ -415,15 +415,21 @@ hi goFunction ctermfg=255
 
 " Elm {{{
 
-hi elmImport ctermfg=39
-hi elmDelimiter ctermfg=222
-hi elmBraces ctermfg=222
-hi elmType ctermfg=71 cterm=bold
-hi elmTopLevelDecl ctermfg=95
-hi elmConditional ctermfg=169
-hi elmAlias ctermfg=105
-hi elmTypedef ctermfg=212
-hi elmOperator ctermfg=167
+hi elmImport              ctermfg=39
+hi elmDelimiter           ctermfg=222
+hi elmBraces              ctermfg=222
+hi elmType                ctermfg=71 cterm=bold
+hi elmTopLevelDecl        ctermfg=95
+hi elmConditional         ctermfg=169
+hi elmAlias               ctermfg=105
+hi elmTypedef             ctermfg=212
+hi elmOperator            ctermfg=167
+hi elmFuncName            ctermfg=105
+hi link                   elmLineComment elmComment
+hi elmComment             ctermfg=242
+hi elmCaseBlockDefinition ctermfg=115
+hi elmInt                 ctermfg=39
+hi elmString              ctermfg=137
 
 " }}}
 
