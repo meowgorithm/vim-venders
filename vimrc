@@ -228,15 +228,6 @@ map <leader>h :pc<cr>
 nmap SSA :wa<cr>:mksession! ~/.vim/session/
 nmap SL  :wa<cr>:so         ~/.vim/session/
 
-" Tri-Split
-nmap SSS :wa<cr>:vs<cr><C-w><C-l>:sp<cr><C-w><C-h>:exe ":echo 'Pew pew pew!'"<cr>
-
-" Shortcut to open stuff in the Vim directory (mostly just to ease .vimrc
-" hacking)
-if !has("nvim")
-  nmap <leader>v :wa<cr>:e ~/.vim/
-endif
-
 " Switch between spaces and tabs on the fly
 nmap <leader>1 :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>:exe ":echo 'spaces, 2'"<cr>
 nmap <leader>2 :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":echo 'spaces, 4'"<cr>
