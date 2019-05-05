@@ -70,6 +70,9 @@ Plug 'digitaltoad/vim-pug'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'neovimhaskell/haskell-vim'
+if has('nvim')
+  Plug 'parsonsmatt/intero-neovim'
+endif
 
 " Utils
 "Plug 'guns/xterm-color-table.vim'
