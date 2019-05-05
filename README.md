@@ -28,4 +28,5 @@ If you’re working with Haskell you may also want to install the
 [Haskll IDE Engine][hie].
 
 
+[wim]: https://en.wikipedia.org/wiki/Wim_Wenders
 [hie]: https://github.com/haskell/haskell-ide-engine
