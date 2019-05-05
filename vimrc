@@ -80,11 +80,11 @@ endif
 call plug#end()
 
 if debug_color_scheme
-  " show the syntax definition in the status line
-  function! syntaxitem()
+  " Show the syntax definition in the status line
+  function! Syntaxitem()
     return synidattr(synid(line("."),col("."),1),"name")
   endfunction
-  set statusline=%{syntaxitem()}
+  set statusline=%{SyntaxItem()}
 endif
 
 " Enable filetype-specific indenting, syntax, and plugins
