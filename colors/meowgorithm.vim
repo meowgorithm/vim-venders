@@ -76,6 +76,12 @@ highlight GitGutterDelete guifg=#ff2222 guibg=#262626 ctermfg=1 ctermbg=235
 
 " }}}
 
+" Highlighted Yank {{{
+
+highlight HighlightedyankRegion ctermfg=224 ctermbg=168
+
+" }}}
+
 " General {{{
 
 hi Comment          ctermfg=239
