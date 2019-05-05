@@ -67,6 +67,12 @@ Quick install everything:
     pip install flake8 mypy yapf
 
 
+### CoffeeScript
+
+- [CoffeeScript](http://coffeescript.org) obviously
+- [CoffeeTags](https://github.com/lukaszkorecki/CoffeeTags): tag browser
+
+
 [wim]: https://en.wikipedia.org/wiki/Wim_Wenders
 [make]: https://www.gnu.org/software/make/
 [xcode]: https://developer.apple.com/xcode/
