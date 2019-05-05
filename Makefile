@@ -17,7 +17,7 @@ SHELL=bash
 
 init:
 	rm -f $(HOME)/.vimrc
-	mkdir -p $(VIM_DIR)/{tmp,view,backup,session}
+	mkdir -p $(VIM_DIR)/{tmp,view,backup,session,swap}
 
 update: | update_bundles tern ycm
 

@@ -1,8 +1,8 @@
 " vim:foldmethod=marker
 "
-" Roshambo Colorscheme. A work in progress.
+" Meowgorithm Colorscheme. A work in progress.
 "
-" By Roshambo
+" By Christian Rocha
 " Created 2010-11-04 11:36 EDT
 " In New York, New York, United States
 "
@@ -16,7 +16,7 @@ if exists('syntax_on')
   syntax reset
 endif
 
-let colors_name = 'Roshambo'
+let colors_name = 'Meowgorithm'
 
 " }}}
 

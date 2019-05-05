@@ -7,12 +7,11 @@ A Vim config inspired by the work of [Wim Wenders][wim].
 
 There’s a setup script included that will create a bunch of directories in
 `~/.vim`, symlink `~/.vimrc` to `~/.vim/vimrc` and install a bunch of plugins.
-Checkout and setup like so:
 
 Make sure you have [Make], [Node.js][node] and [NPM][npm] installed (for [Tern] and
 [YouCompleteMe][ycm]) and then run the following:
 
-    git clone https://github.com/roshambo/vim-venders.git ~/.vim
+    git clone https://github.com/meowgorithm/vim-venders.git ~/.vim
     cd ~/.vim
     make
 
@@ -26,12 +25,7 @@ how to install it.
 
 ### General
 
-- [The Silver Searcher](https://github.com/ggreer/the_silver_searcher): Fast
-  `ack` replacement
-
-
-### C and stuff like that
-
+- [RipGrep](https://github.com/BurntSushi/ripgrep)
 - [Exuberant Ctags](http://ctags.sourceforge.net/)
 
 
@@ -45,30 +39,28 @@ this in the terminal (assuming you have Node.js and NPM installed):
 
 ### Go
 
-- [Gometalinter](https://github.com/alecthomas/gometalinter): runs a bunch of
-  Go linters all at once.
-
-Also, you should run `:GoInstallBinaries` and [Vim-Go][vimgo] will install all
-the other stuff you need.
+Run `:GoInstallBinaries` and [Vim-Go][vimgo] will install all the other stuff
+you need.
 
 
 ### JavaScript
 
-- [Node.js](https://nodejs.org/en/): required for [Tern][tern]
-- [NPM][npm]: also required for [Tern][tern]
-- [ESLint Stuff](https://github.com/jaxbot/syntastic-react) (also covers React)
-- [Prettier](https://prettier.io): code formatter (also formats CSS/Sass)
+- [Node.js](https://nodejs.org/en/): Required for [Tern][tern]
+- [NPM][npm]: Also required for [Tern][tern]
+- [ESLint](https://eslint.org): Linter
+- [Flow](https://flow.org): Static type checker
+- [Prettier](https://prettier.io): Code formatter (also formats CSS/Sass)
 
 Quick install everything:
 
-    npm -g install eslint babel-eslint eslint-plugin-react prettier
+    npm -g install flow eslint babel-eslint eslint-plugin-react prettier
 
 
 ### Python
 
-- [Flake8](https://pypi.python.org/pypi/flake8): Python linter
+- [Flake8](https://pypi.python.org/pypi/flake8): Linter
 - [mypy](http://mypy-lang.org): Static type checker
-- [yapf](https://github.com/google/yapf): Python code formatter
+- [yapf](https://github.com/google/yapf): Code formatter
 
 Quick install everything:
 
