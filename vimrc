@@ -44,20 +44,20 @@ call plug#begin()
 if !debug_color_scheme
   Plug 'vim-airline/vim-airline'
 endif
-Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/vim-easy-align'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/BufOnly.vim'
-Plug 'majutsushi/tagbar'
-Plug 'milkypostman/vim-togglelist'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
+Plug 'majutsushi/tagbar'
+Plug 'milkypostman/vim-togglelist'
 
 " Completers
 Plug 'w0rp/ale'
@@ -75,7 +75,7 @@ Plug 'mxw/vim-jsx'
 Plug 'neovimhaskell/haskell-vim'
 
 " Utils
-Plug 'guns/xterm-color-table.vim'
+"Plug 'guns/xterm-color-table.vim'
 
 call plug#end()
 
@@ -91,7 +91,10 @@ endif
 filetype plugin indent on
 syntax on
 
-set t_Co=256
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
+  set t_Co=16
+endif
 colorscheme meowgorithm
 
 " Vim 7.3 and newer can persist undo history across sessions
@@ -116,9 +119,11 @@ endif
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set history=1000
+set tabpagemax=50
 set expandtab
-set smarttab
 set autoindent
+set smarttab
 set smartindent
 set shiftround
 set timeoutlen=250            " time to wait for a command (after leader, for example)
@@ -134,6 +139,9 @@ set laststatus=2
 set report=0
 set listchars=tab:\▸\ ,trail:·,eol:¶
 set colorcolumn=80
+set sessionoptions-=options
+set scrolloff=1
+set sidescrolloff=5
 
 " Text formatting options, mostly around comments. See :help fo-table.
 set formatoptions+=rocrj1
@@ -142,7 +150,6 @@ set formatoptions+=rocrj1
 set nohlsearch " don't highlight search results by default
 set ignorecase
 set smartcase
-set incsearch  " search-as-you-type
 set gdefault   " assume the /g flag on :s substitutions to replace all matches in a line
 set wrapscan   " searches wrap around the end of the file
 
@@ -150,6 +157,10 @@ set wrapscan   " searches wrap around the end of the file
 set cursorline
 autocmd WinEnter,BufEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
+
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " delete comment character when joining commented lines
+endif
 
 " Language-specific settings
 autocmd FileType vim set expandtab tabstop=2 shiftwidth=2 softtabstop=2
@@ -165,13 +176,9 @@ set wildmode=list:longest,list:full
 " This also affects services like Ctrl+P
 set infercase " ignore case on insert completion
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
-set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*
-set wildignore+=*/tmp/*,*/.cache/*
-set wildignore+=*/build/*,*/dist/*
-set wildignore+=*/vendor/*,*/pkg/*
-set wildignore+=sass-cache/*,.sass-cache/*,*.scssc
-set wildignore+=*/bundle/*
-set wildignore+=YouCompleteMe " this crazy dir locks up ctrl-p in the vim directory a little bit
+set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*,*/tmp/*,*/.cache/*
+set wildignore+=*/build/*,*/dist/*,*/vendor/*,*/pkg/*
+set wildignore+=*/plugged/*,*/YouCompleteMe/*
 
 " Window management
 set splitbelow " open new horizontal splits below the current
@@ -186,28 +193,28 @@ if !has('nvim') && &term =~ '^screen'
 endif
 
 let mapleader=','
-nmap TT :wa<CR>:tabnew<CR>
-nmap BN :wa<CR>:bnext<CR>
-nmap BP :wa<CR>:bprev<CR>
-nmap BO :wa<CR>:BufOnly<CR>
-nmap BD :wa<CR>:bdelete<CR>
-map SP :wa<CR>:sp<CR>
-map VS :wa<CR>:vs<CR>
-map <Leader>r :registers<CR>
+nmap TT :wa<cr>:tabnew<cr>
+nmap BN :wa<cr>:bnext<cr>
+nmap BP :wa<cr>:bprev<cr>
+nmap BO :wa<cr>:BufOnly<cr>
+nmap BD :wa<cr>:bdelete<cr>
+map SP :wa<cr>:sp<cr>
+map VS :wa<cr>:vs<cr>
+map <leader>r :registers<cr>
 nmap RC :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
 
 " Faster window navigation
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+nmap <c-h> <c-w>h
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-l> <c-w>l
 
 " Toggles
-map <Leader>i :set invlist<CR>:exe ":echo 'toggling invisibles'"<CR>
-map <Leader>. :set number! nonumber?<CR>
-map <Leader>s :set hlsearch! hlsearch?<CR>
-map <Leader>w :set wrap! wrap?<CR>
-map <Leader>p :set paste! nopaste?<CR>
+map <leader>i :set invlist<cr>:exe ":echo 'toggling invisibles'"<cr>
+map <leader>. :set number! nonumber?<cr>
+map <leader>s :set hlsearch! hlsearch?<cr>
+map <leader>w :set wrap! wrap?<cr>
+map <leader>p :set paste! nopaste?<cr>
 
 " Toggle the error list
 nmap <script> <silent> E :call ToggleLocationList()<cr>
@@ -219,29 +226,29 @@ function! g:CleanEmptyBuffers()
   exe 'bw '.join(buffers, ' ')
   endif
 endfunction
-nmap BC :call g:CleanEmptyBuffers()<CR>
+nmap BC :call g:CleanEmptyBuffers()<cr>
 
 " Close the preview pane
-map <Leader>h :pc<CR>
+map <leader>h :pc<cr>
 
 " Session management
-nmap SSA :wa<CR>:mksession! ~/.vim/session/
-nmap SO  :wa<CR>:so         ~/.vim/session/
+nmap SSA :wa<cr>:mksession! ~/.vim/session/
+nmap SO  :wa<cr>:so         ~/.vim/session/
 
 " Tri-Split
-nmap SSS :wa<CR>:vs<CR><C-w><C-l>:sp<CR><C-w><C-h>:exe ":echo 'Pew pew pew!'"<CR>
+nmap SSS :wa<cr>:vs<cr><C-w><C-l>:sp<cr><C-w><C-h>:exe ":echo 'Pew pew pew!'"<cr>
 
 " Shortcut to open stuff in the Vim directory (mostly just to ease .vimrc
 " hacking)
 if !has("nvim")
-  nmap <Leader>v :wa<CR>:e ~/.vim/
+  nmap <leader>v :wa<cr>:e ~/.vim/
 endif
 
 " Switch between spaces and tabs on the fly
-nmap <Leader>1 :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":echo 'spaces, 2'"<CR>
-nmap <Leader>2 :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>:exe ":echo 'spaces, 4'"<CR>
-nmap <Leader>3 :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>:exe ":echo 'tabs, 4'"<CR>
-nmap <Leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":echo 'tabs, 2'"<CR>
+nmap <leader>1 :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>:exe ":echo 'spaces, 2'"<cr>
+nmap <leader>2 :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":echo 'spaces, 4'"<cr>
+nmap <leader>3 :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":echo 'tabs, 4'"<cr>
+nmap <leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>:exe ":echo 'tabs, 2'"<cr>
 
 " Visual Mode Blockwise Indent
 " This keeps the current visual block selection active after changing indent
@@ -339,6 +346,7 @@ endif
 
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
+
 "
 " Airline
 "
@@ -422,25 +430,6 @@ let g:elm_setup_keybindings = 1
 
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0
-
-"
-" CoffeeTags
-"
-" The CoffeeTags gem is required for this. The code below was generated via:
-" $ coffeetags --vim-conf --includevars >> ~/.vimrc
-let g:tagbar_type_coffee = {
-\ 'kinds' : [
-\ 'f:functions',
-\ 'o:object'
-\ ],
-\ 'kind2scope' : {
-\ 'f' : 'object',
-\ 'o' : 'object'
-\},
-\ 'sro' : ".",
-\ 'ctagsbin' : 'coffeetags',
-\ 'ctagsargs' : ' ',
-\}
 
 "
 " Golang
