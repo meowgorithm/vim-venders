@@ -59,12 +59,8 @@ Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
-
-" Completers
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe'
-Plug 'ternjs/tern_for_vim'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
+Plug 'zxqfl/tabnine-vim'
 
 " Languages
 Plug 'fatih/vim-go'
@@ -109,14 +105,12 @@ if !has('nvim')
   set backupdir=~/.vim/backup " where to put backups
   set viewdir=~/.vim/view
   set dir=~/.vim/swap
-endif
-set shell=bash                " keep Vim from freaking out under weird shells (like Fish)
-set autoread                  " re-read files when they're changed externally
-if !has('nvim')
   set nobackup
   set nowritebackup
   set noswapfile
 endif
+set shell=bash                " keep Vim from freaking out under weird shells (like Fish)
+set autoread                  " re-read files when they're changed externally
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -175,7 +169,7 @@ set infercase " ignore case on insert completion
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*,*/tmp/*,*/.cache/*
 set wildignore+=*/build/*,*/dist/*,*/vendor/*,*/pkg/*
-set wildignore+=*/plugged/*,*/YouCompleteMe/*
+set wildignore+=*/plugged/*
 
 " Window management
 set splitbelow " open new horizontal splits below the current
@@ -198,7 +192,9 @@ nmap BD :wa<cr>:bdelete<cr>
 map SP :wa<cr>:sp<cr>
 map VS :wa<cr>:vs<cr>
 map <leader>r :registers<cr>
-nmap RC :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
+nmap SO :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
+nnoremap LC :e $MYVIMRC<cr>
+
 
 " Faster window navigation
 nmap <c-h> <c-w>h
@@ -230,7 +226,7 @@ map <leader>h :pc<cr>
 
 " Session management
 nmap SSA :wa<cr>:mksession! ~/.vim/session/
-nmap SO  :wa<cr>:so         ~/.vim/session/
+nmap SL  :wa<cr>:so         ~/.vim/session/
 
 " Tri-Split
 nmap SSS :wa<cr>:vs<cr><C-w><C-l>:sp<cr><C-w><C-h>:exe ":echo 'Pew pew pew!'"<cr>
@@ -278,16 +274,6 @@ let g:ale_linters['haskell'] = ['hie']
 let g:ale_fixers['haskell']  = ['brittany']
 
 "
-" YouCompleteMe
-"
-let g:ycm_semantic_triggers = {}
-inoremap <c-k> <c-p>
-inoremap <c-j> <c-n>
-let g:ycm_key_list_select_completion = []               " unbind <tab>. ctrl+n/ctrl+p will work instead.
-let g:ycm_autoclose_preview_window_after_insertion = 0  " hide the preview window when exiting insert mode?
-let g:ycm_autoclose_preview_window_after_completion = 1 " hide the preview window after a completion?
-
-"
 " UltiSnips
 "
 let g:UltiSnipsExpandTrigger='<tab>'
@@ -301,11 +287,11 @@ else
   let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 endif
 
-" UltiSnips completion function that makes it work nicely with YouCompleteMe
-" (and therefore TabNine).
+" UltiSnips completion function that makes it work nicely with the wildmenu
+" (so omnifunc, YouCompleteMe, TabNine, CoC and so on)
 " https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-171966710
 "
-" Another working solution was:
+" Another working (though not as good as the above) solution was:
 " https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411
 
 function! g:UltiSnips_Complete()
@@ -415,7 +401,6 @@ nmap ga <Plug>(EasyAlign)
 "
 " Elm
 "
-let g:ycm_semantic_triggers['elm'] = ['.']
 let g:elm_jump_to_error = 0
 let g:elm_make_output_file = "elm.js"
 let g:elm_make_show_warnings = 1
@@ -447,19 +432,6 @@ let g:go_highlight_fields = 1
 let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
 let g:go_auto_type_info = 1
 let g:go_fmt_command = "goimports"
-
-"
-" Tern
-"
-let g:tern_show_signature_in_pum = 0
-let g:tern_show_loc_after_rename = 1
-
-"
-" Neovim Language Server
-"
-let g:LanguageClient_serverCommands = {
-  \ 'haskell' : ['~/.local/bin/hie']
-  \ }
 
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim

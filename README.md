@@ -5,19 +5,7 @@ A Vim config inspired by the work of [Wim Wenders][wim].
 
 ## Quick Setup
 
-There’s a setup script included that will create a bunch of directories in
-`~/.vim`, symlink `~/.vimrc` to `~/.vim/vimrc` and install a bunch of plugins.
-
-Make sure you have [Make], [Node.js][node] and [NPM][npm] installed (for [Tern] and
-[YouCompleteMe][ycm]) and then run the following:
-
-    git clone https://github.com/meowgorithm/vim-venders.git ~/.vim
-    cd ~/.vim
-    make
-
-On MacOS, [Make][make] is included with [Xcode][xcode]. If you're on Linux, you
-probably already have it installed, and if you don't, you probably know
-how to install it.
+Checkout to `~/.vim` or (`~/.config/nvim`) and get to work.
 
 
 ## Recommended Utilities
@@ -29,31 +17,17 @@ how to install it.
 - [Exuberant Ctags](http://ctags.sourceforge.net/)
 
 
+### Go
+
+Run `:GoInstallBinaries` and [Vim-Go][vimgo] will install the tools it needs.
+
+
 ### Elm
 
 There's a bunch of Elm stuff to install. It's easiest to just copy and paste
 this in the terminal (assuming you have Node.js and NPM installed):
 
     npm -g install elm elm-test elm-oracle elm-format
-
-
-### Go
-
-Run `:GoInstallBinaries` and [Vim-Go][vimgo] will install all the other stuff
-you need.
-
-
-### JavaScript
-
-- [Node.js](https://nodejs.org/en/): Required for [Tern][tern]
-- [NPM][npm]: Also required for [Tern][tern]
-- [ESLint](https://eslint.org): Linter
-- [Flow](https://flow.org): Static type checker
-- [Prettier](https://prettier.io): Code formatter (also formats CSS/Sass)
-
-Quick install everything:
-
-    npm -g install flow eslint babel-eslint eslint-plugin-react prettier
 
 
 ### Python
@@ -67,18 +41,14 @@ Quick install everything:
     pip install flake8 mypy yapf
 
 
-### CoffeeScript
+### JavaScript
 
-- [CoffeeScript](http://coffeescript.org) obviously
-- [CoffeeTags](https://github.com/lukaszkorecki/CoffeeTags): tag browser
+- [Node.js](https://nodejs.org/en/): Required for [Tern][tern]
+- [NPM][npm]: Also required for [Tern][tern]
+- [ESLint](https://eslint.org): Linter
+- [Flow](https://flow.org): Static type checker
+- [Prettier](https://prettier.io): Code formatter (also formats CSS and Sass)
 
+Quick install everything:
 
-[wim]: https://en.wikipedia.org/wiki/Wim_Wenders
-[make]: https://www.gnu.org/software/make/
-[xcode]: https://developer.apple.com/xcode/
-[vimgo]: https://github.com/fatih/vim-go
-[node]: https://nodejs.org/en/
-[tern]: http://ternjs.net
-[npm]: https://www.npmjs.com
-[yarn]: https://yarnpkg.com/
-[ycm]: https://valloric.github.io/YouCompleteMe/
+    npm -g install flow eslint babel-eslint eslint-plugin-react prettier
