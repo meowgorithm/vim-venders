@@ -100,7 +100,7 @@ if has("persistent_undo")
   set undodir=~/.vim/tmp
 endif
 
-if !has("nvim")
+if !has('nvim')
   set directory=~/.vim/tmp    " where to put swap files
   set backupdir=~/.vim/backup " where to put backups
   set viewdir=~/.vim/view
@@ -108,7 +108,7 @@ if !has("nvim")
 endif
 set shell=bash                " keep Vim from freaking out under weird shells (like Fish)
 set autoread                  " re-read files when they're changed externally
-if !has("nvim")
+if !has('nvim')
   set nobackup
   set nowritebackup
   set noswapfile
@@ -154,10 +154,6 @@ set wrapscan   " searches wrap around the end of the file
 set cursorline
 autocmd WinEnter,BufEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
-
-if v:version > 703 || v:version == 703 && has("patch541")
-  set formatoptions+=j " delete comment character when joining commented lines
-endif
 
 " Language-specific settings
 autocmd FileType vim set expandtab tabstop=2 shiftwidth=2 softtabstop=2
