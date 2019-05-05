@@ -94,10 +94,11 @@ if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
 endif
 colorscheme meowgorithm
 
-" Vim 7.3 and newer can persist undo history across sessions
 if has("persistent_undo")
   set undofile
-  set undodir=~/.vim/tmp
+  if !has('nvim')
+    set undodir=~/.vim/tmp
+  endif
 endif
 
 if !has('nvim')
@@ -194,7 +195,6 @@ map VS :wa<cr>:vs<cr>
 map <leader>r :registers<cr>
 nmap SO :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
 nnoremap LC :e $MYVIMRC<cr>
-
 
 " Faster window navigation
 nmap <c-h> <c-w>h
