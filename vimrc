@@ -81,8 +81,8 @@ call plug#end()
 
 if debug_color_scheme
   " Show the syntax definition in the status line
-  function! Syntaxitem()
-    return synidattr(synid(line("."),col("."),1),"name")
+  function! SyntaxItem()
+    return synIDattr(synID(line("."),col("."),1),"name")
   endfunction
   set statusline=%{SyntaxItem()}
 endif
