@@ -2,9 +2,6 @@
 
 A Vim config inspired by the work of [Wim Wenders][wim].
 
-
-## Quick Setup
-
 Checkout to `~/.vim` or (`~/.config/nvim`) and get to work.
 
 
@@ -43,12 +40,10 @@ Quick install everything:
 
 ### JavaScript
 
-- [Node.js](https://nodejs.org/en/): Required for [Tern][tern]
-- [NPM][npm]: Also required for [Tern][tern]
 - [ESLint](https://eslint.org): Linter
 - [Flow](https://flow.org): Static type checker
 - [Prettier](https://prettier.io): Code formatter (also formats CSS and Sass)
 
 Quick install everything:
 
-    npm -g install flow eslint babel-eslint eslint-plugin-react prettier
+    npm -g install flow-bin eslint babel-eslint eslint-plugin-react prettier
