@@ -225,7 +225,7 @@ nmap BC :call g:CleanEmptyBuffers()<cr>
 nmap SSA :wa<cr>:mksession! ~/.vim/session/
 nmap SL  :wa<cr>:so         ~/.vim/session/
 
-" Switch between spaces and tabs on the fly
+" Switch between spaces and tabs
 nmap <leader>1 :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>:exe ":echo 'spaces, 2'"<cr>
 nmap <leader>2 :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":echo 'spaces, 4'"<cr>
 nmap <leader>3 :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":echo 'tabs, 4'"<cr>
@@ -264,15 +264,15 @@ let g:ale_fixers['haskell']  = ['brittany']
 "
 " UltiSnips
 "
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsEditSplit = 'vertical'
+let g:UltiSnipsEditSplit = 'vertical'
 if has('nvim')
-  let g:UltiSnipsSnippetsDir=stdpath('config') . '/snippets'
+  let g:UltiSnipsSnippetsDir = stdpath('config') . '/snippets'
 else
-  let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
+  let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 endif
 
 " UltiSnips completion function that makes it work nicely with the wildmenu
@@ -395,9 +395,6 @@ let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 1
 let g:elm_setup_keybindings = 1
 
-" Allow JSX in normal JS files
-let g:jsx_ext_required = 0
-
 "
 " Golang
 "
@@ -416,7 +413,7 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
 let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
 let g:go_auto_type_info = 1
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = 'goimports'
 
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
