@@ -95,11 +95,10 @@ set t_Co=256
 colorscheme meowgorithm
 
 " Vim 7.3 and newer can persist undo history across sessions
-if v:version >= 703
+if has("persistent_undo")
   set undofile
   set undodir=~/.vim/tmp
 endif
-
 
 if !has("nvim")
   set directory=~/.vim/tmp    " where to put swap files
@@ -153,7 +152,8 @@ autocmd WinEnter,BufEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
 " Language-specific settings
-autocmd FileType,BufRead,BufEnter,BufWinEnter python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
+autocmd FileType vim set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
 
 " Automatically strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -191,11 +191,10 @@ nmap BN :wa<CR>:bnext<CR>
 nmap BP :wa<CR>:bprev<CR>
 nmap BO :wa<CR>:BufOnly<CR>
 nmap BD :wa<CR>:bdelete<CR>
-nmap CC :CtrlPClearCache<cr>
-nmap ;  :CtrlPBuffer<cr>
 map SP :wa<CR>:sp<CR>
 map VS :wa<CR>:vs<CR>
 map <Leader>r :registers<CR>
+nmap RC :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
 
 " Faster window navigation
 nmap <C-h> <C-w>h
@@ -238,11 +237,11 @@ if !has("nvim")
   nmap <Leader>v :wa<CR>:e ~/.vim/
 endif
 
-" Spaces and tabs settings
-nmap <Leader>1 :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>:exe ":echo 'Spaces, 4'"<CR>
-nmap <Leader>2 :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":echo 'Spaces, 2'"<CR>
-nmap <Leader>3 :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>:exe ":echo 'Tabs, 4'"<CR>
-nmap <Leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":echo 'Tabs, 2'"<CR>
+" Switch between spaces and tabs on the fly
+nmap <Leader>1 :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":echo 'spaces, 2'"<CR>
+nmap <Leader>2 :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>:exe ":echo 'spaces, 4'"<CR>
+nmap <Leader>3 :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>:exe ":echo 'tabs, 4'"<CR>
+nmap <Leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":echo 'tabs, 2'"<CR>
 
 " Visual Mode Blockwise Indent
 " This keeps the current visual block selection active after changing indent
@@ -251,11 +250,6 @@ nmap <Leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>:exe ":e
 " http://vim.wikia.com/wiki/Short_mappings_for_common_tasks
 vmap > >gv
 vmap < <gv
-
-
-"
-" PLUGIN CONFIGURATION
-"
 
 "
 " Ale
@@ -377,6 +371,19 @@ let NERDTreeIgnore              = [
 let NERDSpaceDelims=0 "number of spaces to add before comments
 map <c-c> :NERDCommenterToggle<cr>
 imap <c-c> <esc>:NERDCommenterToggle<cr>a
+
+"
+" CtrlP
+"
+if executable('rg')
+  " Use RipGrep for CtrlP searches, if it's installed. Also just use it for
+  " general grepping.
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif
+nmap ; :CtrlPBuffer<cr>
+nnoremap <c-l> :CtrlPMRUFiles<cr>
 
 "
 " Tagbar
