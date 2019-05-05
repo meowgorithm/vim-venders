@@ -347,7 +347,7 @@ let NERDTreeIgnore              = [
 "
 " NERDCommenter
 "
-let NERDSpaceDelims=0 "number of spaces to add before comments
+let NERDSpaceDelims = 0 " number of spaces to add before comments
 map <c-c> :NERDCommenterToggle<cr>
 imap <c-c> <esc>:NERDCommenterToggle<cr>a
 
@@ -364,17 +364,14 @@ endif
 nmap ; :CtrlPBuffer<cr>
 nnoremap <c-l> :CtrlPMRUFiles<cr>
 
+let g:ctrlp_max_height  = 25
+let g:ctrlp_jump_to_buffer = 0 " enable this to jump to open windows if the file is open there. see ctrlp help.
+let g:ctrlp_working_path_mode = 'ra' " try and find the repo root and search from there
+
 "
 " Tagbar
 "
 map <leader>m :TagbarToggle<cr>
-
-"
-" Ctrlp
-"
-let g:ctrlp_max_height  = 20
-let g:ctrlp_jump_to_buffer = 0 " enable this to jump to open windows if the file is open there. see ctrlp help.
-let g:ctrlp_working_path_mode = 'ra' " try and find the repo root and search from there
 
 "
 " EasyAlign
