@@ -221,9 +221,6 @@ function! g:CleanEmptyBuffers()
 endfunction
 nmap BC :call g:CleanEmptyBuffers()<cr>
 
-" Close the preview pane
-map <leader>h :pc<cr>
-
 " Session management
 nmap SSA :wa<cr>:mksession! ~/.vim/session/
 nmap SL  :wa<cr>:so         ~/.vim/session/
@@ -272,7 +269,7 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsEditSplit='vertical'
-if has("nvim")
+if has('nvim')
   let g:UltiSnipsSnippetsDir=stdpath('config') . '/snippets'
 else
   let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
