@@ -468,8 +468,8 @@ hi gitcommitComment ctermfg=240
 
 " Diff {{{
 
-hi diffFile ctermfg=24
-hi diffAdded ctermfg=28 cterm=none
+hi diffFile    ctermfg=24
+hi diffAdded   ctermfg=28  cterm=none
 hi diffRemoved ctermfg=124 cterm=none
 
 " }}}
