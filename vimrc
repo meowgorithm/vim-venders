@@ -61,21 +61,13 @@ Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
 Plug 'zxqfl/tabnine-vim'
-
-" Languages
-Plug 'fatih/vim-go'
-Plug 'elmcast/elm-vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'digitaltoad/vim-pug'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'neovimhaskell/haskell-vim'
+Plug 'sheerun/vim-polyglot'
 if has('nvim')
   Plug 'parsonsmatt/intero-neovim'
 endif
 
 " Utils
-"Plug 'guns/xterm-color-table.vim'
+Plug 'guns/xterm-color-table.vim'
 
 call plug#end()
 
