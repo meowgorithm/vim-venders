@@ -61,10 +61,13 @@ Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
 Plug 'zxqfl/tabnine-vim'
-Plug 'sheerun/vim-polyglot'
+Plug 'fatih/vim-go',                { 'for': 'go' }
+Plug 'neovimhaskell/haskell-vim',   { 'for': 'haskell' }
+Plug 'ElmCast/elm-vim',             { 'for': 'elm' }
 if has('nvim')
-  Plug 'parsonsmatt/intero-neovim'
+  Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
 endif
+Plug 'sheerun/vim-polyglot'
 
 " Utils
 Plug 'guns/xterm-color-table.vim'
