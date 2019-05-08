@@ -82,7 +82,7 @@ if debug_color_scheme
   set statusline=%{SyntaxItem()}
 endif
 
-" Enable filetype-specific indenting, syntax, and plugins
+" Vim-Plug calls this but we're leaving here anyway
 filetype plugin indent on
 syntax on
 
@@ -104,10 +104,10 @@ if !has('nvim')
   set backupdir=~/.vim/backup " where to put backups
   set viewdir=~/.vim/view
   set dir=~/.vim/swap
-  set nobackup
-  set nowritebackup
-  set noswapfile
 endif
+set nobackup
+set nowritebackup
+set noswapfile
 set shell=bash                " keep Vim from freaking out under weird shells (like Fish)
 set autoread                  " re-read files when they're changed externally
 set tabstop=4
