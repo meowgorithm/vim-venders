@@ -146,6 +146,7 @@ set ignorecase
 set smartcase
 set gdefault   " assume the /g flag on :s substitutions to replace all matches in a line
 set wrapscan   " searches wrap around the end of the file
+set incsearch  " search as you type
 
 " Highlight current line in current window only
 set cursorline
