@@ -273,49 +273,6 @@ else
   let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 endif
 
-" UltiSnips completion function that makes it work nicely with the wildmenu
-" (so omnifunc, YouCompleteMe, TabNine, CoC and so on)
-" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-171966710
-"
-" Another working (though not as good as the above) solution was:
-" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411
-
-function! g:UltiSnips_Complete()
-  call UltiSnips#ExpandSnippet()
-  if g:ulti_expand_res == 0
-    if pumvisible()
-      return "\<C-n>"
-    else
-      call UltiSnips#JumpForwards()
-      if g:ulti_jump_forwards_res == 0
-        return "\<TAB>"
-      endif
-    endif
-  endif
-  return ""
-endfunction
-
-function! g:UltiSnips_Reverse()
-  call UltiSnips#JumpBackwards()
-  if g:ulti_jump_backwards_res == 0
-    return "\<C-P>"
-  endif
-
-  return ""
-endfunction
-
-
-if !exists("g:UltiSnipsJumpForwardTrigger")
-  let g:UltiSnipsJumpForwardTrigger = "<tab>"
-endif
-
-if !exists("g:UltiSnipsJumpBackwardTrigger")
-  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-endif
-
-au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
-
 "
 " Airline
 "
