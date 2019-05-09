@@ -35,7 +35,7 @@ endif
 let debug_color_scheme = 0
 
 "
-" PLUGINS
+" Plugins
 "
 
 call plug#begin()
@@ -61,18 +61,22 @@ Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
 Plug 'zxqfl/tabnine-vim'
+"Plug 'guns/xterm-color-table.vim'
 Plug 'fatih/vim-go',                { 'for': 'go' }
-Plug 'neovimhaskell/haskell-vim',   { 'for': 'haskell' }
 Plug 'ElmCast/elm-vim',             { 'for': 'elm' }
+Plug 'neovimhaskell/haskell-vim',   { 'for': 'haskell' }
 if has('nvim')
   Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
 endif
 Plug 'sheerun/vim-polyglot'
 
-" Utils
-Plug 'guns/xterm-color-table.vim'
+let g:polyglot_disabled = ['elm', 'go', 'haskell']
 
 call plug#end()
+
+"
+" General
+"
 
 if debug_color_scheme
   " Show the syntax definition in the status line
@@ -87,7 +91,7 @@ filetype plugin indent on
 syntax on
 
 " Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
+if !has('nvim') && &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
   set t_Co=16
 endif
 colorscheme meowgorithm
@@ -320,7 +324,7 @@ endif
 nmap ; :CtrlPBuffer<cr>
 nnoremap <c-l> :CtrlPMRUFiles<cr>
 
-let g:ctrlp_max_height  = 25
+let g:ctrlp_max_height = 25
 let g:ctrlp_jump_to_buffer = 0 " enable this to jump to open windows if the file is open there. see ctrlp help.
 let g:ctrlp_working_path_mode = 'ra' " try and find the repo root and search from there
 
