@@ -68,7 +68,7 @@ Plug 'neovimhaskell/haskell-vim',   { 'for': 'haskell' }
 if has('nvim')
   Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
 endif
-Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot',        { 'do': './build' }
 
 let g:polyglot_disabled = ['elm', 'go', 'haskell']
 
