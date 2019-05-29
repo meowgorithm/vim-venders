@@ -275,6 +275,14 @@ else
 endif
 
 "
+" YouCompleteMe (and TabNine)
+"
+
+" Remove <Tab> from the list of keys mapped by YCM. We'll use the standard
+" ctrl n, ctrl p.
+let g:ycm_key_list_select_completion = []
+
+"
 " Airline
 "
 let g:airline#extensions#ale#enabled = 1
