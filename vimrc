@@ -30,12 +30,12 @@ if has('python3')
   silent! python3 1
 endif
 
-" Turning this on diables Airline and instead shows the syntax definition
+" Turning this on disbles Airline and instead shows the syntax definition
 " in the status line
 let debug_color_scheme = 0
 
 "
-" PLUGINS
+" Plugins
 "
 
 call plug#begin()
@@ -60,44 +60,47 @@ Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-
-" Languages
-Plug 'fatih/vim-go'
-Plug 'elmcast/elm-vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'digitaltoad/vim-pug'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'neovimhaskell/haskell-vim'
-
-" Utils
+Plug 'zxqfl/tabnine-vim'
 "Plug 'guns/xterm-color-table.vim'
+Plug 'fatih/vim-go',                { 'for': 'go' }
+Plug 'ElmCast/elm-vim',             { 'for': 'elm' }
+Plug 'neovimhaskell/haskell-vim',   { 'for': 'haskell' }
+if has('nvim')
+  Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
+endif
+Plug 'sheerun/vim-polyglot',        { 'do': './build' }
+
+let g:polyglot_disabled = ['elm', 'go', 'haskell']
 
 call plug#end()
 
+"
+" General
+"
+
 if debug_color_scheme
-  " show the syntax definition in the status line
-  function! syntaxitem()
-    return synidattr(synid(line("."),col("."),1),"name")
+  " Show the syntax definition in the status line
+  function! SyntaxItem()
+    return synIDattr(synID(line("."),col("."),1),"name")
   endfunction
-  set statusline=%{syntaxitem()}
+  set statusline=%{SyntaxItem()}
 endif
 
-" Enable filetype-specific indenting, syntax, and plugins
+" Vim-Plug calls this but we're leaving here anyway
 filetype plugin indent on
 syntax on
 
 " Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
+if !has('nvim') && &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
   set t_Co=16
 endif
 colorscheme meowgorithm
 
-" Vim 7.3 and newer can persist undo history across sessions
 if has("persistent_undo")
   set undofile
-  set undodir=~/.vim/tmp
+  if !has('nvim')
+    set undodir=~/.vim/tmp
+  endif
 endif
 
 if !has('nvim')
@@ -106,13 +109,11 @@ if !has('nvim')
   set viewdir=~/.vim/view
   set dir=~/.vim/swap
 endif
+set nobackup
+set nowritebackup
+set noswapfile
 set shell=bash                " keep Vim from freaking out under weird shells (like Fish)
 set autoread                  " re-read files when they're changed externally
-if !has('nvim')
-  set nobackup
-  set nowritebackup
-  set noswapfile
-endif
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -149,6 +150,7 @@ set ignorecase
 set smartcase
 set gdefault   " assume the /g flag on :s substitutions to replace all matches in a line
 set wrapscan   " searches wrap around the end of the file
+set incsearch  " search as you type
 
 " Highlight current line in current window only
 set cursorline
@@ -158,7 +160,6 @@ autocmd WinLeave * setlocal nocursorline
 " Language-specific settings
 autocmd FileType vim set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
-autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Automatically strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -195,7 +196,8 @@ nmap BD :wa<cr>:bdelete<cr>
 map SP :wa<cr>:sp<cr>
 map VS :wa<cr>:vs<cr>
 map <leader>r :registers<cr>
-nmap RC :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
+nmap <silent>SO :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
+nnoremap LC :e $MYVIMRC<cr>
 
 " Faster window navigation
 nmap <c-h> <c-w>h
@@ -222,21 +224,9 @@ function! g:CleanEmptyBuffers()
 endfunction
 nmap BC :call g:CleanEmptyBuffers()<cr>
 
-" Close the preview pane
-map <leader>h :pc<cr>
-
 " Session management
 nmap SSA :wa<cr>:mksession! ~/.vim/session/
-nmap SO  :wa<cr>:so         ~/.vim/session/
-
-" Tri-Split
-nmap SSS :wa<cr>:vs<cr><C-w><C-l>:sp<cr><C-w><C-h>:exe ":echo 'Pew pew pew!'"<cr>
-
-" Shortcut to open stuff in the Vim directory (mostly just to ease .vimrc
-" hacking)
-if !has("nvim")
-  nmap <leader>v :wa<cr>:e ~/.vim/
-endif
+nmap SL  :wa<cr>:so         ~/.vim/session/
 
 " Switch between spaces and tabs
 nmap <leader>1 :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>:exe ":echo 'spaces, 2'"<cr>
@@ -274,63 +264,27 @@ let g:ale_linters['python'] = ['flake8', 'mypy']
 let g:ale_linters['haskell'] = ['hie']
 let g:ale_fixers['haskell']  = ['brittany']
 
-
 "
 " UltiSnips
 "
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsEditSplit='vertical'
-if has("nvim")
-  let g:UltiSnipsSnippetsDir=stdpath('config') . '/snippets'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsEditSplit = 'vertical'
+let g:UltiSnipsEditSplit = 'vertical'
+if has('nvim')
+  let g:UltiSnipsSnippetsDir = stdpath('config') . '/snippets'
 else
-  let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
+  let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 endif
 
-" UltiSnips completion function that makes it work nicely with the completion
-" menu
-" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-171966710
 "
-" Another (good but not as good) working solution was:
-" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411
+" YouCompleteMe (and TabNine)
+"
 
-function! g:UltiSnips_Complete()
-  call UltiSnips#ExpandSnippet()
-  if g:ulti_expand_res == 0
-    if pumvisible()
-      return "\<C-n>"
-    else
-      call UltiSnips#JumpForwards()
-      if g:ulti_jump_forwards_res == 0
-        return "\<TAB>"
-      endif
-    endif
-  endif
-  return ""
-endfunction
-
-function! g:UltiSnips_Reverse()
-  call UltiSnips#JumpBackwards()
-  if g:ulti_jump_backwards_res == 0
-    return "\<C-P>"
-  endif
-
-  return ""
-endfunction
-
-
-if !exists("g:UltiSnipsJumpForwardTrigger")
-  let g:UltiSnipsJumpForwardTrigger = "<tab>"
-endif
-
-if !exists("g:UltiSnipsJumpBackwardTrigger")
-  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-endif
-
-au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
+" Remove <Tab> from the list of keys mapped by YCM. We'll use the standard
+" ctrl n, ctrl p.
+let g:ycm_key_list_select_completion = []
 
 "
 " Airline
@@ -361,7 +315,7 @@ let NERDTreeIgnore              = [
 "
 " NERDCommenter
 "
-let NERDSpaceDelims=0 "number of spaces to add before comments
+let NERDSpaceDelims = 0 " number of spaces to add before comments
 map <c-c> :NERDCommenterToggle<cr>
 imap <c-c> <esc>:NERDCommenterToggle<cr>a
 
@@ -378,17 +332,14 @@ endif
 nmap ; :CtrlPBuffer<cr>
 nnoremap <c-l> :CtrlPMRUFiles<cr>
 
+let g:ctrlp_max_height = 25
+let g:ctrlp_jump_to_buffer = 0 " enable this to jump to open windows if the file is open there. see ctrlp help.
+let g:ctrlp_working_path_mode = 'ra' " try and find the repo root and search from there
+
 "
 " Tagbar
 "
 map <leader>m :TagbarToggle<cr>
-
-"
-" Ctrlp
-"
-let g:ctrlp_max_height  = 20
-let g:ctrlp_jump_to_buffer = 0 " enable this to jump to open windows if the file is open there. see ctrlp help.
-let g:ctrlp_working_path_mode = 'ra' " try and find the repo root and search from there
 
 "
 " EasyAlign
@@ -403,7 +354,6 @@ nmap ga <Plug>(EasyAlign)
 "
 " Elm
 "
-"let g:ycm_semantic_triggers['elm'] = ['.']
 let g:elm_jump_to_error = 0
 let g:elm_make_output_file = "elm.js"
 let g:elm_make_show_warnings = 1
@@ -412,9 +362,6 @@ let g:elm_detailed_complete = 1
 let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 1
 let g:elm_setup_keybindings = 1
-
-" Allow JSX in normal JS files
-let g:jsx_ext_required = 0
 
 "
 " Golang
@@ -434,20 +381,7 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
 let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
 let g:go_auto_type_info = 1
-let g:go_fmt_command = "goimports"
-
-"
-" Tern
-"
-let g:tern_show_signature_in_pum = 0
-let g:tern_show_loc_after_rename = 1
-
-"
-" Neovim Language Server
-"
-let g:LanguageClient_serverCommands = {
-  \ 'haskell' : ['~/.local/bin/hie']
-  \ }
+let g:go_fmt_command = 'goimports'
 
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
