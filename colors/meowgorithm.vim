@@ -20,6 +20,22 @@ let colors_name = 'Meowgorithm'
 
 " }}}
 
+" Defaults {{{
+
+" hi Comment    ctermfg=239
+" hi Operator   ctermfg=203
+" hi String     ctermfg=29
+" hi Keyword    ctermfg=206
+" hi Function   ctermfg=42
+" hi Constant   ctermfg=80 cterm=bold
+" hi Type       ctermfg=138
+" hi Statement  ctermfg=71
+" hi Special    ctermfg=178
+" hi Identifier ctermfg=29
+" hi PreProc    ctermfg=33
+
+" }}}
+
 " Vim UI {{{
 
 hi Normal           ctermfg=250 ctermbg=235
@@ -79,22 +95,6 @@ highlight GitGutterDelete guifg=#ff2222 guibg=#262626 ctermfg=1 ctermbg=235
 " Highlighted Yank {{{
 
 highlight HighlightedyankRegion ctermfg=224 ctermbg=168
-
-" }}}
-
-" General {{{
-
-hi Comment          ctermfg=239
-hi Operator         ctermfg=203
-hi String           ctermfg=29
-hi Keyword          ctermfg=206
-hi Function         ctermfg=42
-hi Constant         ctermfg=80 cterm=bold
-hi Type             ctermfg=138
-hi Statement        ctermfg=71
-hi Special          ctermfg=178
-hi Identifier       ctermfg=29
-hi PreProc          ctermfg=33
 
 " }}}
 
@@ -430,6 +430,29 @@ hi elmComment             ctermfg=242
 hi elmCaseBlockDefinition ctermfg=115
 hi elmInt                 ctermfg=39
 hi elmString              ctermfg=137
+
+" }}}
+
+" Haskell {{{
+
+hi link                  haskellBlockComment haskellLineComment
+hi haskellLineComment    ctermfg=241
+hi haskellNumber         ctermfg=50
+hi haskellString         ctermfg=137
+hi haskellPragma         ctermfg=216
+hi haskellImportKeywords ctermfg=39
+hi haskellParens         ctermfg=37 " imports and tuples
+hi haskellDeclKeyword    ctermfg=50
+hi haskellDecl           ctermfg=212
+hi link                  haskellLet haskellKeyword
+hi link                  haskellDerive haskellKeyword
+hi link                  haskellConditional haskellKeyword
+hi link                  haskellWhere haskellKeyword
+hi haskellKeyword        ctermfg=212
+hi haskellType           ctermfg=78
+hi haskellIdentifier     ctermfg=105 " type signatures and record members
+hi haskellDelimiter      ctermfg=192
+hi haskellOperators      ctermfg=210
 
 " }}}
 
