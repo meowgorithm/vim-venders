@@ -62,7 +62,7 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
 Plug 'zxqfl/tabnine-vim'
 "Plug 'guns/xterm-color-table.vim'
-Plug 'fatih/vim-go',                { 'for': 'go' }
+Plug 'fatih/vim-go',                { 'for': 'go', 'do': ':GoUpdateBinaries' }
 Plug 'ElmCast/elm-vim',             { 'for': 'elm' }
 Plug 'neovimhaskell/haskell-vim',   { 'for': 'haskell' }
 if has('nvim')
