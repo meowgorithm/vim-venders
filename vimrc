@@ -30,7 +30,7 @@ if has('python3')
   silent! python3 1
 endif
 
-" Turning this on diables Airline and instead shows the syntax definition
+" Turning this on disbles Airline and instead shows the syntax definition
 " in the status line
 let debug_color_scheme = 0
 
@@ -62,7 +62,7 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
 Plug 'zxqfl/tabnine-vim'
 "Plug 'guns/xterm-color-table.vim'
-Plug 'fatih/vim-go',                { 'for': 'go' }
+Plug 'fatih/vim-go',                { 'for': 'go', 'do': ':GoUpdateBinaries' }
 Plug 'ElmCast/elm-vim',             { 'for': 'elm' }
 Plug 'neovimhaskell/haskell-vim',   { 'for': 'haskell' }
 if has('nvim')
