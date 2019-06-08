@@ -259,6 +259,7 @@ let g:ale_fixers['scss'] = 'prettier'
 let g:ale_scss_prettier_options = '--trailing-comma all --tab-width 4'
 let g:ale_scss_prettier_use_local_config = 1
 let g:ale_fixers['json'] = 'prettier'
+let g:ale_fixers['html'] = 'prettier'
 let g:ale_fixers['python']  = ['yapf']
 let g:ale_linters['python'] = ['flake8', 'mypy']
 let g:ale_linters['haskell'] = ['hie']
