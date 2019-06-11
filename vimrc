@@ -62,13 +62,17 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
 Plug 'zxqfl/tabnine-vim'
 "Plug 'guns/xterm-color-table.vim'
-Plug 'fatih/vim-go',                { 'for': 'go', 'do': ':GoUpdateBinaries' }
-Plug 'ElmCast/elm-vim',             { 'for': 'elm' }
-Plug 'neovimhaskell/haskell-vim',   { 'for': 'haskell' }
-if has('nvim')
-  Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
-endif
-Plug 'sheerun/vim-polyglot',        { 'do': './build' }
+Plug 'ElmCast/elm-vim',           { 'for': 'elm' }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'fatih/vim-go',{
+  \ 'for': 'go',
+  \ 'do': ':GoUpdateBinaries'
+  \ }
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': './install.sh'
+  \ }
+Plug 'sheerun/vim-polyglot',      { 'do': './build' }
 
 let g:polyglot_disabled = ['elm', 'go', 'haskell']
 
@@ -241,6 +245,13 @@ nmap <leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>:exe ":e
 " http://vim.wikia.com/wiki/Short_mappings_for_common_tasks
 vmap > >gv
 vmap < <gv
+
+"
+" LanguageClient
+"
+let g:LanguageClient_serverCommands = {
+  \ 'haskell': ['hie-wrapper']
+  \ }
 
 "
 " Ale
