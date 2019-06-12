@@ -250,7 +250,7 @@ vmap < <gv
 " LanguageClient
 "
 let g:LanguageClient_serverCommands = {
-  \ 'haskell': ['hie-wrapper']
+  \ 'haskell': ['hie-wrapper', '--lsp']
   \ }
 
 "
@@ -274,7 +274,7 @@ let g:ale_fixers['html'] = 'prettier'
 let g:ale_fixers['python']  = ['yapf']
 let g:ale_linters['python'] = ['flake8', 'mypy']
 let g:ale_linters['haskell'] = ['hie']
-let g:ale_fixers['haskell']  = ['brittany']
+let g:ale_fixers['haskell']  = ['floskell']
 
 "
 " UltiSnips
