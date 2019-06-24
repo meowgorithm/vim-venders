@@ -256,25 +256,45 @@ let g:LanguageClient_serverCommands = {
 "
 " Ale
 "
+
+" General
 let g:ale_linters = {}
 let g:ale_fixers  = {}
 let g:ale_fix_on_save = 1
-let g:ale_go_langserver_executable = 'gopls'
+let g:ale_use_global_executables = 1
+let g:ale_linters_ignore = { 'elm': ['make'] }
+
+" Go
 let g:ale_linters['go'] = ['gopls']
+let g:ale_go_langserver_executable = 'gopls'
+
+" Elm
 let g:ale_fixers['elm'] = 'format'
+
+" Haskell
+let g:ale_linters['haskell'] = ['hie']
+let g:ale_fixers['haskell']  = ['floskell']
+
+" Python
+let g:ale_fixers['python']  = ['yapf']
+let g:ale_linters['python'] = ['flake8', 'mypy']
+
+" Sass
+let g:ale_fixers['scss'] = 'prettier'
+let g:ale_scss_prettier_options = '--trailing-comma all --tab-width 4'
+let g:ale_scss_prettier_use_local_config = 1
+
+" JavaScript
 let g:ale_linters['javascript'] = ['eslint']
 let g:ale_fixers['javascript'] = ['eslint', 'prettier']
 let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4'
 let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_fixers['scss'] = 'prettier'
-let g:ale_scss_prettier_options = '--trailing-comma all --tab-width 4'
-let g:ale_scss_prettier_use_local_config = 1
+
+" JSON
 let g:ale_fixers['json'] = 'prettier'
+
+" HTML
 let g:ale_fixers['html'] = 'prettier'
-let g:ale_fixers['python']  = ['yapf']
-let g:ale_linters['python'] = ['flake8', 'mypy']
-let g:ale_linters['haskell'] = ['hie']
-let g:ale_fixers['haskell']  = ['floskell']
 
 "
 " UltiSnips
