@@ -20,22 +20,6 @@ let colors_name = 'Meowgorithm'
 
 " }}}
 
-" Defaults {{{
-
-" hi Comment    ctermfg=239
-" hi Operator   ctermfg=203
-" hi String     ctermfg=29
-" hi Keyword    ctermfg=206
-" hi Function   ctermfg=42
-" hi Constant   ctermfg=80 cterm=bold
-" hi Type       ctermfg=138
-" hi Statement  ctermfg=71
-" hi Special    ctermfg=178
-" hi Identifier ctermfg=29
-" hi PreProc    ctermfg=33
-
-" }}}
-
 " Vim UI {{{
 
 hi Normal           ctermfg=250 ctermbg=235
@@ -49,8 +33,8 @@ hi Search           ctermfg=233 ctermbg=227
 hi Folded           ctermfg=243 ctermbg=236
 
 " Autocomplete Menu
-hi PMenu            ctermfg=121 ctermbg=29
-hi PMenuSel         ctermfg=52 ctermbg=217
+hi PMenu            ctermfg=52 ctermbg=217
+hi PMenuSel         ctermfg=121 ctermbg=29
 hi PmenuSbar        ctermbg=23
 hi PmenuThumb       ctermbg=36
 
@@ -70,14 +54,14 @@ hi TabLine     cterm=none ctermfg=244 ctermbg=238
 
 " Filesystem & NERDTree {{{
 
-hi Directory ctermfg=31
+hi Directory        ctermfg=31
 hi NERDTreeOpenable ctermfg=24
 
 " }}}
 
 " Ale {{{
 
-hi ALEError ctermbg=52
+hi ALEError   ctermbg=52
 hi ALEWarning ctermbg=19
 
 " }}}
@@ -94,50 +78,64 @@ highlight GitGutterDelete guifg=#ff2222 guibg=#262626 ctermfg=1 ctermbg=235
 
 " Highlighted Yank {{{
 
-highlight HighlightedyankRegion ctermfg=224 ctermbg=168
+highlight HighlightedyankRegion ctermbg=60
+
+" }}}
+
+" Lanuage Defaults {{{
+
+"hi Comment          ctermfg=239
+"hi Operator         ctermfg=203
+"hi String           ctermfg=29
+"hi Keyword          ctermfg=206
+"hi Function         ctermfg=42
+"hi Constant         ctermfg=80 cterm=bold
+"hi Type             ctermfg=138
+"hi Statement        ctermfg=71
+"hi Special          ctermfg=178
+"hi Identifier       ctermfg=29
+"hi PreProc          ctermfg=33
 
 " }}}
 
 " CSS {{{
 
-hi cssInclude              ctermfg=125
-hi cssURL                  ctermfg=191
-hi cssStringQ              ctermfg=185
-hi cssStringQQ             ctermfg=185
-hi cssTagName              ctermfg=161
-hi cssClassName            ctermfg=206
-hi cssPseudoClass          ctermfg=177
-hi cssPseudoClassId        ctermfg=177
-hi cssSelectorOp           ctermfg=167
-
-hi cssFontProp             ctermfg=37
-hi cssColorProp            ctermfg=37
-hi cssTextProp             ctermfg=37
-hi cssBoxProp              ctermfg=37
-hi cssRenderProp           ctermfg=37
-hi cssAuralProp            ctermfg=37
-hi cssGeneratedContentProp ctermfg=37
-hi cssPagingProp           ctermfg=37
-hi cssTableProp            ctermfg=37
-hi cssUIProp               ctermfg=37
-hi cssMiscProp             ctermfg=37
-
-hi cssCommonAttr           ctermfg=24
-hi cssFontAttr             ctermfg=24
-hi cssTextAttr             ctermfg=24
-hi cssColorAttr            ctermfg=24
-hi cssBoxAttr              ctermfg=24
-hi cssRenderAttr           ctermfg=24
-hi cssAuralAttr            ctermfg=24
-hi cssMiscAttr             ctermfg=24
-hi cssColor                ctermfg=24
-hi cssInteger              ctermfg=24
-hi cssValueNumber          ctermfg=24
-hi cssValueInteger         ctermfg=24
-hi cssValueLength          ctermfg=24
-hi cssValueAngle           ctermfg=24
-hi cssValueTime            ctermfg=24
-hi cssValueFrequency       ctermfg=24
+hi cssInclude        ctermfg=125
+hi cssURL            ctermfg=191
+hi link              cssStringQ cssStringQQ
+hi cssStringQQ       ctermfg=185
+hi cssTagName        ctermfg=161
+hi cssClassName      ctermfg=206
+hi link              cssPseudoClassId cssPseudoClass
+hi cssPseudoClass    ctermfg=177
+hi cssSelectorOp     ctermfg=167
+hi link              cssFontProp             cssMiscProp
+hi link              cssColorProp            cssMiscProp
+hi link              cssTextProp             cssMiscProp
+hi link              cssBoxProp              cssMiscProp
+hi link              cssRenderProp           cssMiscProp
+hi link              cssAuralProp            cssMiscProp
+hi link              cssGeneratedContentProp cssMiscProp
+hi link              cssPagingProp           cssMiscProp
+hi link              cssTableProp            cssMiscProp
+hi link              cssUIProp               cssMiscProp
+hi cssMiscProp       ctermfg=37
+hi cssCommonAttr     ctermfg=24
+hi cssFontAttr       ctermfg=24
+hi cssTextAttr       ctermfg=24
+hi cssColorAttr      ctermfg=24
+hi cssBoxAttr        ctermfg=24
+hi cssRenderAttr     ctermfg=24
+hi cssAuralAttr      ctermfg=24
+hi cssMiscAttr       ctermfg=24
+hi cssColor          ctermfg=24
+hi cssInteger        ctermfg=24
+hi cssValueNumber    ctermfg=24
+hi cssValueInteger   ctermfg=24
+hi cssValueLength    ctermfg=24
+hi cssValueAngle     ctermfg=24
+hi cssValueTime      ctermfg=24
+hi cssValueFrequency ctermfg=24
 
 " }}}
 
@@ -190,31 +188,27 @@ hi javaScriptFunctionName     ctermfg=255 cterm=bold
 
 " JavaScript (pangloss/vim-javascript) {{{
 
-hi link jsTemplateString jsString
-hi jsComment ctermfg=29
-
-hi link jsObjectStringKey jsString
-hi link jsClassStringKey jsString
-hi jsString ctermfg=137
-hi jsTemplateVar ctermfg=61
-
-hi link jsBooleanTrue jsConst
-hi link jsBooleanFalse jsConst
-hi link jsNumber jsConst
-hi link jsNull jsConst
-hi link jsNan jsConst
-hi jsConst ctermfg=121 cterm=bold
-
-hi jsGlobalObjects ctermfg=166
-hi jsThis ctermfg=38
-hi jsPrototype ctermfg=38
-
-hi jsFunction ctermfg=38
-hi jsArrowFunction ctermfg=38
-hi jsGenerator ctermfg=38
-hi jsFuncName ctermfg=254
+hi link             jsTemplateString jsString
+hi jsComment        ctermfg=29
+hi link             jsObjectStringKey jsString
+hi link             jsClassStringKey jsString
+hi jsString         ctermfg=137
+hi jsTemplateVar    ctermfg=61
+hi link             jsBooleanTrue jsConst
+hi link             jsBooleanFalse jsConst
+hi link             jsNumber jsConst
+hi link             jsNull jsConst
+hi link             jsNan jsConst
+hi jsConst          ctermfg=121 cterm=bold
+hi jsGlobalObjects  ctermfg=166
+hi jsThis           ctermfg=38
+hi jsPrototype      ctermfg=38
+hi jsFunction       ctermfg=38
+hi jsArrowFunction  ctermfg=38
+hi jsGenerator      ctermfg=38
+hi jsFuncName       ctermfg=254
 hi jsObjectFuncName ctermfg=77
-hi jsFuncArgs ctermfg=245
+hi jsFuncArgs       ctermfg=245
 
 " Class declaration
 hi link jsExtendsKeyword jsClassKeyword
@@ -282,45 +276,46 @@ hi jsNoise ctermfg=228 guifg=#e7ffb2
 
 " XML (Also JSX) {{{
 
-hi link xmlTagName xmlTag
-hi link xmlEndTag xmlTag
-hi link xmlEqual xmlTag
-hi xmlTag ctermfg=95
-hi link xmlAttribPunct xmlAttrib
+hi link      xmlTagName xmlTag
+hi link      xmlEndTag xmlTag
+hi link      xmlEqual xmlTag
+hi xmlTag    ctermfg=95
+hi link      xmlAttribPunct xmlAttrib
 hi xmlAttrib ctermfg=131
 hi xmlString ctermfg=104
 
 " }}}
 
 " CoffeeScript {{{
-hi coffeeKeyword                ctermfg=77
-hi coffeeConditional            ctermfg=206
-hi coffeeRepeat                 ctermfg=206
-hi coffeeException              ctermfg=77
-hi coffeeStatement              ctermfg=77
-hi coffeeString                 ctermfg=102
-hi coffeeRegex                  ctermfg=62
-hi coffeeEscape                 ctermfg=179 cterm=bold
-hi coffeeGlobal                 ctermfg=81
-hi coffeeBoolean                ctermfg=39
-hi coffeeAssign                 ctermfg=137
-hi coffeeAssignSymbols          ctermfg=160
-hi coffeeSpecialVar             ctermfg=43
-hi coffeeObject                 ctermfg=231 cterm=bold,underline
-hi coffeeObjAssign              ctermfg=39
-hi coffeeSpecialIdent           ctermfg=44
-hi coffeeComment                ctermfg=29
-hi coffeeFunction               ctermfg=67
-hi coffeeOperator               ctermfg=203
-hi coffeeAssignBrackets         ctermfg=193
-hi coffeeConstant               ctermfg=81 cterm=bold
-hi coffeeNumber                 ctermfg=81 cterm=bold
-hi coffeeFloat                  ctermfg=81 cterm=bold
 
-hi coffeePunctutation           ctermfg=193
-hi coffeeDollarVariable         ctermfg=203
-hi coffeeBuiltinFunction        ctermfg=68
-hi coffeeSpecialVariable        ctermfg=68
+hi coffeeKeyword         ctermfg=77
+hi coffeeConditional     ctermfg=206
+hi coffeeRepeat          ctermfg=206
+hi coffeeException       ctermfg=77
+hi coffeeStatement       ctermfg=77
+hi coffeeString          ctermfg=102
+hi coffeeRegex           ctermfg=62
+hi coffeeEscape          ctermfg=179 cterm=bold
+hi coffeeGlobal          ctermfg=81
+hi coffeeBoolean         ctermfg=39
+hi coffeeAssign          ctermfg=137
+hi coffeeAssignSymbols   ctermfg=160
+hi coffeeSpecialVar      ctermfg=43
+hi coffeeObject          ctermfg=231 cterm=bold,underline
+hi coffeeObjAssign       ctermfg=39
+hi coffeeSpecialIdent    ctermfg=44
+hi coffeeComment         ctermfg=29
+hi coffeeFunction        ctermfg=67
+hi coffeeOperator        ctermfg=203
+hi coffeeAssignBrackets  ctermfg=193
+hi coffeeConstant        ctermfg=81 cterm=bold
+hi coffeeNumber          ctermfg=81 cterm=bold
+hi coffeeFloat           ctermfg=81 cterm=bold
+
+hi coffeePunctutation    ctermfg=193
+hi coffeeDollarVariable  ctermfg=203
+hi coffeeBuiltinFunction ctermfg=68
+hi coffeeSpecialVariable ctermfg=68
 
 " }}}
 
@@ -328,88 +323,94 @@ hi coffeeSpecialVariable        ctermfg=68
 
 "let python_highlight_all = 1
 
-hi pythonComment            ctermfg=29
-hi pythonString             ctermfg=102
-hi pythonRawString          ctermfg=137
-hi pythonStatement          ctermfg=77
-hi pythonConditional        ctermfg=206
-hi pythonRepeat             ctermfg=206
-hi pythonException          ctermfg=206
-hi pythonExceptions         ctermfg=79
-hi pythonInclude            ctermfg=80
-hi pythonEscape             ctermfg=179
-hi pythonFunction           ctermfg=231
-hi pythonBuiltin            ctermfg=81
-hi pythonNumber             ctermfg=81
-hi pythonOperator           ctermfg=203
+hi pythonComment     ctermfg=29
+hi pythonString      ctermfg=102
+hi pythonRawString   ctermfg=137
+hi pythonStatement   ctermfg=77
+hi pythonConditional ctermfg=206
+hi pythonRepeat      ctermfg=206
+hi pythonException   ctermfg=206
+hi pythonExceptions  ctermfg=79
+hi pythonInclude     ctermfg=80
+hi pythonEscape      ctermfg=179
+hi pythonFunction    ctermfg=231
+hi pythonBuiltin     ctermfg=81
+hi pythonNumber      ctermfg=81
+hi pythonOperator    ctermfg=203
 
-hi pythonSpecial            ctermfg=39
-hi pythonOperator           ctermfg=203
-hi pythonPunctuation        ctermfg=193
+hi pythonSpecial     ctermfg=39
+hi pythonOperator    ctermfg=203
+hi pythonPunctuation ctermfg=193
 
 " }}}
 
 " Go {{{
 
 " Statements
-hi goDirective        ctermfg=198 cterm=bold
-
-" Keywords
-hi goDeclaration      ctermfg=170 " var const type
-hi goDeclType         ctermfg=170 " struct interface
+hi goDirective ctermfg=198 cterm=bold
 
 " Keywords within functions
-hi goStatement        ctermfg=170
-hi goConditional      ctermfg=170
-hi goLabel            ctermfg=170
-hi goRepeat           ctermfg=170
+hi goStatement   ctermfg=170
+hi goConditional ctermfg=170
+hi goLabel       ctermfg=170
+hi goRepeat      ctermfg=170
 
-hi goBuiltins         ctermfg=208
+hi goBuiltins ctermfg=208
+
+" Declarations
+hi goPackage     ctermfg=204 cterm=bold
+hi goImport      ctermfg=204
+hi goConst       ctermfg=169
+hi link goTypeDecl goVar
+hi link goConst goVar
+hi goVar         ctermfg=169
+hi goDeclaration ctermfg=77  "func
+hi goDeclType    ctermfg=105 "struct, interface
+hi goTypeName    ctermfg=95
+hi goFunction    ctermfg=255 "function names
 
 " Boolean
-hi goBoolean          ctermfg=45
+hi goBoolean ctermfg=45
 
 " Numbers
-hi goDecimalInt       ctermfg=45
-hi goHexadecimalInt   ctermfg=45
-hi goOctalInt         ctermfg=45
-hi goImaginary        ctermfg=45
+hi goDecimalInt     ctermfg=45
+hi goHexadecimalInt ctermfg=45
+hi goOctalInt       ctermfg=45
+hi goImaginary      ctermfg=45
 
 " Types
-hi goType ctermfg=95
-hi goSignedInts ctermfg=95
+hi goType         ctermfg=95
+hi goSignedInts   ctermfg=95
 hi goUnsignedInts ctermfg=95
-hi goFloats ctermfg=95
-hi goComplexes ctermfg=95
-hi goExtraType ctermfg=95
+hi goFloats       ctermfg=95
+hi goComplexes    ctermfg=95
+hi goExtraType    ctermfg=95
 
-" Func
-hi goDeclaration ctermfg=77
-
-" Esacpes
+" Escapes
 hi goEscapeOctal ctermfg=33
-hi goEcscapeC ctermfg=33
-hi goEscapeU ctermfg=33
-hi goEscapeBigU ctermfg=33
+hi goEcscapeC    ctermfg=33
+hi goEscapeU     ctermfg=33
+hi goEscapeBigU  ctermfg=33
 
 " Strings
-hi goString ctermfg=137
-hi goRawString ctermfg=29
-hi goFormatSpecifier ctermfg=29
+hi goString          ctermfg=137
+hi goRawString       ctermfg=29
+hi goFormatSpecifier ctermfg=211 "29
 
 " Comments
 hi goCommentGroup ctermfg=240
-hi goComment ctermfg=240 " 29
+hi goComment      ctermfg=240 "29
 
 " Operators
 hi goOperator ctermfg=203
 
 " Structs & Methods
-hi goMethod ctermfg=31
-hi goStruct ctermfg=208
-hi goStructDef ctermfg=255 cterm=bold,underline
+hi goMethod       ctermfg=31
+hi goStruct       ctermfg=208
+hi goStructDef    ctermfg=255 cterm=bold,underline
+hi goReceiverType ctermfg=95 "method parent types
+hi goField        ctermfg=38 "29
 
-hi goFunction ctermfg=255
 
 " }}}
 
@@ -458,28 +459,28 @@ hi haskellOperators      ctermfg=210
 
 " SQL/PostgreSQL {{{
 
-hi sqlSpecial ctermfg=204 cterm=bold,underline
-hi sqlCatalog ctermfg=204 cterm=bold,underline
-hi sqlConstant ctermfg=204 cterm=bold,underline
-hi sqlErrorCode ctermfg=204 cterm=bold,underline
-hi sqlFunction ctermfg=211 cterm=bold
-hi sqlIdentifier ctermfg=204 cterm=bold,underline
+hi sqlSpecial        ctermfg=204 cterm=bold,underline
+hi sqlCatalog        ctermfg=204 cterm=bold,underline
+hi sqlConstant       ctermfg=204 cterm=bold,underline
+hi sqlErrorCode      ctermfg=204 cterm=bold,underline
+hi sqlFunction       ctermfg=211 cterm=bold
+hi sqlIdentifier     ctermfg=204 cterm=bold,underline
 hi sqlplpgsqlKeyword ctermfg=204 cterm=bold,underline
-hi sqlOperator ctermfg=204 cterm=bold,underline
-hi sqlOption ctermfg=204 cterm=bold,underline
-hi sqlSpecial ctermfg=204 cterm=bold,underline
-hi sqlTable ctermfg=204 cterm=bold,underline
-hi sqlView ctermfg=204 cterm=bold,underline
-hi sqlVariable ctermfg=203 cterm=bold,underline
-hi sqlPsqlCommand ctermfg=203 cterm=bold,underline
-hi sqlPsqlKeyword ctermfg=203 cterm=bold,underline
+hi sqlOperator       ctermfg=204 cterm=bold,underline
+hi sqlOption         ctermfg=204 cterm=bold,underline
+hi sqlSpecial        ctermfg=204 cterm=bold,underline
+hi sqlTable          ctermfg=204 cterm=bold,underline
+hi sqlView           ctermfg=204 cterm=bold,underline
+hi sqlVariable       ctermfg=203 cterm=bold,underline
+hi sqlPsqlCommand    ctermfg=203 cterm=bold,underline
+hi sqlPsqlKeyword    ctermfg=203 cterm=bold,underline
 
-hi sqlType ctermfg=206
+hi sqlType      ctermfg=206
 hi sqlStatement ctermfg=34 " CREATE, UPDATE, DELETE, EXECUTE, etc.
-hi sqlComment ctermfg=240
-hi sqlString ctermfg=137
-hi sqlNumber ctermfg=202
-hi sqlKeyword ctermfg=32
+hi sqlComment   ctermfg=240
+hi sqlString    ctermfg=137
+hi sqlNumber    ctermfg=202
+hi sqlKeyword   ctermfg=32
 
 " }}}
 
