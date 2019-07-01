@@ -1,6 +1,6 @@
 " vim:et:ts=2:sw=2:fdm=marker
 
-" Bootstrap vim-plug
+" Bootstrap vim-plug {{{
 if has("nvim")
 
   let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
@@ -20,6 +20,7 @@ else
   endif
 
 endif
+" }}}
 
 " All UTF-8 all the time
 scriptencoding utf-8
@@ -62,17 +63,11 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
 Plug 'zxqfl/tabnine-vim'
 "Plug 'guns/xterm-color-table.vim'
-Plug 'ElmCast/elm-vim',           { 'for': 'elm' }
+Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-Plug 'fatih/vim-go',{
-  \ 'for': 'go',
-  \ 'do': ':GoUpdateBinaries'
-  \ }
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': './install.sh'
-  \ }
-Plug 'sheerun/vim-polyglot',      { 'do': './build' }
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
+"Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
+Plug 'sheerun/vim-polyglot', { 'do': './build' }
 
 let g:polyglot_disabled = ['elm', 'go', 'haskell']
 
@@ -250,34 +245,34 @@ vmap < <gv
 " LanguageClient
 "
 let g:LanguageClient_serverCommands = {
-  \ 'haskell': ['hie-wrapper', '--lsp']
+  \     'haskell': ['hie-wrapper', '--lsp']
   \ }
 let g:LanguageClient_diagnosticsDisplay = {
-    \     1: {
-    \         "name": "Error",
-    \         "texthl": "ALEError",
-    \         "signText": "✖",
-    \         "signTexthl": "ALEErrorSign",
-    \     },
-    \     2: {
-    \         "name": "Warning",
-    \         "texthl": "ALEWarningSign",
-    \         "signText": "!",
-    \         "signTexthl": "ALEWarningSign",
-    \     },
-    \     3: {
-    \         "name": "Information",
-    \         "texthl": "ALEInfo",
-    \         "signText": "i",
-    \         "signTexthl": "ALEInfoSign",
-    \     },
-    \     4: {
-    \         "name": "Hint",
-    \         "texthl": "ALEInfo",
-    \         "signText": ".",
-    \         "signTexthl": "ALEInfoSign",
-    \     },
-    \ }
+  \   1: {
+  \     "name": "Error",
+  \     "texthl": "ALEError",
+  \     "signText": "✖",
+  \     "signTexthl": "ALEErrorSign",
+  \   },
+  \   2: {
+  \     "name": "Warning",
+  \     "texthl": "ALEWarningSign",
+  \     "signText": "!",
+  \     "signTexthl": "ALEWarningSign",
+  \   },
+  \   3: {
+  \     "name": "Information",
+  \     "texthl": "ALEInfo",
+  \     "signText": "i",
+  \     "signTexthl": "ALEInfoSign",
+  \   },
+  \   4: {
+  \     "name": "Hint",
+  \     "texthl": "ALEInfo",
+  \     "signText": ".",
+  \     "signTexthl": "ALEInfoSign",
+  \   },
+  \ }
 
 "
 " Ale
