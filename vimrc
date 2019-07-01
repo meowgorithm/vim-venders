@@ -252,6 +252,32 @@ vmap < <gv
 let g:LanguageClient_serverCommands = {
   \ 'haskell': ['hie-wrapper', '--lsp']
   \ }
+let g:LanguageClient_diagnosticsDisplay = {
+    \     1: {
+    \         "name": "Error",
+    \         "texthl": "ALEError",
+    \         "signText": "✖",
+    \         "signTexthl": "ALEErrorSign",
+    \     },
+    \     2: {
+    \         "name": "Warning",
+    \         "texthl": "ALEWarningSign",
+    \         "signText": "!",
+    \         "signTexthl": "ALEWarningSign",
+    \     },
+    \     3: {
+    \         "name": "Information",
+    \         "texthl": "ALEInfo",
+    \         "signText": "i",
+    \         "signTexthl": "ALEInfoSign",
+    \     },
+    \     4: {
+    \         "name": "Hint",
+    \         "texthl": "ALEInfo",
+    \         "signText": ".",
+    \         "signTexthl": "ALEInfoSign",
+    \     },
+    \ }
 
 "
 " Ale
