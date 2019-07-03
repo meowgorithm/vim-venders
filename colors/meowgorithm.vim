@@ -453,6 +453,7 @@ hi haskellKeyword        ctermfg=212
 hi haskellType           ctermfg=78
 hi haskellIdentifier     ctermfg=105 " type signatures and record members
 hi haskellDelimiter      ctermfg=192
+hi haskellBacktick       ctermfg=33
 hi haskellOperators      ctermfg=210
 
 " }}}
