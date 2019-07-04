@@ -5,3 +5,15 @@ endsnippet
 snippet ibs "import bytestring stuff"
 import Data.ByteString.Char8 ( ByteString, pack, unpack )
 endsnippet
+
+snippet c "doc comment"
+{-| $0 -}
+endsnippet
+
+snippet # "language pragmga"
+{-# LANGUAGE ${0:OverloadedStrings} #-}
+endsnippet
+
+snippet dpp "record dot preprocessor"
+{-# OPTIONS_GHC -F -pgmF=record-dot-preprocessor #-}
+endsnippet
