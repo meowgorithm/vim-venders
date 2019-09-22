@@ -27,7 +27,7 @@ hi CursorLine       ctermbg=234 cterm=none
 hi ColorColumn      ctermbg=234
 hi NonText          ctermfg=235
 hi LineNr           ctermfg=238
-hi CursorLineNr     ctermfg=242
+hi CursorLineNr     ctermfg=242 cterm=none
 hi SignColumn       ctermbg=237
 hi Search           ctermfg=233 ctermbg=227
 hi Folded           ctermfg=243 ctermbg=236
