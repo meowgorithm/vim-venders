@@ -67,7 +67,7 @@ Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
-Plug 'sheerun/vim-polyglot', { 'do': './build' }
+Plug 'sheerun/vim-polyglot'
 
 let g:polyglot_disabled = ['elm', 'go', 'haskell']
 
