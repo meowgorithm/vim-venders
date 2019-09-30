@@ -211,6 +211,18 @@ map <leader>s :set hlsearch! hlsearch?<cr>
 map <leader>w :set wrap! wrap?<cr>
 map <leader>p :set paste! nopaste?<cr>
 
+" Toggle Ale fix on save
+nnoremap <leader>a :call AleFixOnSaveToggle()<cr>
+function! AleFixOnSaveToggle()
+  if get(g:, 'ale_fix_on_save', 1)
+    let g:ale_fix_on_save = 0
+    echo "Ale Fix-on-Save OFF"
+  else
+    let g:ale_fix_on_save = 1
+    echo "Ale Fix-on-Save ON"
+  endif
+endfunction
+
 " Toggle the error list
 nmap <script> <silent> E :call ToggleLocationList()<cr>
 
