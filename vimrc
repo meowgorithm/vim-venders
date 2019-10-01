@@ -303,6 +303,11 @@ let g:ale_go_langserver_executable = 'gopls'
 
 " Elm
 let g:ale_fixers['elm'] = 'format'
+"
+" There's also an Elm language server we could use. See:
+" https://github.com/elm-tooling/elm-language-server
+"
+let g:ale_linters['elm'] = ['elm_ls']
 
 " Haskell
 let g:ale_linters['haskell'] = ['hie']
