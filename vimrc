@@ -66,10 +66,11 @@ Plug 'zxqfl/tabnine-vim'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
 Plug 'sheerun/vim-polyglot'
 
-let g:polyglot_disabled = ['elm', 'go', 'haskell']
+let g:polyglot_disabled = ['elm', 'go', 'haskell', 'javascript']
 
 call plug#end()
 
@@ -452,6 +453,11 @@ let g:go_highlight_fields = 1
 let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
 let g:go_auto_type_info = 1
 let g:go_fmt_command = 'goimports'
+
+"
+" JavaScript
+"
+let g:javascript_plugin_flow = 1
 
 " Curious background-color-erase fix/hack, apparently
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
