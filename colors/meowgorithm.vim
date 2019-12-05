@@ -100,42 +100,72 @@ highlight HighlightedyankRegion ctermbg=60
 
 " CSS {{{
 
+hi cssComment        ctermfg=241
 hi cssInclude        ctermfg=125
 hi cssURL            ctermfg=191
-hi link              cssStringQ cssStringQQ
 hi cssStringQQ       ctermfg=185
 hi cssTagName        ctermfg=161
 hi cssClassName      ctermfg=206
-hi link              cssPseudoClassId cssPseudoClass
-hi cssPseudoClass    ctermfg=177
+hi cssPseudoClass    ctermfg=219
 hi cssSelectorOp     ctermfg=167
-hi link              cssFontProp             cssMiscProp
-hi link              cssColorProp            cssMiscProp
-hi link              cssTextProp             cssMiscProp
-hi link              cssBoxProp              cssMiscProp
-hi link              cssRenderProp           cssMiscProp
-hi link              cssAuralProp            cssMiscProp
-hi link              cssGeneratedContentProp cssMiscProp
-hi link              cssPagingProp           cssMiscProp
-hi link              cssTableProp            cssMiscProp
-hi link              cssUIProp               cssMiscProp
-hi cssMiscProp       ctermfg=37
-hi cssCommonAttr     ctermfg=24
-hi cssFontAttr       ctermfg=24
-hi cssTextAttr       ctermfg=24
-hi cssColorAttr      ctermfg=24
-hi cssBoxAttr        ctermfg=24
-hi cssRenderAttr     ctermfg=24
-hi cssAuralAttr      ctermfg=24
-hi cssMiscAttr       ctermfg=24
-hi cssColor          ctermfg=24
-hi cssInteger        ctermfg=24
-hi cssValueNumber    ctermfg=24
-hi cssValueInteger   ctermfg=24
-hi cssValueLength    ctermfg=24
-hi cssValueAngle     ctermfg=24
-hi cssValueTime      ctermfg=24
-hi cssValueFrequency ctermfg=24
+hi cssMiscProp       ctermfg=49
+hi scssProperty      ctermfg=49
+hi cssCommonAttr     ctermfg=32
+hi cssUnitDecorators ctermfg=45
+hi scssAttribute     ctermfg=229
+hi cssBraces         ctermfg=229
+hi scssSemicolon     ctermfg=229
+hi scssVariable      ctermfg=159
+hi scssInclude       ctermfg=255 cterm=bold,underline
+hi scssMixinName     ctermfg=75
+hi scssMixinParams   ctermfg=75
+hi scssAmpersand     ctermfg=204
+hi scssSelectorChar  ctermfg=212
+hi scssFunctionName ctermfg=105
+hi scssImport ctermfg=69 cterm=underline
+
+hi link scssComment             cssComment
+hi link scssSelectorName        cssClassName
+hi link cssPseudoClassId        cssPseudoClass
+hi link cssValueNumber          cssTextAttr
+hi link cssStringQ              cssStringQQ
+hi link cssFontProp             cssMiscProp
+hi link cssColorProp            cssMiscProp
+hi link cssTextProp             cssMiscProp
+hi link cssBoxProp              cssMiscProp
+hi link cssRenderProp           cssMiscProp
+hi link cssAuralProp            cssMiscProp
+hi link cssGeneratedContentProp cssMiscProp
+hi link cssPagingProp           cssMiscProp
+hi link cssTableProp            cssMiscProp
+hi link cssUIProp               cssMiscProp
+hi link cssAnimationProp        cssMiscProp
+hi link cssBackgroundProp       cssMiscProp
+hi link cssPositioningProp      cssMiscProp
+hi link cssMediaProp            cssMiscProp
+hi link cssTransformProp        cssMiscProp
+hi link cssBorderProp           cssMiscProp
+hi link cssFlexibleBoxProp      cssMiscProp
+hi link cssMultiColumnProp      cssMiscProp
+hi link cssListProp             cssMiscProp
+hi link cssKeyframeProp         cssMiscProp
+hi link cssFontAttr             cssCommonAttr
+hi link cssTextAttr             cssCommonAttr
+hi link cssColorAttr            cssCommonAttr
+hi link cssBoxAttr              cssCommonAttr
+hi link cssRenderAttr           cssCommonAttr
+hi link cssAuralAttr            cssCommonAttr
+hi link cssMiscAttr             cssCommonAttr
+hi link cssPositioningAttr      cssCommonAttr
+hi link cssColor                cssCommonAttr
+hi link cssInteger              cssCommonAttr
+hi link cssValueNumber          cssCommonAttr
+hi link cssValueInteger         cssCommonAttr
+hi link cssValueLength          cssCommonAttr
+hi link cssValueAngle           cssCommonAttr
+hi link cssValueTime            cssCommonAttr
+hi link cssValueFrequency       cssCommonAttr
+hi link cssAnimationAttr        cssCommonAttr
 
 " }}}
 
