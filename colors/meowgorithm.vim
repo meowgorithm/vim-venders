@@ -304,6 +304,18 @@ hi jsNoise ctermfg=228 guifg=#e7ffb2
 
 " }}}
 
+" JSON {{{
+
+hi jsonBraces ctermfg=229
+hi jsonQuote ctermfg=61
+hi jsonKeyword ctermfg=61
+hi jsonString ctermfg=68
+hi jsonNumber ctermfg=43
+hi jsonBoolean ctermfg=204
+hi jsonEscape ctermfg=224
+
+" }}}
+
 " XML (Also JSX) {{{
 
 hi link      xmlTagName xmlTag
