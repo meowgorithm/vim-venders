@@ -306,7 +306,10 @@ hi jsNoise ctermfg=228 guifg=#e7ffb2
 
 " JSON {{{
 
-hi jsonBraces ctermfg=229
+hi link jsonBraces       jsonNoise
+hi link jsonKeywordMatch jsonNoise
+
+hi jsonNoise ctermfg=229
 hi jsonQuote ctermfg=61
 hi jsonKeyword ctermfg=61
 hi jsonString ctermfg=68
