@@ -98,8 +98,12 @@ colorscheme meowgorithm
 
 if has("persistent_undo")
   set undofile
-  if !has('nvim')
-    set undodir=~/.vim/tmp
+  if has('nvim')
+    " XXX: why doesn't stdpath('config') work here?
+    set undodir=$HOME . '/.config/tmp'
+  else
+    call mkdir($HOME . '/.vim/tmp', 'p')
+    set undodir=$HOME/.vim/tmp
   endif
 endif
 
