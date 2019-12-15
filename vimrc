@@ -24,6 +24,7 @@ endif
 
 " All UTF-8 all the time
 scriptencoding utf-8
+
 set encoding=utf-8
 
 " https://github.com/vim/vim/issues/3117
@@ -63,6 +64,7 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
 Plug 'zxqfl/tabnine-vim'
 "Plug 'guns/xterm-color-table.vim'
+Plug 'chrisbra/Colorizer'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -467,3 +469,12 @@ let g:javascript_plugin_flow = 1
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
 " (We set this specifically for Kitty)
 let &t_ut=''
+
+"
+" Colorizer
+"
+let g:colorizer_auto_color = 0
+let g:colorizer_auto_filetype='css,scss,vim'
+let g:colorizer_use_virtual_text = 0
+nmap <leader>c :ColorToggle<cr>
+
