@@ -297,7 +297,6 @@ let g:ale_linters = {}
 let g:ale_fixers  = {}
 let g:ale_fix_on_save = 0
 let g:ale_use_global_executables = 1
-"let g:ale_linters_ignore = { 'elm': ['make'] }
 
 " Go
 let g:ale_linters['go'] = ['gopls']
@@ -306,10 +305,11 @@ let g:ale_go_langserver_executable = 'gopls'
 " Elm
 let g:ale_fixers['elm'] = 'format'
 "
-" There's also an Elm language server we could use. See:
+" Elm language server. See:
 " https://github.com/elm-tooling/elm-language-server
 "
-let g:ale_linters['elm'] = ['elm_ls']
+"let g:ale_linters_ignore = { 'elm': ['make'] } " Disable the default Elm linter
+"let g:ale_linters['elm'] = ['elm_ls']
 
 " Haskell
 let g:ale_linters['haskell'] = ['hie']
