@@ -186,6 +186,7 @@ if !has('nvim') && &term =~ '^screen'
   " Extended mouse mode
   " See :help ttymouse
   set ttymouse=sgr
+  set balloonexpr=1
 endif
 
 let mapleader=','
@@ -206,9 +207,12 @@ nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 
+nmap <leader>. :ALEHover<cr>
+nmap <leader>d :ALEDetail<cr>
+
 " Toggles
 map <leader>i :set invlist<cr>:exe ":echo 'toggling invisibles'"<cr>
-map <leader>. :set number! nonumber?<cr>
+"map <leader>. :set number! nonumber?<cr>
 map <leader>s :set hlsearch! hlsearch?<cr>
 map <leader>w :set wrap! wrap?<cr>
 map <leader>p :set paste! nopaste?<cr>
@@ -297,6 +301,9 @@ let g:ale_linters = {}
 let g:ale_fixers  = {}
 let g:ale_fix_on_save = 0
 let g:ale_use_global_executables = 1
+if !has('nvim')
+  let g:ale_set_balloons = 1
+endif
 
 " Go
 let g:ale_linters['go'] = ['gopls']
