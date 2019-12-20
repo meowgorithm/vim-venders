@@ -66,6 +66,7 @@ Plug 'zxqfl/tabnine-vim'
 "Plug 'guns/xterm-color-table.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
+"Plug 'ultrox/elm-ale-pretty', { 'for' : 'elm' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -232,11 +233,19 @@ endfunction
 " Toggle the error list
 nmap <script> <silent> E :call ToggleLocationList()<cr>
 
+" Close quickfix, location list, and preview windows
+function! CloseHelperWindows()
+  windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+  pclose
+endfunction
+
+nmap X :call CloseHelperWindows()<cr>
+
 " Remove empty buffers
 function! g:CleanEmptyBuffers()
   let buffers = filter(range(0, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0')
   if !empty(buffers)
-  exe 'bw '.join(buffers, ' ')
+    exe 'bw '.join(buffers, ' ')
   endif
 endfunction
 nmap BC :call g:CleanEmptyBuffers()<cr>
@@ -476,7 +485,7 @@ let &t_ut=''
 " Colorizer
 "
 let g:colorizer_auto_color = 0
-let g:colorizer_auto_filetype='css,scss,vim'
+"let g:colorizer_auto_filetype='css,scss,vim'
 let g:colorizer_use_virtual_text = 0
 nmap <leader>c :ColorToggle<cr>
 
