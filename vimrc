@@ -58,7 +58,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
+"Plug 'Raimondi/delimitMate' " auto-closes brackets, parens, quotes, etc.
 Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
