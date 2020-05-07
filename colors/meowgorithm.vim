@@ -22,8 +22,8 @@ let colors_name = 'Meowgorithm'
 
 " Vim UI {{{
 
-hi Normal           ctermfg=250 ctermbg=235
-hi CursorLine       ctermbg=234 cterm=none
+hi Normal           ctermfg=250 "ctermbg=235
+hi CursorLine       ctermbg=232 cterm=none
 hi ColorColumn      ctermbg=234
 hi NonText          ctermfg=235
 hi LineNr           ctermfg=238
@@ -70,9 +70,12 @@ hi ALEWarning ctermbg=19
 
 " By default, GitGutter uses the Diff colors here so we're overriding with
 " the old defaults
-highlight GitGutterAdd    guifg=#009900 guibg=#262626 ctermfg=2 ctermbg=235
-highlight GitGutterChange guifg=#bbbb00 guibg=#262626 ctermfg=3 ctermbg=235
-highlight GitGutterDelete guifg=#ff2222 guibg=#262626 ctermfg=1 ctermbg=235
+"highlight GitGutterAdd    guifg=#009900 guibg=#262626 ctermfg=2 ctermbg=234
+"highlight GitGutterChange guifg=#bbbb00 guibg=#262626 ctermfg=3 ctermbg=234
+"highlight GitGutterDelete guifg=#ff2222 guibg=#262626 ctermfg=1 ctermbg=234
+highlight GitGutterAdd    ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
 
 " }}}
 
