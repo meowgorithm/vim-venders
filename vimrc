@@ -384,6 +384,7 @@ let g:airline#extensions#ale#enabled = 1
 "
 let g:gitgutter_sign_modified         = '•'
 let g:gitgutter_sign_modified_removed = '•-'
+let g:gitgutter_set_sign_backgrounds = 1 " match to SignColumn
 
 "
 " NERDTree
