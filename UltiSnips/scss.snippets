@@ -46,8 +46,24 @@ snippet h "height"
 height: $0;
 endsnippet
 
-snippet p "position"
-position: $0;
+snippet pos "position"
+position: ${0:relative};
+endsnippet
+
+snippet t "top"
+top: ${1:px($0)}
+endsnippet
+
+snippet r "right"
+right: ${1:px($0)}
+endsnippet
+
+snippet b "bottom"
+bottom: ${1:px($0)}
+endsnippet
+
+snippet l "left"
+left: ${1:px($0)}
 endsnippet
 
 snippet op "opacity"
@@ -62,12 +78,40 @@ snippet f "fixed"
 fixed$0
 endsnippet
 
+snippet fs "font-size"
+font-size: $0;
+endsnippet
+
+snippet fw "font-weight"
+font-weight: $0;
+endsnippet
+
+snippet ti "text-indent"
+text-indent: ${0:-5000px};
+endsnippet
+
+snippet tt "text-transform"
+text-transform: ${0:lowercase};
+endsnippet
+
 snippet bgc "background-color"
 background-color: $0;
 endsnippet
 
 snippet bgi "background-image"
 background-image: url($0);
+endsnippet
+
+snippet bgs "background-size"
+background-size: $0;
+endsnippet
+
+snippet bgp "background-position"
+background-position: $0;
+endsnippet
+
+snippet bgr "background-repeat"
+background-repeat: ${0:no-repeat};
 endsnippet
 
 snippet d "display"
@@ -126,6 +170,10 @@ snippet tz "translateZ"
 translateZ($0)
 endsnippet
 
+snippet ta "text-align"
+text-align: ${0:center};
+endsnippet
+
 #
 # Pseudo Elements
 #
@@ -169,7 +217,7 @@ endsnippet
 # Breakpoints
 #
 snippet bp "breakpoint"
-@include breakpoint($1) {
+@include breakpoint(${1:\$mobile}) {
 	$0
 }
 endsnippet

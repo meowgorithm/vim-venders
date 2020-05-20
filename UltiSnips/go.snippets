@@ -5,12 +5,6 @@ func Test${1:Name}(t *testing.T) {
 endsnippet
 
 snippet tr "t.Run()"
-t.Run("$1", func(t *testing.T) {
-	$0
-})
-endsnippet
-
-snippet st "sub-test"
 t.Run("${1:test name}", func(t *testing.T) {
 	$0
 })
@@ -20,6 +14,12 @@ snippet fn "function"
 func $1($2)$3 {
 	$4
 }
+endsnippet
+
+snippet go "inline goroutine"
+go func(){
+	$1
+}()
 endsnippet
 
 snippet wr "http route"
@@ -51,6 +51,10 @@ func ($3) $1() {
 }
 endsnippet
 
-snippet mn "github.com/magicnumbers"
-"github.com/magicnumbers/$0"
+snippet icb "import charmbracelet lib"
+"github.com/charmbracelet/$0"
+endsnippet
+
+snippet ite "import termenv"
+te "github.com/muesli/termenv"
 endsnippet
