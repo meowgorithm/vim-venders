@@ -419,7 +419,7 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 nmap ; :CtrlPBuffer<cr>
-nnoremap <c-l> :CtrlPMRUFiles<cr>
+nnoremap <c-o> :CtrlPMRUFiles<cr>
 
 let g:ctrlp_max_height = 25
 let g:ctrlp_jump_to_buffer = 0 " enable this to jump to open windows if the file is open there. see ctrlp help.
