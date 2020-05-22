@@ -73,9 +73,10 @@ hi ALEWarning ctermbg=19
 "highlight GitGutterAdd    guifg=#009900 guibg=#262626 ctermfg=2 ctermbg=234
 "highlight GitGutterChange guifg=#bbbb00 guibg=#262626 ctermfg=3 ctermbg=234
 "highlight GitGutterDelete guifg=#ff2222 guibg=#262626 ctermfg=1 ctermbg=234
-highlight GitGutterAdd    ctermfg=2
-highlight GitGutterChange ctermfg=3
-highlight GitGutterDelete ctermfg=1
+highlight GitGutterAdd          ctermfg=2
+highlight GitGutterChange       ctermfg=3
+highlight GitGutterChangeDelete ctermfg=3
+highlight GitGutterDelete       ctermfg=1
 
 " }}}
 
