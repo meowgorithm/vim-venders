@@ -462,6 +462,19 @@ hi goField        ctermfg=38 "29
 
 " }}}
 
+" Go Mod {{{
+
+hi gomodModule ctermfg=204 cterm=bold
+hi gomodGo ctermfg=42
+hi gomodGoVersion ctermfg=42 cterm=underline
+hi gomodRequire ctermfg=204
+hi gomodVersion ctermfg=95
+hi gomodComment ctermfg=29
+hi gomodReplace ctermfg=69
+hi gomodReplaceOperator ctermfg=62
+
+" }}}
+
 " Elm {{{
 
 hi elmImport              ctermfg=39
