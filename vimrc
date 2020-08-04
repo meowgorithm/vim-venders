@@ -342,7 +342,7 @@ let g:ale_scss_prettier_options = '--trailing-comma all --tab-width 4'
 let g:ale_scss_prettier_use_local_config = 1
 
 " JavaScript
-let g:ale_linters['javascript'] = ['flow-language-server', 'eslint']
+let g:ale_linters['javascript'] = ['flow', 'eslint']
 let g:ale_fixers['javascript'] = ['eslint', 'prettier']
 let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4'
 let g:ale_javascript_prettier_use_local_config = 1
