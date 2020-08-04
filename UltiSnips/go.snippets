@@ -36,12 +36,12 @@ snippet tef "t.Errorf()"
 t.Errorf("$1\n", $0)
 endsnippet
 
-snippet pv "print variable"
-fmt.Printf("%#v\n", $0)
+snippet lv "log variable"
+log.Printf("%#v\n", $0)
 endsnippet
 
-snippet pl "fmt.Println()"
-fmt.Println(${1:"$0"})
+snippet pl "log.Println()"
+log.Println(${1:"$0"})
 endsnippet
 
 snippet em "exported method"
