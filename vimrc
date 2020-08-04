@@ -72,6 +72,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
 Plug 'sheerun/vim-polyglot'
+Plug 'cakebaker/scss-syntax.vim'
 
 let g:polyglot_disabled = ['elm', 'go', 'haskell', 'javascript']
 
