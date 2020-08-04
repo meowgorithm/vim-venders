@@ -18,7 +18,7 @@ And then:
 
     # Install Elm and JavaScript tools
     npm -g install \
-        elm elm-test elm-oracle elm-format \
+        elm elm-test elm-oracle elm-format @elm-tooling/elm-language-server \
         flow-bin eslint babel-eslint eslint-plugin-react prettier
 
     # Install Python tools
