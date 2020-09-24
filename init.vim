@@ -261,13 +261,17 @@ nmap <leader>2 :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":ech
 nmap <leader>3 :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":echo 'tabs, 4'"<cr>
 nmap <leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>:exe ":echo 'tabs, 2'"<cr>
 
-" Visual Mode Blockwise Indent
-" This keeps the current visual block selection active after changing indent
-" with '<' or '>'. Usually the visual block selection is lost after you shift
-" it, which is incredibly annoying.
+" Visual Mode Blockwise Indent. This keeps the current visual block selection
+" active after changing indent with '<' or '>'. Usually the visual block
+" selection is lost after you shift it, which is incredibly annoying.
+"
 " http://vim.wikia.com/wiki/Short_mappings_for_common_tasks
 vmap > >gv
 vmap < <gv
+
+" How about if just one < or > indents in normal mode
+nmap > >>
+nmap < <<
 
 "
 " LanguageClient
