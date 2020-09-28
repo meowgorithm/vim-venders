@@ -19,18 +19,23 @@ And then:
     # Install Elm and JavaScript tools
     npm -g install \
         elm elm-test elm-oracle elm-format @elm-tooling/elm-language-server \
-        flow-bin eslint babel-eslint eslint-plugin-react prettier \
-        bash-language-server \
-        vscode-css-languageserver-bin \
-        vscode-html-languageserver-bin \
-        vscode-json-languageserver-bin
+        flow-bin eslint babel-eslint eslint-plugin-react prettier
 
     # Install Python tools
     pip install flake8 mypy yapf pyls
 
-If you’re working with Haskell you may also want to install the
-[Haskll IDE Engine][hie] or [Haskell Language Server][hls]. The latter is a
-better choice at this point but also not well supported by Vim yet.
+Install some common language servers in Vim:
+
+    `:CocInstall coc-tabnine coc-sh coc-json coc-css coc-html coc-python
+
+If you’re working with Haskell you will probably want to install the [Haskell
+Language Server][hls].
+
+You can also improve TabNine's performance by disabling language server stuff,
+since CoC handles that:
+
+    # MacOS
+    sed -i '.original' 's/"ignore_all_lsp": false/"ignore_all_lsp": true/' "$HOME/Library/Preferences/TabNine/tabnine_config.json"
 
 
 [wim]: https://en.wikipedia.org/wiki/Wim_Wenders

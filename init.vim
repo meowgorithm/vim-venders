@@ -61,16 +61,15 @@ Plug 'tpope/vim-surround'
 "Plug 'Raimondi/delimitMate' " auto-closes brackets, parens, quotes, etc.
 Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
-Plug 'w0rp/ale'
-Plug 'zxqfl/tabnine-vim'
+"Plug 'w0rp/ale'
+"Plug 'zxqfl/tabnine-vim'
+Plug 'neoclide/coc.nvim'
 "Plug 'guns/xterm-color-table.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
-"Plug 'ultrox/elm-ale-pretty', { 'for' : 'elm' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-"Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
 Plug 'sheerun/vim-polyglot'
 Plug 'cakebaker/scss-syntax.vim'
 
@@ -209,8 +208,8 @@ nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 
-nmap <leader>. :ALEHover<cr>
-nmap <leader>d :ALEDetail<cr>
+"nmap <leader>. :ALEHover<cr>
+"nmap <leader>d :ALEDetail<cr>
 
 " Toggles
 map <leader>i :set invlist<cr>:exe ":echo 'toggling invisibles'"<cr>
@@ -274,37 +273,23 @@ nmap > >>
 nmap < <<
 
 "
-" LanguageClient
+" CoC
 "
-let g:LanguageClient_serverCommands = {
-  \     'haskell': ['hie-wrapper', '--lsp']
-  \ }
-let g:LanguageClient_diagnosticsDisplay = {
-  \   1: {
-  \     "name": "Error",
-  \     "texthl": "ALEError",
-  \     "signText": "✖",
-  \     "signTexthl": "ALEErrorSign",
-  \   },
-  \   2: {
-  \     "name": "Warning",
-  \     "texthl": "ALEWarningSign",
-  \     "signText": "!",
-  \     "signTexthl": "ALEWarningSign",
-  \   },
-  \   3: {
-  \     "name": "Information",
-  \     "texthl": "ALEInfo",
-  \     "signText": "i",
-  \     "signTexthl": "ALEInfoSign",
-  \   },
-  \   4: {
-  \     "name": "Hint",
-  \     "texthl": "ALEInfo",
-  \     "signText": ".",
-  \     "signTexthl": "ALEInfoSign",
-  \   },
-  \ }
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn to reduce jumpiness
+if has("patch-8.1.1564")
+  " Vim can merge signcolumn and number column into one in recent versions
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 "
 " Ale
