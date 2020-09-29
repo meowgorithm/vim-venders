@@ -64,6 +64,7 @@ Plug 'milkypostman/vim-togglelist'
 "Plug 'w0rp/ale'
 "Plug 'zxqfl/tabnine-vim'
 Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc-tabnine'
 "Plug 'guns/xterm-color-table.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }

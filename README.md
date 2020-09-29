@@ -37,6 +37,9 @@ since CoC handles that:
     # MacOS
     sed -i '.original' 's/"ignore_all_lsp": false/"ignore_all_lsp": true/' "$HOME/Library/Preferences/TabNine/tabnine_config.json"
 
+    # Linux
+    sed -i 's/"ignore_all_lsp": false/"ignore_all_lsp": true/' "$HOME/.config/TabNine/tabnine_config.json"
+
 
 [wim]: https://en.wikipedia.org/wiki/Wim_Wenders
 [hie]: https://github.com/haskell/haskell-ide-engine
