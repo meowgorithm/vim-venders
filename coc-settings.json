@@ -1,4 +1,10 @@
 {
+  "diagnostic.refreshAfterSave": false,
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.warningSign": "--",
+  "coc.preferences.formatOnSaveFiletypes": ["elm"],
+
   "languageserver": {
 
     "go": {
