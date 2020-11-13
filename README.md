@@ -26,7 +26,7 @@ And then:
 
 Install some common language servers in Vim:
 
-    `:CocInstall coc-tabnine coc-sh coc-json coc-css coc-html coc-python
+    :CocInstall coc-tabnine coc-sh coc-json coc-css coc-html coc-python
 
 If you’re working with Haskell you will probably want to install the [Haskell
 Language Server][hls].
