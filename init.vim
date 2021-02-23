@@ -72,6 +72,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'sheerun/vim-polyglot'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'wincent/terminus' " nice cursors, better paste, better mouse, and so on
 
 let g:polyglot_disabled = ['elm', 'go', 'haskell', 'javascript']
 
