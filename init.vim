@@ -62,9 +62,8 @@ Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
 "Plug 'w0rp/ale'
-"Plug 'zxqfl/tabnine-vim'
+"Plug 'codota/tabnine-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-tabnine'
 "Plug 'guns/xterm-color-table.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
