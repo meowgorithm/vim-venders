@@ -232,12 +232,27 @@ function! AleFixOnSaveToggle()
 endfunction
 
 " Toggle the error list
-nmap <script> <silent> E :call ToggleLocationList()<cr>
+"nmap <script> <silent> E :call ToggleLocationList()<cr>
 
 " Close quickfix, location list, and preview windows
 function! CloseHelperWindows()
+  " get current window number
+  let n = winnr()
+  let isParent = 1
+  if &buftype == "quickfix" || &buftype == "locationList"
+      let isParent = 0
+  endif
+
+
+  " cycle through windows and close their helper windows. this will set the
+  " focus to the last window when complete.
   windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
   pclose
+
+  " return to the original window
+  if isParent == 1
+    execute n . "wincmd w"
+  endif
 endfunction
 
 nmap X :call CloseHelperWindows()<cr>
@@ -282,11 +297,15 @@ set shortmess+=c
 
 " Always show the signcolumn to reduce jumpiness
 if has("patch-8.1.1564")
-  " Vim can merge signcolumn and number column into one in recent versions
-  set signcolumn=number
+  " Note that Vim can merge signcolumn and number column into one in recent
+  " versions with: set signcolumn=number
+  set signcolumn=yes
 else
   set signcolumn=yes
 endif
+
+" Show Diagnostics
+nmap E :CocDiagnostics<cr>
 
 " Navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
