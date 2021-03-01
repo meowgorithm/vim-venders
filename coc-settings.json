@@ -38,6 +38,11 @@
       "requireRootPattern": true,
       "settings": {},
       "rootPatterns": [".flowconfig"]
+    },
+
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": ["nix"]
     }
 
   }
