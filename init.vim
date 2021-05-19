@@ -175,7 +175,7 @@ set wildmode=list:longest,list:full
 set infercase " ignore case on insert completion
 set wildignore+=.DS_Store,*.pyc,*.scssc,COMMIT_EDITMSG
 set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*,*/tmp/*,*/.cache/*
-set wildignore+=*/build/*,*/dist/*,*/vendor/*,*/pkg/*
+set wildignore+=*/build/*,*/dist/*,*/dist-newstyle/*,*/vendor/*,*/pkg/*
 set wildignore+=*/plugged/*
 
 " Window management
