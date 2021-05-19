@@ -58,3 +58,14 @@ endsnippet
 snippet ite "import termenv"
 te "github.com/muesli/termenv"
 endsnippet
+
+
+snippet tealog "Bubble Tea Logger"
+f, err := tea.LogToFile("debug.log", "$0")
+if err != nil {
+	fmt.Println("Couldn't open file for logging:", err)
+	os.Exit(1)
+}
+defer f.Close()
+endsnippet
+
