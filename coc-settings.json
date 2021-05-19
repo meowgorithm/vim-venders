@@ -11,7 +11,10 @@
       "command": "gopls",
       "rootPatterns": ["go.mod"],
       "trace.server": "verbose",
-      "filetypes": ["go"]
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "experimentalWorkspaceModule": true
+      }
     },
 
     "haskell": {
