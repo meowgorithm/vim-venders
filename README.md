@@ -28,11 +28,16 @@ Install some common language servers in Vim:
 
     :CocInstall coc-tabnine coc-sh coc-json coc-css coc-html coc-python
 
+Install some common language servers in NeoVim:
+
+    :LspInstall <tab>
+
 If you’re working with Haskell you will probably want to install the [Haskell
-Language Server][hls].
+Language Server][hls], which is probably easiest to install with [GHCUP][ghcup]
+these days.
 
 You can also improve TabNine's performance by disabling language server stuff,
-since CoC handles that:
+since CoC/NeoVim’s Native LSP handles that:
 
     # MacOS
     sed -i '.original' 's/"ignore_all_lsp": false/"ignore_all_lsp": true/' "$HOME/Library/Preferences/TabNine/tabnine_config.json"
@@ -44,3 +49,4 @@ since CoC handles that:
 [wim]: https://en.wikipedia.org/wiki/Wim_Wenders
 [hie]: https://github.com/haskell/haskell-ide-engine
 [hls]: https://github.com/haskell/haskell-language-server
+[ghcup]: https://www.haskell.org/ghcup/
