@@ -50,6 +50,9 @@ hi TabLineFill cterm=none ctermbg=236
 hi TabLineSel  cterm=bold ctermfg=253 ctermbg=242
 hi TabLine     cterm=none ctermfg=244 ctermbg=238
 
+" LSP (NeoVim)
+hi LspDiagnosticsDefaultError ctermfg=204 guifg=#ff5f87
+
 " }}}
 
 " Filesystem & NERDTree {{{

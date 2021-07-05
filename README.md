@@ -1,6 +1,6 @@
 # Vim Venders!
 
-A Vim config inspired by the work of [Wim Wenders][wim].
+A Vim and NeoVim config inspired by the work of [Wim Wenders][wim].
 
 Checkout to `~/.vim` or (`~/.config/nvim`) and get to work.
 
