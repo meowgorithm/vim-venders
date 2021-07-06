@@ -1,39 +1,32 @@
 " vim:et:ts=2:sw=2:fdm=marker
 
 " Bootstrap vim-plug {{{
-if has("nvim")
-
-  let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
-  if !filereadable(autoload_plug_path)
-    silent execute '!curl -fLo ' . autoload_plug_path . '  --create-dirs
-        \ "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-  endif
-  unlet autoload_plug_path
-
+if has('nvim')
+  let autoloadPlugPath = stdpath('data') . '/site/autoload/plug.vim'
 else
-
-  if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-  endif
-
+  let autoloadPlugPath = $HOME . '/.vim/autoload/plug.vim'
 endif
+
+if !filereadable(autoloadPlugPath)
+  silent execute '!curl -fLo ' . autoloadPlugPath . ' --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+unlet autoloadPlugPath
 " }}}
 
-" All UTF-8 all the time
+" All UTF-8 all the time.
 scriptencoding utf-8
-
 set encoding=utf-8
 
+" Supress error message the first time Python 3 is loaded.
 " https://github.com/vim/vim/issues/3117
 if has('python3')
   silent! python3 1
 endif
 
-" Turning this on disbles Airline and instead shows the syntax definition
-" in the status line
+" Turning this on disbles Airline and instead shows the syntax definition in
+" the status line.
 let debug_color_scheme = 0
 
 "
@@ -42,7 +35,6 @@ let debug_color_scheme = 0
 
 call plug#begin()
 
-" General behavioral stuff stuff
 if !debug_color_scheme
   Plug 'vim-airline/vim-airline'
 endif
@@ -73,7 +65,6 @@ else
   "Plug 'codota/tabnine-vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 end
-"Plug 'guns/xterm-color-table.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
@@ -101,7 +92,7 @@ if debug_color_scheme
   set statusline=%{SyntaxItem()}
 endif
 
-" Vim-Plug calls this but we're leaving here anyway
+" Vim-Plug calls this but we're leaving here anyway.
 filetype plugin indent on
 syntax on
 
@@ -110,6 +101,7 @@ if !has('nvim') && &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
   set t_Co=16
 endif
 
+" NeoVim can use TrueColor in color schemes.
 "if has('termguicolors')
 "    set termguicolors
 "endif
@@ -117,30 +109,33 @@ endif
 colorscheme Meowgorithm
 
 if has('persistent_undo')
-  let s:undoTmp = ''
-
   if has('nvim')
-    let s:undoTmp = stdpath('data') . '/nvim-undo'
+    let undoTmp = stdpath('data') . '/undo'
   else
-    let s:undoTmp = $HOME . '/.vim/vim-undo'
+    let undoTmp = $HOME . '/.vim/undo'
   end
 
   set undofile
-  call mkdir(s:undoTmp, 'p')
-  let &undodir = s:undoTmp
+  call mkdir(undoTmp, 'p')
+  let &undodir = undoTmp
+  unlet undoTmp
 endif
 
-if !has('nvim')
-  set directory=~/.vim/tmp    " where to put swap files
-  set backupdir=~/.vim/backup " where to put backups
-  set viewdir=~/.vim/view
-  set dir=~/.vim/swap
+if has('nvim')
+  let &directory = stdpath('data') . '/swap'   " where to put swap files
+  let &backupdir = stdpath('data') . '/backup' " where to put backups
+  let &viewdir = stdpath('data') . '/view'     " where to put views
+else
+  let &directory = $HOME . '/.vim/swap'
+  let &backupdir = $HOME . '/.vim/backup'
+  let &viewdir = $HOME . '/.vim/view'
 endif
+
 set nobackup
 set nowritebackup
 set noswapfile
-set shell=bash                " keep Vim from freaking out under weird shells (like Fish)
-set autoread                  " re-read files when they're changed externally
+set shell=bash     " keep Vim from freaking out under weird shells (like Fish)
+set autoread       " re-read files when they're changed externally
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -151,10 +146,10 @@ set autoindent
 set smarttab
 set smartindent
 set shiftround
-set timeoutlen=250            " time to wait for a command (after leader, for example)
-set hidden                    " change buffer without saving
-set showmatch                 " show matching brackets
-set matchtime=2               " how many tenths of a second to blink
+set timeoutlen=250 " time to wait for a command (after leader, for example)
+set hidden         " change buffer without saving
+set showmatch      " show matching brackets
+set matchtime=2    " how many tenths of a second to blink
 set modeline
 set modelines=5
 set ruler
@@ -171,7 +166,7 @@ set sidescrolloff=5
 " Text formatting options, mostly around comments. See :help fo-table.
 set formatoptions+=rocrj1
 
-" Searching
+" Searching.
 set nohlsearch " don't highlight search results by default
 set ignorecase
 set smartcase
@@ -179,19 +174,19 @@ set gdefault   " assume the /g flag on :s substitutions to replace all matches i
 set wrapscan   " searches wrap around the end of the file
 set incsearch  " search as you type
 
-" Highlight current line in current window only
+" Highlight current line in current window only.
 set cursorline
 autocmd WinEnter,BufEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
-" Language-specific settings
+" Language-specific settings.
 autocmd FileType vim set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
 
-" Automatically strip trailing whitespace on save
+" Automatically strip trailing whitespace on save.
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Completion settings
+" Completion settings.
 set wildmode=list:longest,list:full
 
 " Ignores + ignores + settings for wild mode
@@ -202,12 +197,14 @@ set wildignore+=*/.git/*,*/node_modules/*,*/elm-stuff/*,*/tmp/*,*/.cache/*
 set wildignore+=*/build/*,*/dist/*,*/dist-newstyle/*,*/vendor/*,*/pkg/*
 set wildignore+=*/plugged/*
 
-" Window management
+" Window management.
 set splitbelow " open new horizontal splits below the current
 set splitright " open new veritcal splits to the right of the current
 
-" Enable the mouse in terminal Vim (if supported)
+" Enable the mouse in terminal Vim, if supported.
 set mouse+=a
+
+" Enable balloons (Vim only).
 if !has('nvim') && &term =~ '^screen'
   " Extended mouse mode
   " See :help ttymouse
@@ -227,7 +224,7 @@ map <leader>r :registers<cr>
 nmap <silent>SO :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
 nnoremap LC :e $MYVIMRC<cr>
 
-" Faster window navigation
+" Faster window navigation?
 nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
@@ -236,14 +233,14 @@ nmap <c-l> <c-w>l
 "nmap <leader>. :ALEHover<cr>
 "nmap <leader>d :ALEDetail<cr>
 
-" Toggles
+" Toggles.
 map <leader>i :set invlist<cr>:exe ":echo 'toggling invisibles'"<cr>
 "map <leader>. :set number! nonumber?<cr>
 map <leader>s :set hlsearch! hlsearch?<cr>
 map <leader>w :set wrap! wrap?<cr>
 map <leader>p :set paste! nopaste?<cr>
 
-" Toggle Ale fix on save
+" Toggle Ale fix on save.
 nnoremap <leader>a :call AleFixOnSaveToggle()<cr>
 function! AleFixOnSaveToggle()
   if get(g:, 'ale_fix_on_save', 1)
@@ -258,7 +255,7 @@ endfunction
 " Toggle the error list
 "nmap <script> <silent> E :call ToggleLocationList()<cr>
 
-" Close quickfix, location list, and preview windows
+" Close quickfix, location list, and preview windows.
 function! CloseHelperWindows()
   " get current window number
   let n = winnr()
@@ -266,7 +263,6 @@ function! CloseHelperWindows()
   if &buftype == "quickfix" || &buftype == "locationList"
       let isParent = 0
   endif
-
 
   " cycle through windows and close their helper windows. this will set the
   " focus to the last window when complete.
@@ -281,7 +277,7 @@ endfunction
 
 nmap X :call CloseHelperWindows()<cr>
 
-" Remove empty buffers
+" Remove empty buffers.
 function! g:CleanEmptyBuffers()
   let buffers = filter(range(0, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0')
   if !empty(buffers)
@@ -290,11 +286,11 @@ function! g:CleanEmptyBuffers()
 endfunction
 nmap BC :call g:CleanEmptyBuffers()<cr>
 
-" Session management
+" Session management.
 nmap SSA :wa<cr>:mksession! ~/.vim/session/
 nmap SL  :wa<cr>:so         ~/.vim/session/
 
-" Switch between spaces and tabs
+" Switch between spaces and tabs.
 nmap <leader>1 :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>:exe ":echo 'spaces, 2'"<cr>
 nmap <leader>2 :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":echo 'spaces, 4'"<cr>
 nmap <leader>3 :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<cr>:exe ":echo 'tabs, 4'"<cr>
@@ -308,7 +304,7 @@ nmap <leader>4 :set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>:exe ":e
 vmap > >gv
 vmap < <gv
 
-" How about if just one < or > indents in normal mode
+" How about if just one < or > indents in normal mode?
 nmap > >>
 nmap < <<
 
@@ -316,24 +312,26 @@ nmap < <<
 " CoC
 "
 
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
+if !has('nvim')
+  " Don't pass messages to |ins-completion-menu|.
+  set shortmess+=c
 
-" Always show the signcolumn to reduce jumpiness
-if has("patch-8.1.1564")
-  " Note that Vim can merge signcolumn and number column into one in recent
-  " versions with: set signcolumn=number
-  set signcolumn=yes
-else
-  set signcolumn=yes
-endif
+  " Always show the signcolumn to reduce jumpiness
+  if has("patch-8.1.1564")
+    " Note that Vim can merge signcolumn and number column into one in recent
+    " versions with: set signcolumn=number
+    set signcolumn=yes
+  else
+    set signcolumn=yes
+  endif
 
-" Show Diagnostics
-nmap E :CocDiagnostics<cr>
+  " Show Diagnostics
+  nmap E :CocDiagnostics<cr>
 
-" Navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+  " Navigate diagnostics
+  nmap <silent> [g <Plug>(coc-diagnostic-prev)
+  nmap <silent> ]g <Plug>(coc-diagnostic-next)
+end
 
 "
 " Ale
@@ -418,19 +416,19 @@ let g:airline#extensions#ale#enabled = 1
 "
 let g:gitgutter_sign_modified         = '•'
 let g:gitgutter_sign_modified_removed = '•-'
-let g:gitgutter_set_sign_backgrounds = 1 " match to SignColumn
+let g:gitgutter_set_sign_backgrounds  = 1 " match to SignColumn
 
 "
 " NERDTree
 "
 map <leader>n :NERDTreeToggle<cr>
 map <leader>f :NERDTreeFind<cr>
-let NERDChristmasTree           = 1
+let NERDChristmasTree = 1
 let NERDTreeHighlightCursorline = 1
-let NERDTreeShowBookmarks       = 1
-let NERDTreeShowHidden          = 1
-let NERDTreeHijackNetrw         = 1
-let NERDTreeIgnore              = [
+let NERDTreeShowBookmarks = 1
+let NERDTreeShowHidden = 1
+let NERDTreeHijackNetrw = 1
+let NERDTreeIgnore = [
   \ '\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc',
   \ 'node_modules', 'elm-stuff', '.cache'
   \ ]
@@ -511,9 +509,10 @@ let g:go_fmt_command = 'goimports'
 "
 let g:javascript_plugin_flow = 1
 
-" Curious background-color-erase fix/hack, apparently
+" Curious background-color-erase fix/hack, apparently. We set this
+" specifically for Kitty.
+"
 " https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
-" (We set this specifically for Kitty)
 let &t_ut=''
 
 "
@@ -527,7 +526,6 @@ nmap <leader>c :ColorToggle<cr>
 "
 " NeoVim Language Server
 "
-
 if has('nvim')
 lua <<EOF
 
