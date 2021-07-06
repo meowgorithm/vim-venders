@@ -163,6 +163,17 @@ set sessionoptions-=options
 set scrolloff=1
 set sidescrolloff=5
 
+" Always show the signcolumn to reduce jumpiness
+if has("patch-8.1.1564")
+  " Note that Vim can merge signcolumn and number column into one in recent
+  " versions with:
+  "
+  " set signcolumn=number
+  set signcolumn=yes
+else
+  set signcolumn=yes
+endif
+
 " Text formatting options, mostly around comments. See :help fo-table.
 set formatoptions+=rocrj1
 
@@ -315,15 +326,6 @@ nmap < <<
 if !has('nvim')
   " Don't pass messages to |ins-completion-menu|.
   set shortmess+=c
-
-  " Always show the signcolumn to reduce jumpiness
-  if has("patch-8.1.1564")
-    " Note that Vim can merge signcolumn and number column into one in recent
-    " versions with: set signcolumn=number
-    set signcolumn=yes
-  else
-    set signcolumn=yes
-  endif
 
   " Show Diagnostics
   nmap E :CocDiagnostics<cr>
