@@ -106,7 +106,7 @@ endif
 "    set termguicolors
 "endif
 
-colorscheme Meowgorithm
+colorscheme meowgorithm
 
 if has('persistent_undo')
   if has('nvim')
