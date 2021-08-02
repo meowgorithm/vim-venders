@@ -52,6 +52,13 @@ hi TabLine     cterm=none ctermfg=244 ctermbg=238
 
 " LSP (NeoVim)
 hi LspDiagnosticsDefaultError ctermfg=204 guifg=#ff5f87
+hi LspDiagnosticsDefaultWarning ctermfg=209 guifg=#ff875f
+hi LspDiagnosticsDefaultHint ctermfg=27 guifg=#005fff
+hi LspDiagnosticsDefaultInformation ctermfg=27 guifg=#005fff
+" LspDiagnosticsSignError
+" LspDiagnosticsSignWarning
+" LspDiagnosticsSignHint
+" TroubleSignInformation
 
 " }}}
 
