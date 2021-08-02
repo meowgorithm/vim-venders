@@ -362,7 +362,7 @@ let g:ale_fixers['elm'] = 'format'
 "let g:ale_linters['elm'] = ['elm_ls']
 
 " Haskell
-let g:ale_linters['haskell'] = ['hie']
+let g:ale_linters['haskell'] = ['hls']
 let g:ale_fixers['haskell']  = ['floskell']
 
 " Python
