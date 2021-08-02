@@ -6,4 +6,5 @@ autoload/
 plugged/
 session/
 swap/
+undo/
 .netrwhist
