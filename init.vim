@@ -56,11 +56,13 @@ Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
 if has('nvim')
+  " NeoVim Language Servers
   Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/nvim-compe'
   Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
   Plug 'kabouzeid/nvim-lspinstall'
 else
+  " Vim Language Servers
   "Plug 'w0rp/ale'
   "Plug 'codota/tabnine-vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}

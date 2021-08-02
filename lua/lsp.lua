@@ -32,12 +32,12 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', '<space>f', "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "gopls", "elmls", "hls" }
+local servers = { 'gopls', 'hls', 'elmls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -69,12 +69,7 @@ require'compe'.setup {
   source = {
     path = true;
     nvim_lsp = true;
-    tabnine = {
-        sort = false; -- let TabNine do the sorting
-        show_prediction_strength = true;
-        ignore_pattern = '';
-    };
-
+    tabnine = true;
   };
 }
 
@@ -92,8 +87,8 @@ local check_back_space = function()
 end
 
 -- Use (s-)tab to:
--- • move to prev/next item in completion menuone
--- • jump to prev/next snippet's placeholder
+--- move to prev/next item in completion menuone
+--- jump to prev/next snippet's placeholder
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-n>"
@@ -116,13 +111,28 @@ vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
+--This line is important for auto-import
+vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm("<cr>")', { expr = true })
+vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { expr = true })
+
 --
 -- LSPInstall
 --
 
 require'lspinstall'.setup() -- important
 
-local servers = require'lspinstall'.installed_servers()
+local autoServers = require'lspinstall'.installed_servers()
 for _, server in pairs(servers) do
   require'lspconfig'[server].setup{}
 end
+
+--
+-- Diagnostics
+-- https://github.com/nvim-lua/diagnostic-nvim/issues/73
+--
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true
+  }
+)
