@@ -61,6 +61,8 @@ if has('nvim')
   Plug 'hrsh7th/nvim-compe'
   Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
   Plug 'kabouzeid/nvim-lspinstall'
+  Plug 'folke/trouble.nvim'
+  "Plug 'folke/lsp-colors.nvim'
 else
   " Vim Language Servers
   "Plug 'w0rp/ale'
@@ -336,6 +338,14 @@ if !has('nvim')
   nmap <silent> [g <Plug>(coc-diagnostic-prev)
   nmap <silent> ]g <Plug>(coc-diagnostic-next)
 end
+
+"
+" Trouble
+"
+if has('nvim')
+  nmap E :TroubleToggle<cr>
+end
+
 
 "
 " Ale

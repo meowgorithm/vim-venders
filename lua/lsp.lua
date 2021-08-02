@@ -136,3 +136,13 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     underline = true
   }
 )
+
+--
+-- Trouble (folke/trouble.nvim)
+--
+require'trouble'.setup {
+    icons = false,
+    indent_lines = true,
+    auto_open = false,
+    auto_close = true
+}
