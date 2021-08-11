@@ -1,0 +1,44 @@
+#!/bin/bash
+
+function usage {
+    printf "Enable or disable language server capabilities in TabNine.\n\n"
+    printf "Usage:\n    $0 (off|on)\n"
+}
+
+if [[ $# == 0 ]]; then
+    usage
+    exit 1
+fi
+
+if ! command -v jq &> /dev/null; then
+    printf "'jq' not found. Please install it and try again.\n\n"
+    exit 1
+fi
+
+if ! command -v sponge &> /dev/null; then
+    printf "'sponge' not found. Please install it and try again.\n"
+    exit 1
+fi
+
+disable=""
+case $1 in
+    on)
+        disable="false"
+        printf "Enabling TabNine language server capabilities...\n" ;;
+    off)
+        disable="true"
+        printf "Disabling TabNine language server capabilities...\n" ;;
+    *)
+        usage
+        exit 1 ;;
+esac
+
+path=""
+
+case "$OSTYPE" in
+    linux*)  path="$HOME/.config/TabNine/tabnine_config.json" ;;
+    darwin*) path="$HOME/Library/Preferences/TabNine/tabnine_config.json" ;;
+    *)       echo "Unknown OS: $OSTYPE"; exit 1 ;;
+esac
+
+jq .ignore_all_lsp=$disable < $path | sponge $path
