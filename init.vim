@@ -59,15 +59,17 @@ if has('nvim')
   " NeoVim Language Servers
   Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/nvim-compe'
-  Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+  "Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
   Plug 'kabouzeid/nvim-lspinstall'
   Plug 'folke/trouble.nvim'
-  "Plug 'folke/lsp-colors.nvim'
+  Plug 'RishabhRD/popfix'
+  Plug 'RishabhRD/nvim-lsputils'
+  Plug 'ray-x/lsp_signature.nvim'
 else
   " Vim Language Servers
-  "Plug 'w0rp/ale'
-  "Plug 'codota/tabnine-vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'w0rp/ale'
+  Plug 'codota/tabnine-vim'
+  "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 end
 Plug 'chrisbra/Colorizer'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
@@ -356,9 +358,13 @@ let g:ale_linters = {}
 let g:ale_fixers  = {}
 let g:ale_fix_on_save = 0
 let g:ale_use_global_executables = 1
+"let g:ale_completion_enabled = 1
+"let g:ale_completion_autoimport = 1
 if !has('nvim')
   let g:ale_set_balloons = 1
 endif
+
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
 
 " Go
 let g:ale_linters['go'] = ['gopls']
@@ -419,6 +425,12 @@ endif
 " Remove <Tab> from the list of keys mapped by YCM. We'll use the standard
 " ctrl n, ctrl p.
 let g:ycm_key_list_select_completion = []
+
+" Don't show the preview window for completions
+"set completeopt-=preview
+
+" Close the preview window after a completion
+"let g:ycm_autoclose_preview_window_after_completion=1 " Close the preview window after a completion
 
 "
 " Airline
@@ -543,3 +555,13 @@ nmap <leader>c :ColorToggle<cr>
 if has('nvim')
   lua require 'lsp'
 end
+
+
+" Helptags
+"
+" Load all plugins now. Plugins need to be added to runtimepath before
+" helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded. All messages
+" and errors will be ignored.
+silent! helptags ALL

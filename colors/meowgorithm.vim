@@ -42,7 +42,7 @@ hi PmenuThumb       ctermbg=36
 "
 " NOTE the foreground and background vales are totally reversed for some
 " reason. In other words, foreground values apply to the background and the
-" background values apply to the verical pipe: |. Really annoying!
+" background values apply to the verical pipe: |. It’s quite confusing!
 hi VertSplit        ctermfg=236 ctermbg=236
 
 " Tabs
@@ -50,7 +50,11 @@ hi TabLineFill cterm=none ctermbg=236
 hi TabLineSel  cterm=bold ctermfg=253 ctermbg=242
 hi TabLine     cterm=none ctermfg=244 ctermbg=238
 
-" LSP (NeoVim)
+" }}}
+
+" NeoVim UI {{{
+
+" LSP
 hi LspDiagnosticsDefaultError ctermfg=204 guifg=#ff5f87
 hi LspDiagnosticsDefaultWarning ctermfg=209 guifg=#ff875f
 hi LspDiagnosticsDefaultHint ctermfg=27 guifg=#005fff
