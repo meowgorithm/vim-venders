@@ -67,9 +67,9 @@ if has('nvim')
   Plug 'ray-x/lsp_signature.nvim'
 else
   " Vim Language Servers
-  Plug 'w0rp/ale'
-  Plug 'codota/tabnine-vim'
-  "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Plug 'w0rp/ale'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Plug 'codota/tabnine-vim'
 end
 Plug 'chrisbra/Colorizer'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
@@ -358,8 +358,8 @@ let g:ale_linters = {}
 let g:ale_fixers  = {}
 let g:ale_fix_on_save = 0
 let g:ale_use_global_executables = 1
-"let g:ale_completion_enabled = 1
-"let g:ale_completion_autoimport = 1
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
 if !has('nvim')
   let g:ale_set_balloons = 1
 endif
