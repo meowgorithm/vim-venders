@@ -199,6 +199,10 @@ autocmd WinLeave * setlocal nocursorline
 " Language-specific settings.
 autocmd FileType vim set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python set expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " per PEP0008
+autocmd FileType lua set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType cabal set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType typescript set syntax=javascript
 
 " Automatically strip trailing whitespace on save.
 autocmd BufWritePre * :%s/\s\+$//e
