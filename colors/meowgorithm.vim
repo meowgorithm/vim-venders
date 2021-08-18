@@ -33,8 +33,8 @@ hi Search           ctermfg=233 ctermbg=227
 hi Folded           ctermfg=243 ctermbg=236
 
 " Autocomplete Menu
-hi PMenu            ctermfg=52 ctermbg=217
-hi PMenuSel         ctermfg=121 ctermbg=29
+hi PMenu            ctermfg=248 ctermbg=235
+hi PMenuSel         ctermfg=57 ctermbg=140
 hi PmenuSbar        ctermbg=23
 hi PmenuThumb       ctermbg=36
 
