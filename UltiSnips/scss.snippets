@@ -240,7 +240,13 @@ endsnippet
 #
 # Breakpoints
 #
-snippet bp "breakpoint"
+snippet bp "breakpointMin"
+@include breakpoint(${1:\$mobile}) {
+	$0
+}
+endsnippet
+
+snippet bpm "breakpointMax"
 @include breakpoint(${1:\$mobile}) {
 	$0
 }
