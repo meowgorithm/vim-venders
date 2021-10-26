@@ -19,16 +19,21 @@ brew install ripgrep ctags python nodejs npm
 And then:
 
 ```bash
-# Install Elm and JavaScript tools
-npm -g install \
-    elm elm-test elm-oracle elm-format @elm-tooling/elm-language-server \
-    flow-bin eslint babel-eslint eslint-plugin-react prettier
+# Install Elm tools
+npm -g install elm elm-test elm-oracle elm-format @elm-tooling/elm-language-server
 ```
 
-Install some common language servers in Vim:
+The following language servers are preconfigured in CoC:
+
+* Go
+* Haskell
+* Elm
+* Nix
+
+Install some other common language servers in Vim:
 
 ```
-:CocInstall coc-tabnine coc-sh coc-json coc-css coc-html coc-python
+:CocInstall coc-tabnine coc-rust-analyzer coc-sh coc-tsserver coc-json coc-css coc-html
 ```
 
 Install some common language servers in NeoVim:
