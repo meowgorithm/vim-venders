@@ -58,8 +58,10 @@ Plug 'milkypostman/vim-togglelist'
 if has('nvim')
   " NeoVim Language Servers
   Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/nvim-compe'
-  "Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/nvim-cmp'
   Plug 'kabouzeid/nvim-lspinstall'
   Plug 'folke/trouble.nvim'
   Plug 'RishabhRD/popfix'
