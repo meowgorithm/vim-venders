@@ -59,9 +59,12 @@ if has('nvim')
   " NeoVim Language Servers
   Plug 'neovim/nvim-lspconfig'
 
+  " Completion (nvim-cmp)
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/nvim-cmp'
+  Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+
   Plug 'kabouzeid/nvim-lspinstall'
   Plug 'folke/trouble.nvim'
   Plug 'RishabhRD/popfix'

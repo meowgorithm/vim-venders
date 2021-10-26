@@ -36,6 +36,17 @@ cmp.setup({
 -- nvim-cmp: Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+--
+-- TabNine (nvim-cmp)
+--
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+        max_lines = 1000;
+        max_num_results = 20;
+        sort = true;
+	run_on_every_keystroke = true;
+	snippet_placeholder = '..';
+})
 
 --
 -- nvim-lsp
