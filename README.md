@@ -47,14 +47,11 @@ Language Server][hls], which is probably easiest to install with [GHCUP][ghcup]
 these days.
 
 You can also improve TabNine's performance by disabling language server stuff,
-since CoC/NeoVim’s Native LSP handles that:
+since CoC/NeoVim’s Native LSP handles that. Included is a script for toggling
+TabNine's' LSP capabilities on and off:
 
 ```bash
-# Linux
-sed -i 's/"ignore_all_lsp": false/"ignore_all_lsp": true/' "$HOME/.config/TabNine/tabnine_config.json"
-
-# MacOS
-sed -i '.original' 's/"ignore_all_lsp": false/"ignore_all_lsp": true/' "$HOME/Library/Preferences/TabNine/tabnine_config.json"
+./tabnine-lsp off
 ```
 
 [wim]: https://www.imdb.com/name/nm0000694/
