@@ -7,13 +7,13 @@ a few tools you can install for a better experience:
 
 ```bash
 # Void Linux
-xbps-install -S ripgrep ctags python nodejs npm
+xbps-install -S ripgrep ctags python nodejs npm jq
 
 # Arch Linux
-pacman -S ripgrep ctags python nodejs npm
+pacman -S ripgrep ctags python nodejs npm jq
 
 # macOS
-brew install ripgrep ctags python nodejs npm
+brew install ripgrep ctags python nodejs npm jq sponge
 ```
 
 And then:
@@ -23,32 +23,34 @@ And then:
 npm -g install elm elm-test elm-oracle elm-format @elm-tooling/elm-language-server
 ```
 
-The following language servers are preconfigured in CoC:
+The following language servers are preconfigured in [CoC][coc]:
 
 * Go
 * Haskell
 * Elm
 * Nix
 
-Install some other common language servers in Vim:
+Install some other common language servers:
 
 ```
 :CocInstall coc-tabnine coc-rust-analyzer coc-sh coc-tsserver coc-json coc-css coc-html
-```
-
-Install some common language servers in NeoVim:
-
-```
-:LspInstall <tab>
 ```
 
 If you’re working with Haskell you will likely want to install the [Haskell
 Language Server][hls], which is probably easiest to install with [GHCUP][ghcup]
 these days.
 
-You can also improve TabNine's performance by disabling language server stuff,
-since CoC/NeoVim’s Native LSP handles that. Included is a script for toggling
-TabNine's' LSP capabilities on and off:
+## TabNine
+
+[TabNine][tn] is an AI-powered code completer. Install it with CoC:
+
+```
+:CocInstall coc-tabnine
+```
+
+You can improve TabNine's performance by disabling its internal language
+server, since CoC/NeoVim’s Native LSP handles that. Included is a script for
+toggling TabNine's' LSP capabilities on and off:
 
 ```bash
 ./tabnine-lsp off
@@ -57,3 +59,5 @@ TabNine's' LSP capabilities on and off:
 [wim]: https://www.imdb.com/name/nm0000694/
 [hls]: https://github.com/haskell/haskell-language-server
 [ghcup]: https://www.haskell.org/ghcup/
+[coc]: https://github.com/neoclide/coc.nvim
+[tn]: https://www.tabnine.com

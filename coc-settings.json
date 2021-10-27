@@ -1,8 +1,10 @@
 {
-  "diagnostic.refreshAfterSave": false,
   "diagnostic.refreshOnInsertMode": true,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.warningSign": "--",
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextPrefix": " ■ ",
+  "diagnostic.virtualTextCurrentLineOnly": false,
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
 
   "languageserver": {

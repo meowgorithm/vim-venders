@@ -29,6 +29,9 @@ endif
 " the status line.
 let debug_color_scheme = 0
 
+" Whether or not to use NeoVim's native LSP stuff
+let useNvimNativeLSP = 0
+
 "
 " Plugins
 "
@@ -55,23 +58,23 @@ Plug 'tpope/vim-surround'
 "Plug 'Raimondi/delimitMate' " auto-closes brackets, parens, quotes, etc.
 Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
-if has('nvim')
-  " NeoVim Language Servers
+
+if has('nvim') && useNvimNativeLSP
+  " NeoVim language server stuff
   Plug 'neovim/nvim-lspconfig'
-
-  " Completion (nvim-cmp)
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/nvim-cmp'
-  Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
-
   Plug 'kabouzeid/nvim-lspinstall'
   Plug 'folke/trouble.nvim'
   Plug 'RishabhRD/popfix'
   Plug 'RishabhRD/nvim-lsputils'
   Plug 'ray-x/lsp_signature.nvim'
+
+  " LSP-powered completion (nvim-cmp)
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 else
-  " Vim Language Servers
+  " Vim language servers stuff
   "Plug 'w0rp/ale'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   "Plug 'codota/tabnine-vim'
@@ -353,7 +356,7 @@ end
 "
 " Trouble
 "
-if has('nvim')
+if has('nvim') && useNvimNativeLSP
   nmap E :TroubleToggle<cr>
 end
 
@@ -561,7 +564,7 @@ nmap <leader>c :ColorToggle<cr>
 "
 " NeoVim Language Server Stuff
 "
-if has('nvim')
+if has('nvim') && useNvimNativeLSP
   lua require 'lsp'
 end
 
