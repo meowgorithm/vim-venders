@@ -41,30 +41,39 @@ call plug#begin()
 if !debug_color_scheme
   Plug 'vim-airline/vim-airline'
 endif
+
+" Ergonomics
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
-Plug 'machakann/vim-highlightedyank'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/BufOnly.vim'
+Plug 'tpope/vim-surround'
+Plug 'majutsushi/tagbar'
+Plug 'milkypostman/vim-togglelist'
+Plug 'Raimondi/delimitMate' " auto-closes brackets, parens, quotes, etc.
+
+" UI
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'machakann/vim-highlightedyank'
+Plug 'vim-scripts/taglist.vim'
+Plug 'chrisbra/Colorizer'
 if has('python3')
   Plug 'SirVer/ultisnips'
 end
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-"Plug 'Raimondi/delimitMate' " auto-closes brackets, parens, quotes, etc.
-Plug 'majutsushi/tagbar'
-Plug 'milkypostman/vim-togglelist'
+if !has('nvim')
+  " Nice cursors, better paste, better mouse, and so on
+  Plug 'wincent/terminus'
+end
 
+" LSP and Completion
 if has('nvim') && useNvimNativeLSP
   " NeoVim language server stuff
   Plug 'neovim/nvim-lspconfig'
   Plug 'kabouzeid/nvim-lspinstall'
   Plug 'folke/trouble.nvim'
-  Plug 'RishabhRD/popfix'
   Plug 'RishabhRD/nvim-lsputils'
   Plug 'ray-x/lsp_signature.nvim'
 
@@ -74,21 +83,16 @@ if has('nvim') && useNvimNativeLSP
   Plug 'hrsh7th/nvim-cmp'
   Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 else
-  " Vim language servers stuff
-  "Plug 'w0rp/ale'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  "Plug 'codota/tabnine-vim'
 end
-Plug 'chrisbra/Colorizer'
-Plug 'ElmCast/elm-vim', { 'for': 'elm' }
+
+" Languages
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'sheerun/vim-polyglot'
 Plug 'cakebaker/scss-syntax.vim'
-if !has('nvim')
-  Plug 'wincent/terminus' " nice cursors, better paste, better mouse, and so on
-end
+Plug 'sheerun/vim-polyglot'
 
 let g:polyglot_disabled = ['elm', 'go', 'haskell', 'javascript']
 
@@ -106,7 +110,7 @@ if debug_color_scheme
   set statusline=%{SyntaxItem()}
 endif
 
-" Vim-Plug calls this but we're leaving here anyway.
+" Vim-Plug calls this but we're leaving it here anyway.
 filetype plugin indent on
 syntax on
 
@@ -247,9 +251,9 @@ nmap BN :wa<cr>:bnext<cr>
 nmap BP :wa<cr>:bprev<cr>
 nmap BO :wa<cr>:BufOnly<cr>
 nmap BD :wa<cr>:bdelete<cr>
-map SP :wa<cr>:sp<cr>
-map VS :wa<cr>:vs<cr>
-map <leader>r :registers<cr>
+map  SP :wa<cr>:sp<cr>
+map  VS :wa<cr>:vs<cr>
+map  <leader>r :registers<cr>
 nmap <silent>SO :source $MYVIMRC<cr>:exe ":echo 'configuration reloaded'"<cr>
 nnoremap LC :e $MYVIMRC<cr>
 
@@ -259,27 +263,12 @@ nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 
-"nmap <leader>. :ALEHover<cr>
-"nmap <leader>d :ALEDetail<cr>
-
 " Toggles.
 map <leader>i :set invlist<cr>:exe ":echo 'toggling invisibles'"<cr>
-"map <leader>. :set number! nonumber?<cr>
+"map <leader>j :set number! nonumber?<cr>
 map <leader>s :set hlsearch! hlsearch?<cr>
 map <leader>w :set wrap! wrap?<cr>
 map <leader>p :set paste! nopaste?<cr>
-
-" Toggle Ale fix on save.
-nnoremap <leader>a :call AleFixOnSaveToggle()<cr>
-function! AleFixOnSaveToggle()
-  if get(g:, 'ale_fix_on_save', 1)
-    let g:ale_fix_on_save = 0
-    echo "Ale Fix-on-Save OFF"
-  else
-    let g:ale_fix_on_save = 1
-    echo "Ale Fix-on-Save ON"
-  endif
-endfunction
 
 " Toggle the error list
 "nmap <script> <silent> E :call ToggleLocationList()<cr>
@@ -341,7 +330,7 @@ nmap < <<
 " CoC
 "
 
-if !has('nvim')
+if !has('nvim') || !useNvimNativeLSP
   " Don't pass messages to |ins-completion-menu|.
   set shortmess+=c
 
@@ -359,62 +348,6 @@ end
 if has('nvim') && useNvimNativeLSP
   nmap E :TroubleToggle<cr>
 end
-
-
-"
-" Ale
-"
-
-" General
-let g:ale_linters = {}
-let g:ale_fixers  = {}
-let g:ale_fix_on_save = 0
-let g:ale_use_global_executables = 1
-let g:ale_completion_enabled = 1
-let g:ale_completion_autoimport = 1
-if !has('nvim')
-  let g:ale_set_balloons = 1
-endif
-
-let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
-
-" Go
-let g:ale_linters['go'] = ['gopls']
-let g:ale_go_langserver_executable = 'gopls'
-
-" Elm
-let g:ale_fixers['elm'] = 'format'
-"
-" Elm language server. See:
-" https://github.com/elm-tooling/elm-language-server
-"
-"let g:ale_linters_ignore = { 'elm': ['make'] } " Disable the default Elm linter
-"let g:ale_linters['elm'] = ['elm_ls']
-
-" Haskell
-let g:ale_linters['haskell'] = ['hls']
-let g:ale_fixers['haskell']  = ['floskell']
-
-" Python
-let g:ale_fixers['python']  = ['yapf']
-let g:ale_linters['python'] = ['flake8', 'mypy']
-
-" Sass
-let g:ale_fixers['scss'] = 'prettier'
-let g:ale_scss_prettier_options = '--trailing-comma all --tab-width 4'
-let g:ale_scss_prettier_use_local_config = 1
-
-" JavaScript
-let g:ale_linters['javascript'] = ['flow', 'eslint']
-let g:ale_fixers['javascript'] = ['eslint', 'prettier']
-let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4'
-let g:ale_javascript_prettier_use_local_config = 1
-
-" JSON
-let g:ale_fixers['json'] = 'prettier'
-
-" HTML
-let g:ale_fixers['html'] = 'prettier'
 
 "
 " UltiSnips
@@ -558,11 +491,11 @@ let &t_ut=''
 "
 let g:colorizer_auto_color = 0
 "let g:colorizer_auto_filetype='css,scss,vim'
-let g:colorizer_use_virtual_text = 0
+let g:colorizer_use_virtual_text = 1
 nmap <leader>c :ColorToggle<cr>
 
 "
-" NeoVim Language Server Stuff
+" Load NeoVim Language Server Stuff
 "
 if has('nvim') && useNvimNativeLSP
   lua require 'lsp'

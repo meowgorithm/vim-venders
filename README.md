@@ -33,7 +33,7 @@ The following language servers are preconfigured in [CoC][coc]:
 Install some other common language servers:
 
 ```
-:CocInstall coc-tabnine coc-rust-analyzer coc-sh coc-tsserver coc-json coc-css coc-html
+:CocInstall coc-tabnine coc-vimlsp coc-rust-analyzer coc-sh coc-tsserver coc-json coc-css coc-html
 ```
 
 If you’re working with Haskell you will likely want to install the [Haskell
