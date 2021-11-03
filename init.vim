@@ -78,9 +78,10 @@ if has('nvim') && useNvimNativeLSP
   Plug 'ray-x/lsp_signature.nvim'
 
   " LSP-powered completion (nvim-cmp)
+  Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-path'
   Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 else
   Plug 'neoclide/coc.nvim', {'branch': 'release'}

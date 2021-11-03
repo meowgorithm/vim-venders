@@ -1,17 +1,27 @@
 --
+-- TabNine (nvim-cmp)
+--
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+  max_lines = 1000;
+  max_num_results = 20;
+  sort = true;
+  run_on_every_keystroke = true;
+  snippet_placeholder = '..';
+})
+
+--
 -- nvim-cmp (completion)
 --
+local capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Setup nvim-cmp.
-  local cmp = require'cmp'
+local cmp = require'cmp'
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+      vim.fn["UltiSnips#Anon"](args.body)
     end,
   },
   mapping = {
@@ -24,34 +34,18 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
-    { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
-  }, {
+    { name = 'ultisnips' },
     { name = 'buffer' },
+    { name = 'path' },
+    { name = 'cmp_tabnine' },
   })
 })
 
--- nvim-cmp: Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
---
--- TabNine (nvim-cmp)
---
-local tabnine = require('cmp_tabnine.config')
-tabnine:setup({
-        max_lines = 1000;
-        max_num_results = 20;
-        sort = true;
-	run_on_every_keystroke = true;
-	snippet_placeholder = '..';
-})
 
 --
 -- nvim-lsp
 --
-local nvim_lsp = require('lspconfig')
+local nvim_lsp = require'lspconfig'
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -136,8 +130,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- Trouble (folke/trouble.nvim)
 --
 require'trouble'.setup {
-    icons = false,
-    indent_lines = true,
-    auto_open = false,
-    auto_close = true
+  icons = false,
+  indent_lines = true,
+  auto_open = false,
+  auto_close = true
 }
