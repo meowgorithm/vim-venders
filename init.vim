@@ -359,7 +359,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit = 'vertical'
 let g:UltiSnipsEditSplit = 'vertical'
 if has('nvim')
-  let g:UltiSnipsSnippetsDir = stdpath('config') . '/snippets'
+  let g:UltiSnipsSnippetsDir = stdpath('config') . '/UltiSnips'
 else
   let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 endif
