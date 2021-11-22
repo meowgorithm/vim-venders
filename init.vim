@@ -477,15 +477,16 @@ let g:go_auto_type_info = 1
 let g:go_fmt_command = 'goimports'
 
 "
+" Prettier
+"
+if !has('nvim') || !useNvimNativeLSP
+  command! -nargs=0 Prettier :CocCommand prettier.formatFile
+end
+
+"
 " JavaScript
 "
 let g:javascript_plugin_flow = 1
-
-" Curious background-color-erase fix/hack, apparently. We set this
-" specifically for Kitty.
-"
-" https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
-let &t_ut=''
 
 "
 " Colorizer
@@ -511,3 +512,9 @@ packloadall
 " Load all of the helptags now, after plugins have been loaded. All messages
 " and errors will be ignored.
 silent! helptags ALL
+
+" Curious background-color-erase fix/hack, apparently. We set this
+" specifically for Kitty.
+"
+" https://github.com/kovidgoyal/kitty#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+let &t_ut=''
