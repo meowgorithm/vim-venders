@@ -49,7 +49,7 @@ Plug 'vim-scripts/BufOnly.vim'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
-Plug 'Raimondi/delimitMate' " auto-closes brackets, parens, quotes, etc.
+"Plug 'Raimondi/delimitMate' " auto-closes brackets, parens, quotes, etc.
 
 " UI
 Plug 'ctrlpvim/ctrlp.vim'
