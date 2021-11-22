@@ -256,14 +256,8 @@ endsnippet
 #
 # Breakpoints
 #
-snippet bp "breakpointMin"
-@include breakpoint(${1:\$mobile}) {
-	$0
-}
-endsnippet
-
-snippet bpm "breakpointMax"
-@include breakpoint(${1:\$mobile}) {
+snippet bp "breakpoint"
+@media screen and (${1:max-width: $2}) {
 	$0
 }
 endsnippet
