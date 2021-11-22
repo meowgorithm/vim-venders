@@ -217,6 +217,13 @@ autocmd FileType cabal set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType typescript set syntax=javascript
 
+" Markdown spell checking
+augroup markdownSpell
+  autocmd!
+  autocmd FileType markdown setlocal spell
+  autocmd BufRead,BufNewFile *.md setlocal spell
+augroup END
+
 " Automatically strip trailing whitespace on save.
 autocmd BufWritePre * :%s/\s\+$//e
 
