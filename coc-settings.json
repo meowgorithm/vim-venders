@@ -5,7 +5,7 @@
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextPrefix": " ■ ",
   "diagnostic.virtualTextCurrentLineOnly": false,
-  "coc.preferences.formatOnSaveFiletypes": ["elm"],
+  "coc.preferences.formatOnSaveFiletypes": ["elm", "typescript"],
 
   "prettier.tabWidth": 4,
   "prettier.trailingComma": "all",
