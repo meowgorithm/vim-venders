@@ -51,6 +51,7 @@ Plug 'majutsushi/tagbar'
 Plug 'milkypostman/vim-togglelist'
 "Plug 'Raimondi/delimitMate' " auto-closes brackets, parens, quotes, etc.
 
+
 " UI
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -60,12 +61,15 @@ Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-scripts/taglist.vim'
 Plug 'chrisbra/Colorizer'
-if has('python3')
-  Plug 'SirVer/ultisnips'
-end
 if !has('nvim')
   " Nice cursors, better paste, better mouse, and so on
   Plug 'wincent/terminus'
+end
+
+" Utils
+Plug 'jamessan/vim-gnupg'
+if has('python3')
+  Plug 'SirVer/ultisnips'
 end
 
 " LSP and Completion
