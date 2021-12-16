@@ -486,6 +486,8 @@ let g:go_highlight_fields = 1
 let g:go_auto_sameids = 0 " highlight other variables that match the one under the cursor
 let g:go_auto_type_info = 1
 let g:go_fmt_command = 'goimports'
+let g:go_metalinter_command = 'golangci-lint'
+let g:go_metalinter_enabled = []
 
 "
 " Prettier
