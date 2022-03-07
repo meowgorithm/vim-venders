@@ -1,10 +1,10 @@
-tmp/
-backup/
-undo/
-view/
 autoload/
+backup/
 plugged/
+plugin/
 session/
 swap/
+tmp/
 undo/
+view/
 .netrwhist
