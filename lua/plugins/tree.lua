@@ -1,7 +1,6 @@
 return {
 	-- Note: nvim-tree needs vim.g stuff to run before performing setup.
 	init = function()
-		vim.g.nvim_tree_indent_markers = 1
 		vim.g.nvim_tree_git_hl = 1
 		vim.g.nvim_tree_group_empty = 1
 		vim.g.nvim_tree_symlink_arrow = " >> "
@@ -25,12 +24,12 @@ return {
 				symlink_open = "!",
 			},
 			git = {
-				unstaged = "✗",
+				unstaged = "!",
 				staged = "✓",
 				unmerged = "U",
 				renamed = "➜",
 				untracked = "*",
-				deleted = "x",
+				deleted = "✗",
 				ignored = "◌",
 			},
 		}
@@ -43,5 +42,6 @@ return {
 		disable_netrw = false,
 		hijack_netrw = true,
 		hijack_cursor = true,
+		tree_indent_markers = 1,
 	},
 }
