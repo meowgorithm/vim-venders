@@ -42,6 +42,15 @@ return {
 		disable_netrw = false,
 		hijack_netrw = true,
 		hijack_cursor = true,
-		tree_indent_markers = 1,
+		renderer = {
+			indent_markers = {
+				enable = true,
+				icons = {
+					corner = "╰ ",
+					edge = "│ ",
+					none = "  ",
+				},
+			},
+		},
 	},
 }
