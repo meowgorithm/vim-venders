@@ -26,6 +26,16 @@ packer.startup(function(use)
 		end,
 	})
 
+	use({
+		"rrethy/vim-hexokinase",
+		run = "make hexokinase",
+		config = function()
+			vim.cmd([[
+				let g:Hexokinase_ftEnabled = []
+			]])
+		end,
+	})
+
 	if vim.fn.has("python3") then
 		use({
 			"SirVer/ultisnips",
