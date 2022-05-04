@@ -2,43 +2,43 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 local options = {
-	compatible = false,
-	backup = false,
-	writebackup = false,
-	swapfile = false,
-	shell = "bash",
-	number = true,
-	wrap = false,
-	expandtab = true,
-	shiftwidth = 4,
-	tabstop = 4,
-	softtabstop = 4,
-	termguicolors = true,
-	showmatch = true,
-	colorcolumn = "80",
-	mouse = "a",
-	spell = false,
-	spelllang = { "en_us" },
-	cursorline = true,
-	ruler = true,
-	signcolumn = "yes",
-	listchars = "tab:▸ ,trail:·,eol:¶",
-	splitbelow = true,
-	splitright = true,
+    compatible = false,
+    backup = false,
+    writebackup = false,
+    swapfile = false,
+    shell = "bash",
+    number = true,
+    wrap = false,
+    expandtab = true,
+    shiftwidth = 4,
+    tabstop = 4,
+    softtabstop = 4,
+    termguicolors = true,
+    showmatch = true,
+    colorcolumn = "80",
+    mouse = "a",
+    spell = false,
+    spelllang = { "en_us" },
+    cursorline = true,
+    ruler = true,
+    signcolumn = "yes",
+    listchars = "tab:▸ ,trail:·,eol:¶",
+    splitbelow = true,
+    splitright = true,
 
-	-- Search
-	hlsearch = false,
-	ignorecase = true,
-	incsearch = true, -- search as you type
-	wrapscan = true, -- wrap around the end of the file
+    -- Search
+    hlsearch = false,
+    ignorecase = true,
+    incsearch = true, -- search as you type
+    wrapscan = true, -- wrap around the end of the file
 
-	-- Persistent undo
-	undofile = true,
-	undodir = vim.fn.stdpath("data") .. "/undo",
+    -- Persistent undo
+    undofile = true,
+    undodir = vim.fn.stdpath("data") .. "/undo",
 }
 
 for k, v in pairs(options) do
-	vim.opt[k] = v
+    vim.opt[k] = v
 end
 
 vim.cmd("colorscheme x")
