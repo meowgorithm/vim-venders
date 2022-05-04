@@ -1,5 +1,3 @@
-local nnoremap = require("remap").nnoremap
-
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
@@ -70,8 +68,8 @@ vim.cmd([[
     vmap < <gv
 ]])
 
-nnoremap("S", ":split<CR>")
-nnoremap("VS", ":vsplit<CR>")
-nnoremap("<leader>i", ":set invlist<CR>")
-nnoremap("<leader>s", ":set hlsearch! hlsearch?<CR>")
-nnoremap("<leader>w", ":set wrap! wrap?<CR>")
+vim.keymap.set("n", "S", ":split<CR>")
+vim.keymap.set("n", "VS", ":vsplit<CR>")
+vim.keymap.set("n", "<leader>i", ":set invlist<CR>")
+vim.keymap.set("n", "<leader>s", ":set hlsearch! hlsearch?<CR>")
+vim.keymap.set("n", "<leader>w", ":set wrap! wrap?<CR>")

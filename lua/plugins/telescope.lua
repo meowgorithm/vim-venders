@@ -1,11 +1,10 @@
 local ok, telescope = pcall(require, "telescope")
 if not ok then
-	return
+    return
 end
 
 --telescope.load_extension('fzf')
 --telescope.load_extension('git_worktree')
 
-local r = require("remap").nnoremap
-r("<C-p>", ":Telescope find_files<CR>")
-r(";", ":Telescope buffers<CR>")
+vim.keymap.set("<C-p>", ":Telescope find_files<CR>")
+vim.keymap.set(";", ":Telescope buffers<CR>")

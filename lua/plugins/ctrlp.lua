@@ -1,5 +1,4 @@
 local g = vim.g
-local nnoremap = require("remap").nnoremap
 
 if vim.fn.executable("rg") then
 	g.ctrlp_user_command = 'rg %s --files --color=never --glob ""'
@@ -9,5 +8,5 @@ if vim.fn.executable("rg") then
 	g.ctrlp_working_path_mode = "ra" -- try to find the repo root and search from there
 end
 
-nnoremap(";", ":CtrlPBuffer<CR>")
-nnoremap("<c-o>", ":CtrlPMRUFiles<CR>")
+vim.keymap.set("n", ";", ":CtrlPBuffer<CR>")
+vim.keymap.set("n", "<c-o>", ":CtrlPMRUFiles<CR>")
