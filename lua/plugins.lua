@@ -9,8 +9,8 @@ packer.startup(function(use)
 
     use("nvim-lua/plenary.nvim")
     use("preservim/nerdcommenter")
-    --use("tpope/vim-fugitive")
-    --use("nvim-telescope/telescope.nvim")
+    use("jamessan/vim-gnupg")
+    use("tpope/vim-fugitive")
 
     use({
         "vim-scripts/BufOnly.vim",
@@ -76,7 +76,6 @@ packer.startup(function(use)
     use({
         "lewis6991/gitsigns.nvim",
         requires = { "nvim-lua/plenary.nvim" },
-        --tag = "release",
         config = function()
             require("gitsigns").setup(require("plugins.gitsigns"))
         end,
