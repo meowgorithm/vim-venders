@@ -9,8 +9,8 @@ packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 	use("preservim/nerdcommenter")
-	use("jamessan/vim-gnupg")
 	use("tpope/vim-fugitive")
+	use("jamessan/vim-gnupg")
 
 	use({
 		"vim-scripts/BufOnly.vim",
@@ -123,10 +123,4 @@ packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "lukas-reineke/lsp-format.nvim" })
-	--use("rafamadriz/friendly-snippets")
-	--use("lukas-reineke/indent-blankline.nvim")
-	--use("onsails/lspkind-nvim")
-	--use("simrat39/symbols-outline.nvim")
-	--use("ray-x/lsp_signature.nvim")
-	--use("RRethy/vim-illuminate")
 end)
