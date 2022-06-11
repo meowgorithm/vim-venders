@@ -104,7 +104,7 @@ packer.startup(function(use)
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			return {
+			require("trouble").setup({
 				icons = false,
 				fold_open = "▼", -- icon used for open folds
 				fold_closed = "▶", -- icon used for closed folds
@@ -117,7 +117,7 @@ packer.startup(function(use)
 					information = "info",
 				},
 				use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
-			}
+			})
 		end,
 	})
 	use("williamboman/nvim-lsp-installer")
