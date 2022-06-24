@@ -16,7 +16,7 @@ packer.startup(function(use)
 	use({
 		"vim-scripts/BufOnly.vim",
 		config = function()
-			require("remap").nnoremap("BO", ":wa<CR>:BufOnly<CR>")
+			vim.keymap.set("n", "BO", ":wa<CR>:BufOnly<CR>")
 		end,
 	})
 
