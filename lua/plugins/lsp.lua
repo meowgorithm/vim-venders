@@ -41,6 +41,7 @@ null_ls.setup({
 lsp_format.setup({})
 
 -- TabNine
+--[[
 local tabnine = require("cmp_tabnine.config")
 tabnine:setup({
 	max_lines = 1000,
@@ -53,6 +54,7 @@ tabnine:setup({
 		-- lua = true
 	},
 })
+]]
 
 -- Setup nvim-cmp.
 cmp.setup({
@@ -79,7 +81,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 	}, {
 		{ name = "ultisnips" },
-		{ name = "cmp_tabnine" },
+		--{ name = "cmp_tabnine" },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "cmdline" },

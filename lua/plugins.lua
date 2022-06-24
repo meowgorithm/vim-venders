@@ -97,10 +97,21 @@ packer.startup(function(use)
 	use("hrsh7th/cmp-calc")
 	use("f3fora/cmp-spell")
 	use({
+		"github/copilot.vim",
+		config = function()
+			vim.cmd([[
+				imap <silent><script><expr> <C-Y> copilot#Accept("\<CR>")
+				let g:copilot_no_tab_map = v:true
+			]])
+		end,
+	})
+	--[[
+	use({
 		"tzachar/cmp-tabnine",
 		run = "./install.sh",
 		requires = "hrsh7th/nvim-cmp",
 	})
+	--]]
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
