@@ -59,6 +59,9 @@ snippet ite "import termenv"
 te "github.com/muesli/termenv"
 endsnippet
 
+snippet esc "escape escapes"
+strings.ReplaceAll(strings.ReplaceAll($0, "\x1b", "\\\x1b"), "\n", "\\\n")
+endsnippet
 
 snippet tealog "Bubble Tea Logger"
 f, err := tea.LogToFile("debug.log", "$0")
