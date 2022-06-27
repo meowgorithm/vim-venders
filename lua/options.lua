@@ -43,30 +43,13 @@ end
 
 vim.cmd("colorscheme x")
 
--- Highlight current line in current window only
-vim.cmd([[
-    autocmd WinEnter,BufEnter * setlocal cursorline
-    autocmd WinLeave * setlocal nocursorline
-]])
-
--- Markdown spell checking
-vim.cmd([[
-    augroup markdownSpell
-        autocmd!
-        autocmd FileType markdown setlocal spell
-        autocmd BufRead,BufNewFile *.md setlocal spell
-    augroup END
-]])
-
 -- Visual Mode Blockwise Indent. This keeps the current visual block selection
 -- active after changing indent with '<' or '>'. Usually the visual block
 -- selection is lost after you shift it, which is incredibly annoying.
 --
 -- http://vim.wikia.com/wiki/Short_mappings_for_common_tasks
-vim.cmd([[
-    vmap > >gv
-    vmap < <gv
-]])
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
 
 vim.keymap.set("n", "S", ":split<CR>")
 vim.keymap.set("n", "VS", ":vsplit<CR>")
