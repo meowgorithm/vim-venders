@@ -21,9 +21,12 @@ packer.startup(function(use)
 	})
 
 	use({
-		"ctrlpvim/ctrlp.vim",
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.0",
+		requires = { { "nvim-lua/plenary.nvim" } },
 		config = function()
-			require("plugins.ctrlp")
+			vim.keymap.set("n", "<c-p>", ":Telescope find_files<CR>")
+			vim.keymap.set("n", ";", ":Telescope buffers<CR>")
 		end,
 	})
 
