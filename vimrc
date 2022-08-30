@@ -206,7 +206,7 @@ if &term =~ '^screen'
   set balloonexpr=1
 endif
 
-var mapleader = ','
+g:mapleader = ','
 nmap TT :wa<cr>:tabnew<cr>
 nmap BN :wa<cr>:bnext<cr>
 nmap BP :wa<cr>:bprev<cr>
