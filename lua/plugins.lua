@@ -25,8 +25,8 @@ packer.startup(function(use)
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 		config = function()
-			vim.keymap.set("n", "<c-p>", ":Telescope find_files<CR>")
-			vim.keymap.set("n", ";", ":Telescope buffers<CR>")
+			vim.keymap.set("n", "<c-p>", ":Telescope find_files disable_devicons=true<CR>")
+			vim.keymap.set("n", ";", ":Telescope buffers disable_devicons=true<CR>")
 		end,
 	})
 
