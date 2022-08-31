@@ -29,6 +29,30 @@ local with_diagnostics_code = function(builtin)
 	})
 end
 
+-- Organize Imports
+-- From caarlos0
+--
+-- https://github.com/caarlos0/dotfiles.fish/blob/main/nvim/config/lua/user/lsp.lua
+-- https://github.com/neovim/nvim-lspconfig/issues/115#issuecomment-902680058
+function OrganizeImports(timeoutms)
+	local clients = vim.lsp.buf_get_clients()
+	for _, client in pairs(clients) do
+		local params = vim.lsp.util.make_range_params(nil, client.offset_encoding)
+		params.context = { only = { "source.organizeImports" } }
+
+		local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeoutms)
+		for _, res in pairs(result or {}) do
+			for _, r in pairs(res.result or {}) do
+				if r.edit then
+					vim.lsp.util.apply_workspace_edit(r.edit, client.offset_encoding)
+				else
+					vim.lsp.buf.execute_command(r.command)
+				end
+			end
+		end
+	end
+end
+
 null_ls.setup({
 	sources = {
 		null_ls.builtins.formatting.stylua,
@@ -158,13 +182,28 @@ local on_attach = function(client, bufnr)
 	map("<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 	map("gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 	map("<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-	-- Organize imports on save
-	if client.resolved_capabilities.document_formatting then
+
+	if client.resolved_capabilities.document_formatting and client.name ~= "sumneko_lua" then
 		vim.cmd([[
-			augroup formatting
+			augroup lsp_formatting
 				autocmd! * <buffer>
 				autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
-				autocmd BufWritePre <buffer> lua OrganizeImports(1000)
+			augroup END
+		]])
+	end
+
+	-- From caarlos0:
+	--
+	-- If the organizeImports codeAction runs for lua files, depending on
+	-- where the cursor is, it'll reorder the args and break stuff.
+	-- This took me way too long to figure out.
+	--
+	-- https://github.com/caarlos0/dotfiles.fish/blob/main/nvim/config/lua/user/lsp.lua
+	if client.name ~= "null-ls" and client.name ~= "sumneko_lua" then
+		vim.cmd([[
+			augroup lsp_organize_imports
+				autocmd! * <buffer>
+				autocmd BufWritePre <buffer> lua OrganizeImports(150)
 			augroup END
 		]])
 	end
