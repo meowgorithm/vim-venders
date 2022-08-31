@@ -1,15 +1,12 @@
 vim9script
 
 # Bootstrap vim-plug {{{
-def Autoload()
-  var autoloadPlugPath = $HOME .. '/.vim/autoload/plug.vim'
+var autoloadPlugPath = $HOME .. '/.vim/autoload/plug.vim'
 
-  if !filereadable(autoloadPlugPath)
-    silent execute '!curl -fLo ' .. autoloadPlugPath .. ' --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-  endif
-enddef
-Autoload()
+if !filereadable(autoloadPlugPath)
+  silent execute '!curl -fLo ' .. autoloadPlugPath .. ' --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 # }}}
 
 # All UTF-8 all the time.
@@ -45,7 +42,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-scripts/taglist.vim'
-Plug 'chrisbra/Colorizer'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'wincent/terminus' # nicer cursors, better paste, better mouse, and so on
 
@@ -312,20 +308,6 @@ g:UltiSnipsEditSplit = 'vertical'
 g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 
 #
-# YouCompleteMe (and TabNine)
-#
-
-# Remove <Tab> from the list of keys mapped by YCM. We'll use the standard
-# ctrl n, ctrl p.
-g:ycm_key_list_select_completion = []
-
-# Don't show the preview window for completions
-#set completeopt-=preview
-
-# Close the preview window after a completion
-#var g:ycm_autoclose_preview_window_after_completion=1 " Close the preview window after a completion
-
-#
 # Airline
 #
 g:airline#extensions#ale#enabled = 1
@@ -434,14 +416,6 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 # JavaScript
 #
 g:javascript_plugin_flow = 1
-
-#
-# Colorizer
-#
-g:colorizer_auto_color = 0
-#g:colorizer_auto_filetype='css,scss,vim'
-g:colorizer_use_virtual_text = 1
-nmap <leader>c :ColorToggle<cr>
 
 # Helptags
 #
