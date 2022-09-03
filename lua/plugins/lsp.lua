@@ -1,27 +1,6 @@
-local lsp_ok, _ = pcall(require, "lspconfig")
-if not lsp_ok then
-	return
-end
-
-local inst_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not inst_ok then
-	return
-end
-
-local cmp_ok, cmp = pcall(require, "cmp")
-if not cmp_ok then
-	return
-end
-
-local fmt_ok, lsp_format = pcall(require, "lsp-format")
-if not fmt_ok then
-	return
-end
-
-local null_ok, null_ls = pcall(require, "null-ls")
-if not null_ok then
-	return
-end
+local cmp = require("cmp")
+local lsp_format = require("lsp-format")
+local null_ls = require("null-ls")
 
 local with_diagnostics_code = function(builtin)
 	return builtin.with({
@@ -63,22 +42,6 @@ null_ls.setup({
 })
 
 lsp_format.setup({})
-
--- TabNine
---[[
-local tabnine = require("cmp_tabnine.config")
-tabnine:setup({
-	max_lines = 1000,
-	max_num_results = 20,
-	sort = true,
-	run_on_every_keystroke = true,
-	snippet_placeholder = "..",
-	ignored_file_types = { -- default is not to ignore
-		-- uncomment to ignore in lua:
-		-- lua = true
-	},
-})
-]]
 
 -- Setup nvim-cmp.
 cmp.setup({
@@ -209,56 +172,29 @@ local on_attach = function(client, bufnr)
 	end
 end
 
---[[
-local capabilities = vim.tbl_extend(
-	"keep",
-	cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()) or {},
-	lspstatus.capabilities
-)
---]]
+local lspconfig = require("lspconfig")
 
--- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
--- or if the server is already installed).
-lsp_installer.on_server_ready(function(server)
-	local opts = { settings = {} }
-
-	--opts.capabilities = capabilities
-	opts.on_attach = on_attach
-	opts.capabilities = capabilities
-
-	-- Customize the options passed to the server
-	if server.name == "sumneko_lua" then
-		opts.settings["Lua"] = {
+lspconfig.sumneko_lua.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		Lua = {
 			diagnostics = {
-				globals = { "vim" },
+				globals = { "vim", "require", "pcall", "pairs" },
 			},
-		}
-	elseif server.name == "gopls" then
-		opts.settings["gopls"] = {
+		},
+	},
+})
+
+lspconfig.gopls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		gopls = {
 			gofumpt = true,
-		}
-		opts.flags = {
-			debounce_text_changes = 150,
-		}
-	end
-
-	-- This setup() function will take the provided server configuration and decorate it with the necessary properties
-	-- before passing it onwards to lspconfig.
-	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-	server:setup(opts)
-end)
-
-function OrganizeImports(timeoutMS)
-	local params = vim.lsp.util.make_range_params()
-	params.context = { only = { "source.organizeImports" } }
-	local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeoutMS)
-	for _, res in pairs(result or {}) do
-		for _, r in pairs(res.result or {}) do
-			if r.edit then
-				vim.lsp.util.apply_workspace_edit(r.edit, "UTF-8")
-			else
-				vim.lsp.buf.execute_command(r.command)
-			end
-		end
-	end
-end
+		},
+	},
+	flags = {
+		debounce_text_changes = 150,
+	},
+})

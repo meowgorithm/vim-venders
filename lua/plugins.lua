@@ -108,13 +108,6 @@ packer.startup(function(use)
 			]])
 		end,
 	})
-	--[[
-	use({
-		"tzachar/cmp-tabnine",
-		run = "./install.sh",
-		requires = "hrsh7th/nvim-cmp",
-	})
-	--]]
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
@@ -135,7 +128,21 @@ packer.startup(function(use)
 			})
 		end,
 	})
-	use("williamboman/nvim-lsp-installer")
+	use({
+		"williamboman/mason.nvim",
+		requires = "williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason").setup {
+				ui = {
+					icons = { package_installed = "✓" }
+				}
+			}
+			require("mason-lspconfig").setup {
+				ensure_installed = { "sumneko_lua" },
+				automatic_installation = true,
+			}
+		end
+	})
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "lukas-reineke/lsp-format.nvim" })
 end)
