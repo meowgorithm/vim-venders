@@ -1,6 +1,5 @@
 local cmp = require("cmp")
 local lsp_format = require("lsp-format")
-local null_ls = require("null-ls")
 
 local with_diagnostics_code = function(builtin)
 	return builtin.with({
@@ -31,15 +30,6 @@ function OrganizeImports(timeoutms)
 		end
 	end
 end
-
-null_ls.setup({
-	sources = {
-		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.diagnostics.eslint,
-		null_ls.builtins.completion.spell,
-		with_diagnostics_code(null_ls.builtins.diagnostics.shellcheck),
-	},
-})
 
 lsp_format.setup({})
 
@@ -197,4 +187,16 @@ lspconfig.gopls.setup({
 	flags = {
 		debounce_text_changes = 150,
 	},
+})
+
+local null_ls = require("null-ls")
+null_ls.setup({
+	sources = {
+		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.diagnostics.eslint,
+		null_ls.builtins.completion.spell,
+		with_diagnostics_code(null_ls.builtins.diagnostics.shellcheck),
+	},
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
