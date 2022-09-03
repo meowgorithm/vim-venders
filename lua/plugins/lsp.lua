@@ -169,7 +169,7 @@ lspconfig.sumneko_lua.setup({
 	settings = {
 		Lua = {
 			diagnostics = {
-				globals = { "vim", "require", "pcall", "pairs" },
+				globals = { "vim", "require", "pcall", "pairs", "print" },
 			},
 		},
 	},
