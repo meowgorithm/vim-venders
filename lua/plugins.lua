@@ -12,6 +12,7 @@ packer.startup(function(use)
 	use("tpope/vim-fugitive")
 	use("jamessan/vim-gnupg")
 	use({ "fatih/vim-go", config = require("plugins.go") })
+	use("LnL7/vim-nix")
 
 	use({
 		"vim-scripts/BufOnly.vim",
