@@ -188,6 +188,8 @@ lspconfig.gopls.setup({
 	},
 })
 
+lspconfig.rnix.setup({})
+
 local null_ls = require("null-ls")
 null_ls.setup({
 	sources = {
