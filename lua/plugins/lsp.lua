@@ -58,7 +58,6 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 	}, {
 		{ name = "ultisnips" },
-		--{ name = "cmp_tabnine" },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "cmdline" },

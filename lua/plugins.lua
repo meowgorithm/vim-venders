@@ -132,16 +132,12 @@ packer.startup(function(use)
 		"williamboman/mason.nvim",
 		requires = "williamboman/mason-lspconfig.nvim",
 		config = function()
-			require("mason").setup {
-				ui = {
-					icons = { package_installed = "✓" }
-				}
-			}
-			require("mason-lspconfig").setup {
+			require("mason").setup({})
+			require("mason-lspconfig").setup({
 				ensure_installed = { "sumneko_lua" },
 				automatic_installation = true,
-			}
-		end
+			})
+		end,
 	})
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "lukas-reineke/lsp-format.nvim" })
