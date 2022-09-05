@@ -5,13 +5,18 @@
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextPrefix": " ■ ",
   "diagnostic.virtualTextCurrentLineOnly": false,
-  "coc.preferences.formatOnSaveFiletypes": ["elm", "typescript", "nix"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "elm",
+    "typescript",
+    "javascript",
+    "json",
+    "jsonc"
+  ],
 
-  "prettier.tabWidth": 4,
+  "prettier.tabWidth": 2,
   "prettier.trailingComma": "all",
 
   "languageserver": {
-
     "go": {
       "command": "gopls",
       "rootPatterns": ["go.mod"],
@@ -25,7 +30,13 @@
     "haskell": {
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
-      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
+      ],
       "filetypes": ["haskell", "lhaskell"]
     },
 
@@ -42,29 +53,27 @@
       "command": "rnix-lsp",
       "filetypes": ["nix"]
     }
-
   },
 
-  // coc-diagnostics for shellcheck and shfmt
+  // coc-diagnostics for shellcheck, shfmt and so on.
+  //
   // Install with :CocInstall coc-diagnostic
   "diagnostic-languageserver.filetypes": {
-    // lint `sh` (includes `bash`) files
-    "sh": "shellcheck"
+    "sh": "shellcheck" // lint `sh` (and `bash`) files
   },
   "diagnostic-languageserver.formatFiletypes": {
-    // format `sh` (includes `bash`) files using formatter defined below
-    "sh": "shfmt"
+    "sh": "shfmt" // format `sh` (and `bash`) files
   },
   "diagnostic-languageserver.formatters": {
-      // define our formatter so that we can reference it from
-      // `diagnostic-languageserver.formatFiletypes`
-      "shfmt": {
-          "command": "shfmt",
-          // all the below args are entirely optional
-          // primarily listed here to call out that flags which take an
-          // argument (such as `-i <num-spaces>` for specifying indentation)
-          // should be split into two strings, the flag and then the value
-          "args": ["-i", "2", "-bn", "-ci", "-sr"]
-      }
+    // define our formatter so that we can reference it from
+    // `diagnostic-languageserver.formatFiletypes`
+    "shfmt": {
+      "command": "shfmt",
+      // all the below args are entirely optional
+      // primarily listed here to call out that flags which take an
+      // argument (such as `-i <num-spaces>` for specifying indentation)
+      // should be split into two strings, the flag and then the value
+      "args": ["-i", "2", "-bn", "-ci", "-sr"]
     }
+  }
 }
