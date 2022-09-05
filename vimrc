@@ -54,6 +54,7 @@ endif
 
 # LSP and Languages
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sbdchd/neoformat' # just for alejandra
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
@@ -296,6 +297,14 @@ nmap E :CocDiagnostics<cr>
 # Navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+#
+# NeoFormat
+#
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
 #
 # UltiSnips
