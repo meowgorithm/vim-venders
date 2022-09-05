@@ -36,8 +36,9 @@ Plug 'milkypostman/vim-togglelist'
 
 # UI
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-hijack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
@@ -222,7 +223,6 @@ nmap <c-l> <c-w>l
 
 # Toggles.
 map <leader>i :set invlist<cr>:exe ":echo 'toggling invisibles'"<cr>
-#map <leader>j :set number! nonumber?<cr>
 map <leader>s :set hlsearch! hlsearch?<cr>
 map <leader>w :set wrap! wrap?<cr>
 map <leader>p :set paste! nopaste?<cr>
@@ -320,19 +320,12 @@ g:gitgutter_sign_modified_removed = '•-'
 g:gitgutter_set_sign_backgrounds  = 1 # match to SignColumn
 
 #
-# NERDTree
+# Fern (Tree)
 #
-map <leader>n :NERDTreeToggle<cr>
-map <leader>f :NERDTreeFind<cr>
-var NERDChristmasTree = 1
-var NERDTreeHighlightCursorline = 1
-var NERDTreeShowBookmarks = 1
-var NERDTreeShowHidden = 1
-var NERDTreeHijackNetrw = 1
-var NERDTreeIgnore = [
-  \ '\.$', '\~$', '\.git', '\.DS_Store', '.*\.pyc',
-  \ 'node_modules', 'elm-stuff', '.cache'
-  \ ]
+nnoremap <leader>n :Fern . -drawer -toggle<cr>
+g:fern#renderer#default#leaf_symbol = "│ "
+g:fern#renderer#default#collapsed_symbol = "+ "
+g:fern#renderer#default#expanded_symbol = "- "
 
 #
 # NERDCommenter
