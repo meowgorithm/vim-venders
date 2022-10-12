@@ -12,24 +12,25 @@
     "json",
     "jsonc"
   ],
-
-  "prettier.tabWidth": 2,
-  "prettier.trailingComma": "all",
-
   "languageserver": {
     "go": {
       "command": "gopls",
-      "rootPatterns": ["go.mod"],
+      "rootPatterns": [
+        "go.mod"
+      ],
       "trace.server": "verbose",
-      "filetypes": ["go"],
+      "filetypes": [
+        "go"
+      ],
       "initializationOptions": {
         "experimentalWorkspaceModule": true
       }
     },
-
     "haskell": {
       "command": "haskell-language-server-wrapper",
-      "args": ["--lsp"],
+      "args": [
+        "--lsp"
+      ],
       "rootPatterns": [
         "*.cabal",
         "stack.yaml",
@@ -37,24 +38,30 @@
         "package.yaml",
         "hie.yaml"
       ],
-      "filetypes": ["haskell", "lhaskell"]
+      "filetypes": [
+        "haskell",
+        "lhaskell"
+      ]
     },
-
     "elmLS": {
       "command": "elm-language-server",
-      "filetypes": ["elm"],
-      "rootPatterns": ["elm.json"],
+      "filetypes": [
+        "elm"
+      ],
+      "rootPatterns": [
+        "elm.json"
+      ],
       "initializationOptions": {
         "elmAnalyseTrigger": "change"
       }
     },
-
     "nix": {
       "command": "rnix-lsp",
-      "filetypes": ["nix"]
+      "filetypes": [
+        "nix"
+      ]
     }
   },
-
   // coc-diagnostics for shellcheck, shfmt and so on.
   //
   // Install with :CocInstall coc-diagnostic
@@ -62,7 +69,8 @@
     "sh": "shellcheck" // lint `sh` (and `bash`) files
   },
   "diagnostic-languageserver.formatFiletypes": {
-    "sh": "shfmt" // format `sh` (and `bash`) files
+    "sh": "shfmt", // format `sh` (and `bash`) files
+    "nix": "alejandra"
   },
   "diagnostic-languageserver.formatters": {
     // define our formatter so that we can reference it from
@@ -73,7 +81,13 @@
       // primarily listed here to call out that flags which take an
       // argument (such as `-i <num-spaces>` for specifying indentation)
       // should be split into two strings, the flag and then the value
-      "args": ["-i", "2", "-bn", "-ci", "-sr"]
+      "args": [
+        "-i",
+        "2",
+        "-bn",
+        "-ci",
+        "-sr"
+      ]
     }
   }
 }
