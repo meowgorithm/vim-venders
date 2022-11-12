@@ -300,10 +300,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 #
 # NeoFormat
 #
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+autocmd BufWritePre *.nix try | undojoin | Neoformat | catch /E790/ | Neoformat | endtry
 
 #
 # UltiSnips
