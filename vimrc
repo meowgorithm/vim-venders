@@ -44,7 +44,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-scripts/taglist.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'wincent/terminus' # nicer cursors, better paste, better mouse, and so on
 
 # Utils
 Plug 'jamessan/vim-gnupg'
