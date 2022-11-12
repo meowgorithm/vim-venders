@@ -129,7 +129,7 @@ set report=0
 set listchars=tab:\▸\ ,trail:·,eol:¶
 set colorcolumn=80
 set sessionoptions-=options
-set scrolloff=1
+set scrolloff=5
 set sidescrolloff=5
 
 # Always show the signcolumn to reduce jumpiness
