@@ -53,7 +53,7 @@ endif
 
 # LSP and Languages
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'sbdchd/neoformat' # just for alejandra
+Plug 'sbdchd/neoformat', { 'for': 'nix' } # just for alejandra
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
