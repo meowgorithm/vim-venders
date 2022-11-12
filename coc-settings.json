@@ -22,9 +22,6 @@
       "filetypes": [
         "go"
       ],
-      "initializationOptions": {
-        "experimentalWorkspaceModule": true
-      }
     },
     "haskell": {
       "command": "haskell-language-server-wrapper",
