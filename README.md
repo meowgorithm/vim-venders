@@ -1,3 +1,7 @@
+Archived: everything’s in [meowgorithm/dotfiles](https://github.com/meowgorithm/dotfiles) now.
+
+---
+
 # Vim Venders!
 
 A Vim and NeoVim config inspired by the work of [Wim Wenders][wim].
